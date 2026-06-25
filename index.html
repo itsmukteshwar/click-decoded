@@ -548,24 +548,50 @@ h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n
 /* ╔══════════════════════════════════════════╗
    ║  STATS ROW                               ║
    ╚══════════════════════════════════════════╝ */
-.stats-row{
-  background:var(--n-dark);
-  padding:64px 0;
+.stats-row{background:transparent;padding:56px 0;}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:linear-gradient(135deg,var(--n-dark) 0%,#0d1b35 60%,#161f3a 100%);
+  border-radius:24px;overflow:hidden;
+  box-shadow:0 32px 80px rgba(15,30,56,.28),0 0 0 1px rgba(255,255,255,.07);
 }
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);}
 .stat-col{
-  padding:40px 32px;
-  text-align:center;
-  background:var(--n);
-  position:relative;
+  padding:44px 28px;text-align:center;position:relative;
+  background:linear-gradient(180deg,rgba(255,255,255,.035) 0%,transparent 100%);
 }
 .stat-col::after{
-  content:'';position:absolute;right:0;top:20%;bottom:20%;
-  width:1px;background:rgba(255,255,255,.08);
+  content:'';position:absolute;right:0;top:24px;bottom:24px;
+  width:1px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.1) 40%,rgba(255,255,255,.1) 60%,transparent);
 }
 .stat-col:last-child::after{display:none;}
-.sn{font-size:52px;font-weight:900;color:var(--o);line-height:1;letter-spacing:-.02em;}
-.sl{font-size:13px;color:rgba(255,255,255,.45);margin-top:8px;font-weight:500;}
+.sn{font-size:54px;font-weight:900;line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(135deg,#f59e0b,var(--o));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sl{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:10px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;}
+
+/* ── Why Choose Us strip ── */
+.why-strip{padding:64px 0 48px;}
+.why-strip .sec-h{margin-bottom:36px;}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.why-card{
+  background:#fff;border:1px solid rgba(42,69,115,.09);border-radius:16px;
+  padding:28px 24px;display:flex;gap:16px;align-items:flex-start;
+  box-shadow:0 2px 12px rgba(42,69,115,.05);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.why-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(42,69,115,.1);}
+.why-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  background:linear-gradient(135deg,rgba(238,126,26,.12),rgba(238,126,26,.06));
+  border:1px solid rgba(238,126,26,.2);
+}
+.why-body h4{font-size:15px;font-weight:700;color:var(--n-dark);margin-bottom:6px;}
+.why-body p{font-size:13px;color:var(--s);line-height:1.6;margin:0;}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.why-grid{grid-template-columns:1fr;}}
 
 /* ╔══════════════════════════════════════════╗
    ║  AUTOMATION FEATURE                      ║
@@ -794,6 +820,27 @@ h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n
   transition:.2s;
 }
 .tool-chip:hover{border-color:var(--b);color:var(--b);}
+
+/* ── Social proof marquee (above testimonials) ── */
+.proof-strip{background:var(--n-dark);padding:52px 0;overflow:hidden;}
+.proof-label{text-align:center;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.35);margin-bottom:26px;}
+.proof-track{
+  display:flex;gap:0;
+  animation:ticker 30s linear infinite;
+  white-space:nowrap;
+}
+.proof-track.rev{animation-direction:reverse;}
+.proof-chip{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 22px;margin-right:14px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;font-size:13px;font-weight:600;
+  color:rgba(255,255,255,.75);flex-shrink:0;
+  transition:.2s;
+}
+.proof-chip .pc-val{color:var(--o);font-size:15px;font-weight:900;}
+.proof-strip-wrap{display:flex;flex-direction:column;gap:14px;}
 
 /* ╔══════════════════════════════════════════╗
    ║  LEAD FORM — DARK PANEL                  ║
@@ -1418,10 +1465,22 @@ footer h4{
 <div class="stats-row">
  <div class="wrap">
   <div class="stats-grid">
-   <div class="stat-col rv"><div class="sn count" data-t="12" data-s="+">0</div><div class="sl">Years in digital marketing</div></div>
-   <div class="stat-col rv2"><div class="sn count" data-t="500" data-s="+">0</div><div class="sl">Projects delivered</div></div>
-   <div class="stat-col rv3"><div class="sn count" data-t="98" data-s="%">0</div><div class="sl">Client retention rate</div></div>
-   <div class="stat-col rv"><div class="sn">₹10Cr+</div><div class="sl">Ad spend managed</div></div>
+   <div class="stat-col rv">
+    <div class="sn count" data-t="12" data-s="+">0</div>
+    <div class="sl">Years in digital marketing</div>
+   </div>
+   <div class="stat-col rv2">
+    <div class="sn count" data-t="500" data-s="+">0</div>
+    <div class="sl">Projects delivered</div>
+   </div>
+   <div class="stat-col rv3">
+    <div class="sn count" data-t="98" data-s="%">0</div>
+    <div class="sl">Client retention rate</div>
+   </div>
+   <div class="stat-col rv">
+    <div class="sn">₹10Cr+</div>
+    <div class="sl">Ad spend managed</div>
+   </div>
   </div>
  </div>
 </div>
@@ -1545,6 +1604,61 @@ footer h4{
  </div>
 </section>
 
+<!-- ════════════════ WHY CHOOSE US ════════════════ -->
+<section class="why-strip">
+ <div class="wrap">
+  <div class="sec-h rv" style="margin-bottom:36px;">
+   <div class="pill pill-b">Why Click Decoded</div>
+   <h2>Built Different.<br>Designed to Deliver.</h2>
+   <p>Not an agency that reports vanity metrics. We own outcomes.</p>
+  </div>
+  <div class="why-grid">
+   <div class="why-card rv">
+    <div class="why-icon">🎯</div>
+    <div class="why-body">
+     <h4>ROI-First, Always</h4>
+     <p>Every campaign is benchmarked against actual business outcomes — leads, revenue, and retention. Not impressions.</p>
+    </div>
+   </div>
+   <div class="why-card rv2">
+    <div class="why-icon">🔒</div>
+    <div class="why-body">
+     <h4>NDA-Backed Confidentiality</h4>
+     <p>For agencies: we never contact your clients. Your brand, your credit, zero risk of poaching.</p>
+    </div>
+   </div>
+   <div class="why-card rv3">
+    <div class="why-icon">⚡</div>
+    <div class="why-body">
+     <h4>48-Hour Turnaround</h4>
+     <p>White label reports and campaign updates delivered in 48 hours — so you always look sharp in front of clients.</p>
+    </div>
+   </div>
+   <div class="why-card rv">
+    <div class="why-icon">🤖</div>
+    <div class="why-body">
+     <h4>AI + Human Synergy</h4>
+     <p>AI tools for speed and scale, human experts for strategy. You get the best of both without hiring either.</p>
+    </div>
+   </div>
+   <div class="why-card rv2">
+    <div class="why-icon">📊</div>
+    <div class="why-body">
+     <h4>Full Transparency</h4>
+     <p>Live dashboards, weekly reports, and zero jargon. You always know where every rupee went and what it returned.</p>
+    </div>
+   </div>
+   <div class="why-card rv3">
+    <div class="why-icon">🇮🇳</div>
+    <div class="why-body">
+     <h4>India-Focused Strategy</h4>
+     <p>12 years of cracking the Indian B2B market — language, buyer behaviour, and platform nuances that global agencies miss.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
 <!-- ════════════════ TABS ════════════════ -->
 <section class="tabs-section">
  <div class="wrap">
@@ -1566,6 +1680,65 @@ footer h4{
   <div class="tp"><div class="tp-inner"><h3>White Label Fulfilment</h3><p>We are the invisible engine behind agencies across India. You sell, we deliver — SEO, PPC, web, GEO and reports — all under your brand. We never make contact with your clients. Ever.</p><ul class="tp-list"><li>White label SEO &amp; PPC fulfilment</li><li>Branded client reports in 48h</li><li>NDA-backed confidentiality</li><li>No direct client contact, ever</li><li>Scalable capacity on demand</li><li>Partner agency dashboard</li></ul><a href="#contact" class="btn btn-o btn-sm">Become a Partner</a></div></div>
  </div>
 </section>
+
+<!-- ════════════════ SOCIAL PROOF MARQUEE ════════════════ -->
+<div class="proof-strip">
+ <div class="proof-label">Trusted results across industries</div>
+ <div class="proof-strip-wrap">
+  <!-- Row 1 — forward -->
+  <div style="overflow:hidden;white-space:nowrap;">
+   <div class="proof-track">
+    <span class="proof-chip"><span class="pc-val">3×</span> Organic Traffic Growth</span>
+    <span class="proof-chip"><span class="pc-val">₹10Cr+</span> Ad Spend Managed</span>
+    <span class="proof-chip"><span class="pc-val">#1</span> Rankings Delivered</span>
+    <span class="proof-chip"><span class="pc-val">94%</span> Lead Query Resolution</span>
+    <span class="proof-chip"><span class="pc-val">500+</span> Projects Completed</span>
+    <span class="proof-chip"><span class="pc-val">48h</span> Report Turnaround</span>
+    <span class="proof-chip"><span class="pc-val">6.2×</span> Average ROAS</span>
+    <span class="proof-chip"><span class="pc-val">98%</span> Client Retention Rate</span>
+    <span class="proof-chip"><span class="pc-val">12+</span> Years of Expertise</span>
+    <span class="proof-chip"><span class="pc-val">0</span> Penalty Risk</span>
+    <!-- duplicate for seamless loop -->
+    <span class="proof-chip"><span class="pc-val">3×</span> Organic Traffic Growth</span>
+    <span class="proof-chip"><span class="pc-val">₹10Cr+</span> Ad Spend Managed</span>
+    <span class="proof-chip"><span class="pc-val">#1</span> Rankings Delivered</span>
+    <span class="proof-chip"><span class="pc-val">94%</span> Lead Query Resolution</span>
+    <span class="proof-chip"><span class="pc-val">500+</span> Projects Completed</span>
+    <span class="proof-chip"><span class="pc-val">48h</span> Report Turnaround</span>
+    <span class="proof-chip"><span class="pc-val">6.2×</span> Average ROAS</span>
+    <span class="proof-chip"><span class="pc-val">98%</span> Client Retention Rate</span>
+    <span class="proof-chip"><span class="pc-val">12+</span> Years of Expertise</span>
+    <span class="proof-chip"><span class="pc-val">0</span> Penalty Risk</span>
+   </div>
+  </div>
+  <!-- Row 2 — reverse -->
+  <div style="overflow:hidden;white-space:nowrap;">
+   <div class="proof-track rev">
+    <span class="proof-chip">🏆 B2B SEO Specialists</span>
+    <span class="proof-chip">🤖 AI-Powered Automation</span>
+    <span class="proof-chip">🔒 NDA-Backed Delivery</span>
+    <span class="proof-chip">📈 Google Partner Agency</span>
+    <span class="proof-chip">🇮🇳 India's Top B2B Agency</span>
+    <span class="proof-chip">⚡ 48h White Label Reports</span>
+    <span class="proof-chip">💬 WhatsApp Business API</span>
+    <span class="proof-chip">🌐 GEO / AI Search Ready</span>
+    <span class="proof-chip">🔗 Authority Link Building</span>
+    <span class="proof-chip">📊 Full Transparency Reporting</span>
+    <!-- duplicate -->
+    <span class="proof-chip">🏆 B2B SEO Specialists</span>
+    <span class="proof-chip">🤖 AI-Powered Automation</span>
+    <span class="proof-chip">🔒 NDA-Backed Delivery</span>
+    <span class="proof-chip">📈 Google Partner Agency</span>
+    <span class="proof-chip">🇮🇳 India's Top B2B Agency</span>
+    <span class="proof-chip">⚡ 48h White Label Reports</span>
+    <span class="proof-chip">💬 WhatsApp Business API</span>
+    <span class="proof-chip">🌐 GEO / AI Search Ready</span>
+    <span class="proof-chip">🔗 Authority Link Building</span>
+    <span class="proof-chip">📊 Full Transparency Reporting</span>
+   </div>
+  </div>
+ </div>
+</div>
 
 <!-- ════════════════ TESTIMONIALS ════════════════ -->
 <section class="testi-section">
