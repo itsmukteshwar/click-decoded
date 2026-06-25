@@ -900,7 +900,12 @@ h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n
    ║  FAQ                                     ║
    ╚══════════════════════════════════════════╝ */
 .faq-section{background:var(--bg);}
-.faq-wrap{max-width:760px;margin:0 auto;}
+.faq-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:0 28px;
+  align-items:start;
+}
+.faq-col{display:flex;flex-direction:column;gap:0;}
+@media(max-width:768px){.faq-wrap{grid-template-columns:1fr;}}
 .fi{
   border:1px solid var(--bdr);border-radius:14px;
   margin-bottom:10px;overflow:hidden;transition:.15s;
@@ -1836,11 +1841,18 @@ footer h4{
    <h2>Frequently Asked Questions</h2>
   </div>
   <div class="faq-wrap">
-   <div class="fi"><button class="fi-q">Do you work with both businesses and agencies?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We serve direct business clients with SEO, ads, web and automation, and we act as a white-label fulfilment partner for agencies across India — fully under your brand, with NDA-backed confidentiality.</div></div>
-   <div class="fi"><button class="fi-q">What is GEO and why does it matter now?<span class="fi-icon">+</span></button><div class="fi-a">Generative Engine Optimization makes your brand the source that AI engines like ChatGPT, Gemini and Perplexity cite when answering questions. As AI-powered search grows, GEO is becoming as important as traditional SEO.</div></div>
-   <div class="fi"><button class="fi-q">How fast can I see results?<span class="fi-icon">+</span></button><div class="fi-a">PPC and WhatsApp automation can show results within weeks. SEO and GEO typically compound over 3–6 months as authority builds. We set clear, honest expectations from day one — no false promises.</div></div>
-   <div class="fi"><button class="fi-q">Will you ever contact my clients?<span class="fi-icon">+</span></button><div class="fi-a">Never. Our white-label engagement is NDA-backed. We never contact, pitch, or poach your clients under any circumstances. Your client relationships are always, entirely yours.</div></div>
-   <div class="fi"><button class="fi-q">Do you offer custom packages?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We don't do off-the-shelf. Every engagement starts with a strategy call where we understand your goals, then propose a tailored scope and pricing. Book your free call to get started.</div></div>
+   <!-- Left column -->
+   <div class="faq-col">
+    <div class="fi"><button class="fi-q">Do you work with both businesses and agencies?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We serve direct business clients with SEO, ads, web and automation, and we act as a white-label fulfilment partner for agencies across India — fully under your brand, with NDA-backed confidentiality.</div></div>
+    <div class="fi"><button class="fi-q">What is GEO and why does it matter now?<span class="fi-icon">+</span></button><div class="fi-a">Generative Engine Optimization makes your brand the source that AI engines like ChatGPT, Gemini and Perplexity cite when answering questions. As AI-powered search grows, GEO is becoming as important as traditional SEO.</div></div>
+    <div class="fi"><button class="fi-q">How fast can I see results?<span class="fi-icon">+</span></button><div class="fi-a">PPC and WhatsApp automation can show results within weeks. SEO and GEO typically compound over 3–6 months as authority builds. We set clear, honest expectations from day one — no false promises.</div></div>
+   </div>
+   <!-- Right column -->
+   <div class="faq-col">
+    <div class="fi"><button class="fi-q">Will you ever contact my clients?<span class="fi-icon">+</span></button><div class="fi-a">Never. Our white-label engagement is NDA-backed. We never contact, pitch, or poach your clients under any circumstances. Your client relationships are always, entirely yours.</div></div>
+    <div class="fi"><button class="fi-q">Do you offer custom packages?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We don't do off-the-shelf. Every engagement starts with a strategy call where we understand your goals, then propose a tailored scope and pricing. Book your free call to get started.</div></div>
+    <div class="fi"><button class="fi-q">What industries do you specialise in?<span class="fi-icon">+</span></button><div class="fi-a">We work across B2B services, SaaS, manufacturing, real estate, education, and e-commerce. Our strategies are always tailored to your specific audience, sales cycle, and competition landscape.</div></div>
+   </div>
   </div>
  </div>
 </section>
