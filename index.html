@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Decoded — SEO · Marketing · AI Automation</title>
+<meta name="description" content="Click Decoded is India's premier B2B digital growth agency. SEO, Google Ads, AI Automation, WhatsApp workflows, GEO, and White Label fulfilment. 12 years. 500+ projects. Zero fluff.">
+<meta property="og:title" content="Click Decoded — SEO · Marketing · AI Automation">
+<meta property="og:description" content="Trusted by agencies and businesses across India. Real results, measurable growth.">
+<meta property="og:type" content="website">
+<link rel="icon" href="clickdecoded.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Click Decoded","url":"https://clickdecoded.com","logo":"https://clickdecoded.com/logo-color.svg","description":"Premium B2B digital marketing, SEO, AI automation and white label agency, Bhopal India.","address":{"@type":"PostalAddress","addressLocality":"Bhopal","addressRegion":"Madhya Pradesh","addressCountry":"IN"}}</script>
+<style>
+/* ╔══════════════════════════════════════════╗
+   ║  DESIGN TOKENS                           ║
+   ╚══════════════════════════════════════════╝ */
+:root{
+  --n:   #2A4573;   /* brand navy */
+  --n2:  #1e3460;
+  --n-dark: #0f1e38; /* deep bg */
+  --b:   #2A4573;   /* blue = same as navy */
+  --o:   #EE7E1A;   /* brand orange */
+  --o2:  #d46e12;
+  --w:   #ffffff;
+  --body:#1E293B;
+  --m:   #475569;
+  --s:   #64748b;
+  --bg:  #F4F7FC;
+  --bdr: #E2E8F0;
+  --r:   14px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--body);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img,svg{display:block;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  LAYOUT                                  ║
+   ╚══════════════════════════════════════════╝ */
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px;}
+section{padding:96px 0;}
+.bg-dark{background:var(--n);}
+.bg-off {background:var(--bg);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  TYPE                                    ║
+   ╚══════════════════════════════════════════╝ */
+h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n);}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:99px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;}
+.pill-o{background:rgba(238,126,26,.12);color:var(--o);}
+.pill-b{background:rgba(42,69,115,.1);color:var(--n);}
+.pill-w{background:rgba(255,255,255,.12);color:#fff;}
+.sec-h{text-align:center;max-width:640px;margin:0 auto 56px;}
+.sec-h h2{font-size:36px;margin-top:12px;margin-bottom:14px;}
+.sec-h p{font-size:16px;color:var(--m);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  BUTTONS                                 ║
+   ╚══════════════════════════════════════════╝ */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-weight:700;font-size:14px;border:none;transition:all .18s;white-space:nowrap;}
+.btn-o{background:var(--o);color:#fff;box-shadow:0 4px 18px rgba(245,158,11,.3);}
+.btn-o:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,158,11,.4);}
+.btn-n{background:var(--n);color:#fff;}
+.btn-n:hover{background:var(--n2);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff;}
+.btn-sm{padding:10px 20px;font-size:13px;}
+.btn svg{flex-shrink:0;transition:transform .18s;}
+.btn:hover svg{transform:translateX(3px);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  LOGO INLINE SVG STYLES                  ║
+   ╚══════════════════════════════════════════╝ */
+.logo-wrap{display:flex;align-items:center;gap:11px;}
+.logo-icon{width:38px;height:38px;flex-shrink:0;}
+.logo-type{display:flex;flex-direction:column;line-height:1;}
+.logo-type .lt1{font-size:18px;font-weight:900;letter-spacing:.5px;}
+.logo-type .lt2{font-size:11px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--o);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  HEADER                                  ║
+   ╚══════════════════════════════════════════╝ */
+#hdr{
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--bdr);
+  transition:box-shadow .2s;
+}
+#hdr.up{box-shadow:0 4px 32px rgba(13,27,42,.09);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px;}
+
+/* desktop menu */
+.dmenu{display:flex;align-items:center;gap:2px;}
+.dmenu>li{position:relative;}
+.dmenu>li>a{
+  display:flex;align-items:center;gap:5px;
+  padding:9px 12px;font-size:13.5px;font-weight:600;
+  color:var(--n);border-radius:8px;transition:.15s;
+}
+.dmenu>li>a:hover{background:var(--bg);color:var(--b);}
+.dcar{width:10px;height:10px;opacity:.5;transition:transform .18s;flex-shrink:0;}
+.dmenu>li:hover .dcar{transform:rotate(180deg);}
+
+/* mega */
+.mega{
+  position:absolute;top:calc(100% + 10px);left:50%;
+  transform:translateX(-50%) translateY(8px);
+  background:#fff;border:1px solid var(--bdr);
+  border-radius:18px;padding:26px;
+  box-shadow:0 24px 64px rgba(13,27,42,.14);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .16s,transform .16s;
+}
+.mega.wide{width:940px;display:grid;grid-template-columns:repeat(5,1fr);gap:22px;}
+.mega.slim{width:280px;left:auto;right:0;transform:translateY(8px);}
+.dmenu>li:hover .mega{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.dmenu>li:hover .mega.slim{transform:translateY(0);}
+.mc h5{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--b);margin-bottom:11px;}
+.mc a{display:block;padding:5.5px 0;font-size:13px;font-weight:500;color:var(--body);transition:.12s;}
+.mc a:hover{color:var(--o);padding-left:5px;}
+.mega.slim a{display:block;padding:9px 11px;border-radius:9px;font-size:13px;font-weight:600;color:var(--n);transition:.12s;}
+.mega.slim a:hover{background:var(--bg);color:var(--o);}
+.mega.slim a small{display:block;font-weight:400;font-size:11px;color:var(--s);margin-top:2px;}
+
+.navcta{display:flex;align-items:center;gap:10px;}
+/* hamburger */
+.hb{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;border-radius:8px;}
+.hb span{display:block;width:22px;height:2px;background:var(--n);border-radius:2px;transition:.22s;}
+.hb.x span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hb.x span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hb.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* mobile nav */
+.mnav{
+  display:none;position:fixed;inset:70px 0 0;
+  background:#fff;z-index:899;overflow-y:auto;
+  padding:16px 20px 60px;border-top:1px solid var(--bdr);
+}
+.mnav.on{display:block;}
+.ma{border-bottom:1px solid var(--bdr);}
+.ma>button{
+  width:100%;text-align:left;background:none;border:none;
+  padding:15px 4px;font-size:15.5px;font-weight:700;color:var(--n);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.ma .ms{max-height:0;overflow:hidden;transition:.3s;padding-left:10px;}
+.ma.on .ms{max-height:1600px;padding-bottom:14px;}
+.ma .ms a{display:block;padding:8px 0;color:var(--body);font-size:14px;}
+.ma .ms a:hover{color:var(--o);}
+.ma .ms h6{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--b);font-weight:800;margin:12px 0 3px;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  HERO — SCROLL-PINNED SERVICE REVEAL     ║
+   ╚══════════════════════════════════════════╝ */
+.scroll-hero-wrap{height:300vh;position:relative;}
+.scroll-hero-sticky{
+  position:sticky;top:0;height:100vh;
+  background:var(--n-dark);
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;
+}
+.scroll-hero-sticky::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;z-index:0;
+}
+.sh-glow-l{
+  position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(238,126,26,.08),transparent 65%);
+  top:-120px;left:-100px;pointer-events:none;z-index:0;
+}
+.sh-glow-r{
+  position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(42,69,115,.55),transparent 70%);
+  bottom:-80px;right:8%;pointer-events:none;z-index:0;
+}
+.sh-left{
+  padding:0 52px 0 max(28px,calc((100vw - 1200px)/2 + 28px));
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:3;
+}
+.sh-eyebrow{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 14px;border-radius:99px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);margin-bottom:22px;align-self:flex-start;
+}
+.sh-h1{
+  font-size:54px;color:#fff;line-height:1.06;letter-spacing:-.04em;margin-bottom:28px;
+}
+.sh-h1 em{font-style:normal;color:var(--o);}
+/* Progress dots */
+.sh-dots{display:flex;gap:8px;margin-bottom:24px;}
+.sh-dot{
+  height:4px;border-radius:2px;background:rgba(255,255,255,.15);
+  transition:width .45s ease,background .45s ease;cursor:pointer;width:28px;
+}
+.sh-dot.active{width:54px;background:var(--o);}
+/* Slide content area */
+.sh-slides-wrap{position:relative;min-height:230px;}
+.sh-slide{
+  position:absolute;top:0;left:0;width:100%;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .5s ease,transform .5s ease;pointer-events:none;
+}
+.sh-slide.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative;}
+.sh-svc-badge{
+  display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:99px;
+  background:rgba(238,126,26,.1);border:1px solid rgba(238,126,26,.25);
+  font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--o);margin-bottom:10px;
+}
+.sh-slide-desc{
+  font-size:14.5px;color:rgba(255,255,255,.48);
+  line-height:1.78;max-width:390px;margin-bottom:18px;
+}
+.sh-kpis{
+  display:flex;gap:24px;flex-wrap:wrap;
+  padding:14px 0;border-top:1px solid rgba(255,255,255,.07);margin-bottom:20px;
+}
+.sh-kpi-val{font-size:22px;font-weight:900;color:var(--o);line-height:1;}
+.sh-kpi-lbl{font-size:10px;color:rgba(255,255,255,.3);margin-top:3px;font-weight:500;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+/* RIGHT SIDE */
+.sh-right{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  padding:44px 52px 44px 32px;overflow:hidden;
+}
+.sh-panel{
+  position:absolute;inset:44px 52px 44px 32px;
+  opacity:0;transform:translateX(24px) scale(.97);
+  transition:opacity .5s ease,transform .5s ease;
+  display:flex;align-items:center;
+}
+.sh-panel.active{opacity:1;transform:translateX(0) scale(1);}
+/* Card base */
+.sh-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;backdrop-filter:blur(12px);width:100%;max-width:460px;overflow:hidden;
+}
+.sh-card-head{
+  padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;gap:10px;
+  font-size:12.5px;font-weight:600;color:rgba(255,255,255,.75);
+}
+.sh-card-icon{
+  width:28px;height:28px;border-radius:8px;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(238,126,26,.15);flex-shrink:0;
+}
+.sh-card-body{padding:18px 20px;}
+/* SEO panel */
+.sh-kw-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 10px;border-radius:8px;margin-bottom:5px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);
+  transition:.18s;
+}
+.sh-kw-row:hover{background:rgba(238,126,26,.06);border-color:rgba(238,126,26,.18);}
+.sh-kw-name{font-size:11.5px;color:rgba(255,255,255,.55);}
+.sh-kw-pos{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;}
+.sh-kw-pos.up{color:#34d399;}.sh-kw-pos.same{color:rgba(255,255,255,.38);}
+.sh-bars-wrap{margin-top:12px;}
+.sh-bars-label{font-size:10px;color:rgba(255,255,255,.3);margin-bottom:6px;font-weight:500;}
+.sh-bars{display:flex;align-items:flex-end;gap:4px;height:52px;}
+.sh-bar{
+  flex:1;border-radius:3px 3px 0 0;
+  background:rgba(42,69,115,.5);
+  transition:height 1s ease;
+}
+.sh-bar.hi{background:var(--o);}
+/* Social panel */
+.sh-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+.sh-stat-box{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+  border-radius:11px;padding:12px 14px;
+}
+.sh-stat-box .sv{font-size:19px;font-weight:900;color:#fff;line-height:1;}
+.sh-stat-box .sl{font-size:9.5px;color:rgba(255,255,255,.32);margin-top:2px;}
+.sh-roas{
+  padding:12px 16px;border-radius:11px;
+  background:linear-gradient(135deg,rgba(238,126,26,.11),rgba(238,126,26,.04));
+  border:1px solid rgba(238,126,26,.22);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sh-roas-val{font-size:26px;font-weight:900;color:var(--o);}
+.sh-roas-lbl{font-size:10.5px;color:rgba(255,255,255,.4);}
+.sh-plat-row{display:flex;gap:8px;margin-bottom:12px;}
+.sh-plat{
+  flex:1;padding:8px;border-radius:9px;text-align:center;
+  border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);
+  font-size:10px;font-weight:600;color:rgba(255,255,255,.45);
+}
+/* WhatsApp panel */
+.sh-wa-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:12px;font-weight:600;color:rgba(255,255,255,.7);
+}
+.sh-online-dot{
+  width:7px;height:7px;border-radius:50%;background:#34d399;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(52,211,153,.2);animation:shPulse 2s infinite;
+}
+@keyframes shPulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(52,211,153,.18);}
+  50%{box-shadow:0 0 0 6px rgba(52,211,153,.07);}
+}
+.sh-chat{display:flex;flex-direction:column;gap:6px;padding:12px 14px;}
+.sh-msg{
+  max-width:80%;padding:8px 11px;font-size:11.5px;line-height:1.5;
+}
+.sh-msg.bot{
+  background:rgba(42,69,115,.55);color:rgba(255,255,255,.75);
+  border-radius:4px 10px 10px 10px;align-self:flex-start;
+}
+.sh-msg.user{
+  background:rgba(37,211,102,.1);color:rgba(255,255,255,.65);
+  border:1px solid rgba(37,211,102,.18);
+  border-radius:10px 4px 10px 10px;align-self:flex-end;
+}
+.sh-live-row{display:flex;gap:7px;padding:10px 14px;border-top:1px solid rgba(255,255,255,.06);}
+.sh-live-badge{
+  flex:1;padding:9px;border-radius:9px;text-align:center;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+}
+.sh-live-badge .lv{font-size:15px;font-weight:800;color:var(--o);}
+.sh-live-badge .ll{font-size:9px;color:rgba(255,255,255,.32);margin-top:1px;}
+/* Scroll hint */
+.sh-scroll-hint{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-size:10px;font-weight:600;color:rgba(255,255,255,.25);
+  letter-spacing:.08em;text-transform:uppercase;z-index:5;
+  animation:shFade 2s ease-in-out infinite alternate;
+}
+@keyframes shFade{from{opacity:.4;}to{opacity:.9;}}
+.sh-scroll-mouse{
+  width:20px;height:32px;border:1.5px solid rgba(255,255,255,.2);border-radius:10px;
+  display:flex;justify-content:center;padding-top:6px;
+}
+.sh-scroll-mouse::after{
+  content:'';width:2px;height:6px;background:rgba(255,255,255,.3);
+  border-radius:1px;animation:shWheel 1.4s ease-in-out infinite;
+}
+@keyframes shWheel{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(8px);opacity:0;}}
+
+/* Mobile */
+@media(max-width:900px){
+  .scroll-hero-wrap{height:auto;}
+  .scroll-hero-sticky{
+    position:relative;height:auto;grid-template-columns:1fr;
+    min-height:auto;padding-bottom:40px;
+  }
+  .sh-h1{font-size:38px;}
+  .sh-right{display:none;}
+  .sh-left{padding:60px 24px 40px;}
+  .sh-scroll-hint{display:none;}
+  .sh-slides-wrap{min-height:auto;}
+  .sh-slide{position:relative;opacity:1;transform:none;pointer-events:auto;}
+  .sh-slide:not(.active){display:none;}
+}
+
+/* ╔══════════════════════════════════════════╗
+   ║  MARQUEE TICKER                          ║
+   ╚══════════════════════════════════════════╝ */
+.ticker{
+  background:var(--o);
+  padding:13px 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.ticker-inner{
+  display:inline-flex;gap:0;
+  animation:ticker 28s linear infinite;
+}
+.ticker-inner span{
+  font-size:13px;font-weight:700;color:var(--n);
+  padding:0 24px;text-transform:uppercase;letter-spacing:.06em;
+}
+.ticker-inner span::after{content:'✦';margin-left:24px;opacity:.4;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ╔══════════════════════════════════════════╗
+   ║  BENTO SERVICES GRID                     ║
+   ╚══════════════════════════════════════════╝ */
+.bento{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-template-rows:auto;
+  gap:16px;
+}
+.bc{
+  background:#fff;
+  border:1px solid var(--bdr);
+  border-radius:20px;
+  padding:32px;
+  transition:all .25s;
+  position:relative;
+  overflow:hidden;
+}
+.bc:hover{box-shadow:0 20px 50px rgba(13,27,42,.1);transform:translateY(-4px);border-color:transparent;}
+.bc::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(37,99,235,.04),transparent);
+  opacity:0;transition:.25s;border-radius:20px;
+}
+.bc:hover::before{opacity:1;}
+/* grid placement */
+.bc-seo  {grid-column:span 4;}
+.bc-ads  {grid-column:span 4;}
+.bc-web  {grid-column:span 4;}
+.bc-auto {grid-column:span 6;}
+.bc-geo  {grid-column:span 6;}
+.bc-wl   {grid-column:span 12;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:48px;}
+
+.bc .bc-icon{
+  width:52px;height:52px;border-radius:13px;
+  background:linear-gradient(135deg,var(--b),var(--n));
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;margin-bottom:20px;
+}
+.bc h3{font-size:18px;margin-bottom:8px;}
+.bc p{font-size:14px;color:var(--m);line-height:1.65;margin-bottom:18px;}
+.bc .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.tag{padding:5px 11px;background:var(--bg);border:1px solid var(--bdr);border-radius:6px;font-size:12px;font-weight:600;color:var(--s);}
+.bc-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--o);transition:.15s;}
+.bc-link:hover{gap:9px;}
+
+/* white label bento */
+.bc-wl h2{font-size:30px;margin-bottom:14px;}
+.bc-wl p{font-size:15px;color:var(--m);margin-bottom:24px;}
+.wl-stats{display:flex;gap:32px;margin-top:32px;}
+.wl-stat .ws-n{font-size:40px;font-weight:900;color:var(--o);line-height:1;}
+.wl-stat .ws-l{font-size:12px;color:var(--s);margin-top:4px;}
+.wl-right{
+  background:linear-gradient(135deg,var(--n),#162d4e);
+  border-radius:16px;padding:36px;color:#fff;
+}
+.wl-checks{display:flex;flex-direction:column;gap:14px;margin-top:16px;}
+.wl-check{display:flex;align-items:flex-start;gap:11px;font-size:14px;font-weight:500;color:rgba(255,255,255,.75);}
+.wl-check::before{content:'✓';width:22px;height:22px;background:rgba(245,158,11,.2);color:var(--o);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  STATS ROW                               ║
+   ╚══════════════════════════════════════════╝ */
+.stats-row{
+  background:var(--n-dark);
+  padding:64px 0;
+}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);}
+.stat-col{
+  padding:40px 32px;
+  text-align:center;
+  background:var(--n);
+  position:relative;
+}
+.stat-col::after{
+  content:'';position:absolute;right:0;top:20%;bottom:20%;
+  width:1px;background:rgba(255,255,255,.08);
+}
+.stat-col:last-child::after{display:none;}
+.sn{font-size:52px;font-weight:900;color:var(--o);line-height:1;letter-spacing:-.02em;}
+.sl{font-size:13px;color:rgba(255,255,255,.45);margin-top:8px;font-weight:500;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  AUTOMATION FEATURE                      ║
+   ╚══════════════════════════════════════════╝ */
+.auto-section{
+  background:var(--n-dark);
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.auto-section::before{
+  content:'';position:absolute;
+  width:700px;height:700px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(245,158,11,.08),transparent 65%);
+  top:-200px;right:-150px;
+}
+.auto-section::after{
+  content:'';position:absolute;
+  width:500px;height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,.1),transparent 65%);
+  bottom:-150px;left:-100px;
+}
+.auto-inner{position:relative;z-index:2;}
+.auto-section .sec-h h2{color:#fff;}
+.auto-section .sec-h p{color:rgba(255,255,255,.5);}
+.auto-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px;}
+.acard{
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;
+  padding:34px;
+  background:rgba(255,255,255,.03);
+  transition:.2s;
+  position:relative;overflow:hidden;
+}
+.acard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--b),var(--o));
+  transform:scaleX(0);transform-origin:left;transition:.3s;
+}
+.acard:hover{background:rgba(255,255,255,.06);border-color:rgba(245,158,11,.15);}
+.acard:hover::before{transform:scaleX(1);}
+.acard .ai{font-size:38px;margin-bottom:18px;}
+.acard h4{color:#fff;font-size:18px;margin-bottom:10px;}
+.acard p{color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;}
+.acard .atag{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:18px;padding:6px 12px;border-radius:6px;
+  background:rgba(245,158,11,.1);color:var(--o);font-size:12px;font-weight:700;
+}
+
+/* ╔══════════════════════════════════════════╗
+   ║  GEO SECTION                             ║
+   ╚══════════════════════════════════════════╝ */
+.geo-section{background:var(--bg);}
+.geo-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.geo-left h2{font-size:36px;margin:14px 0 18px;}
+.geo-left p{color:var(--m);font-size:15px;line-height:1.75;margin-bottom:28px;}
+.geo-platforms{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
+.gp{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:10px;
+  background:#fff;border:1px solid var(--bdr);
+  font-size:13px;font-weight:600;color:var(--n);
+  transition:.2s;
+}
+.gp:hover{border-color:var(--o);color:var(--o);transform:translateY(-2px);}
+.gp .gi{font-size:16px;}
+.geo-right{display:flex;flex-direction:column;gap:14px;}
+.geo-card{
+  background:#fff;border:1px solid var(--bdr);
+  border-radius:16px;padding:22px 24px;
+  display:flex;align-items:flex-start;gap:16px;
+  transition:.2s;
+}
+.geo-card:hover{border-color:var(--b);box-shadow:0 8px 24px rgba(37,99,235,.08);}
+.geo-card .gc-icon{
+  width:44px;height:44px;border-radius:11px;
+  background:linear-gradient(135deg,var(--b),var(--n));
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.geo-card h4{font-size:15px;margin-bottom:4px;}
+.geo-card p{font-size:13px;color:var(--m);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  CASE STUDIES                            ║
+   ╚══════════════════════════════════════════╝ */
+.cases-section{background:#fff;}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.case{
+  border-radius:20px;overflow:hidden;
+  border:1px solid var(--bdr);
+  transition:.25s;
+}
+.case:hover{box-shadow:0 20px 50px rgba(13,27,42,.1);transform:translateY(-4px);}
+.case-head{
+  padding:32px;
+  background:linear-gradient(135deg,var(--n),#162d4e);
+  position:relative;overflow:hidden;
+}
+.case-head::after{
+  content:'';position:absolute;
+  width:120px;height:120px;border-radius:50%;
+  background:rgba(245,158,11,.12);
+  bottom:-40px;right:-20px;
+}
+.case-num{font-size:52px;font-weight:900;color:var(--o);line-height:1;letter-spacing:-.03em;}
+.case-metric{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;}
+.case-body{padding:24px;}
+.case-sector{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--b);margin-bottom:8px;}
+.case-body p{font-size:14px;color:var(--m);line-height:1.6;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  TABS                                    ║
+   ╚══════════════════════════════════════════╝ */
+.tabs-section{background:var(--n-dark);}
+.tabs-section .sec-h h2{color:#fff;}
+.tabs-section .sec-h p{color:rgba(255,255,255,.5);}
+.tab-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.tb{
+  padding:10px 22px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.12);
+  background:transparent;font-weight:700;font-size:13px;
+  color:rgba(255,255,255,.5);transition:.18s;
+}
+.tb:hover{border-color:rgba(255,255,255,.3);color:#fff;}
+.tb.on{background:var(--o);border-color:var(--o);color:#fff;}
+.tp{display:none;max-width:800px;margin:0 auto;}
+.tp.on{display:block;}
+.tp-inner{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;padding:44px;
+}
+.tp h3{color:#fff;font-size:24px;margin-bottom:14px;}
+.tp>p,
+.tp-inner>p{color:rgba(255,255,255,.6);font-size:15px;line-height:1.75;margin-bottom:24px;}
+.tp-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px;}
+.tp-list li{
+  display:flex;align-items:center;gap:9px;
+  font-size:13.5px;color:rgba(255,255,255,.7);font-weight:500;
+}
+.tp-list li::before{content:'▸';color:var(--o);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  TESTIMONIALS                            ║
+   ╚══════════════════════════════════════════╝ */
+.testi-section{background:var(--bg);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.tcard{
+  background:#fff;border:1px solid var(--bdr);
+  border-radius:20px;padding:32px;
+  transition:.2s;display:flex;flex-direction:column;
+}
+.tcard:hover{box-shadow:0 16px 40px rgba(13,27,42,.09);}
+.t-stars{color:var(--o);font-size:14px;letter-spacing:2px;margin-bottom:14px;}
+.t-q{
+  font-size:15px;color:var(--n);font-weight:500;
+  line-height:1.65;margin-bottom:24px;flex:1;
+  font-style:italic;
+}
+.t-q::before{content:'"';font-size:40px;color:var(--o);font-style:normal;line-height:0;vertical-align:-15px;margin-right:4px;}
+.t-who{display:flex;align-items:center;gap:12px;}
+.t-av{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--b),var(--o));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:800;font-size:13px;
+}
+.t-who b{display:block;color:var(--n);font-size:13.5px;}
+.t-who small{color:var(--s);font-size:12px;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  BLOG                                    ║
+   ╚══════════════════════════════════════════╝ */
+.blog-section{background:#fff;}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.bcard{
+  border:1px solid var(--bdr);border-radius:20px;
+  overflow:hidden;transition:.25s;
+}
+.bcard:hover{box-shadow:0 16px 40px rgba(13,27,42,.09);transform:translateY(-4px);}
+.bcard-img{
+  height:190px;
+  display:flex;align-items:flex-end;padding:18px;
+  position:relative;
+}
+.bcard-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,27,42,.6),transparent);
+}
+.bcard-cat{
+  position:relative;z-index:1;
+  background:var(--o);color:#fff;
+  font-size:10.5px;font-weight:700;
+  padding:4px 12px;border-radius:20px;
+  text-transform:uppercase;letter-spacing:.06em;
+}
+.bcard-body{padding:24px;}
+.bcard-date{font-size:11.5px;color:var(--s);margin-bottom:10px;}
+.bcard-body h3{font-size:16px;margin-bottom:14px;line-height:1.45;}
+.bcard-body .read{
+  font-size:13px;font-weight:700;color:var(--o);
+  display:inline-flex;align-items:center;gap:4px;transition:.15s;
+}
+.bcard-body .read:hover{gap:8px;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  TOOLS MARQUEE                           ║
+   ╚══════════════════════════════════════════╝ */
+.tools-section{background:var(--bg);padding:60px 0;overflow:hidden;}
+.tools-label{text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--s);margin-bottom:28px;}
+.tools-track{
+  display:flex;gap:0;
+  animation:ticker 22s linear infinite;
+  white-space:nowrap;
+}
+.tool-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;margin-right:12px;
+  background:#fff;border:1px solid var(--bdr);
+  border-radius:10px;font-size:13px;font-weight:600;
+  color:var(--s);flex-shrink:0;
+  transition:.2s;
+}
+.tool-chip:hover{border-color:var(--b);color:var(--b);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  LEAD FORM — DARK PANEL                  ║
+   ╚══════════════════════════════════════════╝ */
+.lead-section{
+  background:var(--n);
+  position:relative;overflow:hidden;
+}
+.lead-section::before{
+  content:'';position:absolute;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,158,11,.12),transparent 65%);
+  top:-100px;left:-100px;
+}
+.lead-section::after{
+  content:'';position:absolute;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,.12),transparent 65%);
+  bottom:-100px;right:-50px;
+}
+.lead-inner{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;
+}
+.lead-l h2{color:#fff;font-size:38px;margin:14px 0 18px;}
+.lead-l p{color:rgba(255,255,255,.55);font-size:16px;line-height:1.75;margin-bottom:32px;}
+.lead-perks{display:flex;flex-direction:column;gap:12px;}
+.perk{
+  display:flex;align-items:center;gap:12px;
+  font-size:14px;font-weight:600;color:rgba(255,255,255,.7);
+}
+.perk-dot{
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.25);
+  color:var(--o);display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:900;flex-shrink:0;
+}
+.lead-form{
+  background:rgba(255,255,255,.97);
+  border-radius:22px;padding:38px;
+  box-shadow:0 30px 80px rgba(0,0,0,.3);
+}
+.lead-form h3{font-size:22px;margin-bottom:6px;}
+.lead-form .fsub{color:var(--m);font-size:13px;margin-bottom:26px;}
+.field{margin-bottom:16px;}
+.field label{font-size:12px;font-weight:700;color:var(--n);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
+.field input,.field select{
+  width:100%;padding:12px 14px;
+  border:1.5px solid var(--bdr);border-radius:10px;
+  font-size:14px;font-family:inherit;color:var(--body);
+  outline:none;transition:.15s;background:#fff;
+}
+.field input:focus,.field select:focus{border-color:var(--b);box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.submsg{display:none;background:#dcfce7;color:#166534;padding:12px 16px;border-radius:10px;font-weight:600;margin-top:14px;font-size:14px;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  FAQ                                     ║
+   ╚══════════════════════════════════════════╝ */
+.faq-section{background:var(--bg);}
+.faq-wrap{max-width:760px;margin:0 auto;}
+.fi{
+  border:1px solid var(--bdr);border-radius:14px;
+  margin-bottom:10px;overflow:hidden;transition:.15s;
+  background:#fff;
+}
+.fi:hover{border-color:rgba(37,99,235,.2);}
+.fi.on{border-color:rgba(245,158,11,.3);box-shadow:0 4px 20px rgba(245,158,11,.07);}
+.fi-q{
+  width:100%;text-align:left;background:transparent;border:none;
+  padding:20px 22px;font-size:15px;font-weight:700;color:var(--n);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.fi-icon{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  background:var(--bg);border:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--o);font-size:18px;font-weight:900;line-height:1;
+  transition:transform .2s;
+}
+.fi.on .fi-icon{transform:rotate(45deg);background:var(--o);color:#fff;border-color:var(--o);}
+.fi-a{max-height:0;overflow:hidden;transition:.3s;color:var(--m);font-size:14.5px;line-height:1.75;}
+.fi.on .fi-a{max-height:260px;padding:0 22px 22px;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  FOOTER                                  ║
+   ╚══════════════════════════════════════════╝ */
+footer{background:var(--n-dark);color:rgba(255,255,255,.5);}
+.footer-main{padding:72px 0 52px;border-bottom:1px solid rgba(255,255,255,.06);}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;}
+.fb-desc{font-size:14px;line-height:1.7;margin:14px 0 22px;max-width:270px;}
+.socials{display:flex;gap:9px;}
+.socials a{
+  width:36px;height:36px;border-radius:9px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:rgba(255,255,255,.6);transition:.15s;
+}
+.socials a:hover{background:var(--o);border-color:var(--o);color:#fff;}
+footer h4{
+  color:rgba(255,255,255,.4);font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;
+}
+.fl a{
+  display:block;padding:6px 0;font-size:13.5px;
+  color:rgba(255,255,255,.45);transition:.12s;
+}
+.fl a:hover{color:var(--o);padding-left:4px;}
+.fc a{
+  display:flex;align-items:flex-start;gap:8px;padding:7px 0;
+  font-size:13.5px;color:rgba(255,255,255,.45);transition:.12s;
+}
+.fc a:hover{color:var(--o);}
+.footer-areas{
+  padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:12.5px;
+}
+.footer-areas b{color:rgba(255,255,255,.35);}
+.footer-areas a{display:inline;color:rgba(255,255,255,.25);margin:0 3px;transition:.1s;}
+.footer-areas a:hover{color:var(--o);}
+.footer-bottom{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:18px 0;font-size:11.5px;color:rgba(255,255,255,.25);
+}
+.footer-bottom a{color:rgba(255,255,255,.3);transition:.1s;}
+.footer-bottom a:hover{color:var(--o);}
+
+/* ╔══════════════════════════════════════════╗
+   ║  REVEAL ANIMATION                        ║
+   ╚══════════════════════════════════════════╝ */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.rv.in{opacity:1;transform:none;}
+.rv2{opacity:0;transform:translateY(24px);transition:opacity .6s ease .15s,transform .6s ease .15s;}
+.rv2.in{opacity:1;transform:none;}
+.rv3{opacity:0;transform:translateY(24px);transition:opacity .6s ease .28s,transform .6s ease .28s;}
+.rv3.in{opacity:1;transform:none;}
+
+/* ╔══════════════════════════════════════════╗
+   ║  TOP BAR                                 ║
+   ╚══════════════════════════════════════════╝ */
+.topbar{
+  background:var(--n-dark);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:0;
+}
+.topbar-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:38px;gap:12px;
+}
+.topbar-left{
+  display:flex;align-items:center;gap:20px;
+}
+.topbar-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:12.5px;font-weight:500;color:rgba(255,255,255,.55);
+  text-decoration:none;transition:.15s;white-space:nowrap;
+}
+.topbar-item:hover{color:var(--o);}
+.topbar-item svg{flex-shrink:0;opacity:.7;}
+.topbar-right{display:flex;align-items:center;gap:10px;}
+.tb-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 13px;border-radius:6px;
+  font-size:11.5px;font-weight:700;border:none;cursor:pointer;
+  transition:.15s;white-space:nowrap;text-decoration:none;
+}
+.tb-call{background:var(--o);color:#fff;}
+.tb-call:hover{background:var(--o2);transform:translateY(-1px);}
+.tb-wa{background:#25D366;color:#fff;}
+.tb-wa:hover{background:#1ebe59;transform:translateY(-1px);}
+@media(max-width:768px){
+  .topbar-left .topbar-item:last-child{display:none;}
+  .topbar-item span.lbl{display:none;}
+}
+@media(max-width:480px){
+  .topbar{display:none;}
+}
+
+/* ╔══════════════════════════════════════════╗
+   ║  RESPONSIVE                              ║
+   ╚══════════════════════════════════════════╝ */
+@media(max-width:1024px){
+  .bento{grid-template-columns:1fr 1fr;}
+  .bc-seo,.bc-ads,.bc-web,.bc-auto,.bc-geo{grid-column:span 1;}
+  .bc-wl{grid-column:span 2;grid-template-columns:1fr;}
+  .mega.wide{width:700px;grid-template-columns:repeat(3,1fr);}
+  .geo-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .dmenu,.navcta .btn:not(.show-m){display:none;}
+  .hb{display:flex;}
+  .bento,.auto-cards,.cases-grid,.testi-grid,.blog-grid{grid-template-columns:1fr;}
+  .bc-wl{grid-column:span 1;}
+  .stats-grid,.fg,.lead-inner{grid-template-columns:1fr;}
+  .tp-list{grid-template-columns:1fr;}
+  section{padding:64px 0;}
+  .sec-h h2{font-size:28px;}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;}
+  .hero-btns .btn{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ STICKY SHELL ════════════════ -->
+<div style="position:sticky;top:0;z-index:900;">
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="topbar-left">
+      <a href="tel:+919407000101" class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        +91 94070 00101
+      </a>
+      <a href="mailto:hello@clickdecoded.com" class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        hello@clickdecoded.com
+      </a>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+919407000101" class="tb-btn tb-call">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        Call Now
+      </a>
+      <a href="https://wa.me/919407000101" target="_blank" rel="noopener" class="tb-btn tb-wa">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header id="hdr" style="position:relative;top:auto;">
+ <div class="wrap nav">
+
+  <!-- Logo -->
+  <a href="/">
+    <img src="clickdecoded.png" alt="Click Decoded" style="height:44px;width:auto;display:block;">
+  </a>
+
+  <!-- Desktop Menu -->
+  <ul class="dmenu">
+   <li><a href="/">Home</a></li>
+   <li>
+    <a href="#">Services
+     <svg class="dcar" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="mega wide">
+     <div class="mc"><h5>🔍 SEO Services</h5>
+      <a href="#">SEO Services</a><a href="#">Local SEO</a><a href="#">E-commerce SEO</a>
+      <a href="#">Technical SEO Audit</a><a href="#">Link Building</a><a href="#">SEO Consulting</a>
+     </div>
+     <div class="mc"><h5>📢 Digital Marketing</h5>
+      <a href="#">Digital Marketing</a><a href="#">Google Ads Management</a><a href="#">Meta Ads</a>
+      <a href="#">Social Media Marketing</a><a href="#">Content Marketing</a>
+     </div>
+     <div class="mc"><h5>💻 Web Development</h5>
+      <a href="#">Web Development</a><a href="#">WordPress Development</a>
+      <a href="#">E-commerce Dev</a><a href="#">Landing Page Design</a>
+     </div>
+     <div class="mc"><h5>🤖 AI & Automation</h5>
+      <a href="#">AI Automation</a><a href="#">WhatsApp Automation</a><a href="#">n8n Workflows</a>
+      <a href="#">AI Chatbot Dev</a><a href="#">CRM Automation</a><a href="#">Lead Follow-Up Auto</a>
+     </div>
+     <div class="mc"><h5>🚀 GEO / AI Search</h5>
+      <a href="#">GEO Services</a><a href="#">Answer Engine Opt</a><a href="#">LLM Optimization</a>
+      <a href="#">AI Brand Visibility</a><a href="#">ChatGPT Citations</a>
+     </div>
+    </div>
+   </li>
+   <li>
+    <a href="#">White Label
+     <svg class="dcar" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="mega slim">
+     <a href="#">White Label SEO Services<small>Overview &amp; partner program</small></a>
+     <a href="#">White Label SEO<small>Resell under your brand</small></a>
+     <a href="#">White Label PPC<small>Google Ads reseller</small></a>
+     <a href="#">White Label Web Dev<small>WordPress &amp; stores</small></a>
+     <a href="#">White Label GEO<small>AI-search, resold</small></a>
+     <a href="#">White Label Reporting<small>Branded client reports</small></a>
+    </div>
+   </li>
+   <li><a href="#">Case Studies</a></li>
+   <li><a href="#">Blog</a></li>
+   <li><a href="#">About</a></li>
+  </ul>
+
+  <div class="navcta">
+   <a href="#contact" class="btn btn-o btn-sm">Get Free Strategy Call</a>
+   <button class="hb" id="hb"><span></span><span></span><span></span></button>
+  </div>
+
+ </div>
+</header>
+</div><!-- /sticky shell -->
+
+<!-- Mobile Nav -->
+<div class="mnav" id="mnav">
+ <div class="ma"><button>Home</button></div>
+ <div class="ma"><button>Services <span>+</span></button><div class="ms">
+  <h6>SEO</h6><a href="#">SEO Services</a><a href="#">Local SEO</a><a href="#">E-commerce SEO</a><a href="#">Technical SEO Audit</a><a href="#">Link Building</a>
+  <h6>Digital Marketing</h6><a href="#">Google Ads</a><a href="#">Meta Ads</a><a href="#">Social Media</a><a href="#">Content Marketing</a>
+  <h6>Web Development</h6><a href="#">Web Development</a><a href="#">WordPress Dev</a><a href="#">E-commerce Dev</a>
+  <h6>AI & Automation</h6><a href="#">AI Automation</a><a href="#">WhatsApp Automation</a><a href="#">n8n Workflows</a><a href="#">AI Chatbot</a>
+  <h6>GEO / AI Search</h6><a href="#">GEO Services</a><a href="#">AEO</a><a href="#">LLM Optimization</a>
+ </div></div>
+ <div class="ma"><button>White Label <span>+</span></button><div class="ms">
+  <a href="#">White Label SEO</a><a href="#">White Label PPC</a><a href="#">White Label Web Dev</a><a href="#">White Label GEO</a><a href="#">White Label Reporting</a>
+ </div></div>
+ <div class="ma"><button>Case Studies</button></div>
+ <div class="ma"><button>Blog</button></div>
+ <div class="ma"><button>About</button></div>
+ <div style="margin-top:22px"><a href="#contact" class="btn btn-o" style="width:100%;justify-content:center">Get Free Strategy Call</a></div>
+</div>
+
+<!-- ════════════════ HERO — SCROLL REVEAL ════════════════ -->
+<div class="scroll-hero-wrap" id="home">
+ <div class="scroll-hero-sticky">
+  <div class="sh-glow-l"></div>
+  <div class="sh-glow-r"></div>
+
+  <!-- LEFT: Branding + Switching Slides -->
+  <div class="sh-left">
+   <div class="sh-eyebrow">🇮🇳 India's Premier B2B Growth Agency</div>
+   <h1 class="sh-h1">One Agency.<br>Every<br><em>Growth Lever.</em></h1>
+
+   <!-- Progress indicator -->
+   <div class="sh-dots">
+    <div class="sh-dot active" data-i="0"></div>
+    <div class="sh-dot" data-i="1"></div>
+    <div class="sh-dot" data-i="2"></div>
+   </div>
+
+   <!-- Slides -->
+   <div class="sh-slides-wrap">
+
+    <!-- Slide 0: SEO -->
+    <div class="sh-slide active" data-slide="0">
+     <div class="sh-svc-badge">🔍 SEO &amp; Organic Growth</div>
+     <p class="sh-slide-desc">Long-term rankings that compound month over month. Technical audits, content strategy, and authority building that puts your brand on Page 1 and keeps it there.</p>
+     <div class="sh-kpis">
+      <div><div class="sh-kpi-val">3×</div><div class="sh-kpi-lbl">Avg Traffic Growth</div></div>
+      <div><div class="sh-kpi-val">89%</div><div class="sh-kpi-lbl">Keywords in Top 10</div></div>
+      <div><div class="sh-kpi-val">0</div><div class="sh-kpi-lbl">Penalty Risk</div></div>
+     </div>
+     <div class="hero-btns">
+      <a href="#contact" class="btn btn-o">Get Free SEO Audit <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#services" class="btn btn-ghost">All Services</a>
+     </div>
+    </div>
+
+    <!-- Slide 1: Social / Paid Ads -->
+    <div class="sh-slide" data-slide="1">
+     <div class="sh-svc-badge">📢 Social Media &amp; Paid Ads</div>
+     <p class="sh-slide-desc">Google, Meta and LinkedIn campaigns built for measurable ROI — not vanity metrics. Every rupee tracked, every campaign optimised weekly with full transparency.</p>
+     <div class="sh-kpis">
+      <div><div class="sh-kpi-val">6.2×</div><div class="sh-kpi-lbl">Avg ROAS</div></div>
+      <div><div class="sh-kpi-val">-38%</div><div class="sh-kpi-lbl">Cost Per Lead</div></div>
+      <div><div class="sh-kpi-val">₹89</div><div class="sh-kpi-lbl">Avg Lead Cost</div></div>
+     </div>
+     <div class="hero-btns">
+      <a href="#contact" class="btn btn-o">Get Campaign Audit <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#services" class="btn btn-ghost">All Services</a>
+     </div>
+    </div>
+
+    <!-- Slide 2: WhatsApp & Automation -->
+    <div class="sh-slide" data-slide="2">
+     <div class="sh-svc-badge">🤖 WhatsApp &amp; AI Automation</div>
+     <p class="sh-slide-desc">Never lose a lead to slow response again. AI chatbots and n8n workflows respond in seconds, qualify leads, and book appointments — while you sleep.</p>
+     <div class="sh-kpis">
+      <div><div class="sh-kpi-val">2 min</div><div class="sh-kpi-lbl">Avg Response Time</div></div>
+      <div><div class="sh-kpi-val">94%</div><div class="sh-kpi-lbl">Queries Resolved</div></div>
+      <div><div class="sh-kpi-val">4+</div><div class="sh-kpi-lbl">Languages Supported</div></div>
+     </div>
+     <div class="hero-btns">
+      <a href="#contact" class="btn btn-o">Build My Bot <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#services" class="btn btn-ghost">All Services</a>
+     </div>
+    </div>
+
+   </div><!-- /sh-slides-wrap -->
+  </div><!-- /sh-left -->
+
+  <!-- RIGHT: Visual Panels -->
+  <div class="sh-right">
+
+   <!-- Panel 0: SEO Rankings Dashboard -->
+   <div class="sh-panel active" data-panel="0">
+    <div class="sh-card">
+     <div class="sh-card-head">
+      <div class="sh-card-icon">🔍</div>
+      Organic Rankings Dashboard
+      <span style="margin-left:auto;font-size:10px;color:rgba(255,255,255,.3);">Live · Updated daily</span>
+     </div>
+     <div class="sh-card-body">
+      <div class="sh-kw-row">
+       <span class="sh-kw-name">b2b seo agency india</span>
+       <span class="sh-kw-pos up">▲ #1 <span style="font-size:9px;opacity:.5">was 7</span></span>
+      </div>
+      <div class="sh-kw-row">
+       <span class="sh-kw-name">white label seo services</span>
+       <span class="sh-kw-pos up">▲ #2 <span style="font-size:9px;opacity:.5">was 11</span></span>
+      </div>
+      <div class="sh-kw-row">
+       <span class="sh-kw-name">digital marketing bhopal</span>
+       <span class="sh-kw-pos up">▲ #1 <span style="font-size:9px;opacity:.5">was 4</span></span>
+      </div>
+      <div class="sh-kw-row">
+       <span class="sh-kw-name">ai automation agency</span>
+       <span class="sh-kw-pos same">→ #3 <span style="font-size:9px;opacity:.5">stable</span></span>
+      </div>
+      <div class="sh-bars-wrap">
+       <div class="sh-bars-label">Organic Traffic — Last 6 Months</div>
+       <div class="sh-bars">
+        <div class="sh-bar" style="height:32%;"></div>
+        <div class="sh-bar" style="height:45%;"></div>
+        <div class="sh-bar" style="height:52%;"></div>
+        <div class="sh-bar" style="height:65%;"></div>
+        <div class="sh-bar" style="height:80%;"></div>
+        <div class="sh-bar hi" style="height:100%;"></div>
+       </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:14px;">
+       <span style="font-size:10.5px;color:rgba(255,255,255,.35);">DA <strong style="color:#fff">54</strong></span>
+       <span style="font-size:10.5px;color:rgba(255,255,255,.35);">Backlinks <strong style="color:#fff">2.4k</strong></span>
+       <span style="font-size:10.5px;color:#34d399;font-weight:600;">✓ Zero Penalties</span>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <!-- Panel 1: Social / Ads Performance -->
+   <div class="sh-panel" data-panel="1">
+    <div class="sh-card">
+     <div class="sh-card-head">
+      <div class="sh-card-icon">📊</div>
+      Campaign Performance — July 2025
+      <span style="margin-left:auto;font-size:10px;color:rgba(255,255,255,.3);">Meta + Google</span>
+     </div>
+     <div class="sh-card-body">
+      <div class="sh-plat-row">
+       <div class="sh-plat">🔵 Meta Ads</div>
+       <div class="sh-plat">🔴 Google Ads</div>
+       <div class="sh-plat">🟦 LinkedIn</div>
+      </div>
+      <div class="sh-stat-grid">
+       <div class="sh-stat-box">
+        <div class="sv">4.2L</div><div class="sl">Total Reach</div>
+       </div>
+       <div class="sh-stat-box">
+        <div class="sv">847</div><div class="sl">Conversions</div>
+       </div>
+       <div class="sh-stat-box">
+        <div class="sv">₹89</div><div class="sl">Cost / Lead</div>
+       </div>
+       <div class="sh-stat-box">
+        <div class="sv">3.8%</div><div class="sl">CTR (avg)</div>
+       </div>
+      </div>
+      <div class="sh-roas">
+       <div>
+        <div class="sh-roas-val">6.2×</div>
+        <div class="sh-roas-lbl">Return on Ad Spend</div>
+       </div>
+       <svg width="80" height="36" viewBox="0 0 80 36" fill="none">
+        <polyline points="0,30 13,24 26,20 39,14 52,9 65,5 80,1" stroke="#EE7E1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="0,30 13,24 26,20 39,14 52,9 65,5 80,1 80,36 0,36" fill="rgba(238,126,26,.08)"/>
+       </svg>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <!-- Panel 2: WhatsApp Automation -->
+   <div class="sh-panel" data-panel="2">
+    <div class="sh-card">
+     <div class="sh-wa-bar">
+      <div class="sh-online-dot"></div>
+      WhatsApp AI Agent · Multilingual
+      <span style="margin-left:auto;font-size:10px;color:rgba(255,255,255,.3);">42 req/min</span>
+     </div>
+     <div class="sh-chat">
+      <div class="sh-msg user">Hi, I need info about your pricing for SEO services.</div>
+      <div class="sh-msg bot">👋 Hello! I'm the Click Decoded assistant. We offer customised SEO plans starting at ₹15,000/mo. May I know your website URL?</div>
+      <div class="sh-msg user">clickdecoded.com — we're a B2B SaaS</div>
+      <div class="sh-msg bot">Perfect! I'll schedule a free strategy call for you. Available slots: <strong>Mon 11am · Tue 3pm · Wed 10am</strong> — which works?</div>
+      <div class="sh-msg user" style="font-size:10.5px;opacity:.7;font-style:italic;">✓ Booking confirmed automatically…</div>
+     </div>
+     <div class="sh-live-row">
+      <div class="sh-live-badge"><div class="lv">94%</div><div class="ll">Resolved</div></div>
+      <div class="sh-live-badge"><div class="lv">2 min</div><div class="ll">Avg Reply</div></div>
+      <div class="sh-live-badge"><div class="lv">4</div><div class="ll">Languages</div></div>
+      <div class="sh-live-badge"><div class="lv">24/7</div><div class="ll">Active</div></div>
+     </div>
+    </div>
+   </div>
+
+  </div><!-- /sh-right -->
+
+  <!-- Scroll hint -->
+  <div class="sh-scroll-hint">
+   <div class="sh-scroll-mouse"></div>
+   Scroll to explore
+  </div>
+
+ </div><!-- /scroll-hero-sticky -->
+</div><!-- /scroll-hero-wrap -->
+
+
+<!-- ════════════════ TICKER ════════════════ -->
+<div class="ticker" aria-hidden="true">
+ <div class="ticker-inner">
+  <span>SEO Services</span><span>Google Ads</span><span>WhatsApp Automation</span><span>White Label SEO</span><span>GEO Optimization</span><span>Web Development</span><span>n8n Workflows</span><span>AI Chatbots</span><span>Meta Ads</span><span>Link Building</span><span>LLM Optimization</span><span>CRM Automation</span>
+  <span>SEO Services</span><span>Google Ads</span><span>WhatsApp Automation</span><span>White Label SEO</span><span>GEO Optimization</span><span>Web Development</span><span>n8n Workflows</span><span>AI Chatbots</span><span>Meta Ads</span><span>Link Building</span><span>LLM Optimization</span><span>CRM Automation</span>
+ </div>
+</div>
+
+<!-- ════════════════ BENTO SERVICES ════════════════ -->
+<section id="services">
+ <div class="wrap">
+  <div class="sec-h rv">
+   <div class="pill pill-b">Our Services</div>
+   <h2>Every Growth Lever.<br>One Agency.</h2>
+   <p>From search rankings to AI-powered lead follow-up — we do it all, or do it invisibly under your brand.</p>
+  </div>
+  <div class="bento">
+
+   <div class="bc bc-seo rv">
+    <div class="bc-icon">🔍</div>
+    <h3>SEO Services</h3>
+    <p>Long-term organic visibility through technical audits, content strategy, and authoritative link building. No penalties, no shortcuts.</p>
+    <div class="tag-row"><span class="tag">Technical SEO</span><span class="tag">Local SEO</span><span class="tag">E-comm SEO</span></div>
+    <a href="#" class="bc-link">Explore SEO <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   </div>
+
+   <div class="bc bc-ads rv2">
+    <div class="bc-icon">📢</div>
+    <h3>Digital Marketing</h3>
+    <p>Google Ads, Meta Ads &amp; social campaigns built for measurable ROI. Every rupee tracked, every campaign optimised.</p>
+    <div class="tag-row"><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Shopping</span></div>
+    <a href="#" class="bc-link">Explore Ads <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   </div>
+
+   <div class="bc bc-web rv3">
+    <div class="bc-icon">💻</div>
+    <h3>Web Development</h3>
+    <p>Fast, SEO-ready WordPress websites and conversion-focused landing pages built to perform at scale.</p>
+    <div class="tag-row"><span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">Landing Pages</span></div>
+    <a href="#" class="bc-link">Explore Web Dev <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   </div>
+
+   <div class="bc bc-auto rv" style="background:linear-gradient(135deg,var(--n),#162d4e);border-color:transparent;color:#fff;">
+    <div class="bc-icon" style="background:rgba(245,158,11,.2)">🤖</div>
+    <h3 style="color:#fff">AI &amp; Automation</h3>
+    <p style="color:rgba(255,255,255,.6)">WhatsApp automation, n8n workflows and AI chatbots. Your leads get replies in 2 minutes, not 2 hours — 24/7.</p>
+    <div class="tag-row"><span class="tag" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)">WhatsApp</span><span class="tag" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)">n8n</span><span class="tag" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)">Chatbots</span></div>
+    <a href="#contact" class="bc-link" style="color:var(--o)">Build My Automation <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   </div>
+
+   <div class="bc bc-geo rv2">
+    <div class="bc-icon" style="background:linear-gradient(135deg,#7c3aed,var(--n))">🚀</div>
+    <h3>GEO / AI Search</h3>
+    <p>Get cited in ChatGPT, Gemini, and Perplexity. We make your brand the answer that AI engines trust and recommend.</p>
+    <div class="tag-row"><span class="tag">GEO</span><span class="tag">AEO</span><span class="tag">LLM Optimization</span><span class="tag">AI Citations</span></div>
+    <a href="#" class="bc-link">Explore GEO <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   </div>
+
+   <!-- White Label — full width -->
+   <div class="bc bc-wl rv">
+    <div>
+     <div class="pill pill-b" style="margin-bottom:16px">For Agencies</div>
+     <h2>Your Silent<br>Fulfilment Partner.</h2>
+     <p>You sell. We deliver — SEO, PPC, web, GEO, and branded reports — all under your brand, never ours. NDA-backed, zero client contact.</p>
+     <div class="wl-stats">
+      <div class="wl-stat"><div class="ws-n">48h</div><div class="ws-l">Report turnaround</div></div>
+      <div class="wl-stat"><div class="ws-n">0</div><div class="ws-l">Client contact ever</div></div>
+      <div class="wl-stat"><div class="ws-n">100%</div><div class="ws-l">White label, always</div></div>
+     </div>
+    </div>
+    <div class="wl-right">
+     <h4 style="font-size:16px;color:#fff;letter-spacing:normal;text-transform:none;margin-bottom:6px">Partner Benefits</h4>
+     <p style="color:rgba(255,255,255,.45);font-size:13px;margin-bottom:18px">Everything you need to scale without the overhead.</p>
+     <div class="wl-checks">
+      <div class="wl-check">100% White Label — your brand on every deliverable</div>
+      <div class="wl-check">NDA-backed confidentiality — zero client poaching</div>
+      <div class="wl-check">Branded reports in 48 hours</div>
+      <div class="wl-check">Scalable capacity — handle more without hiring</div>
+     </div>
+     <a href="#contact" class="btn btn-o" style="margin-top:26px">Become a Partner <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ STATS ════════════════ -->
+<div class="stats-row">
+ <div class="wrap">
+  <div class="stats-grid">
+   <div class="stat-col rv"><div class="sn count" data-t="12" data-s="+">0</div><div class="sl">Years in digital marketing</div></div>
+   <div class="stat-col rv2"><div class="sn count" data-t="500" data-s="+">0</div><div class="sl">Projects delivered</div></div>
+   <div class="stat-col rv3"><div class="sn count" data-t="98" data-s="%">0</div><div class="sl">Client retention rate</div></div>
+   <div class="stat-col rv"><div class="sn">₹10Cr+</div><div class="sl">Ad spend managed</div></div>
+  </div>
+ </div>
+</div>
+
+<!-- ════════════════ AUTOMATION ════════════════ -->
+<section class="auto-section">
+ <div class="wrap auto-inner">
+  <div class="sec-h rv">
+   <div class="pill pill-o">AI Automation</div>
+   <h2>Stop Losing Leads to<br>Slow Response Times.</h2>
+   <p>While competitors reply in 2 hours, our automation fires in 2 minutes — 24/7, no manual effort.</p>
+  </div>
+  <div class="auto-cards">
+   <div class="acard rv">
+    <div class="ai">⚡</div>
+    <h4>WhatsApp Automation</h4>
+    <p>Instant lead follow-up via WhatsApp Business API. Auto-reply, qualify, and route every lead without lifting a finger.</p>
+    <div class="atag">📲 WhatsApp Business API</div>
+   </div>
+   <div class="acard rv2">
+    <div class="ai">🔄</div>
+    <h4>n8n Workflows</h4>
+    <p>Connect your CRM, forms, ads, and apps. Build automation pipelines that run silently in the background and never break.</p>
+    <div class="atag">🔗 n8n • Zapier • Make</div>
+   </div>
+   <div class="acard rv3">
+    <div class="ai">🤖</div>
+    <h4>AI Chatbots &amp; Agents</h4>
+    <p>Intelligent chatbots that capture, qualify and convert leads — on your website and WhatsApp — around the clock.</p>
+    <div class="atag">🧠 Powered by AI</div>
+   </div>
+  </div>
+  <div style="text-align:center">
+   <a href="#contact" class="btn btn-o">Build My Automation Stack <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ GEO ════════════════ -->
+<section class="geo-section">
+ <div class="wrap">
+  <div class="geo-grid">
+   <div class="rv">
+    <div class="pill pill-b">GEO / AI Search</div>
+    <h2>Get Found in<br>AI-Powered Search.</h2>
+    <p>The next frontier of SEO isn't just Google. ChatGPT, Gemini, Perplexity and Google AI Overviews now answer questions directly. We ensure your brand is the one they cite.</p>
+    <div class="geo-platforms">
+     <div class="gp"><span class="gi">🧠</span> ChatGPT</div>
+     <div class="gp"><span class="gi">💎</span> Gemini</div>
+     <div class="gp"><span class="gi">🔵</span> Perplexity</div>
+     <div class="gp"><span class="gi">🔍</span> AI Overviews</div>
+     <div class="gp"><span class="gi">🤖</span> Copilot</div>
+    </div>
+    <a href="#contact" class="btn btn-n">Get GEO Strategy <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   </div>
+   <div class="rv2">
+    <div class="geo-card">
+     <div class="gc-icon">🎯</div>
+     <div><h4>Generative Engine Optimization</h4><p>Optimize your content and authority signals so AI engines choose your brand as a cited source.</p></div>
+    </div>
+    <div class="geo-card">
+     <div class="gc-icon">💬</div>
+     <div><h4>Answer Engine Optimization (AEO)</h4><p>Structure your content as direct answers to the questions your customers are asking AI.</p></div>
+    </div>
+    <div class="geo-card">
+     <div class="gc-icon">🔗</div>
+     <div><h4>LLM Optimization &amp; Entity Markup</h4><p>Build the entity associations and schema signals that large language models rely on.</p></div>
+    </div>
+    <div class="geo-card">
+     <div class="gc-icon">📊</div>
+     <div><h4>AI Brand Mention Tracking</h4><p>Monitor when and how AI engines mention your brand — and improve it over time.</p></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ CASES ════════════════ -->
+<section class="cases-section">
+ <div class="wrap">
+  <div class="sec-h rv">
+   <div class="pill pill-o">Case Studies</div>
+   <h2>Real Clients.<br>Real Numbers.</h2>
+   <p>No vanity metrics. Results that show up in revenue, rankings, and ROI.</p>
+  </div>
+  <div class="cases-grid">
+   <div class="case rv">
+    <div class="case-head">
+     <div class="case-num">+212%</div>
+     <div class="case-metric">Organic Traffic Growth</div>
+    </div>
+    <div class="case-body">
+     <div class="case-sector">E-commerce · SEO</div>
+     <p>Organic traffic doubled in 6 months for a mid-sized Indore e-commerce brand through technical SEO and content strategy.</p>
+    </div>
+   </div>
+   <div class="case rv2">
+    <div class="case-head" style="background:linear-gradient(135deg,#1a0a3a,#2563eb)">
+     <div class="case-num">-38%</div>
+     <div class="case-metric">Cost Per Lead Reduction</div>
+    </div>
+    <div class="case-body">
+     <div class="case-sector">Real Estate · Google Ads</div>
+     <p>Restructured ad campaigns and landing pages cut cost-per-lead by 38% while maintaining lead volume.</p>
+    </div>
+   </div>
+   <div class="case rv3">
+    <div class="case-head" style="background:linear-gradient(135deg,#0a2a1a,#0d1b2a)">
+     <div class="case-num">2 min</div>
+     <div class="case-metric">Avg Lead Response Time</div>
+    </div>
+    <div class="case-body">
+     <div class="case-sector">Coaching · WhatsApp Automation</div>
+     <p>Deployed WhatsApp automation that responds to every lead within 2 minutes — up from 4+ hours manually.</p>
+    </div>
+   </div>
+  </div>
+  <div style="text-align:center;margin-top:36px">
+   <a href="#" class="btn btn-n">View All Case Studies</a>
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ TABS ════════════════ -->
+<section class="tabs-section">
+ <div class="wrap">
+  <div class="sec-h rv">
+   <h2>What We Actually Do</h2>
+   <p>Deep-dive into each service — process, deliverables, and outcomes.</p>
+  </div>
+  <div class="tab-row">
+   <button class="tb on" data-i="0">SEO</button>
+   <button class="tb" data-i="1">Paid Ads</button>
+   <button class="tb" data-i="2">AI Automation</button>
+   <button class="tb" data-i="3">GEO / AI Search</button>
+   <button class="tb" data-i="4">White Label</button>
+  </div>
+  <div class="tp on"><div class="tp-inner"><h3>Search Engine Optimization</h3><p>We build compounding organic visibility through technical audits, on-page strategy, content creation and quality link acquisition. No black hat. No penalties. Just sustainable growth that accelerates over time.</p><ul class="tp-list"><li>Full website technical audit</li><li>Keyword research &amp; mapping</li><li>On-page SEO &amp; content strategy</li><li>Local SEO &amp; Google Maps</li><li>E-commerce &amp; category SEO</li><li>Monthly ranking reports</li></ul><a href="#contact" class="btn btn-o btn-sm">Explore SEO Services</a></div></div>
+  <div class="tp"><div class="tp-inner"><h3>Paid Advertising</h3><p>Google Ads, Meta Ads and Shopping campaigns run for ROI, not impressions. Every rupee tracked, every campaign A/B tested, every week reported with full transparency.</p><ul class="tp-list"><li>Search, Display, Shopping, YouTube</li><li>Facebook &amp; Instagram lead ads</li><li>Landing page &amp; A/B testing</li><li>Bid strategy optimisation</li><li>Audience &amp; retargeting setup</li><li>Weekly performance reporting</li></ul><a href="#contact" class="btn btn-o btn-sm">Explore Ad Services</a></div></div>
+  <div class="tp"><div class="tp-inner"><h3>AI &amp; Automation</h3><p>We build WhatsApp workflows, n8n automation stacks and AI chatbots that respond instantly and follow up automatically — so you never lose a lead to slow response times again.</p><ul class="tp-list"><li>WhatsApp Business API setup</li><li>n8n workflow design &amp; build</li><li>AI chatbot for web &amp; WhatsApp</li><li>CRM integration &amp; lead routing</li><li>Auto follow-up sequences</li><li>Pipeline &amp; task automation</li></ul><a href="#contact" class="btn btn-o btn-sm">Explore Automation</a></div></div>
+  <div class="tp"><div class="tp-inner"><h3>GEO / AI Search</h3><p>We make your brand the answer AI engines cite. Get found in ChatGPT, Gemini, Perplexity and Google AI Overviews — not just on the traditional results page.</p><ul class="tp-list"><li>Generative Engine Optimization</li><li>Answer Engine Optimization (AEO)</li><li>LLM optimization &amp; entity markup</li><li>AI brand-mention tracking</li><li>Schema &amp; structured data</li><li>Citation authority building</li></ul><a href="#contact" class="btn btn-o btn-sm">Explore GEO Services</a></div></div>
+  <div class="tp"><div class="tp-inner"><h3>White Label Fulfilment</h3><p>We are the invisible engine behind agencies across India. You sell, we deliver — SEO, PPC, web, GEO and reports — all under your brand. We never make contact with your clients. Ever.</p><ul class="tp-list"><li>White label SEO &amp; PPC fulfilment</li><li>Branded client reports in 48h</li><li>NDA-backed confidentiality</li><li>No direct client contact, ever</li><li>Scalable capacity on demand</li><li>Partner agency dashboard</li></ul><a href="#contact" class="btn btn-o btn-sm">Become a Partner</a></div></div>
+ </div>
+</section>
+
+<!-- ════════════════ TOOLS ════════════════ -->
+<div class="tools-section">
+ <div class="tools-label">Powered by industry-leading tools</div>
+ <div style="overflow:hidden;white-space:nowrap;">
+  <div class="tools-track">
+   <span class="tool-chip">📊 Google Ads</span><span class="tool-chip">📘 Meta Business Suite</span><span class="tool-chip">📈 Google Analytics 4</span><span class="tool-chip">🔍 Search Console</span><span class="tool-chip">🔧 Semrush</span><span class="tool-chip">🔗 Ahrefs</span><span class="tool-chip">🏆 RankMath Pro</span><span class="tool-chip">🔄 n8n</span><span class="tool-chip">💬 WhatsApp Business API</span><span class="tool-chip">🌐 WordPress</span><span class="tool-chip">🛒 WooCommerce</span><span class="tool-chip">🎨 Elementor Pro</span><span class="tool-chip">🐸 Screaming Frog</span><span class="tool-chip">📋 Looker Studio</span>
+   <span class="tool-chip">📊 Google Ads</span><span class="tool-chip">📘 Meta Business Suite</span><span class="tool-chip">📈 Google Analytics 4</span><span class="tool-chip">🔍 Search Console</span><span class="tool-chip">🔧 Semrush</span><span class="tool-chip">🔗 Ahrefs</span><span class="tool-chip">🏆 RankMath Pro</span><span class="tool-chip">🔄 n8n</span><span class="tool-chip">💬 WhatsApp Business API</span><span class="tool-chip">🌐 WordPress</span><span class="tool-chip">🛒 WooCommerce</span><span class="tool-chip">🎨 Elementor Pro</span><span class="tool-chip">🐸 Screaming Frog</span><span class="tool-chip">📋 Looker Studio</span>
+  </div>
+ </div>
+</div>
+
+<!-- ════════════════ TESTIMONIALS ════════════════ -->
+<section class="testi-section">
+ <div class="wrap">
+  <div class="sec-h rv">
+   <div class="pill pill-b">Client Stories</div>
+   <h2>What Our Clients Say</h2>
+  </div>
+  <div class="testi-grid">
+   <div class="tcard rv">
+    <div class="t-stars">★★★★★</div>
+    <p class="t-q">They became our silent fulfilment team. Our clients genuinely believe we built everything in-house — that's the level of quality and discretion.</p>
+    <div class="t-who"><div class="t-av">RA</div><div><b>Rahul A.</b><small>Agency Owner, Indore</small></div></div>
+   </div>
+   <div class="tcard rv2">
+    <div class="t-stars">★★★★★</div>
+    <p class="t-q">The WhatsApp automation paid for itself in the first month. Every lead now gets a reply in under 2 minutes — even at 2am on a Sunday.</p>
+    <div class="t-who"><div class="t-av">SP</div><div><b>Sneha P.</b><small>Real Estate Developer, Bhopal</small></div></div>
+   </div>
+   <div class="tcard rv3">
+    <div class="t-stars">★★★★★</div>
+    <p class="t-q">Twelve years of real experience shows in every recommendation. No fluff, no jargon — just results we can measure and present to our board.</p>
+    <div class="t-who"><div class="t-av">MK</div><div><b>Manish K.</b><small>E-commerce Founder, Indore</small></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ BLOG ════════════════ -->
+<section class="blog-section">
+ <div class="wrap">
+  <div class="sec-h rv">
+   <div class="pill pill-o">From the Blog</div>
+   <h2>Insights on SEO, Ads &amp; AI</h2>
+  </div>
+  <div class="blog-grid">
+   <div class="bcard rv">
+    <div class="bcard-img" style="background:linear-gradient(135deg,var(--n),#2d4a7a)"><span class="bcard-cat">White Label</span></div>
+    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>What is White Label SEO &amp; How Does It Work for Agencies?</h3><a href="#" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+   </div>
+   <div class="bcard rv2">
+    <div class="bcard-img" style="background:linear-gradient(135deg,#1a0a3a,var(--b))"><span class="bcard-cat">Automation</span></div>
+    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>How to Automate WhatsApp Follow-Ups for Your Business (Step-by-Step)</h3><a href="#" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+   </div>
+   <div class="bcard rv3">
+    <div class="bcard-img" style="background:linear-gradient(135deg,#0a2a1a,var(--n))"><span class="bcard-cat">GEO</span></div>
+    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>Get Found in ChatGPT: A Complete GEO Guide for Indian Businesses</h3><a href="#" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ LEAD FORM ════════════════ -->
+<section class="lead-section" id="contact">
+ <div class="wrap">
+  <div class="lead-inner">
+   <div class="lead-l rv">
+    <div class="pill pill-w" style="margin-bottom:20px">Free Strategy Session</div>
+    <h2>Ready to Grow?<br>Let's Build Your<br>Strategy.</h2>
+    <p>30 minutes. No pressure. No jargon. Walk away with a clear, actionable plan specific to your business or agency.</p>
+    <div class="lead-perks">
+     <div class="perk"><div class="perk-dot">✓</div>No commitment required</div>
+     <div class="perk"><div class="perk-dot">✓</div>Tailored growth recommendations</div>
+     <div class="perk"><div class="perk-dot">✓</div>Response within 24 hours</div>
+     <div class="perk"><div class="perk-dot">✓</div>Works for both businesses &amp; agencies</div>
+    </div>
+   </div>
+   <div class="rv2">
+    <form class="lead-form" id="lf">
+     <h3>Book Your Free Call</h3>
+     <p class="fsub">We'll be in touch within 24 hours.</p>
+     <div class="field"><label>Name *</label><input required placeholder="Your full name"></div>
+     <div class="field"><label>Email *</label><input type="email" required placeholder="you@company.com"></div>
+     <div class="field"><label>Phone *</label><input type="tel" required placeholder="+91 XXXXX XXXXX"></div>
+     <div class="field"><label>What do you need?</label>
+      <select>
+       <option>SEO Services</option><option>Google Ads Management</option>
+       <option>WhatsApp Automation</option><option>GEO / AI Search</option>
+       <option>White Label SEO</option><option>Web Development</option>
+       <option>AI Chatbot / n8n</option><option>Not sure yet</option>
+      </select>
+     </div>
+     <button type="submit" class="btn btn-o" style="width:100%;justify-content:center">Book My Free Strategy Call</button>
+     <div class="submsg" id="sm">✓ Thank you! We'll call you within 24 hours.</div>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ FAQ ════════════════ -->
+<section class="faq-section">
+ <div class="wrap">
+  <div class="sec-h rv">
+   <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-wrap">
+   <div class="fi"><button class="fi-q">Do you work with both businesses and agencies?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We serve direct business clients with SEO, ads, web and automation, and we act as a white-label fulfilment partner for agencies across India — fully under your brand, with NDA-backed confidentiality.</div></div>
+   <div class="fi"><button class="fi-q">What is GEO and why does it matter now?<span class="fi-icon">+</span></button><div class="fi-a">Generative Engine Optimization makes your brand the source that AI engines like ChatGPT, Gemini and Perplexity cite when answering questions. As AI-powered search grows, GEO is becoming as important as traditional SEO.</div></div>
+   <div class="fi"><button class="fi-q">How fast can I see results?<span class="fi-icon">+</span></button><div class="fi-a">PPC and WhatsApp automation can show results within weeks. SEO and GEO typically compound over 3–6 months as authority builds. We set clear, honest expectations from day one — no false promises.</div></div>
+   <div class="fi"><button class="fi-q">Will you ever contact my clients?<span class="fi-icon">+</span></button><div class="fi-a">Never. Our white-label engagement is NDA-backed. We never contact, pitch, or poach your clients under any circumstances. Your client relationships are always, entirely yours.</div></div>
+   <div class="fi"><button class="fi-q">Do you offer custom packages?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We don't do off-the-shelf. Every engagement starts with a strategy call where we understand your goals, then propose a tailored scope and pricing. Book your free call to get started.</div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+ <div class="wrap">
+  <div class="footer-main">
+   <div class="fg">
+    <div>
+     <a href="/">
+      <img src="clickdecoded.png" alt="Click Decoded" style="height:38px;width:auto;display:block;filter:brightness(0) invert(1);">
+     </a>
+     <p class="fb-desc">Decoding growth through SEO, digital marketing, and AI automation. India's trusted B2B growth partner.</p>
+     <div class="socials">
+      <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="X">𝕏</a><a href="#" aria-label="YouTube">YT</a>
+     </div>
+    </div>
+    <div><h4>Services</h4><div class="fl"><a href="#">SEO Services</a><a href="#">Digital Marketing</a><a href="#">Web Development</a><a href="#">AI & Automation</a><a href="#">GEO / AI Search</a><a href="#">White Label SEO</a></div></div>
+    <div><h4>Company</h4><div class="fl"><a href="#">About Us</a><a href="#">Case Studies</a><a href="#">Blog</a><a href="#">Contact</a><a href="#">Careers</a></div></div>
+    <div><h4>Contact</h4><div class="fc"><a href="mailto:hello@clickdecoded.com">📧 hello@clickdecoded.com</a><a href="tel:+91XXXXXXXXXX">📞 +91 XXXXX XXXXX</a><a href="#">📍 Bhopal, Madhya Pradesh</a><a href="#">💬 WhatsApp Us</a></div></div>
+   </div>
+  </div>
+  <div class="footer-areas"><b>Service Areas:</b> <a href="#">Bhopal</a>·<a href="#">Indore</a>·<a href="#">Dewas</a>·<a href="#">Sehore</a>·<a href="#">Raisen</a>·<a href="#">Itarsi</a>·<a href="#">Vidisha</a>·<a href="#">Bina</a>·<a href="#">Jhansi</a>·<a href="#">Sagar</a>·<a href="#">Gwalior</a></div>
+  <div class="footer-bottom">
+   <div>© 2026 Click Decoded. All rights reserved. · <a href="#">Privacy Policy</a> · <a href="#">Terms</a></div>
+   <div>Click Decoded is a brand of Aharnish Infotech Private Limited © 2014–2026.</div>
+  </div>
+ </div>
+</footer>
+
+<script>
+/* ─ Hamburger ─ */
+const hb=document.getElementById('hb'),mn=document.getElementById('mnav');
+hb.onclick=()=>{hb.classList.toggle('x');mn.classList.toggle('on');document.body.style.overflow=mn.classList.contains('on')?'hidden':'';};
+
+/* ─ Mobile accordion ─ */
+document.querySelectorAll('.ma>button').forEach(b=>{
+  b.onclick=()=>{
+    const a=b.parentElement,isOpen=a.classList.contains('on');
+    document.querySelectorAll('.ma').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.ma>button span').forEach(s=>s&&(s.textContent='+'));
+    if(!isOpen){a.classList.add('on');const s=b.querySelector('span');if(s)s.textContent='−';}
+  };
+});
+
+/* ─ Sticky header ─ */
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
+
+/* ─ Tabs ─ */
+document.querySelectorAll('.tb').forEach((b,i)=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tb').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.tp').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    document.querySelectorAll('.tp')[i].classList.add('on');
+  };
+});
+
+/* ─ FAQ ─ */
+document.querySelectorAll('.fi').forEach(item=>{
+  item.querySelector('.fi-q').onclick=()=>{
+    const open=item.classList.contains('on');
+    document.querySelectorAll('.fi').forEach(x=>x.classList.remove('on'));
+    if(!open)item.classList.add('on');
+  };
+});
+
+/* ─ Form ─ */
+document.getElementById('lf').onsubmit=e=>{
+  e.preventDefault();
+  document.getElementById('sm').style.display='block';
+  e.target.querySelector('button[type=submit]').textContent='Submitted ✓';
+  e.target.querySelector('button[type=submit]').disabled=true;
+};
+
+/* ─ Scroll reveal ─ */
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
+
+/* ─ Count-up ─ */
+function countUp(){
+  document.querySelectorAll('.count:not([data-done])').forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight){
+      el.dataset.done='1';
+      const t=+el.dataset.t,s=el.dataset.s||'';
+      let c=0;const step=Math.ceil(t/50);
+      const iv=setInterval(()=>{c=Math.min(c+step,t);el.textContent=c+s;if(c>=t)clearInterval(iv);},28);
+    }
+  });
+}
+window.addEventListener('scroll',countUp,{passive:true});
+countUp();
+
+/* ─ Scroll Hero ─ */
+(function(){
+  const wrap=document.querySelector('.scroll-hero-wrap');
+  if(!wrap)return;
+  const slides=document.querySelectorAll('.sh-slide');
+  const panels=document.querySelectorAll('.sh-panel');
+  const dots=document.querySelectorAll('.sh-dot');
+  const TOTAL=slides.length;
+  let current=0;
+
+  function goTo(idx){
+    if(idx===current)return;
+    slides[current].classList.remove('active');
+    panels[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current=idx;
+    slides[current].classList.add('active');
+    panels[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  // Scroll-driven
+  function onScroll(){
+    const rect=wrap.getBoundingClientRect();
+    const wrapH=wrap.offsetHeight;
+    const viewH=window.innerHeight;
+    // Progress 0→1 as we scroll through the sticky section
+    const scrolled=Math.max(0,-rect.top);
+    const scrollable=wrapH-viewH;
+    if(scrollable<=0)return;
+    const progress=Math.min(1,scrolled/scrollable);
+    const idx=Math.min(TOTAL-1,Math.floor(progress*TOTAL));
+    goTo(idx);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Dot click
+  dots.forEach((d,i)=>d.addEventListener('click',()=>{
+    // Scroll to correct position
+    const wrapH=wrap.offsetHeight;
+    const viewH=window.innerHeight;
+    const scrollable=wrapH-viewH;
+    const target=wrap.offsetTop+(i/TOTAL)*scrollable;
+    window.scrollTo({top:target,behavior:'smooth'});
+  }));
+})();
+</script>
+</body>
+</html>
