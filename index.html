@@ -8,7 +8,7 @@
 <meta property="og:title" content="Click Decoded — SEO · Marketing · AI Automation">
 <meta property="og:description" content="Trusted by agencies and businesses across India. Real results, measurable growth.">
 <meta property="og:type" content="website">
-<link rel="icon" href="clickdecoded.png" type="image/png">
+<link rel="icon" href="favicon-clickdecoded.svg" type="image/svg+xml"><link rel="alternate icon" href="clickdecoded.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Click Decoded","url":"https://clickdecoded.com","logo":"https://clickdecoded.com/logo-color.svg","description":"Premium B2B digital marketing, SEO, AI automation and white label agency, Bhopal India.","address":{"@type":"PostalAddress","addressLocality":"Bhopal","addressRegion":"Madhya Pradesh","addressCountry":"IN"}}</script>
@@ -124,6 +124,7 @@ h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n
 .mega.slim{width:296px;left:auto;right:0;transform:translateY(10px);}
 .dmenu>li:hover .mega{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0);}
 .dmenu>li:hover .mega.slim{transform:translateY(0);}
+.dmenu>li::after{content:'';position:absolute;top:100%;left:-40px;right:-40px;height:14px;}
 /* Category heading */
 .mc h5{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--b);margin-bottom:11px;}
 /* Menu item — animated left-bar accent */
@@ -983,6 +984,33 @@ footer h4{
 .rv3.in{opacity:1;transform:none;}
 
 /* ╔══════════════════════════════════════════╗
+   ║  WORKING-ON TICKER                       ║
+   ╚══════════════════════════════════════════╝ */
+.working-strip{background:var(--n-dark);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);height:46px;display:flex;align-items:center;overflow:hidden;gap:0;}
+.ws-label{flex-shrink:0;padding:0 20px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.13em;color:var(--o);white-space:nowrap;border-right:1px solid rgba(255,255,255,.1);height:100%;display:flex;align-items:center;gap:7px;}
+.ws-label::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--o);box-shadow:0 0 6px var(--o);animation:ws-blink 1.4s ease-in-out infinite;}
+@keyframes ws-blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.ws-track-wrap{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;}
+.ws-track{display:flex;gap:0;animation:ws-scroll 38s linear infinite;width:max-content;}
+.ws-track:hover{animation-play-state:paused;}
+.ws-item{display:flex;align-items:center;gap:10px;padding:0 28px;font-size:12.5px;color:rgba(255,255,255,.55);white-space:nowrap;border-right:1px solid rgba(255,255,255,.07);}
+.ws-item .ws-dot{width:5px;height:5px;border-radius:50%;background:var(--o);flex-shrink:0;}
+@keyframes ws-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ╔══════════════════════════════════════════╗
+   ║  RESULTS TICKER                          ║
+   ╚══════════════════════════════════════════╝ */
+.results-strip{background:linear-gradient(90deg,rgba(238,126,26,.06),rgba(42,69,115,.08),rgba(238,126,26,.06));border-top:1px solid rgba(238,126,26,.12);border-bottom:1px solid rgba(238,126,26,.12);height:48px;display:flex;align-items:center;overflow:hidden;}
+.rs-label{flex-shrink:0;padding:0 22px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.13em;color:var(--n);white-space:nowrap;border-right:1px solid var(--bdr);height:100%;display:flex;align-items:center;gap:6px;background:#fff;}
+.rs-label span{color:var(--o);}
+.rs-track-wrap{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;}
+.rs-track{display:flex;gap:0;animation:rs-scroll 45s linear infinite;width:max-content;}
+.rs-track:hover{animation-play-state:paused;}
+.rs-item{display:flex;align-items:center;gap:9px;padding:0 28px;font-size:12.5px;color:var(--body);white-space:nowrap;border-right:1px solid var(--bdr);font-weight:500;}
+.rs-item .rs-badge{font-size:11px;font-weight:700;color:var(--o);background:rgba(238,126,26,.1);padding:2px 8px;border-radius:5px;}
+@keyframes rs-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ╔══════════════════════════════════════════╗
    ║  TOP BAR                                 ║
    ╚══════════════════════════════════════════╝ */
 .topbar{
@@ -991,6 +1019,7 @@ footer h4{
   padding:0;
 }
 .topbar-inner{
+  max-width:1200px;margin:0 auto;padding:0 28px;width:100%;
   display:flex;align-items:center;justify-content:space-between;
   height:38px;gap:12px;
 }
@@ -1051,119 +1080,8 @@ footer h4{
 </head>
 <body>
 
-<!-- ════════════════ STICKY SHELL ════════════════ -->
-<div style="position:sticky;top:0;z-index:900;">
-
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="wrap topbar-inner">
-    <div class="topbar-left">
-      <a href="tel:+919407000101" class="topbar-item">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-        +91 94070 00101
-      </a>
-      <a href="mailto:hello@clickdecoded.com" class="topbar-item">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        hello@clickdecoded.com
-      </a>
-    </div>
-    <div class="topbar-right">
-      <a href="tel:+919407000101" class="tb-btn tb-call">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-        Call Now
-      </a>
-      <a href="https://wa.me/919407000101" target="_blank" rel="noopener" class="tb-btn tb-wa">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ════════════════ HEADER ════════════════ -->
-<header id="hdr" style="position:relative;top:auto;">
- <div class="wrap nav">
-
-  <!-- Logo -->
-  <a href="/">
-    <img src="clickdecoded.png" alt="Click Decoded" style="height:44px;width:auto;display:block;">
-  </a>
-
-  <!-- Desktop Menu -->
-  <ul class="dmenu">
-   <li><a href="/">Home</a></li>
-   <li>
-    <a href="#">Services
-     <svg class="dcar" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <div class="mega wide">
-     <div class="mc"><h5>🔍 SEO Services</h5>
-      <a href="#">SEO Services</a><a href="#">Local SEO</a><a href="#">E-commerce SEO</a>
-      <a href="#">Technical SEO Audit</a><a href="#">Link Building</a><a href="#">SEO Consulting</a>
-     </div>
-     <div class="mc"><h5>📢 Digital Marketing</h5>
-      <a href="#">Digital Marketing</a><a href="#">Google Ads Management</a><a href="#">Meta Ads</a>
-      <a href="#">Social Media Marketing</a><a href="#">Content Marketing</a>
-     </div>
-     <div class="mc"><h5>💻 Web Development</h5>
-      <a href="#">Web Development</a><a href="#">WordPress Development</a>
-      <a href="#">E-commerce Dev</a><a href="#">Landing Page Design</a>
-     </div>
-     <div class="mc"><h5>🤖 AI & Automation</h5>
-      <a href="#">AI Automation</a><a href="#">WhatsApp Automation</a><a href="#">n8n Workflows</a>
-      <a href="#">AI Chatbot Dev</a><a href="#">CRM Automation</a><a href="#">Lead Follow-Up Auto</a>
-     </div>
-     <div class="mc"><h5>🚀 GEO / AI Search</h5>
-      <a href="#">GEO Services</a><a href="#">Answer Engine Opt</a><a href="#">LLM Optimization</a>
-      <a href="#">AI Brand Visibility</a><a href="#">ChatGPT Citations</a>
-     </div>
-    </div>
-   </li>
-   <li>
-    <a href="#">White Label
-     <svg class="dcar" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <div class="mega slim">
-     <a href="#">White Label SEO Services<small>Overview &amp; partner program</small></a>
-     <a href="#">White Label SEO<small>Resell under your brand</small></a>
-     <a href="#">White Label PPC<small>Google Ads reseller</small></a>
-     <a href="#">White Label Web Dev<small>WordPress &amp; stores</small></a>
-     <a href="#">White Label GEO<small>AI-search, resold</small></a>
-     <a href="#">White Label Reporting<small>Branded client reports</small></a>
-    </div>
-   </li>
-   <li><a href="#">Case Studies</a></li>
-   <li><a href="#">Blog</a></li>
-   <li><a href="#">About</a></li>
-  </ul>
-
-  <div class="navcta">
-   <a href="#contact" class="btn btn-o btn-sm">Get Free Strategy Call</a>
-   <button class="hb" id="hb"><span></span><span></span><span></span></button>
-  </div>
-
- </div>
-</header>
-</div><!-- /sticky shell -->
-
-<!-- Mobile Nav -->
-<div class="mnav" id="mnav">
- <div class="ma"><button>Home</button></div>
- <div class="ma"><button>Services <span>+</span></button><div class="ms">
-  <h6>SEO</h6><a href="#">SEO Services</a><a href="#">Local SEO</a><a href="#">E-commerce SEO</a><a href="#">Technical SEO Audit</a><a href="#">Link Building</a>
-  <h6>Digital Marketing</h6><a href="#">Google Ads</a><a href="#">Meta Ads</a><a href="#">Social Media</a><a href="#">Content Marketing</a>
-  <h6>Web Development</h6><a href="#">Web Development</a><a href="#">WordPress Dev</a><a href="#">E-commerce Dev</a>
-  <h6>AI & Automation</h6><a href="#">AI Automation</a><a href="#">WhatsApp Automation</a><a href="#">n8n Workflows</a><a href="#">AI Chatbot</a>
-  <h6>GEO / AI Search</h6><a href="#">GEO Services</a><a href="#">AEO</a><a href="#">LLM Optimization</a>
- </div></div>
- <div class="ma"><button>White Label <span>+</span></button><div class="ms">
-  <a href="#">White Label SEO</a><a href="#">White Label PPC</a><a href="#">White Label Web Dev</a><a href="#">White Label GEO</a><a href="#">White Label Reporting</a>
- </div></div>
- <div class="ma"><button>Case Studies</button></div>
- <div class="ma"><button>Blog</button></div>
- <div class="ma"><button>About</button></div>
- <div style="margin-top:22px"><a href="#contact" class="btn btn-o" style="width:100%;justify-content:center">Get Free Strategy Call</a></div>
-</div>
+<div id="cd-header"></div>
+<script src="components/header.js"></script>
 
 <!-- ════════════════ HERO — SCROLL REVEAL ════════════════ -->
 <div class="scroll-hero-wrap" id="home">
@@ -1455,6 +1373,36 @@ footer h4{
  </div>
 </section>
 
+<!-- ════════════════ WORKING-ON TICKER ════════════════ -->
+<div class="working-strip" aria-label="What the team is currently working on">
+  <div class="ws-label">⚡ Currently Working On</div>
+  <div class="ws-track-wrap">
+    <div class="ws-track">
+      <div class="ws-item"><div class="ws-dot"></div>Building n8n lead automation for a Bhopal logistics company</div>
+      <div class="ws-item"><div class="ws-dot"></div>Running Google Ads for a B2B SaaS client — ₹42 CPC, 6.8% CTR</div>
+      <div class="ws-item"><div class="ws-dot"></div>Technical SEO audit for a 4,000-page e-commerce store</div>
+      <div class="ws-item"><div class="ws-dot"></div>Deploying WhatsApp chatbot for a real estate developer in Indore</div>
+      <div class="ws-item"><div class="ws-dot"></div>White label SEO delivery for a Delhi digital agency</div>
+      <div class="ws-item"><div class="ws-dot"></div>Link building campaign — 38 DR60+ backlinks in 30 days</div>
+      <div class="ws-item"><div class="ws-dot"></div>GEO optimisation — getting client cited in ChatGPT responses</div>
+      <div class="ws-item"><div class="ws-dot"></div>Rebuilding a healthcare website on WordPress — 94 PageSpeed score</div>
+      <div class="ws-item"><div class="ws-dot"></div>Meta Ads for an e-commerce brand — 4.2× ROAS this month</div>
+      <div class="ws-item"><div class="ws-dot"></div>AI chatbot trained on client knowledge base — goes live Friday</div>
+      <!-- duplicate for seamless loop -->
+      <div class="ws-item"><div class="ws-dot"></div>Building n8n lead automation for a Bhopal logistics company</div>
+      <div class="ws-item"><div class="ws-dot"></div>Running Google Ads for a B2B SaaS client — ₹42 CPC, 6.8% CTR</div>
+      <div class="ws-item"><div class="ws-dot"></div>Technical SEO audit for a 4,000-page e-commerce store</div>
+      <div class="ws-item"><div class="ws-dot"></div>Deploying WhatsApp chatbot for a real estate developer in Indore</div>
+      <div class="ws-item"><div class="ws-dot"></div>White label SEO delivery for a Delhi digital agency</div>
+      <div class="ws-item"><div class="ws-dot"></div>Link building campaign — 38 DR60+ backlinks in 30 days</div>
+      <div class="ws-item"><div class="ws-dot"></div>GEO optimisation — getting client cited in ChatGPT responses</div>
+      <div class="ws-item"><div class="ws-dot"></div>Rebuilding a healthcare website on WordPress — 94 PageSpeed score</div>
+      <div class="ws-item"><div class="ws-dot"></div>Meta Ads for an e-commerce brand — 4.2× ROAS this month</div>
+      <div class="ws-item"><div class="ws-dot"></div>AI chatbot trained on client knowledge base — goes live Friday</div>
+    </div>
+  </div>
+</div>
+
 <!-- ════════════════ TOOLS ════════════════ -->
 <div class="tools-section">
  <div class="tools-label">Powered by industry-leading tools</div>
@@ -1483,11 +1431,41 @@ footer h4{
     <div class="sl">Client retention rate</div>
    </div>
    <div class="stat-col rv">
-    <div class="sn">₹10Cr+</div>
-    <div class="sl">Ad spend managed</div>
+    <div class="sn count" data-t="0" data-s="">0</div>
+    <div class="sl">Google penalty incidents</div>
    </div>
   </div>
  </div>
+</div>
+
+<!-- ════════════════ RESULTS TICKER ════════════════ -->
+<div class="results-strip" aria-label="Real results from client work">
+  <div class="rs-label">📈 <span>Real Results</span></div>
+  <div class="rs-track-wrap">
+    <div class="rs-track">
+      <div class="rs-item"><span class="rs-badge">SEO</span> +340% organic traffic in 4 months — B2B SaaS client</div>
+      <div class="rs-item"><span class="rs-badge">Google Ads</span> ₹18 cost-per-lead — manufacturing company, Bhopal</div>
+      <div class="rs-item"><span class="rs-badge">WhatsApp</span> 2-minute lead response time, 24/7 — zero manual effort</div>
+      <div class="rs-item"><span class="rs-badge">SEO</span> Ranked #1 for "digital agency Bhopal" — in 90 days</div>
+      <div class="rs-item"><span class="rs-badge">Meta Ads</span> 4.2× ROAS — e-commerce brand, Indore</div>
+      <div class="rs-item"><span class="rs-badge">White Label</span> 0 client contact in 12+ years of fulfilment</div>
+      <div class="rs-item"><span class="rs-badge">n8n</span> 3-hour/week saved per sales rep — CRM + WhatsApp automation</div>
+      <div class="rs-item"><span class="rs-badge">Technical SEO</span> 0 Google penalties across 500+ projects</div>
+      <div class="rs-item"><span class="rs-badge">Web Dev</span> 94 PageSpeed score — healthcare website rebuild</div>
+      <div class="rs-item"><span class="rs-badge">GEO</span> Client cited in ChatGPT, Gemini & Perplexity — same week</div>
+      <!-- duplicate for seamless loop -->
+      <div class="rs-item"><span class="rs-badge">SEO</span> +340% organic traffic in 4 months — B2B SaaS client</div>
+      <div class="rs-item"><span class="rs-badge">Google Ads</span> ₹18 cost-per-lead — manufacturing company, Bhopal</div>
+      <div class="rs-item"><span class="rs-badge">WhatsApp</span> 2-minute lead response time, 24/7 — zero manual effort</div>
+      <div class="rs-item"><span class="rs-badge">SEO</span> Ranked #1 for "digital agency Bhopal" — in 90 days</div>
+      <div class="rs-item"><span class="rs-badge">Meta Ads</span> 4.2× ROAS — e-commerce brand, Indore</div>
+      <div class="rs-item"><span class="rs-badge">White Label</span> 0 client contact in 12+ years of fulfilment</div>
+      <div class="rs-item"><span class="rs-badge">n8n</span> 3-hour/week saved per sales rep — CRM + WhatsApp automation</div>
+      <div class="rs-item"><span class="rs-badge">Technical SEO</span> 0 Google penalties across 500+ projects</div>
+      <div class="rs-item"><span class="rs-badge">Web Dev</span> 94 PageSpeed score — healthcare website rebuild</div>
+      <div class="rs-item"><span class="rs-badge">GEO</span> Client cited in ChatGPT, Gemini & Perplexity — same week</div>
+    </div>
+  </div>
 </div>
 
 <!-- ════════════════ AUTOMATION ════════════════ -->
@@ -1501,7 +1479,7 @@ footer h4{
   <div class="auto-cards">
    <div class="acard rv">
     <div class="ai">⚡</div>
-    <h4>WhatsApp Automation</h4>
+    <h4><a href="whatsapp-automation.html" style="color:inherit;">WhatsApp Automation</a></h4>
     <p>Instant lead follow-up via WhatsApp Business API. Auto-reply, qualify, and route every lead without lifting a finger.</p>
     <div class="atag">📲 WhatsApp Business API</div>
    </div>
@@ -1694,7 +1672,7 @@ footer h4{
   <div style="overflow:hidden;white-space:nowrap;">
    <div class="proof-track">
     <span class="proof-chip"><span class="pc-val">3×</span> Organic Traffic Growth</span>
-    <span class="proof-chip"><span class="pc-val">₹10Cr+</span> Ad Spend Managed</span>
+    <span class="proof-chip">✓ Zero Penalty Record</span>
     <span class="proof-chip"><span class="pc-val">#1</span> Rankings Delivered</span>
     <span class="proof-chip"><span class="pc-val">94%</span> Lead Query Resolution</span>
     <span class="proof-chip"><span class="pc-val">500+</span> Projects Completed</span>
@@ -1705,7 +1683,7 @@ footer h4{
     <span class="proof-chip"><span class="pc-val">0</span> Penalty Risk</span>
     <!-- duplicate for seamless loop -->
     <span class="proof-chip"><span class="pc-val">3×</span> Organic Traffic Growth</span>
-    <span class="proof-chip"><span class="pc-val">₹10Cr+</span> Ad Spend Managed</span>
+    <span class="proof-chip">✓ Zero Penalty Record</span>
     <span class="proof-chip"><span class="pc-val">#1</span> Rankings Delivered</span>
     <span class="proof-chip"><span class="pc-val">94%</span> Lead Query Resolution</span>
     <span class="proof-chip"><span class="pc-val">500+</span> Projects Completed</span>
@@ -1718,66 +1696,39 @@ footer h4{
   </div>
   <!-- Row 2 — reverse -->
   <div style="overflow:hidden;white-space:nowrap;">
-   <div class="proof-track rev">
-    <span class="proof-chip">🏆 B2B SEO Specialists</span>
-    <span class="proof-chip">🤖 AI-Powered Automation</span>
-    <span class="proof-chip">🔒 NDA-Backed Delivery</span>
-    <span class="proof-chip">📈 Google Partner Agency</span>
-    <span class="proof-chip">🇮🇳 India's Top B2B Agency</span>
-    <span class="proof-chip">⚡ 48h White Label Reports</span>
-    <span class="proof-chip">💬 WhatsApp Business API</span>
-    <span class="proof-chip">🌐 GEO / AI Search Ready</span>
-    <span class="proof-chip">🔗 Authority Link Building</span>
-    <span class="proof-chip">📊 Full Transparency Reporting</span>
+   <div class="proof-track    <span class="proof-chip"><span class="pc-val">3×</span> Organic Traffic Growth</span>
+    <span class="proof-chip">✓ Zero Penalty Record</span>
+    <span class="proof-chip"><span class="pc-val">#1</span> Rankings Delivered</span>
+    <span class="proof-chip"><span class="pc-val">94%</span> Lead Query Resolution</span>
+    <span class="proof-chip"><span class="pc-val">500+</span> Projects Completed</span>
+    <span class="proof-chip"><span class="pc-val">48h</span> Report Turnaround</span>
+    <span class="proof-chip"><span class="pc-val">6.2×</span> Average ROAS</span>
+    <span class="proof-chip"><span class="pc-val">98%</span> Client Retention Rate</span>
+    <span class="proof-chip"><span class="pc-val">12+</span> Years of Expertise</span>
+    <span class="proof-chip"><span class="pc-val">0</span> Penalty Risk</span>
     <!-- duplicate -->
-    <span class="proof-chip">🏆 B2B SEO Specialists</span>
-    <span class="proof-chip">🤖 AI-Powered Automation</span>
-    <span class="proof-chip">🔒 NDA-Backed Delivery</span>
-    <span class="proof-chip">📈 Google Partner Agency</span>
-    <span class="proof-chip">🇮🇳 India's Top B2B Agency</span>
-    <span class="proof-chip">⚡ 48h White Label Reports</span>
-    <span class="proof-chip">💬 WhatsApp Business API</span>
-    <span class="proof-chip">🌐 GEO / AI Search Ready</span>
-    <span class="proof-chip">🔗 Authority Link Building</span>
-    <span class="proof-chip">📊 Full Transparency Reporting</span>
+    <span class="proof-chip"><span class="pc-val">3×</span> Organic Traffic Growth</span>
+    <span class="proof-chip">✓ Zero Penalty Record</span>
+    <span class="proof-chip"><span class="pc-val">#1</span> Rankings Delivered</span>
+    <span class="proof-chip"><span class="pc-val">94%</span> Lead Query Resolution</span>
+    <span class="proof-chip"><span class="pc-val">500+</span> Projects Completed</span>
+    <span class="proof-chip"><span class="pc-val">48h</span> Report Turnaround</span>
+    <span class="proof-chip"><span class="pc-val">6.2×</span> Average ROAS</span>
+    <span class="proof-chip"><span class="pc-val">98%</span> Client Retention Rate</span>
+    <span class="proof-chip"><span class="pc-val">12+</span> Years of Expertise</span>
+    <span class="proof-chip"><span class="pc-val">0</span> Penalty Risk</span>
    </div>
   </div>
  </div>
-</div>
-
-<!-- ════════════════ TESTIMONIALS ════════════════ -->
-<section class="testi-section">
- <div class="wrap">
-  <div class="sec-h rv">
-   <div class="pill pill-b">Client Stories</div>
-   <h2>What Our Clients Say</h2>
-  </div>
-  <div class="testi-grid">
-   <div class="tcard rv">
-    <div class="t-stars">★★★★★</div>
-    <p class="t-q">They became our silent fulfilment team. Our clients genuinely believe we built everything in-house — that's the level of quality and discretion.</p>
-    <div class="t-who"><div class="t-av">RA</div><div><b>Rahul A.</b><small>Agency Owner, Indore</small></div></div>
-   </div>
-   <div class="tcard rv2">
-    <div class="t-stars">★★★★★</div>
-    <p class="t-q">The WhatsApp automation paid for itself in the first month. Every lead now gets a reply in under 2 minutes — even at 2am on a Sunday.</p>
-    <div class="t-who"><div class="t-av">SP</div><div><b>Sneha P.</b><small>Real Estate Developer, Bhopal</small></div></div>
-   </div>
-   <div class="tcard rv3">
-    <div class="t-stars">★★★★★</div>
-    <p class="t-q">Twelve years of real experience shows in every recommendation. No fluff, no jargon — just results we can measure and present to our board.</p>
-    <div class="t-who"><div class="t-av">MK</div><div><b>Manish K.</b><small>E-commerce Founder, Indore</small></div></div>
-   </div>
-  </div>
- </div>
-</section>
+</div><!-- /proof-strip -->
 
 <!-- ════════════════ BLOG ════════════════ -->
 <section class="blog-section">
  <div class="wrap">
   <div class="sec-h rv">
-   <div class="pill pill-o">From the Blog</div>
-   <h2>Insights on SEO, Ads &amp; AI</h2>
+   <div class="pill pill-b">Resources</div>
+   <h2>Insights & Guides</h2>
+   <p>Practical marketing knowledge from our team — no fluff, no gated content.</p>
   </div>
   <div class="blog-grid">
    <div class="bcard rv">
@@ -1786,269 +1737,133 @@ footer h4{
    </div>
    <div class="bcard rv2">
     <div class="bcard-img" style="background:linear-gradient(135deg,#1a0a3a,var(--b))"><span class="bcard-cat">Automation</span></div>
-    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>How to Automate WhatsApp Follow-Ups for Your Business (Step-by-Step)</h3><a href="#" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>How WhatsApp Automation Cuts Lead Response Time from Hours to 2 Minutes</h3><a href="#" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
    </div>
    <div class="bcard rv3">
-    <div class="bcard-img" style="background:linear-gradient(135deg,#0a2a1a,var(--n))"><span class="bcard-cat">GEO</span></div>
-    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>Get Found in ChatGPT: A Complete GEO Guide for Indian Businesses</h3><a href="#" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="bcard-img" style="background:linear-gradient(135deg,#0d3320,#0a5c36)"><span class="bcard-cat">GEO / AI Search</span></div>
+    <div class="bcard-body"><div class="bcard-date">May 2026</div><h3>GEO vs SEO: How to Get Your Business Cited by ChatGPT and Gemini</h3><a href="#" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
    </div>
   </div>
  </div>
 </section>
 
-<!-- ════════════════ LEAD FORM ════════════════ -->
+<!-- ════════════════ LEAD / CONTACT ════════════════ -->
 <section class="lead-section" id="contact">
  <div class="wrap">
   <div class="lead-inner">
-   <div class="lead-l rv">
-    <div class="pill pill-w" style="margin-bottom:20px">Free Strategy Session</div>
-    <h2>Ready to Grow?<br>Let's Build Your<br>Strategy.</h2>
-    <p>30 minutes. No pressure. No jargon. Walk away with a clear, actionable plan specific to your business or agency.</p>
+   <div class="lead-l">
+    <div class="pill pill-o">Free Consultation</div>
+    <h2>Ready to Stop Guessing and Start Growing?</h2>
+    <p>Tell us where you are and what you're trying to build. We'll come back within 4 business hours with a specific plan — not a sales pitch.</p>
     <div class="lead-perks">
-     <div class="perk"><div class="perk-dot">✓</div>No commitment required</div>
-     <div class="perk"><div class="perk-dot">✓</div>Tailored growth recommendations</div>
-     <div class="perk"><div class="perk-dot">✓</div>Response within 24 hours</div>
-     <div class="perk"><div class="perk-dot">✓</div>Works for both businesses &amp; agencies</div>
+     <div class="perk"><div class="perk-dot">✓</div>Free 30-minute strategy call</div>
+     <div class="perk"><div class="perk-dot">✓</div>Custom growth roadmap — no templates</div>
+     <div class="perk"><div class="perk-dot">✓</div>No commitment. No agency jargon.</div>
+     <div class="perk"><div class="perk-dot">✓</div>Response within 4 business hours</div>
     </div>
    </div>
-   <div class="rv2">
-    <form class="lead-form" id="lf">
-     <h3>Book Your Free Call</h3>
-     <p class="fsub">We'll be in touch within 24 hours.</p>
-     <div class="field"><label>Name *</label><input required placeholder="Your full name"></div>
-     <div class="field"><label>Email *</label><input type="email" required placeholder="you@company.com"></div>
-     <div class="field"><label>Phone *</label><input type="tel" required placeholder="+91 XXXXX XXXXX"></div>
-     <div class="field"><label>What do you need?</label>
-      <select>
-       <option>SEO Services</option><option>Google Ads Management</option>
-       <option>WhatsApp Automation</option><option>GEO / AI Search</option>
-       <option>White Label SEO</option><option>Web Development</option>
-       <option>AI Chatbot / n8n</option><option>Not sure yet</option>
-      </select>
-     </div>
-     <button type="submit" class="btn btn-o" style="width:100%;justify-content:center">Book My Free Strategy Call</button>
-     <div class="submsg" id="sm">✓ Thank you! We'll call you within 24 hours.</div>
-    </form>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- ════════════════ FAQ ════════════════ -->
-<section class="faq-section">
- <div class="wrap">
-  <div class="sec-h rv">
-   <h2>Frequently Asked Questions</h2>
-  </div>
-  <div class="faq-wrap">
-   <!-- Left column -->
-   <div class="faq-col">
-    <div class="fi"><button class="fi-q">Do you work with both businesses and agencies?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We serve direct business clients with SEO, ads, web and automation, and we act as a white-label fulfilment partner for agencies across India — fully under your brand, with NDA-backed confidentiality.</div></div>
-    <div class="fi"><button class="fi-q">What is GEO and why does it matter now?<span class="fi-icon">+</span></button><div class="fi-a">Generative Engine Optimization makes your brand the source that AI engines like ChatGPT, Gemini and Perplexity cite when answering questions. As AI-powered search grows, GEO is becoming as important as traditional SEO.</div></div>
-    <div class="fi"><button class="fi-q">How fast can I see results?<span class="fi-icon">+</span></button><div class="fi-a">PPC and WhatsApp automation can show results within weeks. SEO and GEO typically compound over 3–6 months as authority builds. We set clear, honest expectations from day one — no false promises.</div></div>
-   </div>
-   <!-- Right column -->
-   <div class="faq-col">
-    <div class="fi"><button class="fi-q">Will you ever contact my clients?<span class="fi-icon">+</span></button><div class="fi-a">Never. Our white-label engagement is NDA-backed. We never contact, pitch, or poach your clients under any circumstances. Your client relationships are always, entirely yours.</div></div>
-    <div class="fi"><button class="fi-q">Do you offer custom packages?<span class="fi-icon">+</span></button><div class="fi-a">Yes. We don't do off-the-shelf. Every engagement starts with a strategy call where we understand your goals, then propose a tailored scope and pricing. Book your free call to get started.</div></div>
-    <div class="fi"><button class="fi-q">What industries do you specialise in?<span class="fi-icon">+</span></button><div class="fi-a">We work across B2B services, SaaS, manufacturing, real estate, education, and e-commerce. Our strategies are always tailored to your specific audience, sales cycle, and competition landscape.</div></div>
+   <div class="lead-form">
+    <h3>Get Your Free Strategy Call</h3>
+    <p class="fsub">Takes 60 seconds. We'll do the heavy lifting.</p>
+    <div class="field"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+    <div class="field"><label>Business Email</label><input type="email" placeholder="you@company.com"></div>
+    <div class="field"><label>Mobile Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+    <div class="field"><label>What do you need help with?</label>
+     <select>
+      <option>SEO Services</option><option>Google Ads Management</option>
+      <option>WhatsApp Automation</option><option>GEO / AI Search</option>
+      <option>White Label SEO</option><option>Web Development</option>
+      <option>AI Chatbot / n8n</option><option>Not sure yet</option>
+     </select>
+    </div>
+    <button class="btn btn-o" style="width:100%;justify-content:center;font-size:15px;padding:15px;" onclick="this.previousElementSibling&&(document.querySelector('.submsg').style.display='block');">🚀 Get Free Strategy Call</button>
+    <div class="submsg">✅ Got it! We'll reach out within 4 business hours.</div>
    </div>
   </div>
  </div>
 </section>
 
 <!-- ════════════════ FOOTER ════════════════ -->
-<footer>
- <div class="wrap">
-  <div class="footer-main">
-   <div class="fg">
-    <div>
-     <a href="/">
-      <img src="clickdecoded.png" alt="Click Decoded" style="height:38px;width:auto;display:block;filter:brightness(0) invert(1);">
-     </a>
-     <p class="fb-desc">Decoding growth through SEO, digital marketing, and AI automation. India's trusted B2B growth partner.</p>
-     <div class="socials">
-      <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">IG</a>
-      <a href="#" aria-label="X">𝕏</a><a href="#" aria-label="YouTube">YT</a>
-     </div>
-    </div>
-    <div><h4>Services</h4><div class="fl"><a href="#">SEO Services</a><a href="#">Digital Marketing</a><a href="#">Web Development</a><a href="#">AI & Automation</a><a href="#">GEO / AI Search</a><a href="#">White Label SEO</a></div></div>
-    <div><h4>Company</h4><div class="fl"><a href="#">About Us</a><a href="#">Case Studies</a><a href="#">Blog</a><a href="#">Contact</a><a href="#">Careers</a></div></div>
-    <div><h4>Contact</h4><div class="fc"><a href="mailto:hello@clickdecoded.com">📧 hello@clickdecoded.com</a><a href="tel:+91XXXXXXXXXX">📞 +91 XXXXX XXXXX</a><a href="#">📍 Bhopal, Madhya Pradesh</a><a href="#">💬 WhatsApp Us</a></div></div>
-   </div>
-  </div>
-  <div class="footer-areas"><b>Service Areas:</b> <a href="#">Bhopal</a>·<a href="#">Indore</a>·<a href="#">Dewas</a>·<a href="#">Sehore</a>·<a href="#">Raisen</a>·<a href="#">Itarsi</a>·<a href="#">Vidisha</a>·<a href="#">Bina</a>·<a href="#">Jhansi</a>·<a href="#">Sagar</a>·<a href="#">Gwalior</a></div>
-  <div class="footer-bottom">
-   <div>© 2026 Click Decoded. All rights reserved. · <a href="#">Privacy Policy</a> · <a href="#">Terms</a></div>
-   <div>Click Decoded is a brand of Aharnish Infotech Private Limited © 2014–2026.</div>
-  </div>
- </div>
-</footer>
+<div id="cd-footer"></div>
+<script src="components/footer.js"></script>
 
 <script>
-/* ─ Hamburger ─ */
-const hb=document.getElementById('hb'),mn=document.getElementById('mnav');
-hb.onclick=()=>{hb.classList.toggle('x');mn.classList.toggle('on');document.body.style.overflow=mn.classList.contains('on')?'hidden':'';};
-
-/* ─ Mobile accordion ─ */
-document.querySelectorAll('.ma>button').forEach(b=>{
-  b.onclick=()=>{
-    const a=b.parentElement,isOpen=a.classList.contains('on');
-    document.querySelectorAll('.ma').forEach(x=>x.classList.remove('on'));
-    document.querySelectorAll('.ma>button span').forEach(s=>s&&(s.textContent='+'));
-    if(!isOpen){a.classList.add('on');const s=b.querySelector('span');if(s)s.textContent='−';}
-  };
-});
-
-/* ─ Sticky header ─ */
-const hdr=document.getElementById('hdr');
-window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
-
-/* ─ Tabs ─ */
-document.querySelectorAll('.tb').forEach((b,i)=>{
-  b.onclick=()=>{
-    document.querySelectorAll('.tb').forEach(x=>x.classList.remove('on'));
-    document.querySelectorAll('.tp').forEach(x=>x.classList.remove('on'));
-    b.classList.add('on');
-    document.querySelectorAll('.tp')[i].classList.add('on');
-  };
-});
-
-/* ─ FAQ ─ */
-document.querySelectorAll('.fi').forEach(item=>{
-  item.querySelector('.fi-q').onclick=()=>{
-    const open=item.classList.contains('on');
-    document.querySelectorAll('.fi').forEach(x=>x.classList.remove('on'));
-    if(!open)item.classList.add('on');
-  };
-});
-
-/* ─ Form ─ */
-document.getElementById('lf').onsubmit=e=>{
-  e.preventDefault();
-  document.getElementById('sm').style.display='block';
-  e.target.querySelector('button[type=submit]').textContent='Submitted ✓';
-  e.target.querySelector('button[type=submit]').disabled=true;
-};
-
-/* ─ Scroll reveal ─ */
-const obs=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
-},{threshold:.1});
+// Scroll reveal
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.1});
 document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
 
-/* ─ Count-up ─ */
-function countUp(){
-  document.querySelectorAll('.count:not([data-done])').forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight){
-      el.dataset.done='1';
-      const t=+el.dataset.t,s=el.dataset.s||'';
-      let c=0;const step=Math.ceil(t/50);
-      const iv=setInterval(()=>{c=Math.min(c+step,t);el.textContent=c+s;if(c>=t)clearInterval(iv);},28);
+// Counter animation
+function animateCount(el){
+  const t=+el.dataset.t,s=el.dataset.s||'';
+  if(t===0){el.textContent='0';return;}
+  const dur=1800;let start=null;
+  const step=ts=>{
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1);
+    el.textContent=Math.round((1-Math.pow(1-p,4))*t)+s;
+    if(p<1)requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const cobs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting&&!x.target.dataset.done){
+      x.target.dataset.done=1;
+      animateCount(x.target);
     }
   });
-}
-window.addEventListener('scroll',countUp,{passive:true});
-countUp();
+},{threshold:.4});
+document.querySelectorAll('.count').forEach(el=>cobs.observe(el));
 
-/* ─ Scroll Hero ─ */
+// Tab switcher
+document.querySelectorAll('.tb').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tb').forEach(t=>t.classList.remove('on'));
+    document.querySelectorAll('.tp').forEach(p=>p.classList.remove('on'));
+    b.classList.add('on');
+    const tp=document.querySelectorAll('.tp')[+b.dataset.i];
+    if(tp)tp.classList.add('on');
+  };
+});
+
+// FAQ accordion
+document.querySelectorAll('.fi').forEach(item=>{
+  item.querySelector('.fi-q').onclick=()=>{
+    const on=item.classList.contains('on');
+    document.querySelectorAll('.fi').forEach(f=>f.classList.remove('on'));
+    if(!on)item.classList.add('on');
+  };
+});
+
+// Hero slider
 (function(){
-  const wrap=document.querySelector('.scroll-hero-wrap');
-  if(!wrap)return;
   const slides=document.querySelectorAll('.sh-slide');
   const panels=document.querySelectorAll('.sh-panel');
   const dots=document.querySelectorAll('.sh-dot');
-  const TOTAL=slides.length;
-  let current=0,animating=false;
-
-  /* KPI count-up for a slide */
-  function animateKPIs(slide){
-    slide.querySelectorAll('.sh-kpi-val[data-val]').forEach(el=>{
-      const raw=el.dataset.val;
-      const num=parseFloat(raw);
-      const suffix=raw.replace(/[\d.]/g,'');
-      let start=null;
-      const dur=800;
-      function step(ts){
-        if(!start)start=ts;
-        const p=Math.min((ts-start)/dur,1);
-        const ease=1-Math.pow(1-p,3); // ease-out cubic
-        const val=num*ease;
-        el.textContent=(Number.isInteger(num)?Math.round(val):val.toFixed(1))+suffix;
-        if(p<1)requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    });
-  }
-
-  function goTo(idx){
-    if(idx===current||animating)return;
-    animating=true;
-
-    // Exit current
-    slides[current].classList.add('exit');
-    panels[current].classList.add('exit');
-    slides[current].classList.remove('active');
-    panels[current].classList.remove('active');
-    dots[current].classList.remove('active');
-
-    const prev=current;
-    current=idx;
-
+  if(!slides.length)return;
+  let cur=0,timer;
+  function go(i){
+    // Left: slide text
+    slides[cur].classList.remove('active');slides[cur].classList.add('exit');
+    dots[cur]&&dots[cur].classList.remove('active');
+    // Right: card panel
+    panels[cur]&&panels[cur].classList.remove('active');
+    panels[cur]&&panels[cur].classList.add('exit');
     setTimeout(()=>{
-      slides[prev].classList.remove('exit');
-      panels[prev].classList.remove('exit');
-      // Enter new
-      slides[current].classList.add('active');
-      panels[current].classList.add('active');
-      dots[current].classList.add('active');
-      animateKPIs(slides[current]);
-      setTimeout(()=>animating=false,600);
-    },120);
+      slides[cur]&&slides[cur].classList.remove('exit');
+      panels[cur]&&panels[cur].classList.remove('exit');
+    },700);
+    cur=i;
+    slides[cur].classList.add('active');
+    dots[cur]&&dots[cur].classList.add('active');
+    panels[cur]&&panels[cur].classList.add('active');
   }
-
-  // Init first slide KPIs
-  animateKPIs(slides[0]);
-
-  // Scroll-driven
-  function onScroll(){
-    const rect=wrap.getBoundingClientRect();
-    const wrapH=wrap.offsetHeight;
-    const viewH=window.innerHeight;
-    const scrolled=Math.max(0,-rect.top);
-    const scrollable=wrapH-viewH;
-    if(scrollable<=0)return;
-    const progress=Math.min(1,scrolled/scrollable);
-    const idx=Math.min(TOTAL-1,Math.floor(progress*TOTAL));
-    goTo(idx);
-  }
-  window.addEventListener('scroll',onScroll,{passive:true});
-
-  // Dot click → smooth scroll
-  dots.forEach((d,i)=>d.addEventListener('click',()=>{
-    const wrapH=wrap.offsetHeight;
-    const viewH=window.innerHeight;
-    const scrollable=wrapH-viewH;
-    const target=wrap.offsetTop+(i/TOTAL)*scrollable+4;
-    window.scrollTo({top:target,behavior:'smooth'});
-  }));
-
-  // Mouse parallax on card depth wrapper
-  const right=document.querySelector('.sh-right');
-  if(right){
-    right.addEventListener('mousemove',e=>{
-      const depth=right.querySelector('.sh-panel.active .sh-card-depth');
-      if(!depth)return;
-      const r=right.getBoundingClientRect();
-      const x=((e.clientX-r.left)/r.width-.5)*14;
-      const y=((e.clientY-r.top)/r.height-.5)*-10;
-      depth.style.transform=`perspective(900px) rotateY(${x}deg) rotateX(${y}deg) translateY(-6px)`;
-    });
-    right.addEventListener('mouseleave',()=>{
-      const depth=right.querySelector('.sh-panel.active .sh-card-depth');
-      if(depth)depth.style.transform='';
-    });
-  }
+  function next(){go((cur+1)%slides.length);}
+  slides[0].classList.add('active');
+  dots[0]&&dots[0].classList.add('active');
+  panels[0]&&panels[0].classList.add('active');
+  timer=setInterval(next,4000);
+  dots.forEach((d,i)=>d.onclick=()=>{clearInterval(timer);go(i);timer=setInterval(next,4000);});
 })();
 </script>
 </body>
