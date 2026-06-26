@@ -109,7 +109,7 @@
     <a href="index.html"><img src="clickdecoded.png" alt="Click Decoded" style="height:36px;width:auto;"></a>
     <button id="mnav-close" style="background:none;border:none;font-size:24px;cursor:pointer;color:#2A4573;" aria-label="Close menu">✕</button>
   </div>
-  <div class="ma"><button>Home</button></div>
+  <div class="ma"><a href="index.html" style="display:block;padding:15px 0;font-size:15px;font-weight:600;color:var(--n);">Home</a></div>
   <div class="ma"><button>Services <span>+</span></button>
     <div class="ms">
       <h6>SEO</h6>
@@ -166,8 +166,12 @@
       <a href="whitelabel-seo.html">Become a Partner</a>
     </div>
   </div>
-  <div style="margin-top:22px;">
+  <div style="margin-top:22px;display:flex;flex-direction:column;gap:10px;">
     <a href="contact.html" class="btn btn-o" style="width:100%;justify-content:center;display:flex;">🚀 Get Free Strategy Call</a>
+    <div style="display:flex;gap:10px;">
+      <a href="tel:+919407000101" class="btn" style="flex:1;justify-content:center;background:#f1f5f9;color:#2A4573;font-size:13px;padding:11px 16px;">📞 Call Now</a>
+      <a href="https://wa.me/919407000101" target="_blank" rel="noopener" class="btn btn-wa" style="flex:1;justify-content:center;font-size:13px;padding:11px 16px;">💬 WhatsApp</a>
+    </div>
   </div>
 </div>
 `;
@@ -175,6 +179,31 @@
   // Inject HTML
   const el = document.getElementById('cd-header');
   if (el) el.outerHTML = H;
+
+  // Inject responsive topbar CSS (applies to every page via header.js)
+  const mobileStyle = document.createElement('style');
+  mobileStyle.textContent = `
+    @media(max-width:768px){
+      .topbar-inner{padding:0 16px;}
+      .topbar-left .topbar-item:last-child{display:none;}
+      .topbar-left a{font-size:11px;}
+      .tb-btn{font-size:10.5px;padding:4px 9px;gap:4px;}
+    }
+    @media(max-width:560px){
+      .topbar-left{display:none;}
+      .topbar-inner{justify-content:flex-end;}
+      .topbar{height:36px;}
+    }
+    @media(max-width:400px){
+      .topbar{height:34px;}
+      .tb-btn{font-size:10px;padding:4px 8px;gap:3px;}
+    }
+    @media(max-width:900px){
+      .hb{display:flex;}
+      .dmenu,.navcta .btn-o{display:none;}
+    }
+  `;
+  document.head.appendChild(mobileStyle);
 
   // Active page highlight
   const page = (window.location.pathname.split('/').pop() || 'index.html');

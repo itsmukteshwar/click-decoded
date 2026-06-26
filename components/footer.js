@@ -69,7 +69,7 @@
     </div>
     <div class="footer-areas">
       <b>Areas:</b>
-      <a href="#">Bhopal</a> · <a href="#">Indore</a> · <a href="#">Dewas</a> · <a href="#">Gwalior</a> · <a href="#">Raipur</a> · <a href="#">Nagpur</a> · <a href="#">Pune</a> · <a href="#">Delhi NCR</a> · <a href="#">Mumbai</a> · <a href="#">Bangalore</a>
+      <a href="service-areas.html#bhopal">Bhopal</a> · <a href="service-areas.html#indore">Indore</a> · <a href="service-areas.html#dewas">Dewas</a> · <a href="service-areas.html#gwalior">Gwalior</a> · <a href="service-areas.html#raipur">Raipur</a> · <a href="service-areas.html#nagpur">Nagpur</a> · <a href="service-areas.html#pune">Pune</a> · <a href="service-areas.html#delhi-ncr">Delhi NCR</a> · <a href="service-areas.html#mumbai">Mumbai</a> · <a href="service-areas.html#bangalore">Bangalore</a>
     </div>
     <div class="footer-bottom">
       <div>© ${year} Click Decoded. All rights reserved. · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms & Conditions</a> · <a href="cookie-policy.html">Cookie Policy</a></div>
