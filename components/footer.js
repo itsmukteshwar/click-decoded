@@ -24,8 +24,8 @@
           <h4>Web Development</h4>
           <div class="fl">
             <a href="web-development.html">Web Development</a>
-            <a href="wordpress-dev.html">WordPress Dev</a>
-            <a href="ecommerce-dev.html">E-Commerce Dev</a>
+            <a href="wordpress-development.html">WordPress Dev</a>
+            <a href="ecommerce-development.html">E-Commerce Dev</a>
             <a href="landing-pages.html">Landing Pages</a>
           </div>
         </div>
@@ -45,8 +45,8 @@
           <div class="fl">
             <a href="about.html">Know About Us</a>
             <a href="honest.html">The Honest Page</a>
-            <a href="clients.html">Our Work</a>
-            <a href="process.html">How We Work</a>
+            <a href="our-work.html">Our Work</a>
+            <a href="how-we-work.html">How We Work</a>
             <a href="#">Blog / Insights</a>
             <a href="careers.html">Careers</a>
             <a href="internship.html">Internship</a>

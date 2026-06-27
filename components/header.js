@@ -45,22 +45,22 @@
           <div class="mc">
             <h5>💻 Web Development</h5>
             <a href="web-development.html">Web Development</a>
-            <a href="wordpress-dev.html">WordPress Dev</a>
-            <a href="ecommerce-dev.html">E-Commerce Dev</a>
+            <a href="wordpress-development.html">WordPress Dev</a>
+            <a href="ecommerce-development.html">E-Commerce Dev</a>
             <a href="landing-pages.html">Landing Pages</a>
           </div>
           <div class="mc">
             <h5>🤖 AI &amp; Automation</h5>
             <a href="ai-automation.html">AI Automation</a>
             <a href="whatsapp-automation.html">WhatsApp Automation</a>
-            <a href="n8n-workflows.html">n8n Workflows</a>
-            <a href="ai-chatbot-dev.html">AI Chatbot Dev</a>
+            <a href="workflow-automation.html">n8n Workflows</a>
+            <a href="ai-chatbot-development.html">AI Chatbot Dev</a>
           </div>
           <div class="mc">
             <h5>🚀 GEO / AI Search</h5>
-            <a href="geo-services.html">GEO Services</a>
+            <a href="generative-engine-optimization.html">GEO Services</a>
             <a href="answer-engine-optimization.html">Answer Engine Opt</a>
-            <a href="llm-optimization.html">LLM Optimization</a>
+            <a href="ai-search-optimization.html">LLM Optimization</a>
             <a href="ai-brand-visibility.html">AI Brand Visibility</a>
           </div>
         </div>
@@ -70,7 +70,7 @@
         <div class="mega slim">
           <a href="whitelabel-seo.html">White Label SEO Services<small>Full SEO, resold under your brand</small></a>
           <a href="whitelabel-ppc.html">White Label PPC<small>Google &amp; Meta Ads reseller</small></a>
-          <a href="whitelabel-webdev.html">White Label Web Dev<small>WordPress &amp; WooCommerce</small></a>
+          <a href="whitelabel-web-development.html">White Label Web Dev<small>WordPress &amp; WooCommerce</small></a>
           <a href="whitelabel-geo.html">White Label GEO<small>AI-search visibility, resold</small></a>
           <a href="whitelabel-reporting.html">White Label Reporting<small>Branded client reports</small></a>
           <a href="whitelabel-ai.html">White Label AI &amp; Automation<small>n8n, chatbots &amp; workflows</small></a>
@@ -81,8 +81,8 @@
         <div class="mega slim">
           <a href="about.html">Know About Us<small>The team, the story &amp; the mission</small></a>
           <a href="honest.html">The Honest Page<small>No pitch. Just the plain truth.</small></a>
-          <a href="clients.html">Brands We've Worked With<small>Industries &amp; companies we've served</small></a>
-          <a href="process.html">How We Work<small>Our process, step by step</small></a>
+          <a href="our-work.html">Brands We've Worked With<small>Industries &amp; companies we've served</small></a>
+          <a href="how-we-work.html">How We Work<small>Our process, step by step</small></a>
         </div>
       </li>
       <li>
@@ -124,18 +124,18 @@
       <a href="#">Social Media</a>
       <h6>Web Development</h6>
       <a href="web-development.html">Web Development</a>
-      <a href="wordpress-dev.html">WordPress Dev</a>
-      <a href="ecommerce-dev.html">E-Commerce Dev</a>
+      <a href="wordpress-development.html">WordPress Dev</a>
+      <a href="ecommerce-development.html">E-Commerce Dev</a>
       <a href="landing-pages.html">Landing Pages</a>
       <h6>AI &amp; Automation</h6>
       <a href="ai-automation.html">AI Automation</a>
       <a href="whatsapp-automation.html">WhatsApp Automation</a>
-      <a href="n8n-workflows.html">n8n Workflows</a>
-      <a href="ai-chatbot-dev.html">AI Chatbot Dev</a>
+      <a href="workflow-automation.html">n8n Workflows</a>
+      <a href="ai-chatbot-development.html">AI Chatbot Dev</a>
       <h6>GEO / AI Search</h6>
-      <a href="geo-services.html">GEO Services</a>
+      <a href="generative-engine-optimization.html">GEO Services</a>
       <a href="answer-engine-optimization.html">Answer Engine Opt</a>
-      <a href="llm-optimization.html">LLM Optimization</a>
+      <a href="ai-search-optimization.html">LLM Optimization</a>
       <a href="ai-brand-visibility.html">AI Brand Visibility</a>
     </div>
   </div>
@@ -143,7 +143,7 @@
     <div class="ms">
       <a href="whitelabel-seo.html">White Label SEO Services</a>
       <a href="whitelabel-ppc.html">White Label PPC</a>
-      <a href="whitelabel-webdev.html">White Label Web Dev</a>
+      <a href="whitelabel-web-development.html">White Label Web Dev</a>
       <a href="whitelabel-geo.html">White Label GEO</a>
       <a href="whitelabel-reporting.html">White Label Reporting</a>
       <a href="whitelabel-ai.html">White Label AI &amp; Automation</a>
@@ -153,8 +153,8 @@
     <div class="ms">
       <a href="about.html">Know About Us</a>
       <a href="honest.html">The Honest Page</a>
-      <a href="clients.html">Brands We've Worked With</a>
-      <a href="process.html">How We Work</a>
+      <a href="our-work.html">Brands We've Worked With</a>
+      <a href="how-we-work.html">How We Work</a>
     </div>
   </div>
   <div class="ma"><button>Contact <span>+</span></button>
@@ -205,38 +205,4 @@
   `;
   document.head.appendChild(mobileStyle);
 
-  // Active page highlight
-  const page = (window.location.pathname.split('/').pop() || 'index.html');
-  const activeLink = document.querySelector('#hdr a[href="' + page + '"]');
-  if (activeLink) {
-    activeLink.style.color = 'var(--o, #EE7E1A)';
-    activeLink.style.fontWeight = '800';
-  }
-
-  // Sticky header
-  const hdr = document.getElementById('hdr');
-  if (hdr) {
-    window.addEventListener('scroll', function() {
-      hdr.classList.toggle('up', window.scrollY > 40);
-    }, { passive: true });
-  }
-
-  // Mobile menu open/close
-  const hb = document.getElementById('hb');
-  const mn = document.getElementById('mnav');
-  const mc = document.getElementById('mnav-close');
-  function openMnav() { mn.classList.add('on'); document.body.style.overflow = 'hidden'; }
-  function closeMnav() { mn.classList.remove('on'); document.body.style.overflow = ''; }
-  if (hb) hb.addEventListener('click', openMnav);
-  if (mc) mc.addEventListener('click', closeMnav);
-
-  // Mobile accordion
-  document.querySelectorAll('.ma > button').forEach(function(b) {
-    b.addEventListener('click', function() {
-      const item = b.parentElement;
-      const isOpen = item.classList.contains('on');
-      document.querySelectorAll('.ma').forEach(function(x) { x.classList.remove('on'); });
-      if (!isOpen) item.classList.add('on');
-    });
-  });
 })();
