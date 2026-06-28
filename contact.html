@@ -88,6 +88,28 @@
 .form-group input::placeholder,.form-group textarea::placeholder{color:#94a3b8;}
 .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer;}
 .form-group textarea{resize:vertical;min-height:110px;line-height:1.6;}
+/* PHONE ROW — custom flag picker */
+.phone-row{display:flex;position:relative;}
+.phone-trigger{display:flex;align-items:center;gap:7px;padding:0 12px;height:48px;background:#f8fafc;border:1.5px solid var(--bdr);border-right:none;border-radius:10px 0 0 10px;cursor:pointer;white-space:nowrap;font-size:13.5px;font-weight:600;color:var(--n);transition:.18s;flex-shrink:0;user-select:none;}
+.phone-trigger:hover{background:#eef2f8;}
+.phone-trigger img{width:22px;height:15px;border-radius:2px;object-fit:cover;}
+.phone-trigger svg{opacity:.45;margin-left:2px;}
+.phone-row input[type=tel]{border-radius:0 10px 10px 0;border:1.5px solid var(--bdr);flex:1;padding:12px 16px;font-size:14px;font-family:'Inter',sans-serif;color:var(--body);outline:none;transition:.18s;}
+.phone-row input[type=tel]:focus{border-color:var(--o);box-shadow:0 0 0 3px rgba(238,126,26,.08);}
+.phone-row.open .phone-trigger{border-color:var(--o);background:#fff;}
+/* Dropdown */
+.phone-drop{display:none;position:absolute;top:calc(100% + 6px);left:0;width:300px;background:#fff;border:1.5px solid var(--bdr);border-radius:14px;box-shadow:0 16px 48px rgba(13,27,42,.13);z-index:999;overflow:hidden;}
+.phone-row.open .phone-drop{display:block;}
+.phone-drop-search{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1.5px solid var(--bdr);}
+.phone-drop-search input{border:none;outline:none;font-size:13px;font-family:'Inter',sans-serif;color:var(--body);width:100%;background:transparent;}
+.phone-drop-search input::placeholder{color:#94a3b8;}
+.phone-drop-list{max-height:220px;overflow-y:auto;padding:6px;}
+.phone-opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;transition:.12s;}
+.phone-opt:hover,.phone-opt.selected{background:var(--bg);}
+.phone-opt img{width:22px;height:15px;border-radius:2px;object-fit:cover;flex-shrink:0;}
+.phone-opt-name{font-size:13px;color:var(--body);flex:1;}
+.phone-opt-code{font-size:12px;font-weight:600;color:var(--s);}
+#phone-dial-hidden{display:none;}
 .form-submit{width:100%;padding:15px;background:var(--o);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:.18s;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:8px;}
 .form-submit:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(238,126,26,.3);}
 .form-note{text-align:center;font-size:12px;color:var(--s);margin-top:14px;line-height:1.6;}
@@ -245,7 +267,22 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
             </div>
             <div class="form-group">
               <label>Phone / WhatsApp <span>*</span></label>
-              <input type="tel" name="phone" placeholder="+91 98765 00000" required>
+              <div class="phone-row" id="phone-row">
+                <button type="button" class="phone-trigger" id="phone-trigger" aria-haspopup="listbox">
+                  <img id="phone-flag" src="https://flagcdn.com/24x18/in.png" alt="India">
+                  <span id="phone-code-display">+91</span>
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                <div class="phone-drop" id="phone-drop" role="listbox">
+                  <div class="phone-drop-search">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="5" stroke="#94a3b8" stroke-width="1.4"/><path d="M10 10l3 3" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    <input type="text" id="phone-search" placeholder="Search country..." autocomplete="off">
+                  </div>
+                  <div class="phone-drop-list" id="phone-drop-list"></div>
+                </div>
+                <input type="hidden" id="phone-dial-hidden" name="phone-dial" value="+91">
+                <input type="tel" id="phone-input" name="phone" placeholder="98765 00000" required>
+              </div>
             </div>
           </div>
           <div class="form-group">
@@ -486,56 +523,65 @@ const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll'
 
 /* ── Live Open / Closed Indicator ── */
 (function(){
-  const now = new Date();
-  const ist = new Date(now.toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
-  const day = ist.getDay();   // 0=Sun, 1=Mon…6=Sat
-  const h   = ist.getHours();
-  const m   = ist.getMinutes();
-  const mins = h * 60 + m;
+  try {
+    /* Reliable IST detection via Intl.DateTimeFormat */
+    const now  = new Date();
+    const parts = new Intl.DateTimeFormat('en-US',{
+      timeZone:'Asia/Kolkata',
+      weekday:'short', hour:'numeric', minute:'numeric', hour12:false
+    }).formatToParts(now);
+    const get  = t => parts.find(p => p.type === t).value;
+    const dMap = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    const day  = dMap[get('weekday')];
+    const h    = parseInt(get('hour'),10);
+    const m    = parseInt(get('minute'),10);
+    const mins = h * 60 + m;
 
-  let isOpen = false;
-  let closesAt = '';
-  let nextOpen = '';
+    let isOpen  = false;
+    let nextOpen = '';
 
-  if(day >= 1 && day <= 5){          // Mon–Fri
-    isOpen = mins >= 600 && mins < 1140;  // 10:00–19:00
-    closesAt = '7:00 PM';
-    nextOpen = day === 5 ? 'tomorrow (Saturday) at 10:00 AM' : 'tomorrow at 10:00 AM';
-  } else if(day === 6){              // Saturday
-    isOpen = mins >= 600 && mins < 1020;  // 10:00–17:00
-    closesAt = '5:00 PM';
-    nextOpen = 'Monday at 10:00 AM';
-  } else {                           // Sunday
-    isOpen = false;
-    nextOpen = 'Monday at 10:00 AM';
-  }
+    if(day >= 1 && day <= 5){           // Mon–Fri
+      isOpen   = mins >= 600 && mins < 1140;  // 10:00–19:00
+      nextOpen = day === 5 ? 'Saturday at 10:00 AM' : 'tomorrow at 10:00 AM';
+    } else if(day === 6){               // Saturday
+      isOpen   = mins >= 600 && mins < 1020;  // 10:00–17:00
+      nextOpen = 'Monday at 10:00 AM';
+    } else {                            // Sunday
+      isOpen   = false;
+      nextOpen = 'Monday at 10:00 AM';
+    }
 
-  const pill   = document.getElementById('live-status');
-  const banner = document.getElementById('live-banner');
-  if(!pill || !banner) return;
+    /* Weekend window: Sat after 5PM → all Sunday → Mon before 10AM */
+    const isWeekendWindow = (day === 6 && !isOpen) || day === 0 || (day === 1 && mins < 600);
 
-  if(isOpen){
-    pill.style.cssText  += "background:rgba(16,185,129,.12);color:#059669;border:1px solid rgba(16,185,129,.2);";
-    pill.innerHTML = '<span style="width:8px;height:8px;border-radius:50%;background:#10b981;display:inline-block;animation:pulse-g 1.6s ease-in-out infinite;"></span> We’re Open';
-    banner.style.cssText += "background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.18);color:#065f46;";
-    banner.innerHTML = "🟢 <strong>We’re in the office right now.</strong> Expect a reply within a few hours — or ping us on WhatsApp for instant response.";
-  } else if(day === 0){
-    pill.style.cssText  += "background:rgba(99,102,241,.08);color:#6366f1;border:1px solid rgba(99,102,241,.18);";
-    pill.innerHTML = '<span style="width:8px;height:8px;border-radius:50%;background:#6366f1;display:inline-block;animation:pulse-g 1.6s ease-in-out infinite;"></span> Bots Active';
-    banner.style.cssText += "background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.15);color:#3730a3;";
-    banner.innerHTML = "🤖 <strong>The humans are resting — but our AI never stops.</strong> Your message is being logged, your website is being crawled, and your competitors are being watched. Back Monday 10 AM with fresh insights. Drop a message anyway — it gets seen first.";
-  } else {
-    pill.style.cssText  += "background:rgba(239,68,68,.08);color:#dc2626;border:1px solid rgba(239,68,68,.15);";
-    pill.innerHTML = '<span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Closed';
-    banner.style.cssText += "background:rgba(42,69,115,.05);border:1px solid var(--bdr);color:var(--m);";
-    banner.innerHTML = "🔴 <strong>We’re currently closed.</strong> We’ll be back " + nextOpen + ". Leave a message or WhatsApp us — we’ll reply first thing.";
-  }
+    const pill   = document.getElementById('live-status');
+    const banner = document.getElementById('live-banner');
+    if(!pill || !banner) return;
 
-  if(!document.getElementById('pulse-style')){
-    const s=document.createElement('style');s.id='pulse-style';
-    s.textContent='@keyframes pulse-g{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.4);}50%{box-shadow:0 0 0 5px rgba(16,185,129,0);}}';
-    document.head.appendChild(s);
-  }
+    if(isOpen){
+      pill.style.cssText   += "background:rgba(16,185,129,.12);color:#059669;border:1px solid rgba(16,185,129,.2);";
+      pill.innerHTML        = '<span style="width:8px;height:8px;border-radius:50%;background:#10b981;display:inline-block;animation:pulse-g 1.6s ease-in-out infinite;margin-right:4px;"></span>We\'re Open';
+      banner.style.cssText += "background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.18);color:#065f46;";
+      banner.innerHTML      = "🟢 <strong>We're in the office right now.</strong> Expect a reply within a few hours — or ping us on WhatsApp for instant response.";
+    } else if(isWeekendWindow){
+      pill.style.cssText   += "background:rgba(99,102,241,.08);color:#6366f1;border:1px solid rgba(99,102,241,.18);";
+      pill.innerHTML        = '<span style="width:8px;height:8px;border-radius:50%;background:#6366f1;display:inline-block;animation:pulse-g 1.6s ease-in-out infinite;margin-right:4px;"></span>Bots Active';
+      banner.style.cssText += "background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.15);color:#3730a3;";
+      banner.innerHTML      = "🤖 <strong>The humans are resting — but our AI never stops.</strong> Your message is being logged, your website is being crawled, and your competitors are being watched. Back Monday 10 AM with fresh insights. Drop a message anyway — it gets seen first.";
+    } else {
+      pill.style.cssText   += "background:rgba(245,158,11,.08);color:#d97706;border:1px solid rgba(245,158,11,.18);";
+      pill.innerHTML        = '<span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;animation:pulse-g 1.6s ease-in-out infinite;margin-right:4px;"></span>Bots on Duty';
+      banner.style.cssText += "background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.15);color:#92400e;";
+      banner.innerHTML      = "🤖 <strong>We're off for the day — but our bots are regularly doing the heavy lifting.</strong> Drop a message or WhatsApp us. We'll pick it up first thing " + nextOpen + " with your brief already prepped.";
+    }
+
+    if(!document.getElementById('pulse-style')){
+      const s = document.createElement('style');
+      s.id = 'pulse-style';
+      s.textContent = '@keyframes pulse-g{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.4);}50%{box-shadow:0 0 0 5px rgba(16,185,129,0);}}';
+      document.head.appendChild(s);
+    }
+  } catch(e){ console.warn('Live status error:',e); }
 })();
 
 /* ── Form Submit Handler ── */
@@ -546,9 +592,10 @@ if(form){
     e.preventDefault();
     const name=form.name.value.trim();
     const email=form.email.value.trim();
-    const phone=form.phone.value.trim();
+    const dialEl=document.getElementById('phone-dial-hidden');
+    const phoneVal=((dialEl?dialEl.value:'+91')+' '+form.phone.value.trim()).trim();
     const service=form.service.value;
-    if(!name||!email||!phone||!service){
+    if(!name||!email||!phoneVal||!service){
       const firstEmpty=[...form.querySelectorAll('input[required],select[required]')].find(el=>!el.value.trim());
       if(firstEmpty){firstEmpty.focus();firstEmpty.style.borderColor='#ef4444';setTimeout(()=>firstEmpty.style.borderColor='',2000);}
       return;
@@ -558,6 +605,90 @@ if(form){
   });
   form.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',()=>el.style.borderColor=''));
 }
+
+/* ── Phone Flag Picker ── */
+(function(){
+  const COUNTRIES=[
+    {code:'in',dial:'+91',name:'India'},
+    {code:'us',dial:'+1',name:'United States'},
+    {code:'gb',dial:'+44',name:'United Kingdom'},
+    {code:'ae',dial:'+971',name:'UAE'},
+    {code:'sg',dial:'+65',name:'Singapore'},
+    {code:'au',dial:'+61',name:'Australia'},
+    {code:'ca',dial:'+1',name:'Canada'},
+    {code:'my',dial:'+60',name:'Malaysia'},
+    {code:'nz',dial:'+64',name:'New Zealand'},
+    {code:'de',dial:'+49',name:'Germany'},
+    {code:'fr',dial:'+33',name:'France'},
+    {code:'it',dial:'+39',name:'Italy'},
+    {code:'es',dial:'+34',name:'Spain'},
+    {code:'nl',dial:'+31',name:'Netherlands'},
+    {code:'sa',dial:'+966',name:'Saudi Arabia'},
+    {code:'qa',dial:'+974',name:'Qatar'},
+    {code:'om',dial:'+968',name:'Oman'},
+    {code:'bh',dial:'+973',name:'Bahrain'},
+    {code:'kw',dial:'+965',name:'Kuwait'},
+    {code:'pk',dial:'+92',name:'Pakistan'},
+    {code:'bd',dial:'+880',name:'Bangladesh'},
+    {code:'lk',dial:'+94',name:'Sri Lanka'},
+    {code:'np',dial:'+977',name:'Nepal'},
+    {code:'za',dial:'+27',name:'South Africa'},
+    {code:'ng',dial:'+234',name:'Nigeria'},
+    {code:'ke',dial:'+254',name:'Kenya'},
+    {code:'br',dial:'+55',name:'Brazil'},
+    {code:'mx',dial:'+52',name:'Mexico'},
+    {code:'jp',dial:'+81',name:'Japan'},
+    {code:'kr',dial:'+82',name:'South Korea'},
+    {code:'cn',dial:'+86',name:'China'}
+  ];
+
+  const row=document.getElementById('phone-row');
+  const trigger=document.getElementById('phone-trigger');
+  const flag=document.getElementById('phone-flag');
+  const codeDisplay=document.getElementById('phone-code-display');
+  const dialHidden=document.getElementById('phone-dial-hidden');
+  const drop=document.getElementById('phone-drop');
+  const list=document.getElementById('phone-drop-list');
+  const search=document.getElementById('phone-search');
+  if(!trigger||!list)return;
+
+  function flagUrl(code){return 'https://flagcdn.com/24x18/'+code+'.png';}
+
+  function renderList(filter){
+    const q=(filter||'').toLowerCase();
+    list.innerHTML='';
+    COUNTRIES.filter(c=>!q||c.name.toLowerCase().includes(q)||c.dial.includes(q)).forEach(c=>{
+      const el=document.createElement('div');
+      el.className='phone-opt'+(c.code==='in'?' selected':'');
+      el.setAttribute('role','option');
+      el.innerHTML='<img src="'+flagUrl(c.code)+'" alt="'+c.name+'" loading="lazy"><span class="phone-opt-name">'+c.name+'</span><span class="phone-opt-code">'+c.dial+'</span>';
+      el.addEventListener('click',function(){
+        flag.src=flagUrl(c.code);
+        codeDisplay.textContent=c.dial;
+        dialHidden.value=c.dial;
+        drop.style.display='none';
+        list.querySelectorAll('.phone-opt').forEach(o=>o.classList.remove('selected'));
+        el.classList.add('selected');
+      });
+      list.appendChild(el);
+    });
+  }
+
+  renderList();
+
+  trigger.addEventListener('click',function(e){
+    e.stopPropagation();
+    const open=drop.style.display==='block';
+    drop.style.display=open?'none':'block';
+    if(!open){search.value='';renderList();search.focus();}
+  });
+
+  search.addEventListener('input',function(){renderList(this.value);});
+
+  document.addEventListener('click',function(e){
+    if(!row.contains(e.target)) drop.style.display='none';
+  });
+})();
 </script>
 </body>
 </html>

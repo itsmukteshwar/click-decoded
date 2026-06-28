@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0D1B2A; color: #e2e8f0; padding: 20px; font-size: 13px; }
+  h1 { font-size: 18px; font-weight: 800; color: #F59E0B; margin-bottom: 4px; letter-spacing: .5px; }
+  .subtitle { color: #64748b; font-size: 12px; margin-bottom: 16px; }
+  .legend { display: flex; gap: 20px; margin-bottom: 18px; flex-wrap: wrap; }
+  .leg { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #94a3b8; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-g { background: #22c55e; }
+  .dot-r { background: #ef4444; }
+  .dot-y { background: #f59e0b; }
+
+  .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+  .nav-item { background: #1a2e4a; border-radius: 10px; overflow: hidden; border: 1px solid #2d4a7a; }
+  .nav-head { padding: 10px 14px; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; }
+  .nav-head .label { display: flex; align-items: center; gap: 8px; }
+  .nav-head .icon { font-size: 16px; }
+  .nav-head .badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; }
+  .badge-new { background: rgba(239,68,68,.2); color: #ef4444; border: 1px solid rgba(239,68,68,.3); }
+  .badge-ok  { background: rgba(34,197,94,.15); color: #22c55e; border: 1px solid rgba(34,197,94,.2); }
+  .badge-partial { background: rgba(245,158,11,.15); color: #f59e0b; border: 1px solid rgba(245,158,11,.2); }
+  .chevron { color: #64748b; font-size: 12px; transition: transform .2s; }
+  .nav-item.open .chevron { transform: rotate(180deg); }
+
+  .nav-body { display: none; padding: 6px 0 10px; }
+  .nav-item.open .nav-body { display: block; }
+
+  .group-label { font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 1px; padding: 8px 14px 4px; }
+  .sub-item { display: flex; align-items: center; gap: 8px; padding: 5px 14px; font-size: 12px; color: #cbd5e1; }
+  .sub-item .si-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .si-exists { background: #22c55e; }
+  .si-new    { background: #ef4444; }
+  .si-partial{ background: #f59e0b; }
+  .sub-item .si-url { font-size: 10px; color: #475569; margin-left: auto; font-family: monospace; }
+  .sub-item .si-tag { font-size: 9px; padding: 1px 6px; border-radius: 10px; margin-left: 4px; flex-shrink: 0; }
+  .tag-new { background: rgba(239,68,68,.15); color: #f87171; }
+  .tag-phase2 { background: rgba(100,116,139,.15); color: #94a3b8; }
+
+  /* color per section */
+  .h-seo    { background: linear-gradient(90deg,#0f3460,#1a2e4a); border-bottom: 2px solid #2563eb; }
+  .h-paid   { background: linear-gradient(90deg,#2d1a0e,#1a2e4a); border-bottom: 2px solid #f59e0b; }
+  .h-ai     { background: linear-gradient(90deg,#0d2d2d,#1a2e4a); border-bottom: 2px solid #06b6d4; }
+  .h-geo    { background: linear-gradient(90deg,#1a0d3a,#1a2e4a); border-bottom: 2px solid #8b5cf6; }
+  .h-content{ background: linear-gradient(90deg,#1a2d0d,#1a2e4a); border-bottom: 2px solid #22c55e; }
+  .h-web    { background: linear-gradient(90deg,#1a1a0d,#1a2e4a); border-bottom: 2px solid #eab308; }
+  .h-ind    { background: linear-gradient(90deg,#2d0d1a,#1a2e4a); border-bottom: 2px solid #ec4899; }
+  .h-wl     { background: linear-gradient(90deg,#0d2d1a,#1a2e4a); border-bottom: 2px solid #10b981; }
+  .h-co     { background: linear-gradient(90deg,#1e1a0d,#1a2e4a); border-bottom: 2px solid #d97706; }
+
+  .summary { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 16px; }
+  .sum-card { background: #1a2e4a; border-radius: 8px; padding: 12px 14px; border: 1px solid #2d4a7a; }
+  .sum-num { font-size: 28px; font-weight: 900; margin-bottom: 2px; }
+  .sum-lbl { font-size: 11px; color: #64748b; }
+  .num-g { color: #22c55e; }
+  .num-r { color: #ef4444; }
+  .num-y { color: #f59e0b; }
+
+  .note { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.2); border-radius: 8px; padding: 10px 14px; margin-top: 14px; font-size: 12px; color: #fbbf24; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<h1>Click Decoded — Complete Nav Blueprint</h1>
+<p class="subtitle">9 top-level items · All services mapped · Updated with Content + AI + Industries inputs</p>
+
+<div class="legend">
+  <div class="leg"><div class="dot dot-g"></div> Page exists</div>
+  <div class="leg"><div class="dot dot-r"></div> New page needed</div>
+  <div class="leg"><div class="dot dot-y"></div> Phase 2 / placeholder</div>
+</div>
+
+<div class="nav-grid" id="navGrid"></div>
+
+<div class="summary" id="summary"></div>
+
+<div class="note" id="noteBox"></div>
+
+<script>
+const navData = [
+  {
+    id:'seo', label:'SEO', icon:'🔍', headClass:'h-seo', badge:'partial',
+    groups:[
+      { label:'Organic', items:[
+        { name:'SEO Services', url:'seo-services.html', status:'exists' },
+        { name:'Local SEO', url:'local-seo.html', status:'exists' },
+        { name:'Technical SEO Audit', url:'technical-seo-audit.html', status:'exists' },
+        { name:'E-Commerce SEO', url:'ecommerce-seo.html', status:'exists' },
+        { name:'Link Building', url:'link-building.html', status:'exists' },
+        { name:'Programmatic SEO', url:'programmatic-seo.html', status:'new' },
+        { name:'Google My Business (GMB)', url:'gmb-marketing.html', status:'new' },
+      ]},
+      { label:'CTA Strip', items:[
+        { name:'→ Free SEO Audit', url:'contact.html#audit', status:'exists' },
+      ]}
+    ]
+  },
+  {
+    id:'paid', label:'Paid Ads', icon:'💰', headClass:'h-paid', badge:'partial',
+    note:'Renamed from "Digital Marketing"',
+    groups:[
+      { label:'Ad Platforms', items:[
+        { name:'Google Ads', url:'google-ads.html', status:'exists' },
+        { name:'Meta Ads (FB + IG)', url:'meta-ads.html', status:'exists' },
+        { name:'YouTube Ads', url:'youtube-ads.html', status:'new' },
+        { name:'LinkedIn Ads', url:'linkedin-ads.html', status:'new' },
+        { name:'Shopping Ads', url:'shopping-ads.html', status:'new' },
+        { name:'Retargeting Campaigns', url:'retargeting.html', status:'new' },
+      ]}
+    ]
+  },
+  {
+    id:'ai', label:'AI & Automation', icon:'🤖', headClass:'h-ai', badge:'ok',
+    groups:[
+      { label:'Automation', items:[
+        { name:'AI Automation', url:'ai-automation.html', status:'exists' },
+        { name:'WhatsApp Automation', url:'whatsapp-automation.html', status:'exists' },
+        { name:'n8n Workflows', url:'workflow-automation.html', status:'exists' },
+        { name:'CRM & Lead Automation', url:'workflow-automation.html', status:'exists' },
+      ]},
+      { label:'AI Creative', items:[
+        { name:'AI Chatbot Development', url:'ai-chatbot-development.html', status:'exists' },
+        { name:'AI Ad Creatives', url:'ai-ad-creatives.html', status:'new' },
+        { name:'AI Content Generation', url:'ai-content.html', status:'new' },
+      ]}
+    ]
+  },
+  {
+    id:'geo', label:'GEO / AI Search', icon:'🚀', headClass:'h-geo', badge:'ok',
+    groups:[
+      { label:'AI Search Visibility', items:[
+        { name:'GEO Services', url:'generative-engine-optimization.html', status:'exists' },
+        { name:'Answer Engine Optimization', url:'answer-engine-optimization.html', status:'exists' },
+        { name:'LLM Optimization', url:'ai-search-optimization.html', status:'exists' },
+        { name:'AI Brand Visibility', url:'ai-brand-visibility.html', status:'exists' },
+      ]}
+    ]
+  },
+  {
+    id:'content', label:'Content', icon:'🎬', headClass:'h-content', badge:'new',
+    groups:[
+      { label:'Visual Production', items:[
+        { name:'Virtual Tour', url:'virtual-tour.html', status:'new' },
+        { name:'HD Photography', url:'hd-photography.html', status:'new' },
+        { name:'Product Photography', url:'product-photography.html', status:'new' },
+        { name:'Drone Video', url:'drone-video.html', status:'new' },
+        { name:'Influencer Video', url:'influencer-video.html', status:'new' },
+        { name:'AI Video Making', url:'ai-video.html', status:'new' },
+        { name:'Google Trusted Photography', url:'google-trusted-photography.html', status:'new' },
+      ]},
+      { label:'Content & Distribution', items:[
+        { name:'Email Marketing', url:'email-marketing.html', status:'new' },
+        { name:'WhatsApp Marketing', url:'whatsapp-marketing.html', status:'new' },
+        { name:'Blogging & Content Writing', url:'blogging.html', status:'new' },
+      ]}
+    ]
+  },
+  {
+    id:'web', label:'Web & Design', icon:'💻', headClass:'h-web', badge:'partial',
+    groups:[
+      { label:'Development', items:[
+        { name:'Web Development', url:'web-development.html', status:'exists' },
+        { name:'WordPress Dev', url:'wordpress-development.html', status:'exists' },
+        { name:'E-Commerce Dev', url:'ecommerce-development.html', status:'exists' },
+        { name:'Landing Pages', url:'landing-pages.html', status:'exists' },
+        { name:'UI/UX Design', url:'ui-ux.html', status:'new' },
+      ]}
+    ]
+  },
+  {
+    id:'ind', label:'Industries', icon:'🏢', headClass:'h-ind', badge:'new',
+    groups:[
+      { label:'Phase 1 — Build Now', items:[
+        { name:'Real Estate & Builders', url:'industry-real-estate.html', status:'new' },
+        { name:'Healthcare & Clinics', url:'industry-healthcare.html', status:'new' },
+        { name:'Education & EdTech', url:'industry-education.html', status:'new' },
+        { name:'E-Commerce & Retail', url:'industry-ecommerce.html', status:'new' },
+      ]},
+      { label:'Phase 2 — Template Fill', items:[
+        { name:'Manufacturing & Industrial', url:'industry-manufacturing.html', status:'phase2' },
+        { name:'IT Services & SaaS', url:'industry-it-saas.html', status:'phase2' },
+        { name:'Legal & CA Firms', url:'industry-legal.html', status:'phase2' },
+        { name:'Finance & NBFC', url:'industry-finance.html', status:'phase2' },
+        { name:'Hospitality & Travel', url:'industry-hospitality.html', status:'phase2' },
+        { name:'Automotive Dealers', url:'industry-automotive.html', status:'phase2' },
+        { name:'Restaurants & Food', url:'industry-restaurants.html', status:'phase2' },
+        { name:'Construction & Infra', url:'industry-construction.html', status:'phase2' },
+      ]}
+    ]
+  },
+  {
+    id:'wl', label:'White Label', icon:'🤝', headClass:'h-wl', badge:'ok',
+    groups:[
+      { label:'Reseller Services', items:[
+        { name:'White Label SEO', url:'whitelabel-seo.html', status:'exists' },
+        { name:'White Label PPC', url:'whitelabel-ppc.html', status:'exists' },
+        { name:'White Label Web Dev', url:'whitelabel-web-development.html', status:'exists' },
+        { name:'White Label GEO', url:'whitelabel-geo.html', status:'exists' },
+        { name:'White Label Reporting', url:'whitelabel-reporting.html', status:'exists' },
+        { name:'White Label AI & Automation', url:'whitelabel-ai.html', status:'exists' },
+      ]}
+    ]
+  },
+  {
+    id:'co', label:'Company', icon:'⚙️', headClass:'h-co', badge:'partial',
+    note:'Careers & Contact moved out of old "Contact" dropdown',
+    groups:[
+      { label:'About', items:[
+        { name:'About Us', url:'about.html', status:'exists' },
+        { name:'How We Work', url:'how-we-work.html', status:'exists' },
+        { name:'The Honest Page', url:'honest.html', status:'exists' },
+      ]},
+      { label:'Resources & More', items:[
+        { name:'Blog', url:'blog.html', status:'exists' },
+        { name:'Pricing / How We Engage', url:'pricing.html', status:'new' },
+        { name:'Careers', url:'careers.html', status:'exists' },
+        { name:'Contact / Get in Touch', url:'contact.html', status:'exists' },
+      ]}
+    ]
+  },
+];
+
+const statusClass = { exists:'si-exists', new:'si-new', phase2:'si-partial' };
+const statusDot   = { exists:'exists', new:'new', phase2:'phase2' };
+
+function countItems(nav) {
+  let exists=0, newp=0, phase2=0;
+  nav.forEach(n => n.groups.forEach(g => g.items.forEach(i => {
+    if(i.status==='exists') exists++;
+    else if(i.status==='new') newp++;
+    else phase2++;
+  })));
+  return { exists, new: newp, phase2 };
+}
+
+const badgeCls = { ok:'badge-ok', new:'badge-new', partial:'badge-partial' };
+const badgeTxt = { ok:'All built', new:'All new', partial:'Needs pages' };
+
+const grid = document.getElementById('navGrid');
+navData.forEach((n,i) => {
+  const el = document.createElement('div');
+  el.className = 'nav-item';
+  el.dataset.id = n.id;
+
+  const bodyHtml = n.groups.map(g => `
+    <div class="group-label">${g.label}</div>
+    ${g.items.map(it => `
+      <div class="sub-item">
+        <div class="si-dot ${statusClass[it.status]}"></div>
+        <span>${it.name}</span>
+        ${it.status==='new' ? '<span class="si-tag tag-new">BUILD</span>' : ''}
+        ${it.status==='phase2' ? '<span class="si-tag tag-phase2">PHASE 2</span>' : ''}
+        <span class="si-url">${it.url}</span>
+      </div>`).join('')}
+  `).join('');
+
+  el.innerHTML = `
+    <div class="nav-head ${n.headClass}">
+      <div class="label">
+        <span class="icon">${n.icon}</span>
+        <span>${n.label}</span>
+        <span class="badge ${badgeCls[n.badge]}">${badgeTxt[n.badge]}</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="nav-body">${bodyHtml}</div>
+  `;
+  el.querySelector('.nav-head').addEventListener('click', () => {
+    el.classList.toggle('open');
+  });
+  grid.appendChild(el);
+});
+
+// Open first 3 by default
+document.querySelectorAll('.nav-item').forEach((el,i) => {
+  if(i < 2) el.classList.add('open');
+});
+
+// Summary
+const counts = countItems(navData);
+const sumEl = document.getElementById('summary');
+sumEl.innerHTML = `
+  <div class="sum-card"><div class="sum-num num-g">${counts.exists}</div><div class="sum-lbl">Pages already exist</div></div>
+  <div class="sum-card"><div class="sum-num num-r">${counts.new}</div><div class="sum-lbl">New pages to build</div></div>
+  <div class="sum-card"><div class="sum-num num-y">${counts.phase2}</div><div class="sum-lbl">Phase 2 (template fill)</div></div>
+`;
+
+document.getElementById('noteBox').innerHTML = `
+  <strong>Build order suggestion:</strong><br>
+  1. Update <code>header.js</code> nav structure first (no pages needed) →
+  2. Content section: 10 new pages (Visual Production + Distribution) →
+  3. Industries Phase 1: 4 pages (Real Estate, Healthcare, Education, E-Commerce) →
+  4. SEO gaps: Programmatic SEO + GMB →
+  5. Paid Ads gaps: YouTube, LinkedIn, Shopping, Retargeting →
+  6. Phase 2 industries: 8 pages (template fill) →
+  7. AI Creative: AI Ad Creatives + AI Content Generation
+`;
+</script>
+</body>
+</html>
