@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Click Decoded — Sitemap Index | clickdecoded.com -->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://clickdecoded.com/sitemap-core.xml</loc>
+    <lastmod>2026-06-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://clickdecoded.com/sitemap-services.xml</loc>
+    <lastmod>2026-06-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://clickdecoded.com/sitemap-locations.xml</loc>
+    <lastmod>2026-06-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://clickdecoded.com/sitemap-industries.xml</loc>
+    <lastmod>2026-06-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://clickdecoded.com/sitemap-whitelabel.xml</loc>
+    <lastmod>2026-06-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://clickdecoded.com/sitemap-blog.xml</loc>
+    <lastmod>2026-06-29</lastmod>
+  </sitemap>
+</sitemapindex>
