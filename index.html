@@ -1143,6 +1143,14 @@ footer h4{
   .hero-btns .btn{justify-content:center;}
 }
 </style>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 
@@ -1844,121 +1852,4 @@ footer h4{
    <div class="lead-l">
     <div class="pill pill-o">Free Consultation</div>
     <h2>Ready to Stop Guessing and Start Growing?</h2>
-    <p>Tell us where you are and what you're trying to build. We'll come back within 4 business hours with a specific plan — not a sales pitch.</p>
-    <div class="lead-perks">
-     <div class="perk"><div class="perk-dot">✓</div>Free 30-minute strategy call</div>
-     <div class="perk"><div class="perk-dot">✓</div>Custom growth roadmap — no templates</div>
-     <div class="perk"><div class="perk-dot">✓</div>No commitment. No agency jargon.</div>
-     <div class="perk"><div class="perk-dot">✓</div>Response within 4 business hours</div>
-    </div>
-   </div>
-   <div class="lead-form">
-    <div class="lead-form-avatar">
-     <img src="clickdecodedround.png" alt="Click Decoded" loading="lazy">
-    </div>
-    <h3>Get Your Free Strategy Call</h3>
-    <p class="fsub">Takes 60 seconds. We'll do the heavy lifting.</p>
-    <div class="field"><label>Full Name</label><input type="text" placeholder="Your name"></div>
-    <div class="field"><label>Business Email</label><input type="email" placeholder="you@company.com"></div>
-    <div class="field"><label>Mobile Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
-    <div class="field"><label>What do you need help with?</label>
-     <select>
-      <option>SEO Services</option><option>Google Ads Management</option>
-      <option>WhatsApp Automation</option><option>GEO / AI Search</option>
-      <option>White Label SEO</option><option>Web Development</option>
-      <option>AI Chatbot / n8n</option><option>Not sure yet</option>
-     </select>
-    </div>
-    <button class="btn btn-o" style="width:100%;justify-content:center;font-size:15px;padding:15px;" onclick="this.previousElementSibling&&(document.querySelector('.submsg').style.display='block');">🚀 Get Free Strategy Call</button>
-    <div class="submsg">✅ Got it! We'll reach out within 4 business hours.</div>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- ════════════════ FOOTER ════════════════ -->
-<div id="cd-footer"></div>
-<script src="components/footer.js"></script>
-
-<script>
-// Scroll reveal
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.1});
-document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
-
-// Counter animation
-function animateCount(el){
-  const t=+el.dataset.t,s=el.dataset.s||'';
-  if(t===0){el.textContent='0';return;}
-  const dur=1800;let start=null;
-  const step=ts=>{
-    if(!start)start=ts;
-    const p=Math.min((ts-start)/dur,1);
-    el.textContent=Math.round((1-Math.pow(1-p,4))*t)+s;
-    if(p<1)requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-const cobs=new IntersectionObserver(e=>{
-  e.forEach(x=>{
-    if(x.isIntersecting&&!x.target.dataset.done){
-      x.target.dataset.done=1;
-      animateCount(x.target);
-    }
-  });
-},{threshold:.4});
-document.querySelectorAll('.count').forEach(el=>cobs.observe(el));
-
-// Tab switcher
-document.querySelectorAll('.tb').forEach(b=>{
-  b.onclick=()=>{
-    document.querySelectorAll('.tb').forEach(t=>t.classList.remove('on'));
-    document.querySelectorAll('.tp').forEach(p=>p.classList.remove('on'));
-    b.classList.add('on');
-    const tp=document.querySelectorAll('.tp')[+b.dataset.i];
-    if(tp)tp.classList.add('on');
-  };
-});
-
-// FAQ accordion
-document.querySelectorAll('.fi').forEach(item=>{
-  item.querySelector('.fi-q').onclick=()=>{
-    const on=item.classList.contains('on');
-    document.querySelectorAll('.fi').forEach(f=>f.classList.remove('on'));
-    if(!on)item.classList.add('on');
-  };
-});
-
-// Hero slider
-(function(){
-  const slides=document.querySelectorAll('.sh-slide');
-  const panels=document.querySelectorAll('.sh-panel');
-  const dots=document.querySelectorAll('.sh-dot');
-  if(!slides.length)return;
-  let cur=0,timer;
-  function go(i){
-    // Left: slide text
-    slides[cur].classList.remove('active');slides[cur].classList.add('exit');
-    dots[cur]&&dots[cur].classList.remove('active');
-    // Right: card panel
-    panels[cur]&&panels[cur].classList.remove('active');
-    panels[cur]&&panels[cur].classList.add('exit');
-    setTimeout(()=>{
-      slides[cur]&&slides[cur].classList.remove('exit');
-      panels[cur]&&panels[cur].classList.remove('exit');
-    },700);
-    cur=i;
-    slides[cur].classList.add('active');
-    dots[cur]&&dots[cur].classList.add('active');
-    panels[cur]&&panels[cur].classList.add('active');
-  }
-  function next(){go((cur+1)%slides.length);}
-  slides[0].classList.add('active');
-  dots[0]&&dots[0].classList.add('active');
-  panels[0]&&panels[0].classList.add('active');
-  timer=setInterval(next,4000);
-  dots.forEach((d,i)=>d.onclick=()=>{clearInterval(timer);go(i);timer=setInterval(next,4000);});
-})();
-</script>
-</body>
-</html>
-                                                                                                                
+    <p>Tell us where you are and what you're trying t

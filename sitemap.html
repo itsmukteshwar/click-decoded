@@ -123,6 +123,14 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:960px){.sm-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.sm-grid{grid-template-columns:1fr;}.sm-stats{gap:20px;}.hb{display:flex;}}
 </style>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 
@@ -344,56 +352,4 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
             <div class="sm-cat-count">9 pages</div>
           </div>
         </div>
-        <div class="sm-cat-links">
-          <a href="about.html" class="sm-link"><span class="sm-link-dot"></span>Know About Us</a>
-          <a href="honest.html" class="sm-link"><span class="sm-link-dot"></span>The Honest Page</a>
-          <a href="our-work.html" class="sm-link"><span class="sm-link-dot"></span>Our Work</a>
-          <a href="how-we-work.html" class="sm-link"><span class="sm-link-dot"></span>How We Work</a>
-          <a href="careers.html" class="sm-link"><span class="sm-link-dot"></span>Careers</a>
-          <a href="internship.html" class="sm-link"><span class="sm-link-dot"></span>Internship Program</a>
-          <a href="service-areas.html" class="sm-link"><span class="sm-link-dot"></span>Areas We Work</a>
-          <a href="blog.html" class="sm-link"><span class="sm-link-dot"></span>Blog / Insights <span class="sm-link-badge badge-new">Live</span></a>
-          <a href="contact.html" class="sm-link"><span class="sm-link-dot"></span>Contact Us</a>
-        </div>
-      </div>
-
-      <!-- LEGAL -->
-      <div class="sm-cat cat-legal" id="legal">
-        <div class="sm-cat-head">
-          <div class="sm-cat-icon">⚖️</div>
-          <div>
-            <div class="sm-cat-title">Legal</div>
-            <div class="sm-cat-count">3 pages</div>
-          </div>
-        </div>
-        <div class="sm-cat-links">
-          <a href="privacy.html" class="sm-link"><span class="sm-link-dot"></span>Privacy Policy</a>
-          <a href="terms.html" class="sm-link"><span class="sm-link-dot"></span>Terms & Conditions</a>
-          <a href="cookie-policy.html" class="sm-link"><span class="sm-link-dot"></span>Cookie Policy</a>
-        </div>
-      </div>
-
-    </div><!-- /sm-grid -->
-  </div>
-</section>
-
-<div id="cd-footer"></div>
-<script src="components/footer.js"></script>
-<script>
-const hdr=document.getElementById('hdr');
-if(hdr)window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
-const hb=document.getElementById('hb'),mn=document.getElementById('mnav'),mc=document.getElementById('mnav-close');
-function openMnav(){mn&&mn.classList.add('on');document.body.style.overflow='hidden';}
-function closeMnav(){mn&&mn.classList.remove('on');document.body.style.overflow='';}
-if(hb)hb.addEventListener('click',openMnav);
-if(mc)mc.addEventListener('click',closeMnav);
-document.querySelectorAll('.ma > button').forEach(b=>{
-  b.addEventListener('click',()=>{
-    const item=b.parentElement,isOpen=item.classList.contains('on');
-    document.querySelectorAll('.ma').forEach(x=>x.classList.remove('on'));
-    if(!isOpen)item.classList.add('on');
-  });
-});
-</script>
-</body>
-</html>
+        <div class=
