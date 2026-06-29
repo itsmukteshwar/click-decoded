@@ -213,6 +213,10 @@
   // ── Mobile CSS overrides ───────────────────────────────────
   var s = document.createElement('style');
   s.textContent = [
+    /* Prevent horizontal scroll on all pages */
+    'html,body{overflow-x:hidden !important;max-width:100%;}',
+    /* Mobile nav — must sit above sticky shell (z-index:200) */
+    '.mnav{position:fixed !important;inset:0 !important;z-index:9999 !important;}',
     '.mega-services{width:1100px !important;grid-template-columns:repeat(6,1fr) !important;gap:18px !important;}',
     '@media(max-width:1200px){.mega-services{width:calc(100vw - 40px) !important;left:20px !important;transform:none !important;}}',
     '@media(max-width:960px){.hb{display:flex !important;}.dmenu,.navcta .btn-o{display:none !important;}.mega{display:none !important;}}',
@@ -239,6 +243,8 @@
 
     if (hb && mn) {
       hb.addEventListener('click', function() {
+        // Move to body root to escape sticky-shell stacking context
+        if (mn.parentNode !== document.body) document.body.appendChild(mn);
         mn.classList.add('on');
         document.body.style.overflow = 'hidden';
       });
