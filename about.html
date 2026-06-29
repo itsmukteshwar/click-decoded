@@ -212,14 +212,7 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:900px){.values-grid{grid-template-columns:1fr 1fr;}.dept-grid{grid-template-columns:1fr 1fr;}.whyus-grid{grid-template-columns:1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.values-grid,.dept-grid,.stats-grid{grid-template-columns:1fr 1fr;}.hero h1{font-size:38px;}.hb{display:flex;}.dmenu{display:none;}}
 </style>
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
+
 </head>
 <body>
 
@@ -481,5 +474,13 @@ document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
 /* Header scroll shadow */
 const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
 </script>
+<!-- Google Analytics GA4 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

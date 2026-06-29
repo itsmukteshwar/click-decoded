@@ -119,14 +119,7 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.services-grid{grid-template-columns:1fr 1fr;}.proc-steps{grid-template-columns:1fr 1fr;gap:32px;}.proc-steps::before{display:none;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.services-grid{grid-template-columns:1fr;}.hero h1{font-size:36px;}.hb{display:flex;}.dmenu{display:none;}}
 </style>
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
+
 </head>
 <body>
 <div id="cd-header"></div>
@@ -244,5 +237,13 @@ document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
 const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open');});});
 </script>
+<!-- Google Analytics GA4 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

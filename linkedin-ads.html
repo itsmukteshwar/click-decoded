@@ -223,14 +223,7 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .footer-areas a{color:rgba(255,255,255,.25);transition:.15s;}.footer-areas a:hover{color:rgba(255,255,255,.6);}
 /* ===== END FOOTER CSS ===== */
 </style>
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
+
 </head>
 <body>
 <div id="cd-header"></div>
@@ -437,5 +430,13 @@ const heights=[12,18,15,24,30,28,36,42,38,52,60,72];
 const sl=document.getElementById('sparkline');
 if(sl){heights.forEach(h=>{const b=document.createElement('div');b.className='spark-bar';b.style.height=h+'%';sl.appendChild(b);});}
 </script>
+<!-- Google Analytics GA4 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

@@ -19,14 +19,7 @@
 .results-strip{background:linear-gradient(135deg,#0a0a1f,#12123a);}
 .cta-strip{background:linear-gradient(135deg,#0a0a1f,#12123a);}
 </style>
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
+
 </head>
 <body>
 <div id="cd-header"></div><script src="components/header.js?v=2"></script>
@@ -109,4 +102,12 @@
 
 <div id="cd-footer"></div><script src="components/footer.js"></script>
 <script>const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});const hbtn=document.getElementById('hb'),mn=document.getElementById('mnav'),mc=document.getElementById('mnav-close');function openM(){mn.classList.add('on');document.body.style.overflow='hidden';}function closeM(){mn.classList.remove('on');document.body.style.overflow='';}if(hbtn)hbtn.addEventListener('click',openM);if(mc)mc.addEventListener('click',closeM);document.querySelectorAll('.ma>button').forEach(b=>{b.addEventListener('click',()=>{const it=b.parentElement,op=it.classList.contains('on');document.querySelectorAll('.ma').forEach(x=>x.classList.remove('on'));if(!op)it.classList.add('on');});});document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const on=item.classList.contains('on');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('on'));if(!on)item.classList.add('on');});});</script>
+<!-- Google Analytics GA4 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
 </body></html>
