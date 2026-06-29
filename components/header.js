@@ -214,7 +214,7 @@
   var s = document.createElement('style');
   s.textContent = [
     /* Prevent horizontal scroll on all pages */
-    'html,body{overflow-x:hidden !important;max-width:100%;}',
+    'html{overflow-x:clip;}body{overflow-x:clip;max-width:100%;position:relative;}',
     /* Mobile nav — must sit above sticky shell (z-index:200) */
     '.mnav{position:fixed !important;inset:0 !important;z-index:9999 !important;}',
     '.mega-services{width:1100px !important;grid-template-columns:repeat(6,1fr) !important;gap:18px !important;}',
