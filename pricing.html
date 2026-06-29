@@ -229,6 +229,14 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:600px){section{padding:60px 0;}.hero{padding:64px 0 52px;}.stats-inner{grid-template-columns:1fr 1fr;}}
 </style>
 
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 <div id="cd-header"></div>
@@ -510,13 +518,5 @@ mainToggle.addEventListener('click',()=>{isAnnual=!isAnnual;applyPricing(isAnnua
 // hero mock toggle (decorative)
 document.getElementById('heroSwitch').addEventListener('click',()=>{isAnnual=!isAnnual;applyPricing(isAnnual);});
 </script>
-<!-- Google Analytics GA4 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
-<script async src="/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

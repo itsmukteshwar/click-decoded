@@ -134,6 +134,14 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:600px){.culture-grid{grid-template-columns:1fr;}.hero h1{font-size:36px;}.hb{display:flex;}.dmenu{display:none;}}
 </style>
 
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 <div id="cd-header"></div>
@@ -298,13 +306,5 @@ document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
 const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
 function handleApply(e){e.preventDefault();e.target.innerHTML='<div style="text-align:center;padding:32px;"><div style="font-size:48px;margin-bottom:12px;">🎉</div><h3 style="font-size:20px;margin-bottom:10px;">Application Received!</h3><p style="font-size:14px;color:var(--m);line-height:1.7;">Thank you! We review every application personally and will get back to you within 3 working days.<br>Feel free to WhatsApp us at <strong>+91 94070 00101</strong> if you have questions.</p></div>';}
 </script>
-<!-- Google Analytics GA4 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
-<script async src="/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

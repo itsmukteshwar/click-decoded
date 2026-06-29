@@ -254,6 +254,14 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:600px){.services-grid,.steps-grid,.ga-stats-inner,.fg{grid-template-columns:1fr;}section{padding:60px 0;}.ga-hero{padding:64px 0 52px;}}
 </style>
 
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 <div id="cd-header"></div>
@@ -528,13 +536,5 @@ document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
   if(mock){const so=new IntersectionObserver(e=>{if(e[0].isIntersecting){setTimeout(runCamp,1000);so.disconnect();}},{threshold:.3});so.observe(mock);}
 })();
 </script>
-<!-- Google Analytics GA4 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
-<script async src="/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

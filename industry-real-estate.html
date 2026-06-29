@@ -199,6 +199,14 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:600px){.inc-grid,.formats-grid,.stats-inner{grid-template-columns:1fr;}section{padding:60px 0;}.hero{padding:64px 0 52px;}}
 </style>
 
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 <div id="cd-header"></div>
@@ -414,13 +422,5 @@ if(mc)mc.addEventListener('click',()=>{mn.classList.remove('on');document.body.s
 document.querySelectorAll('.ma>button').forEach(b=>{b.addEventListener('click',()=>{const p=b.parentElement,o=p.classList.contains('on');document.querySelectorAll('.ma').forEach(x=>x.classList.remove('on'));if(!o)p.classList.add('on');});});
 document.querySelectorAll('.fi-q').forEach(b=>b.addEventListener('click',()=>{const fi=b.parentElement,was=fi.classList.contains('on');document.querySelectorAll('.fi').forEach(x=>x.classList.remove('on'));if(!was)fi.classList.add('on');}));
 </script>
-<!-- Google Analytics GA4 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
-<script async src="/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

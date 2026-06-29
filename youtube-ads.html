@@ -209,6 +209,14 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 /* ===== END FOOTER CSS ===== */
 </style>
 
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 <div id="cd-header"></div>
@@ -391,13 +399,5 @@ const heights=[18,25,22,32,40,36,48,55,62,70,78,92];
 const sl=document.getElementById('sparkline');
 if(sl){heights.forEach(h=>{const b=document.createElement('div');b.className='spark-bar';b.style.height=h+'%';sl.appendChild(b);});}
 </script>
-<!-- Google Analytics GA4 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
-<script async src="/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>

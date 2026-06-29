@@ -140,6 +140,14 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:600px){.tracks-grid{grid-template-columns:1fr;}.hero h1{font-size:34px;}.apply-form-wrap{padding:28px 20px;}.hb{display:flex;}.dmenu{display:none;}.invest-grid{grid-template-columns:1fr !important;}}
 </style>
 
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LEH1H9LH8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LEH1H9LH8E');
+</script>
 </head>
 <body>
 <div id="cd-header"></div>
@@ -469,13 +477,5 @@ document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
 const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
 function handleInternApply(e){e.preventDefault();e.target.innerHTML='<div style="text-align:center;padding:36px;"><div style="font-size:48px;margin-bottom:12px;">🎉</div><h3 style="font-size:22px;margin-bottom:10px;">Application Submitted!</h3><p style="font-size:14.5px;color:var(--m);line-height:1.8;">Thank you for applying! We review applications personally and respond within 5 working days.<br>Got questions? WhatsApp us at <strong>+91 94070 00101</strong>.</p></div>';}
 </script>
-<!-- Google Analytics GA4 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LEH1H9LH8E');
-</script>
-<script async src="/gtag/js?id=G-LEH1H9LH8E"></script>
 </body>
 </html>
