@@ -174,6 +174,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;}.saas-mock{display:none;}.pain-grid,.why-grid{grid-template-columns:repeat(2,1fr);}.faq-grid{grid-template-columns:1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.pain-grid,.why-grid{grid-template-columns:1fr;}.res-grid{grid-template-columns:repeat(2,1fr);}.form-row{grid-template-columns:1fr;}.fg{grid-template-columns:1fr;}}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(63,81,181,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(63,81,181,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(63,81,181,.12);border:1px solid rgba(63,81,181,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#9fa8da;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#9fa8da,#3F51B5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.saas-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.saas-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.saas-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.saas-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#3F51B5;font-weight:600;}
+.saas-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#3F51B5;box-shadow:0 0 0 3px rgba(63,81,181,.2);animation:saasp 2s infinite;}
+@keyframes saasp{0%,100%{box-shadow:0 0 0 3px rgba(63,81,181,.2);}50%{box-shadow:0 0 0 6px rgba(63,81,181,.05);}}
+.saas-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.saas-kpi{background:#0f1e38;padding:14px 16px;}
+.saas-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.saas-kpi-val{font-size:20px;font-weight:900;color:#3F51B5;letter-spacing:-.02em;line-height:1;}
+.saas-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.saas-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.saas-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.saas-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.saas-row:last-child{border:none;}
+.saas-row-n{color:rgba(255,255,255,.55);}
+.saas-row-v{color:#9fa8da;font-weight:700;font-size:11px;}
+.saas-btm{padding:12px 18px;background:rgba(63,81,181,.06);border-top:1px solid rgba(63,81,181,.1);display:flex;align-items:center;justify-content:space-between;}
+.saas-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.saas-btm-val{font-size:15px;font-weight:800;color:#3F51B5;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.saas-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -189,46 +220,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 <div id="cd-header"></div>
 <script src="components/header.js?v=2"></script>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <div class="eyebrow">💻 Industry Expertise</div>
-      <h1>More <em>Demo Requests</em> for IT Companies & SaaS Products</h1>
-      <p class="hero-sub">SaaS and IT services buyers research extensively before buying. We build SEO, content, and targeted ad campaigns that put your product in front of decision-makers during their research phase.</p>
-      <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
-        <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
-      </div>
-      <div class="hero-proof">
-        <span class="proof-item">✓ <strong>Industry-Specific</strong> Expertise</span>
-        <span class="proof-item">✓ <strong>No</strong> Lock-In</span>
-        <span class="proof-item">✓ <strong>Results</strong> in 30–60 Days</span>
-      </div>
-    </div>
-    <div class="form-box">
-      <h3>Free Industry Audit</h3>
-      <p>We'll review your current digital presence and show you exactly what's missing.</p>
-      <form id="lf" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('lf-ok').style.display='block';">
-        <div class="form-row">
-          <div class="fg-item"><label>Name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg-item"><label>Phone</label><input type="tel" placeholder="+91 98765 00000" required></div>
-          <div class="fg-item fg-full"><label>Business Name</label><input type="text" placeholder="Your business name"></div>
-          <div class="fg-item fg-full"><label>Primary Goal</label>
-            <select>
-              <option>More Leads & Enquiries</option>
-              <option>Better Google Rankings</option>
-              <option>New Website</option>
-              <option>Automate Operations</option>
-            </select>
-          </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">💻 IT Companies & SaaS Product Marketing</div>
+        <h1>More Demo Requests<br><em>for IT Companies & SaaS Products.</em></h1>
+        <p class="hero-desc">SaaS and IT buyers research extensively before buying. We build SEO, content, and targeted ad campaigns that put your product in front of decision-makers at the right moment.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
-        <button type="submit" class="form-submit">🚀 Get Free Industry Audit</button>
-        <p class="form-note">🔒 Confidential. No spam ever.</p>
-      </form>
-      <div id="lf-ok" style="display:none;text-align:center;padding:24px 0;">
-        <div style="font-size:36px;margin-bottom:12px;">✅</div>
-        <h3 style="color:#fff;margin-bottom:8px;">Got it!</h3>
-        <p>We'll send your audit within 24 hours.</p>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>312%</strong> More Demo Requests</span>
+          <span class="proof-item"><strong>68%</strong> Lower CPL vs Industry</span>
+          <span class="proof-item"><strong>Enterprise</strong> Decision-Maker Targeting</span>
+        </div>
+      </div>
+      <div class="saas-mock">
+        <div class="saas-hdr">
+          <span class="saas-hdr-title">SaaS Growth Dashboard</span>
+          <span class="saas-live">Live</span>
+        </div>
+        <div class="saas-kpis">
+          <div class="saas-kpi"><div class="saas-kpi-lbl">Demo Requests</div><div class="saas-kpi-val">94</div><div class="saas-kpi-d">↑ 312% in 90 days</div></div>
+          <div class="saas-kpi"><div class="saas-kpi-lbl">Trial Sign-ups</div><div class="saas-kpi-val">247</div><div class="saas-kpi-d">↑ from 41/month</div></div>
+          <div class="saas-kpi"><div class="saas-kpi-lbl">Organic Traffic</div><div class="saas-kpi-val">18,400</div><div class="saas-kpi-d">↑ 134% YoY</div></div>
+          <div class="saas-kpi"><div class="saas-kpi-lbl">Cost Per Lead</div><div class="saas-kpi-val">₹420</div><div class="saas-kpi-d">↓ 68% from ₹1,310</div></div>
+        </div>
+        <div class="saas-rows">
+          <div class="saas-rows-lbl">Conversion Funnel This Month</div>
+          <div class="saas-row"><span class="saas-row-n">Visitors → Trials</span><span class="saas-row-v">18,400 → 247 (1.3%)</span></div>
+          <div class="saas-row"><span class="saas-row-n">Trials → Demos</span><span class="saas-row-v">247 → 94 (38%)</span></div>
+          <div class="saas-row"><span class="saas-row-n">Demos → Closed Won</span><span class="saas-row-v">94 → 31 (33%)</span></div>
+        </div>
+        <div class="saas-btm">
+          <span class="saas-btm-lbl">💼 Avg. Deal Value Closed</span>
+          <span class="saas-btm-val">₹2.4L/deal</span>
+        </div>
       </div>
     </div>
   </div>

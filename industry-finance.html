@@ -172,6 +172,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;}.fin-mock{display:none;}.pain-grid,.why-grid{grid-template-columns:repeat(2,1fr);}.faq-grid{grid-template-columns:1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.pain-grid,.why-grid{grid-template-columns:1fr;}.res-grid{grid-template-columns:repeat(2,1fr);}.form-row{grid-template-columns:1fr;}.fg{grid-template-columns:1fr;}}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(25,118,210,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(25,118,210,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(25,118,210,.12);border:1px solid rgba(25,118,210,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#90caf9;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#90caf9,#1976D2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.fin-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.fin-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.fin-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.fin-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#1976D2;font-weight:600;}
+.fin-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#1976D2;box-shadow:0 0 0 3px rgba(25,118,210,.2);animation:finp 2s infinite;}
+@keyframes finp{0%,100%{box-shadow:0 0 0 3px rgba(25,118,210,.2);}50%{box-shadow:0 0 0 6px rgba(25,118,210,.05);}}
+.fin-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.fin-kpi{background:#0f1e38;padding:14px 16px;}
+.fin-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.fin-kpi-val{font-size:20px;font-weight:900;color:#1976D2;letter-spacing:-.02em;line-height:1;}
+.fin-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.fin-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.fin-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.fin-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.fin-row:last-child{border:none;}
+.fin-row-n{color:rgba(255,255,255,.55);}
+.fin-row-v{color:#90caf9;font-weight:700;font-size:11px;}
+.fin-btm{padding:12px 18px;background:rgba(25,118,210,.06);border-top:1px solid rgba(25,118,210,.1);display:flex;align-items:center;justify-content:space-between;}
+.fin-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.fin-btm-val{font-size:15px;font-weight:800;color:#1976D2;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.fin-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -187,46 +218,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 <div id="cd-header"></div>
 <script src="components/header.js?v=2"></script>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <div class="eyebrow">💳 Industry Expertise</div>
-      <h1>More <em>Quality Leads</em> for Financial Services & NBFCs</h1>
-      <p class="hero-sub">Financial services is one of the most competitive and regulated digital marketing verticals in India. We know the rules — and how to win within them.</p>
-      <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
-        <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
-      </div>
-      <div class="hero-proof">
-        <span class="proof-item">✓ <strong>Industry-Specific</strong> Expertise</span>
-        <span class="proof-item">✓ <strong>No</strong> Lock-In</span>
-        <span class="proof-item">✓ <strong>Results</strong> in 30–60 Days</span>
-      </div>
-    </div>
-    <div class="form-box">
-      <h3>Free Industry Audit</h3>
-      <p>We'll review your current digital presence and show you exactly what's missing.</p>
-      <form id="lf" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('lf-ok').style.display='block';">
-        <div class="form-row">
-          <div class="fg-item"><label>Name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg-item"><label>Phone</label><input type="tel" placeholder="+91 98765 00000" required></div>
-          <div class="fg-item fg-full"><label>Business Name</label><input type="text" placeholder="Your business name"></div>
-          <div class="fg-item fg-full"><label>Primary Goal</label>
-            <select>
-              <option>More Leads & Enquiries</option>
-              <option>Better Google Rankings</option>
-              <option>New Website</option>
-              <option>Automate Operations</option>
-            </select>
-          </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">💳 Financial Services & NBFC Marketing</div>
+        <h1>More Quality Leads<br><em>for Financial Services & NBFCs.</em></h1>
+        <p class="hero-desc">Financial services is one of the most competitive digital marketing verticals. We know the compliance rules, the buyer psychology, and how to generate verified, high-intent leads.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
-        <button type="submit" class="form-submit">🚀 Get Free Industry Audit</button>
-        <p class="form-note">🔒 Confidential. No spam ever.</p>
-      </form>
-      <div id="lf-ok" style="display:none;text-align:center;padding:24px 0;">
-        <div style="font-size:36px;margin-bottom:12px;">✅</div>
-        <h3 style="color:#fff;margin-bottom:8px;">Got it!</h3>
-        <p>We'll send your audit within 24 hours.</p>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>High-Intent</strong> Verified Leads Only</span>
+          <span class="proof-item"><strong>Compliant</strong> RBI-Safe Campaigns</span>
+          <span class="proof-item"><strong>4×</strong> Avg. Lead Quality Score</span>
+        </div>
+      </div>
+      <div class="fin-mock">
+        <div class="fin-hdr">
+          <span class="fin-hdr-title">Lead Quality Dashboard</span>
+          <span class="fin-live">Live</span>
+        </div>
+        <div class="fin-kpis">
+          <div class="fin-kpi"><div class="fin-kpi-lbl">Monthly Leads</div><div class="fin-kpi-val">428</div><div class="fin-kpi-d">↑ 312% in 6 months</div></div>
+          <div class="fin-kpi"><div class="fin-kpi-lbl">Lead Quality Score</div><div class="fin-kpi-val">8.4/10</div><div class="fin-kpi-d">↑ from 3.1/10</div></div>
+          <div class="fin-kpi"><div class="fin-kpi-lbl">Cost Per Lead</div><div class="fin-kpi-val">₹180</div><div class="fin-kpi-d">↓ from ₹920</div></div>
+          <div class="fin-kpi"><div class="fin-kpi-lbl">Loan Disbursals</div><div class="fin-kpi-val">₹4.2Cr</div><div class="fin-kpi-d">↑ attributed to digital</div></div>
+        </div>
+        <div class="fin-rows">
+          <div class="fin-rows-lbl">Top Performing Campaigns</div>
+          <div class="fin-row"><span class="fin-row-n">Home Loan Search Ads</span><span class="fin-row-v">148 leads · ₹210 CPL</span></div>
+          <div class="fin-row"><span class="fin-row-n">Mutual Fund — Meta Ads</span><span class="fin-row-v">124 leads · ₹160 CPL</span></div>
+          <div class="fin-row"><span class="fin-row-n">Business Loan — SEO</span><span class="fin-row-v">92 leads · ₹0 CPL</span></div>
+        </div>
+        <div class="fin-btm">
+          <span class="fin-btm-lbl">💰 Loan Value Attributed to Digital</span>
+          <span class="fin-btm-val">₹4.2Cr/month</span>
+        </div>
       </div>
     </div>
   </div>

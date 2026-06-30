@@ -172,6 +172,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;}.rst-mock{display:none;}.pain-grid,.why-grid{grid-template-columns:repeat(2,1fr);}.faq-grid{grid-template-columns:1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.pain-grid,.why-grid{grid-template-columns:1fr;}.res-grid{grid-template-columns:repeat(2,1fr);}.form-row{grid-template-columns:1fr;}.fg{grid-template-columns:1fr;}}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(255,152,0,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(255,152,0,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(255,152,0,.12);border:1px solid rgba(255,152,0,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#ffcc80;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#ffcc80,#FF9800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.rst-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.rst-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.rst-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.rst-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#FF9800;font-weight:600;}
+.rst-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF9800;box-shadow:0 0 0 3px rgba(255,152,0,.2);animation:rstp 2s infinite;}
+@keyframes rstp{0%,100%{box-shadow:0 0 0 3px rgba(255,152,0,.2);}50%{box-shadow:0 0 0 6px rgba(255,152,0,.05);}}
+.rst-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.rst-kpi{background:#0f1e38;padding:14px 16px;}
+.rst-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.rst-kpi-val{font-size:20px;font-weight:900;color:#FF9800;letter-spacing:-.02em;line-height:1;}
+.rst-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.rst-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.rst-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.rst-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.rst-row:last-child{border:none;}
+.rst-row-n{color:rgba(255,255,255,.55);}
+.rst-row-v{color:#ffcc80;font-weight:700;font-size:11px;}
+.rst-btm{padding:12px 18px;background:rgba(255,152,0,.06);border-top:1px solid rgba(255,152,0,.1);display:flex;align-items:center;justify-content:space-between;}
+.rst-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.rst-btm-val{font-size:15px;font-weight:800;color:#FF9800;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.rst-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -187,46 +218,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 <div id="cd-header"></div>
 <script src="components/header.js?v=2"></script>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <div class="eyebrow">🍽️ Industry Expertise</div>
-      <h1>More <em>Diners & Delivery Orders</em> for Restaurants & Cloud Kitchens</h1>
-      <p class="hero-sub">Hungry customers search 'restaurants near me' 2 billion times a month. We make sure your restaurant appears first — on Google Maps, Swiggy, and Instagram — driving both footfall and orders.</p>
-      <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
-        <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
-      </div>
-      <div class="hero-proof">
-        <span class="proof-item">✓ <strong>Industry-Specific</strong> Expertise</span>
-        <span class="proof-item">✓ <strong>No</strong> Lock-In</span>
-        <span class="proof-item">✓ <strong>Results</strong> in 30–60 Days</span>
-      </div>
-    </div>
-    <div class="form-box">
-      <h3>Free Industry Audit</h3>
-      <p>We'll review your current digital presence and show you exactly what's missing.</p>
-      <form id="lf" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('lf-ok').style.display='block';">
-        <div class="form-row">
-          <div class="fg-item"><label>Name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg-item"><label>Phone</label><input type="tel" placeholder="+91 98765 00000" required></div>
-          <div class="fg-item fg-full"><label>Business Name</label><input type="text" placeholder="Your business name"></div>
-          <div class="fg-item fg-full"><label>Primary Goal</label>
-            <select>
-              <option>More Leads & Enquiries</option>
-              <option>Better Google Rankings</option>
-              <option>New Website</option>
-              <option>Automate Operations</option>
-            </select>
-          </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">🍽️ Restaurant & Cloud Kitchen Marketing</div>
+        <h1>More Diners & Delivery Orders<br><em>for Restaurants & Cloud Kitchens.</em></h1>
+        <p class="hero-desc">Hungry customers search 'restaurants near me' billions of times a month. We make sure your restaurant appears first — on Google Maps, Swiggy SEO, and Instagram Reels.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
-        <button type="submit" class="form-submit">🚀 Get Free Industry Audit</button>
-        <p class="form-note">🔒 Confidential. No spam ever.</p>
-      </form>
-      <div id="lf-ok" style="display:none;text-align:center;padding:24px 0;">
-        <div style="font-size:36px;margin-bottom:12px;">✅</div>
-        <h3 style="color:#fff;margin-bottom:8px;">Got it!</h3>
-        <p>We'll send your audit within 24 hours.</p>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>3×</strong> More Table Reservations</span>
+          <span class="proof-item"><strong>Google Maps</strong> #1 Local Rank</span>
+          <span class="proof-item"><strong>Swiggy/Zomato</strong> Organic Rank Boost</span>
+        </div>
+      </div>
+      <div class="rst-mock">
+        <div class="rst-hdr">
+          <span class="rst-hdr-title">Restaurant Growth Dashboard</span>
+          <span class="rst-live">Live</span>
+        </div>
+        <div class="rst-kpis">
+          <div class="rst-kpi"><div class="rst-kpi-lbl">Monthly Covers</div><div class="rst-kpi-val">1,840</div><div class="rst-kpi-d">↑ 3.2× vs 6 months ago</div></div>
+          <div class="rst-kpi"><div class="rst-kpi-lbl">Online Orders/Mo</div><div class="rst-kpi-val">2,140</div><div class="rst-kpi-d">↑ 284% growth</div></div>
+          <div class="rst-kpi"><div class="rst-kpi-lbl">Google Maps Rank</div><div class="rst-kpi-val">#1</div><div class="rst-kpi-d">↑ 'restaurant near me'</div></div>
+          <div class="rst-kpi"><div class="rst-kpi-lbl">Avg. Order Value</div><div class="rst-kpi-val">₹680</div><div class="rst-kpi-d">↑ from ₹420</div></div>
+        </div>
+        <div class="rst-rows">
+          <div class="rst-rows-lbl">Top Performing Channels</div>
+          <div class="rst-row"><span class="rst-row-n">Google Maps / GMB</span><span class="rst-row-v">840 covers · ₹0 spend</span></div>
+          <div class="rst-row"><span class="rst-row-n">Instagram Reels</span><span class="rst-row-v">520 covers · ₹18 CPL</span></div>
+          <div class="rst-row"><span class="rst-row-n">Swiggy SEO Rank</span><span class="rst-row-v">#1 · 2,140 orders/mo</span></div>
+        </div>
+        <div class="rst-btm">
+          <span class="rst-btm-lbl">🍽️ Revenue Attributed to Digital</span>
+          <span class="rst-btm-val">₹12.4L/month</span>
+        </div>
       </div>
     </div>
   </div>

@@ -172,6 +172,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;}.hsp-mock{display:none;}.pain-grid,.why-grid{grid-template-columns:repeat(2,1fr);}.faq-grid{grid-template-columns:1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.pain-grid,.why-grid{grid-template-columns:1fr;}.res-grid{grid-template-columns:repeat(2,1fr);}.form-row{grid-template-columns:1fr;}.fg{grid-template-columns:1fr;}}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(0,188,212,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(0,188,212,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(0,188,212,.12);border:1px solid rgba(0,188,212,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#80deea;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#80deea,#00BCD4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.hsp-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.hsp-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.hsp-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.hsp-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#00BCD4;font-weight:600;}
+.hsp-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#00BCD4;box-shadow:0 0 0 3px rgba(0,188,212,.2);animation:hspp 2s infinite;}
+@keyframes hspp{0%,100%{box-shadow:0 0 0 3px rgba(0,188,212,.2);}50%{box-shadow:0 0 0 6px rgba(0,188,212,.05);}}
+.hsp-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.hsp-kpi{background:#0f1e38;padding:14px 16px;}
+.hsp-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.hsp-kpi-val{font-size:20px;font-weight:900;color:#00BCD4;letter-spacing:-.02em;line-height:1;}
+.hsp-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.hsp-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.hsp-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.hsp-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.hsp-row:last-child{border:none;}
+.hsp-row-n{color:rgba(255,255,255,.55);}
+.hsp-row-v{color:#80deea;font-weight:700;font-size:11px;}
+.hsp-btm{padding:12px 18px;background:rgba(0,188,212,.06);border-top:1px solid rgba(0,188,212,.1);display:flex;align-items:center;justify-content:space-between;}
+.hsp-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.hsp-btm-val{font-size:15px;font-weight:800;color:#00BCD4;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hsp-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -187,46 +218,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 <div id="cd-header"></div>
 <script src="components/header.js?v=2"></script>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <div class="eyebrow">🏨 Industry Expertise</div>
-      <h1>More <em>Direct Bookings</em> — Less OTA Dependency for Hotels & Resorts</h1>
-      <p class="hero-sub">Every booking through MakeMyTrip costs you 15–25% in commission. We drive direct bookings through SEO, Google Ads, virtual tours, and WhatsApp — giving you full-margin revenue.</p>
-      <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
-        <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
-      </div>
-      <div class="hero-proof">
-        <span class="proof-item">✓ <strong>Industry-Specific</strong> Expertise</span>
-        <span class="proof-item">✓ <strong>No</strong> Lock-In</span>
-        <span class="proof-item">✓ <strong>Results</strong> in 30–60 Days</span>
-      </div>
-    </div>
-    <div class="form-box">
-      <h3>Free Industry Audit</h3>
-      <p>We'll review your current digital presence and show you exactly what's missing.</p>
-      <form id="lf" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('lf-ok').style.display='block';">
-        <div class="form-row">
-          <div class="fg-item"><label>Name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg-item"><label>Phone</label><input type="tel" placeholder="+91 98765 00000" required></div>
-          <div class="fg-item fg-full"><label>Business Name</label><input type="text" placeholder="Your business name"></div>
-          <div class="fg-item fg-full"><label>Primary Goal</label>
-            <select>
-              <option>More Leads & Enquiries</option>
-              <option>Better Google Rankings</option>
-              <option>New Website</option>
-              <option>Automate Operations</option>
-            </select>
-          </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">🏨 Hotels, Resorts & Hospitality Marketing</div>
+        <h1>More Direct Bookings.<br><em>Less OTA Dependency.</em></h1>
+        <p class="hero-desc">Every MakeMyTrip booking costs you 15–25% in commission. We drive direct bookings through SEO, Google Ads, and social — putting that margin back in your pocket.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">Get Industry-Specific Strategy</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
-        <button type="submit" class="form-submit">🚀 Get Free Industry Audit</button>
-        <p class="form-note">🔒 Confidential. No spam ever.</p>
-      </form>
-      <div id="lf-ok" style="display:none;text-align:center;padding:24px 0;">
-        <div style="font-size:36px;margin-bottom:12px;">✅</div>
-        <h3 style="color:#fff;margin-bottom:8px;">Got it!</h3>
-        <p>We'll send your audit within 24 hours.</p>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>Direct Bookings</strong> Up 3× vs OTA</span>
+          <span class="proof-item"><strong>15–25%</strong> Commission Saved</span>
+          <span class="proof-item"><strong>Google Maps</strong> #1 Local Rank</span>
+        </div>
+      </div>
+      <div class="hsp-mock">
+        <div class="hsp-hdr">
+          <span class="hsp-hdr-title">Direct Booking Dashboard</span>
+          <span class="hsp-live">Live</span>
+        </div>
+        <div class="hsp-kpis">
+          <div class="hsp-kpi"><div class="hsp-kpi-lbl">Direct Bookings/Mo</div><div class="hsp-kpi-val">284</div><div class="hsp-kpi-d">↑ 3.4× vs OTA share</div></div>
+          <div class="hsp-kpi"><div class="hsp-kpi-lbl">Commission Saved</div><div class="hsp-kpi-val">₹8.4L</div><div class="hsp-kpi-d">↑ vs MMT/Goibibo</div></div>
+          <div class="hsp-kpi"><div class="hsp-kpi-lbl">Avg. Room Rate</div><div class="hsp-kpi-val">₹4,200</div><div class="hsp-kpi-d">↑ better guest quality</div></div>
+          <div class="hsp-kpi"><div class="hsp-kpi-lbl">Google Maps Rank</div><div class="hsp-kpi-val">#1</div><div class="hsp-kpi-d">↑ 'hotel near me'</div></div>
+        </div>
+        <div class="hsp-rows">
+          <div class="hsp-rows-lbl">Booking Source Breakdown</div>
+          <div class="hsp-row"><span class="hsp-row-n">Direct Website</span><span class="hsp-row-v">58% of bookings ↑</span></div>
+          <div class="hsp-row"><span class="hsp-row-n">Google Ads</span><span class="hsp-row-v">24% of bookings</span></div>
+          <div class="hsp-row"><span class="hsp-row-n">OTA (reduced)</span><span class="hsp-row-v">18% of bookings ↓</span></div>
+        </div>
+        <div class="hsp-btm">
+          <span class="hsp-btm-lbl">💰 Commission Saved This Month</span>
+          <span class="hsp-btm-val">₹8.4L saved</span>
+        </div>
       </div>
     </div>
   </div>
