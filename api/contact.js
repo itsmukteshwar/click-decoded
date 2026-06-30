@@ -3,17 +3,6 @@
 
 const nodemailer = require("nodemailer");
 
-// ── Zoho SMTP transporter ──────────────────────────────────────────────────
-const transporter = nodemailer.createTransport({
-  host: "smtp.zoho.in",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.ZOHO_EMAIL,
-    pass: process.env.ZOHO_APP_PASSWORD,
-  },
-});
-
 // ── Thank You email to the person who enquired ────────────────────────────
 function buildThankYouEmail(data) {
   const { name, company, service, budget, message } = data;
@@ -277,8 +266,24 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ success: false, error: "Method not allowed" });
   }
 
+  // ── Guard: check env vars are present ──
+  if (!process.env.ZOHO_EMAIL || !process.env.ZOHO_APP_PASSWORD) {
+    console.error("Missing ZOHO_EMAIL or ZOHO_APP_PASSWORD env vars");
+    return res.status(500).json({
+      success: false,
+      error: "Server configuration error. Please contact us via WhatsApp.",
+    });
+  }
+
   try {
-    const { name, company, email, phone, service, budget, message } = req.body;
+    // ── Parse body (Vercel may pass raw string or parsed object) ──
+    let body = req.body;
+    if (typeof body === "string") {
+      try { body = JSON.parse(body); } catch { body = {}; }
+    }
+    body = body || {};
+
+    const { name, company, email, phone, service, budget, message } = body;
 
     // Basic validation
     if (!name || !email || !service) {
@@ -290,6 +295,17 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ success: false, error: "Invalid email address." });
     }
 
+    // ── Build transporter inside handler (avoids cold-start SMTP issues) ──
+    const transporter = nodemailer.createTransport({
+      host: "smtp.zoho.in",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.ZOHO_EMAIL,
+        pass: process.env.ZOHO_APP_PASSWORD,
+      },
+    });
+
     // ── 1. Send Thank You email to the enquirer ──
     await transporter.sendMail({
       from: `"Click Decoded" <${process.env.ZOHO_EMAIL}>`,
@@ -298,7 +314,7 @@ module.exports = async function handler(req, res) {
       html: buildThankYouEmail({ name, company, email, phone, service, budget, message }),
     });
 
-    // ── 2. Send notification to hello@clickdecoded.com ──
+    // ── 2. Send notification copy to hello@clickdecoded.com ──
     await transporter.sendMail({
       from: `"Click Decoded Website" <${process.env.ZOHO_EMAIL}>`,
       to: process.env.ZOHO_EMAIL,
@@ -308,8 +324,12 @@ module.exports = async function handler(req, res) {
     });
 
     return res.status(200).json({ success: true, message: "Emails sent successfully." });
+
   } catch (err) {
-    console.error("Contact form error:", err);
-    return res.status(500).json({ success: false, error: "Failed to send email. Please try WhatsApp or call us directly." });
+    console.error("Contact form SMTP error:", err.message || err);
+    return res.status(500).json({
+      success: false,
+      error: "Failed to send email. Please WhatsApp us at +91 94070 00101.",
+    });
   }
 };
