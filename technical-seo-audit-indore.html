@@ -190,6 +190,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .btn-ac:hover{opacity:.9;transform:translateY(-2px);}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}.hero-inner{grid-template-columns:1fr;}.lead-box{position:static;max-width:500px;}.inc-grid{grid-template-columns:1fr 1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.hero{padding:52px 0 44px;}.inc-grid{grid-template-columns:1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(245,158,11,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(245,158,11,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fde68a;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#fde68a,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.tsai-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.tsai-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.tsai-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.tsai-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#F59E0B;font-weight:600;}
+.tsai-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#F59E0B;box-shadow:0 0 0 3px rgba(245,158,11,.2);animation:tsaip 2s infinite;}
+@keyframes tsaip{0%,100%{box-shadow:0 0 0 3px rgba(245,158,11,.2);}50%{box-shadow:0 0 0 6px rgba(245,158,11,.05);}}
+.tsai-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.tsai-kpi{background:#0f1e38;padding:14px 16px;}
+.tsai-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.tsai-kpi-val{font-size:20px;font-weight:900;color:#F59E0B;letter-spacing:-.02em;line-height:1;}
+.tsai-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.tsai-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.tsai-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.tsai-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.tsai-row:last-child{border:none;}
+.tsai-row-n{color:rgba(255,255,255,.55);}
+.tsai-row-v{color:#fde68a;font-weight:700;font-size:11px;}
+.tsai-btm{padding:12px 18px;background:rgba(245,158,11,.06);border-top:1px solid rgba(245,158,11,.1);display:flex;align-items:center;justify-content:space-between;}
+.tsai-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.tsai-btm-val{font-size:15px;font-weight:800;color:#F59E0B;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.tsai-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -219,50 +250,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">⚙️ Technical SEO Audit — Indore, MP</div>
-        <h1>Your Website Has<br><em>Hidden Technical</em><br>SEO Problems.</h1>
-        <p class="hero-sub">A technical SEO audit uncovers everything blocking Google from properly crawling, indexing, and ranking your Indore business website. We find it all — and fix it.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">⚙️ Full Technical Audit</div>
-          <div class="hb-badge">🚀 Core Web Vitals</div>
-          <div class="hb-badge">📋 Detailed Report</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-ac">🚀 Get Free Technical Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">⚙️ Technical SEO Audit — Indore, MP</div>
+        <h1>Your Website Has Hidden<br><em>Technical SEO Problems.</em></h1>
+        <p class="hero-desc">A technical SEO audit uncovers everything blocking Google from crawling, indexing, and ranking your Indore website. We find every issue — and fix it fast.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">⚙️ Get Free Technical Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>100+</strong> Issues Caught</div>
-          <div class="proof-item">✅ <strong>Page Speed</strong> Core Web Vitals</div>
-          <div class="proof-item">✅ <strong>12yr</strong> Experience</div>
+          <span class="proof-item"><strong>200+</strong> Technical Checks Run</span>
+          <span class="proof-item"><strong>Core Web</strong> Vitals Optimised</span>
+          <span class="proof-item"><strong>48hr</strong> Audit Turnaround</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Get Your Free Technical SEO Audit</div>
-        <div class="lead-sub">We'll audit your site's technical health and show you exactly what's holding back your Indore rankings.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Technical SEO Audit Indore">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your industry...</option>
-              <option>Real Estate</option><option>Healthcare / Clinic</option><option>Education / Coaching</option>
-              <option>Manufacturing / Industrial</option><option>Retail / E-Commerce</option>
-              <option>Hospitality / Restaurant</option><option>Legal / Finance</option><option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get Free Technical Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20a%20technical%20SEO%20audit%20for%20my%20Indore%20website" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="tsai-mock">
+        <div class="tsai-hdr">
+          <span class="tsai-hdr-title">Technical SEO Audit — Indore</span>
+          <span class="tsai-live">Live</span>
+        </div>
+        <div class="tsai-kpis">
+          <div class="tsai-kpi"><div class="tsai-kpi-lbl">Issues Found</div><div class="tsai-kpi-val">184</div><div class="tsai-kpi-d">↑ critical blockers removed</div></div>
+          <div class="tsai-kpi"><div class="tsai-kpi-lbl">Page Speed Score</div><div class="tsai-kpi-val">28 → 94</div><div class="tsai-kpi-d">↑ Core Web Vitals passed</div></div>
+          <div class="tsai-kpi"><div class="tsai-kpi-lbl">Crawl Errors Fixed</div><div class="tsai-kpi-val">112</div><div class="tsai-kpi-d">↑ all resolved in 7 days</div></div>
+          <div class="tsai-kpi"><div class="tsai-kpi-lbl">Rankings After Fix</div><div class="tsai-kpi-val">+78 pos</div><div class="tsai-kpi-d">↑ avg keyword lift</div></div>
+        </div>
+        <div class="tsai-rows">
+          <div class="tsai-rows-lbl">Critical Issues Fixed</div>
+          <div class="tsai-row"><span class="tsai-row-n">Broken Internal Links (48)</span><span class="tsai-row-v">✅ Fixed</span></div>
+          <div class="tsai-row"><span class="tsai-row-n">Missing Schema Markup</span><span class="tsai-row-v">✅ Added</span></div>
+          <div class="tsai-row"><span class="tsai-row-n">Slow LCP (7.8s → 1.0s)</span><span class="tsai-row-v">✅ Resolved</span></div>
+        </div>
+        <div class="tsai-btm">
+          <span class="tsai-btm-lbl">⚡ Avg. Ranking Lift After Audit</span>
+          <span class="tsai-btm-val">+78 positions</span>
+        </div>
       </div>
     </div>
   </div>

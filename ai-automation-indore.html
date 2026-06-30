@@ -190,6 +190,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .btn-ac:hover{opacity:.9;transform:translateY(-2px);}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}.hero-inner{grid-template-columns:1fr;}.lead-box{position:static;max-width:500px;}.inc-grid{grid-template-columns:1fr 1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.hero{padding:52px 0 44px;}.inc-grid{grid-template-columns:1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(124,58,237,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(124,58,237,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#c4b5fd;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#c4b5fd,#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.aii-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.aii-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.aii-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.aii-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#7C3AED;font-weight:600;}
+.aii-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#7C3AED;box-shadow:0 0 0 3px rgba(124,58,237,.2);animation:aiip 2s infinite;}
+@keyframes aiip{0%,100%{box-shadow:0 0 0 3px rgba(124,58,237,.2);}50%{box-shadow:0 0 0 6px rgba(124,58,237,.05);}}
+.aii-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.aii-kpi{background:#0f1e38;padding:14px 16px;}
+.aii-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.aii-kpi-val{font-size:20px;font-weight:900;color:#7C3AED;letter-spacing:-.02em;line-height:1;}
+.aii-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.aii-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.aii-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.aii-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.aii-row:last-child{border:none;}
+.aii-row-n{color:rgba(255,255,255,.55);}
+.aii-row-v{color:#c4b5fd;font-weight:700;font-size:11px;}
+.aii-btm{padding:12px 18px;background:rgba(124,58,237,.06);border-top:1px solid rgba(124,58,237,.1);display:flex;align-items:center;justify-content:space-between;}
+.aii-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.aii-btm-val{font-size:15px;font-weight:800;color:#7C3AED;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.aii-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -219,50 +250,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">🤖 AI Automation — Indore, MP</div>
-        <h1>Automate Your Indore<br><em>Business with AI.</em><br>Save 20+ Hours Weekly.</h1>
-        <p class="hero-sub">Repetitive tasks are killing your team's productivity. We build AI workflows and automation systems for Indore businesses that run 24/7 — so your team can focus on what matters.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">🤖 AI-Powered Workflows</div>
-          <div class="hb-badge">💬 WhatsApp Automation</div>
-          <div class="hb-badge">⏰ 24/7 Automation</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-ac">🚀 Get Free Automation Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">🤖 AI Automation — Indore, MP</div>
+        <h1>Automate Your Indore Business.<br><em>Save 20+ Hours Weekly.</em></h1>
+        <p class="hero-desc">We build AI workflows and automation systems for Indore businesses that run 24/7 — lead follow-ups, reporting, support bots — so your team focuses on growth, not repetition.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🤖 Book Free Automation Demo</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>20+</strong> Hours Saved Weekly</div>
-          <div class="proof-item">✅ <strong>24/7</strong> Automation Runs</div>
-          <div class="proof-item">✅ <strong>500+</strong> Automations Built</div>
+          <span class="proof-item"><strong>20+</strong> Hours Saved Per Week</span>
+          <span class="proof-item"><strong>24/7</strong> Automated Workflows</span>
+          <span class="proof-item"><strong>Indore</strong> Businesses Served</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Get Your Free Automation Audit</div>
-        <div class="lead-sub">We'll identify which of your business processes can be automated and estimate your time savings.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="AI Automation Indore">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your industry...</option>
-              <option>Real Estate</option><option>Healthcare / Clinic</option><option>Education / Coaching</option>
-              <option>Manufacturing / Industrial</option><option>Retail / E-Commerce</option>
-              <option>Hospitality / Restaurant</option><option>Legal / Finance</option><option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get Free Automation Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20AI%20automation%20for%20my%20Indore%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="aii-mock">
+        <div class="aii-hdr">
+          <span class="aii-hdr-title">Automation Impact — Indore</span>
+          <span class="aii-live">Live</span>
+        </div>
+        <div class="aii-kpis">
+          <div class="aii-kpi"><div class="aii-kpi-lbl">Hours Saved/Month</div><div class="aii-kpi-val">480+</div><div class="aii-kpi-d">↑ across 12 clients</div></div>
+          <div class="aii-kpi"><div class="aii-kpi-lbl">Leads Auto-Followed Up</div><div class="aii-kpi-val">2,840</div><div class="aii-kpi-d">↑ 0% missed</div></div>
+          <div class="aii-kpi"><div class="aii-kpi-lbl">Tickets Auto-Resolved</div><div class="aii-kpi-val">81%</div><div class="aii-kpi-d">↑ vs 9% before</div></div>
+          <div class="aii-kpi"><div class="aii-kpi-lbl">Cost Saved</div><div class="aii-kpi-val">₹2.1L</div><div class="aii-kpi-d">↑ in manual work</div></div>
+        </div>
+        <div class="aii-rows">
+          <div class="aii-rows-lbl">Active Automation Workflows</div>
+          <div class="aii-row"><span class="aii-row-n">WhatsApp Lead Bot — Indore</span><span class="aii-row-v">Running 24/7</span></div>
+          <div class="aii-row"><span class="aii-row-n">Auto Invoice & GST Reports</span><span class="aii-row-v">Running 24/7</span></div>
+          <div class="aii-row"><span class="aii-row-n">CRM Data Entry Automation</span><span class="aii-row-v">Running 24/7</span></div>
+        </div>
+        <div class="aii-btm">
+          <span class="aii-btm-lbl">🚀 Automations Deployed This Month</span>
+          <span class="aii-btm-val">5 new live</span>
+        </div>
       </div>
     </div>
   </div>

@@ -190,6 +190,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .btn-ac:hover{opacity:.9;transform:translateY(-2px);}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}.hero-inner{grid-template-columns:1fr;}.lead-box{position:static;max-width:500px;}.inc-grid{grid-template-columns:1fr 1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.hero{padding:52px 0 44px;}.inc-grid{grid-template-columns:1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(99,102,241,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(99,102,241,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#a5b4fc;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#a5b4fc,#6366F1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.mai-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.mai-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.mai-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.mai-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#6366F1;font-weight:600;}
+.mai-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#6366F1;box-shadow:0 0 0 3px rgba(99,102,241,.2);animation:maip 2s infinite;}
+@keyframes maip{0%,100%{box-shadow:0 0 0 3px rgba(99,102,241,.2);}50%{box-shadow:0 0 0 6px rgba(99,102,241,.05);}}
+.mai-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.mai-kpi{background:#0f1e38;padding:14px 16px;}
+.mai-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.mai-kpi-val{font-size:20px;font-weight:900;color:#6366F1;letter-spacing:-.02em;line-height:1;}
+.mai-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.mai-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.mai-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.mai-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.mai-row:last-child{border:none;}
+.mai-row-n{color:rgba(255,255,255,.55);}
+.mai-row-v{color:#a5b4fc;font-weight:700;font-size:11px;}
+.mai-btm{padding:12px 18px;background:rgba(99,102,241,.06);border-top:1px solid rgba(99,102,241,.1);display:flex;align-items:center;justify-content:space-between;}
+.mai-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.mai-btm-val{font-size:15px;font-weight:800;color:#6366F1;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.mai-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -219,50 +250,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">📘 Meta Ads — Indore, MP</div>
-        <h1>Facebook & Instagram Ads<br><em>That Generate Indore</em><br>Leads Daily.</h1>
-        <p class="hero-sub">Indore's buyers are on Facebook and Instagram every day. We build and manage Meta Ads campaigns that put your business in front of the right audience — and convert them.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📘 Facebook & Instagram</div>
-          <div class="hb-badge">🎯 Lead Gen Specialist</div>
-          <div class="hb-badge">📊 Full Funnel Campaigns</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-ac">🚀 Get Free Meta Ads Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">📘 Meta Ads — Indore, MP</div>
+        <h1>Facebook & Instagram Ads<br><em>That Generate Indore Leads Daily.</em></h1>
+        <p class="hero-desc">Indore's buyers are on Facebook and Instagram every day. We build Meta Ads campaigns that put your business in front of the right audience — and convert them into paying customers.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">📘 Get Free Meta Ads Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>4x</strong> Avg. Lead ROAS</div>
-          <div class="proof-item">✅ <strong>24hr</strong> Campaign Launch</div>
-          <div class="proof-item">✅ <strong>500+</strong> Campaigns</div>
+          <span class="proof-item"><strong>4.5×</strong> Average ROAS</span>
+          <span class="proof-item"><strong>₹16</strong> Avg. Cost Per Lead</span>
+          <span class="proof-item"><strong>Indore-Targeted</strong> Audience Segments</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Get Your Free Meta Ads Audit</div>
-        <div class="lead-sub">We'll review your current Meta Ads performance (or map out your opportunity) — free.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Meta Ads Management Indore">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your industry...</option>
-              <option>Real Estate</option><option>Healthcare / Clinic</option><option>Education / Coaching</option>
-              <option>Manufacturing / Industrial</option><option>Retail / E-Commerce</option>
-              <option>Hospitality / Restaurant</option><option>Legal / Finance</option><option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get Free Meta Ads Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20Meta%20Ads%20for%20my%20Indore%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="mai-mock">
+        <div class="mai-hdr">
+          <span class="mai-hdr-title">Meta Ads Dashboard — Indore</span>
+          <span class="mai-live">Live</span>
+        </div>
+        <div class="mai-kpis">
+          <div class="mai-kpi"><div class="mai-kpi-lbl">Monthly Leads</div><div class="mai-kpi-val">542</div><div class="mai-kpi-d">↑ 380% vs previous</div></div>
+          <div class="mai-kpi"><div class="mai-kpi-lbl">Cost Per Lead</div><div class="mai-kpi-val">₹16</div><div class="mai-kpi-d">↓ 77% from ₹71</div></div>
+          <div class="mai-kpi"><div class="mai-kpi-lbl">ROAS</div><div class="mai-kpi-val">4.5×</div><div class="mai-kpi-d">↑ from 0.8× at start</div></div>
+          <div class="mai-kpi"><div class="mai-kpi-lbl">Reach</div><div class="mai-kpi-val">2.4L/mo</div><div class="mai-kpi-d">↑ Indore-targeted</div></div>
+        </div>
+        <div class="mai-rows">
+          <div class="mai-rows-lbl">Top Performing Ad Creatives</div>
+          <div class="mai-row"><span class="mai-row-n">Real Estate Offer Reel</span><span class="mai-row-v">₹12 CPL · 7.4% CTR</span></div>
+          <div class="mai-row"><span class="mai-row-n">Education Testimonial Carousel</span><span class="mai-row-v">₹19 CPL · 5.8% CTR</span></div>
+          <div class="mai-row"><span class="mai-row-n">Clinic Before/After</span><span class="mai-row-v">₹21 CPL · 4.9% CTR</span></div>
+        </div>
+        <div class="mai-btm">
+          <span class="mai-btm-lbl">🎯 Total Indore Audience Reached</span>
+          <span class="mai-btm-val">18L+ this year</span>
+        </div>
       </div>
     </div>
   </div>

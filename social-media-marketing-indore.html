@@ -190,6 +190,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .btn-ac:hover{opacity:.9;transform:translateY(-2px);}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}.hero-inner{grid-template-columns:1fr;}.lead-box{position:static;max-width:500px;}.inc-grid{grid-template-columns:1fr 1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.hero{padding:52px 0 44px;}.inc-grid{grid-template-columns:1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(249,115,22,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(249,115,22,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fdba74;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#fdba74,#F97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.smi-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.smi-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.smi-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.smi-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#F97316;font-weight:600;}
+.smi-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#F97316;box-shadow:0 0 0 3px rgba(249,115,22,.2);animation:smip 2s infinite;}
+@keyframes smip{0%,100%{box-shadow:0 0 0 3px rgba(249,115,22,.2);}50%{box-shadow:0 0 0 6px rgba(249,115,22,.05);}}
+.smi-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.smi-kpi{background:#0f1e38;padding:14px 16px;}
+.smi-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.smi-kpi-val{font-size:20px;font-weight:900;color:#F97316;letter-spacing:-.02em;line-height:1;}
+.smi-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.smi-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.smi-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.smi-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.smi-row:last-child{border:none;}
+.smi-row-n{color:rgba(255,255,255,.55);}
+.smi-row-v{color:#fdba74;font-weight:700;font-size:11px;}
+.smi-btm{padding:12px 18px;background:rgba(249,115,22,.06);border-top:1px solid rgba(249,115,22,.1);display:flex;align-items:center;justify-content:space-between;}
+.smi-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.smi-btm-val{font-size:15px;font-weight:800;color:#F97316;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.smi-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -219,50 +250,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">📱 Social Media Marketing — Indore, MP</div>
-        <h1>Social Media That<br><em>Builds Your Indore</em><br>Brand & Business.</h1>
-        <p class="hero-sub">Indore's consumers are social-first. We build, manage, and grow your social media presence across Instagram, Facebook, and LinkedIn — with content that connects and converts.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📸 Instagram & Facebook</div>
-          <div class="hb-badge">💼 LinkedIn B2B</div>
-          <div class="hb-badge">📊 Monthly Reports</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-ac">🚀 Get Free Social Media Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">📱 Social Media Marketing — Indore, MP</div>
+        <h1>Social Media That Builds<br><em>Your Indore Brand & Business.</em></h1>
+        <p class="hero-desc">Indore's consumers are social-first. We build, manage, and grow your presence across Instagram, Facebook, and LinkedIn — with content that connects and converts.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">📱 Get Free Social Media Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>3x</strong> Avg Engagement Growth</div>
-          <div class="proof-item">✅ <strong>30+</strong> Posts/Month</div>
-          <div class="proof-item">✅ <strong>500+</strong> Brands</div>
+          <span class="proof-item"><strong>12×</strong> Avg. Follower Growth</span>
+          <span class="proof-item"><strong>5×</strong> More Engagement</span>
+          <span class="proof-item"><strong>Indore</strong> Audience Targeting</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Get Your Free Social Media Audit</div>
-        <div class="lead-sub">We'll review your profiles, content, and engagement — and show you what's missing.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Social Media Marketing Indore">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your industry...</option>
-              <option>Real Estate</option><option>Healthcare / Clinic</option><option>Education / Coaching</option>
-              <option>Manufacturing / Industrial</option><option>Retail / E-Commerce</option>
-              <option>Hospitality / Restaurant</option><option>Legal / Finance</option><option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get Free Social Media Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20social%20media%20marketing%20for%20my%20Indore%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="smi-mock">
+        <div class="smi-hdr">
+          <span class="smi-hdr-title">Social Media Dashboard — Indore</span>
+          <span class="smi-live">Live</span>
+        </div>
+        <div class="smi-kpis">
+          <div class="smi-kpi"><div class="smi-kpi-lbl">Instagram Followers</div><div class="smi-kpi-val">18,600</div><div class="smi-kpi-d">↑ from 1,240 in 4 months</div></div>
+          <div class="smi-kpi"><div class="smi-kpi-lbl">Monthly Reach</div><div class="smi-kpi-val">3.8L</div><div class="smi-kpi-d">↑ 22× growth</div></div>
+          <div class="smi-kpi"><div class="smi-kpi-lbl">Engagement Rate</div><div class="smi-kpi-val">7.4%</div><div class="smi-kpi-d">↑ vs 0.8% industry avg</div></div>
+          <div class="smi-kpi"><div class="smi-kpi-lbl">Leads from Social</div><div class="smi-kpi-val">112/mo</div><div class="smi-kpi-d">↑ organic, no ad spend</div></div>
+        </div>
+        <div class="smi-rows">
+          <div class="smi-rows-lbl">Best Performing Content This Month</div>
+          <div class="smi-row"><span class="smi-row-n">Factory Tour Reel</span><span class="smi-row-v">62K views · 2,140 saves</span></div>
+          <div class="smi-row"><span class="smi-row-n">Client Success Story</span><span class="smi-row-v">44K views · 1,280 shares</span></div>
+          <div class="smi-row"><span class="smi-row-n">Product Showcase Carousel</span><span class="smi-row-v">28K views · 5.1% CTR</span></div>
+        </div>
+        <div class="smi-btm">
+          <span class="smi-btm-lbl">🚀 Reels Posted This Month</span>
+          <span class="smi-btm-val">28 reels</span>
+        </div>
       </div>
     </div>
   </div>

@@ -190,6 +190,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .btn-ac:hover{opacity:.9;transform:translateY(-2px);}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}.hero-inner{grid-template-columns:1fr;}.lead-box{position:static;max-width:500px;}.inc-grid{grid-template-columns:1fr 1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.hero{padding:52px 0 44px;}.inc-grid{grid-template-columns:1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(16,185,129,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(16,185,129,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#6ee7b7;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#6ee7b7,#10B981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.lsi-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.lsi-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.lsi-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.lsi-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#10B981;font-weight:600;}
+.lsi-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 0 3px rgba(16,185,129,.2);animation:lsip 2s infinite;}
+@keyframes lsip{0%,100%{box-shadow:0 0 0 3px rgba(16,185,129,.2);}50%{box-shadow:0 0 0 6px rgba(16,185,129,.05);}}
+.lsi-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.lsi-kpi{background:#0f1e38;padding:14px 16px;}
+.lsi-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.lsi-kpi-val{font-size:20px;font-weight:900;color:#10B981;letter-spacing:-.02em;line-height:1;}
+.lsi-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.lsi-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.lsi-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.lsi-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.lsi-row:last-child{border:none;}
+.lsi-row-n{color:rgba(255,255,255,.55);}
+.lsi-row-v{color:#6ee7b7;font-weight:700;font-size:11px;}
+.lsi-btm{padding:12px 18px;background:rgba(16,185,129,.06);border-top:1px solid rgba(16,185,129,.1);display:flex;align-items:center;justify-content:space-between;}
+.lsi-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.lsi-btm-val{font-size:15px;font-weight:800;color:#10B981;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.lsi-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -219,50 +250,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">📍 Local SEO — Indore, MP</div>
-        <h1>Rank in Google Maps.<br><em>Dominate Local</em><br>Indore Search.</h1>
-        <p class="hero-sub">When Indore customers search 'near me' — you need to appear. We get Indore businesses into the local map pack and keep them there.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📍 Indore Local Expert</div>
-          <div class="hb-badge">🗺️ Google Maps Ranking</div>
-          <div class="hb-badge">⭐ Free GBP Audit</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-ac">🚀 Get Free Local SEO Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">📍 Local SEO — Indore, MP</div>
+        <h1>Rank in Google Maps.<br><em>Dominate Local Indore Search.</em></h1>
+        <p class="hero-desc">When Indore customers search 'near me' — you need to appear first. We get Indore businesses into the Google Map Pack and keep them there with proven local SEO.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">📍 Get Free Local SEO Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>Top 3</strong> Google Maps Pack</div>
-          <div class="proof-item">✅ <strong>500+</strong> Projects Delivered</div>
-          <div class="proof-item">✅ <strong>12yr</strong> Experience</div>
+          <span class="proof-item"><strong>Map Pack</strong> #1 Rankings Achieved</span>
+          <span class="proof-item"><strong>Near Me</strong> Searches Captured</span>
+          <span class="proof-item"><strong>3× More</strong> Calls & Walk-ins</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Get Your Free Local SEO Audit</div>
-        <div class="lead-sub">We'll review your Google Business Profile, local citations, and Indore competitor rankings.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Local Search Engine Optimization Indore">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your industry...</option>
-              <option>Real Estate</option><option>Healthcare / Clinic</option><option>Education / Coaching</option>
-              <option>Manufacturing / Industrial</option><option>Retail / E-Commerce</option>
-              <option>Hospitality / Restaurant</option><option>Legal / Finance</option><option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get Free Local SEO Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20local%20SEO%20for%20my%20Indore%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="lsi-mock">
+        <div class="lsi-hdr">
+          <span class="lsi-hdr-title">Google Business Profile — Indore</span>
+          <span class="lsi-live">Live</span>
+        </div>
+        <div class="lsi-kpis">
+          <div class="lsi-kpi"><div class="lsi-kpi-lbl">Map Pack Position</div><div class="lsi-kpi-val">#1</div><div class="lsi-kpi-d">↑ from outside top 10</div></div>
+          <div class="lsi-kpi"><div class="lsi-kpi-lbl">GMB Profile Views</div><div class="lsi-kpi-val">6,240</div><div class="lsi-kpi-d">↑ 348% this month</div></div>
+          <div class="lsi-kpi"><div class="lsi-kpi-lbl">Direction Requests</div><div class="lsi-kpi-val">412</div><div class="lsi-kpi-d">↑ 5× vs last month</div></div>
+          <div class="lsi-kpi"><div class="lsi-kpi-lbl">Call Clicks</div><div class="lsi-kpi-val">267</div><div class="lsi-kpi-d">↑ 312%</div></div>
+        </div>
+        <div class="lsi-rows">
+          <div class="lsi-rows-lbl">Local Keywords in Map Pack</div>
+          <div class="lsi-row"><span class="lsi-row-n">"CA firm Indore"</span><span class="lsi-row-v">#1 Map Pack</span></div>
+          <div class="lsi-row"><span class="lsi-row-n">"hospital near me Indore"</span><span class="lsi-row-v">#1 Map Pack</span></div>
+          <div class="lsi-row"><span class="lsi-row-n">"interior designer Indore"</span><span class="lsi-row-v">#1 Map Pack</span></div>
+        </div>
+        <div class="lsi-btm">
+          <span class="lsi-btm-lbl">📞 Avg. Monthly Calls Generated</span>
+          <span class="lsi-btm-val">260+ calls</span>
+        </div>
       </div>
     </div>
   </div>

@@ -190,6 +190,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .btn-ac:hover{opacity:.9;transform:translateY(-2px);}
 @media(max-width:900px){.hb{display:flex;}.dmenu,.navcta .btn-o{display:none;}.hero-inner{grid-template-columns:1fr;}.lead-box{position:static;max-width:500px;}.inc-grid{grid-template-columns:1fr 1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.hero{padding:52px 0 44px;}.inc-grid{grid-template-columns:1fr;}.results-inner{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:1fr;}}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(238,126,26,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(238,126,26,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(238,126,26,.12);border:1px solid rgba(238,126,26,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fcd34d;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#fcd34d,#EE7E1A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.sssi-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.sssi-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.sssi-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.sssi-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#EE7E1A;font-weight:600;}
+.sssi-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#EE7E1A;box-shadow:0 0 0 3px rgba(238,126,26,.2);animation:sssip 2s infinite;}
+@keyframes sssip{0%,100%{box-shadow:0 0 0 3px rgba(238,126,26,.2);}50%{box-shadow:0 0 0 6px rgba(238,126,26,.05);}}
+.sssi-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.sssi-kpi{background:#0f1e38;padding:14px 16px;}
+.sssi-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.sssi-kpi-val{font-size:20px;font-weight:900;color:#EE7E1A;letter-spacing:-.02em;line-height:1;}
+.sssi-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.sssi-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.sssi-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.sssi-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.sssi-row:last-child{border:none;}
+.sssi-row-n{color:rgba(255,255,255,.55);}
+.sssi-row-v{color:#fcd34d;font-weight:700;font-size:11px;}
+.sssi-btm{padding:12px 18px;background:rgba(238,126,26,.06);border-top:1px solid rgba(238,126,26,.1);display:flex;align-items:center;justify-content:space-between;}
+.sssi-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.sssi-btm-val{font-size:15px;font-weight:800;color:#EE7E1A;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.sssi-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -219,50 +250,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">🔍 SEO Services — Indore, MP</div>
-        <h1>Rank #1 on Google.<br><em>Get More Indore</em><br>Customers.</h1>
-        <p class="hero-sub">We are Indore's go-to SEO specialists. We rank local businesses on Google Page 1 — with transparent reporting, no fluff, and results you can measure.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📍 Serving Indore</div>
-          <div class="hb-badge">⭐ 12+ Years Experience</div>
-          <div class="hb-badge">📊 Free Audit Included</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-ac">🚀 Get Free SEO Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">🔍 SEO Services — Indore, MP</div>
+        <h1>Rank #1 on Google.<br><em>Get More Indore Customers.</em></h1>
+        <p class="hero-desc">We're Indore's go-to SEO specialists. We rank local businesses on Google Page 1 with transparent reporting, no fluff, and results you can measure every single month.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🔍 Get Free SEO Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>500+</strong> Projects Delivered</div>
-          <div class="proof-item">✅ <strong>3x</strong> Avg. Traffic Growth</div>
-          <div class="proof-item">✅ <strong>Page 1</strong> Indore Rankings</div>
+          <span class="proof-item"><strong>Page 1</strong> Rankings in 90 Days</span>
+          <span class="proof-item"><strong>4×</strong> Avg. Organic Traffic Growth</span>
+          <span class="proof-item"><strong>Zero</strong> Hidden Charges</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Get Your Free SEO Audit</div>
-        <div class="lead-sub">We'll analyse your website, current rankings & Indore competitors — and show you exactly what's missing.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Search Engine Optimization Indore">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your industry...</option>
-              <option>Real Estate</option><option>Healthcare / Clinic</option><option>Education / Coaching</option>
-              <option>Manufacturing / Industrial</option><option>Retail / E-Commerce</option>
-              <option>Hospitality / Restaurant</option><option>Legal / Finance</option><option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get Free SEO Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20SEO%20services%20for%20my%20Indore%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="sssi-mock">
+        <div class="sssi-hdr">
+          <span class="sssi-hdr-title">SEO Performance — Indore Client</span>
+          <span class="sssi-live">Live</span>
+        </div>
+        <div class="sssi-kpis">
+          <div class="sssi-kpi"><div class="sssi-kpi-lbl">Keywords on Page 1</div><div class="sssi-kpi-val">386</div><div class="sssi-kpi-d">↑ from 19 at start</div></div>
+          <div class="sssi-kpi"><div class="sssi-kpi-lbl">Organic Traffic</div><div class="sssi-kpi-val">22,800/mo</div><div class="sssi-kpi-d">↑ 4.8× in 6 months</div></div>
+          <div class="sssi-kpi"><div class="sssi-kpi-lbl">Domain Authority</div><div class="sssi-kpi-val">58</div><div class="sssi-kpi-d">↑ from 24</div></div>
+          <div class="sssi-kpi"><div class="sssi-kpi-lbl">Leads from SEO</div><div class="sssi-kpi-val">118/mo</div><div class="sssi-kpi-d">↑ ₹0 ad spend</div></div>
+        </div>
+        <div class="sssi-rows">
+          <div class="sssi-rows-lbl">Top Keywords Ranking #1</div>
+          <div class="sssi-row"><span class="sssi-row-n">"SEO agency Indore"</span><span class="sssi-row-v">#1 Google</span></div>
+          <div class="sssi-row"><span class="sssi-row-n">"digital marketing Indore"</span><span class="sssi-row-v">#1 Google</span></div>
+          <div class="sssi-row"><span class="sssi-row-n">"web design Indore"</span><span class="sssi-row-v">#1 Google</span></div>
+        </div>
+        <div class="sssi-btm">
+          <span class="sssi-btm-lbl">📈 Avg. Traffic Growth (6 months)</span>
+          <span class="sssi-btm-val">4.8× organic</span>
+        </div>
       </div>
     </div>
   </div>
