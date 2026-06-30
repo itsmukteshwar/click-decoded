@@ -203,6 +203,13 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .rst-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
 .rst-btm-val{font-size:15px;font-weight:800;color:#FF9800;}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.rst-mock{display:none;}}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{background:var(--bg);border-bottom:1px solid var(--bdr);padding:12px 0;}
+.bc-list{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--s);list-style:none;padding:0;margin:0;}
+.bc-list a{color:var(--m);font-weight:500;transition:.14s;}
+.bc-list a:hover{color:var(--n);}
+.bc-sep{opacity:.4;}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -217,6 +224,18 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 <body>
 <div id="cd-header"></div>
 <script src="components/header.js?v=2"></script>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="wrap">
+    <ol class="bc-list">
+      <li><a href="index.html">Home</a></li>
+      <li class="bc-sep">›</li>
+      <li><a href="#">Industries</a></li>
+      <li class="bc-sep">›</li>
+      <li>Restaurants & Cloud Kitchens</li>
+    </ol>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
