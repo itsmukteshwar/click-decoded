@@ -108,8 +108,54 @@
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--o);box-shadow:0 0 0 3px rgba(238,126,26,.08);}
 .form-group textarea{min-height:90px;resize:vertical;line-height:1.6;}
 .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
-.form-submit-btn{width:100%;padding:14px;background:var(--o);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:.18s;margin-top:4px;}
+.form-submit-btn{width:100%;padding:14px;background:var(--o);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:.18s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px;}
 .form-submit-btn:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 6px 24px rgba(238,126,26,.3);}
+/* PHONE ROW */
+.phone-row{display:flex;position:relative;}
+.phone-trigger{display:flex;align-items:center;gap:7px;padding:0 12px;height:46px;background:#f8fafc;border:1.5px solid var(--bdr);border-right:none;border-radius:9px 0 0 9px;cursor:pointer;white-space:nowrap;font-size:13.5px;font-weight:600;color:var(--n);transition:.18s;flex-shrink:0;user-select:none;}
+.phone-trigger:hover{background:#eef2f8;}
+.phone-trigger img{width:22px;height:15px;border-radius:2px;object-fit:cover;}
+.phone-trigger svg{opacity:.45;margin-left:2px;}
+.phone-row input[type=tel]{border-radius:0 9px 9px 0;border:1.5px solid var(--bdr);flex:1;padding:11px 15px;font-size:14px;font-family:'Inter',sans-serif;color:var(--body);outline:none;transition:.18s;background:#fff;}
+.phone-row input[type=tel]:focus{border-color:var(--o);box-shadow:0 0 0 3px rgba(238,126,26,.08);}
+.phone-row.open .phone-trigger{border-color:var(--o);background:#fff;}
+.phone-drop{display:none;position:absolute;top:calc(100% + 6px);left:0;width:300px;background:#fff;border:1.5px solid var(--bdr);border-radius:14px;box-shadow:0 16px 48px rgba(13,27,42,.13);z-index:999;overflow:hidden;}
+.phone-row.open .phone-drop{display:block;}
+.phone-drop-search{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1.5px solid var(--bdr);}
+.phone-drop-search input{border:none;outline:none;font-size:13px;font-family:'Inter',sans-serif;color:var(--body);width:100%;background:transparent;}
+.phone-drop-search input::placeholder{color:#94a3b8;}
+.phone-drop-list{max-height:220px;overflow-y:auto;padding:6px;}
+.phone-opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;transition:.12s;}
+.phone-opt:hover,.phone-opt.selected{background:var(--bg);}
+.phone-opt img{width:22px;height:15px;border-radius:2px;object-fit:cover;flex-shrink:0;}
+.phone-opt-name{font-size:13px;color:var(--body);flex:1;}
+.phone-opt-code{font-size:12px;font-weight:600;color:var(--s);}
+/* FILE UPLOAD */
+.file-upload-wrap{position:relative;}
+.file-upload-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.file-upload-ui{display:flex;align-items:center;gap:12px;padding:11px 15px;border:1.5px dashed var(--bdr);border-radius:9px;background:#fafbfc;cursor:pointer;transition:.18s;}
+.file-upload-ui:hover{border-color:var(--o);background:rgba(238,126,26,.03);}
+.file-upload-icon{width:36px;height:36px;border-radius:8px;background:rgba(238,126,26,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.file-upload-text{font-size:13px;color:var(--s);line-height:1.5;}
+.file-upload-text strong{display:block;font-size:13.5px;color:var(--n);font-weight:600;}
+.file-name-display{margin-top:7px;font-size:12px;color:#059669;font-weight:600;display:none;}
+/* CAPTCHA */
+.captcha-row{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#f8fafc;border:1.5px solid var(--bdr);border-radius:9px;}
+.captcha-q{font-size:14px;font-weight:700;color:var(--n);flex:1;}
+.captcha-input{width:80px;padding:8px 12px;border:1.5px solid var(--bdr);border-radius:8px;font-size:15px;font-weight:700;text-align:center;outline:none;transition:.18s;font-family:'Inter',sans-serif;}
+.captcha-input:focus{border-color:var(--o);box-shadow:0 0 0 3px rgba(238,126,26,.08);}
+.captcha-refresh{background:none;border:none;cursor:pointer;padding:6px;border-radius:6px;color:var(--s);transition:.15s;flex-shrink:0;}
+.captcha-refresh:hover{color:var(--o);background:rgba(238,126,26,.08);}
+/* APPLY SUCCESS STATE */
+.apply-success{display:none;text-align:center;padding:48px 24px 36px;}
+.apply-success .as-anim{position:relative;width:80px;height:80px;margin:0 auto 20px;}
+.apply-success .as-ring{position:absolute;inset:0;border-radius:50%;border:3px solid #10b981;animation:fs-ring-pop .5s cubic-bezier(.34,1.56,.64,1) forwards;}
+.apply-success .as-check{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.apply-success .as-badge{display:inline-block;background:rgba(16,185,129,.1);color:#059669;border:1px solid rgba(16,185,129,.25);border-radius:100px;padding:5px 16px;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:14px;text-transform:uppercase;}
+.apply-success h3{font-size:22px;font-weight:800;color:var(--n);margin-bottom:8px;}
+.apply-success p{font-size:14px;color:var(--m);line-height:1.75;margin-bottom:0;}
+@keyframes as-ring-pop{0%{transform:scale(0);opacity:0;}60%{transform:scale(1.12);}100%{transform:scale(1);opacity:1;}}
+@keyframes as-check-draw{0%{stroke-dashoffset:40;}100%{stroke-dashoffset:0;}}
 .apply-info h3{font-size:26px;margin-bottom:16px;}
 .apply-info p{font-size:15px;color:var(--m);line-height:1.8;margin-bottom:20px;}
 .perks-list{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
@@ -265,26 +311,102 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
     <div class="apply-form rv">
       <h3>Apply Now</h3>
       <p class="sub">Fill this in — we read every application personally and respond within 3 working days.</p>
-      <form onsubmit="handleApply(event)">
-        <div class="form-group"><label>Full Name <span>*</span></label><input type="text" placeholder="Your full name" required></div>
-        <div class="form-group"><label>Email Address <span>*</span></label><input type="email" placeholder="you@email.com" required></div>
-        <div class="form-group"><label>Phone / WhatsApp <span>*</span></label><input type="tel" placeholder="+91 98765 00000" required></div>
+      <form id="apply-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>Full Name <span>*</span></label>
+          <input type="text" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span>*</span></label>
+          <input type="email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp <span>*</span></label>
+          <div class="phone-row" id="apply-phone-row">
+            <button type="button" class="phone-trigger" id="apply-phone-trigger" aria-haspopup="listbox">
+              <img id="apply-phone-flag" src="https://flagcdn.com/24x18/in.png" alt="India">
+              <span id="apply-phone-code">+91</span>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="phone-drop" id="apply-phone-drop" role="listbox">
+              <div class="phone-drop-search">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="5" stroke="#94a3b8" stroke-width="1.4"/><path d="M10 10l3 3" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round"/></svg>
+                <input type="text" id="apply-phone-search" placeholder="Search country..." autocomplete="off">
+              </div>
+              <div class="phone-drop-list" id="apply-phone-drop-list"></div>
+            </div>
+            <input type="hidden" id="apply-phone-dial" value="+91">
+            <input type="tel" id="apply-phone-input" name="phone" placeholder="98765 00000" required>
+          </div>
+        </div>
         <div class="form-group">
           <label>Role You're Applying For <span>*</span></label>
-          <select required>
+          <select name="role" required>
             <option value="" disabled selected>— Select role —</option>
             <option>SEO Specialist</option>
             <option>Performance Marketing Executive</option>
             <option>Web Developer</option>
             <option>AI Automation Engineer</option>
-            <option>Content Strategist & Writer</option>
+            <option>Content Strategist &amp; Writer</option>
             <option>Open Application (Something Else)</option>
           </select>
         </div>
-        <div class="form-group"><label>LinkedIn / Portfolio URL</label><input type="url" placeholder="https://linkedin.com/in/yourname"></div>
-        <div class="form-group"><label>Why Click Decoded? <span>*</span></label><textarea placeholder="Tell us what excites you about this role and why you'd be a great fit. Be honest — we appreciate it." required></textarea></div>
-        <button type="submit" class="form-submit-btn">Submit Application →</button>
+        <div class="form-group">
+          <label>LinkedIn / Portfolio URL</label>
+          <input type="url" name="portfolio" placeholder="https://linkedin.com/in/yourname">
+        </div>
+        <div class="form-group">
+          <label>Upload Resume <span>*</span></label>
+          <div class="file-upload-wrap">
+            <input type="file" id="resume-file" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required class="file-upload-input">
+            <div class="file-upload-ui" id="file-upload-ui">
+              <div class="file-upload-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EE7E1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              </div>
+              <div class="file-upload-text">
+                <strong>Click to upload your resume</strong>
+                PDF, DOC or DOCX only · Max 5 MB
+              </div>
+            </div>
+            <div class="file-name-display" id="file-name-display">📎 <span id="file-name-text"></span></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Why Click Decoded? <span>*</span></label>
+          <textarea name="message" placeholder="Tell us what excites you about this role and why you'd be a great fit. Be honest — we appreciate it." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Quick Check <span>*</span></label>
+          <div class="captcha-row">
+            <span class="captcha-q" id="captcha-q">Loading...</span>
+            <input type="number" class="captcha-input" id="captcha-ans" placeholder="?" required min="0" max="99">
+            <button type="button" class="captcha-refresh" id="captcha-refresh" title="New question">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="form-note" style="margin-top:0;margin-bottom:12px;">🔒 Your information is private and will never be shared with third parties.</p>
+        <button type="submit" class="form-submit-btn" id="apply-submit-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Submit Application
+        </button>
+        <div id="apply-error" style="display:none;margin-top:12px;padding:12px 16px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:10px;font-size:13px;color:#dc2626;text-align:center;"></div>
       </form>
+      <div class="apply-success" id="apply-success">
+        <div class="as-anim">
+          <div class="as-ring" style="animation-name:as-ring-pop;"></div>
+          <div class="as-check">
+            <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+              <path d="M9 18l6 6 12-12" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                stroke-dasharray="40" stroke-dashoffset="40"
+                style="animation:as-check-draw .4s .35s ease forwards;"/>
+            </svg>
+          </div>
+        </div>
+        <div class="as-badge">🎉 Application received</div>
+        <h3>We've got your application!<br>We'll be in touch.</h3>
+        <p>We review every application personally and respond within 3 working days. Keep an eye on your inbox — and WhatsApp us at <strong>+91 94070 00101</strong> if you have questions.</p>
+      </div>
     </div>
     <div class="apply-info rv2">
       <div class="pill pill-o" style="margin-bottom:16px;">Why Join Us</div>
@@ -307,7 +429,164 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.1});
 document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
 const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>40),{passive:true});
-function handleApply(e){e.preventDefault();e.target.innerHTML='<div style="text-align:center;padding:32px;"><div style="font-size:48px;margin-bottom:12px;">🎉</div><h3 style="font-size:20px;margin-bottom:10px;">Application Received!</h3><p style="font-size:14px;color:var(--m);line-height:1.7;">Thank you! We review every application personally and will get back to you within 3 working days.<br>Feel free to WhatsApp us at <strong>+91 94070 00101</strong> if you have questions.</p></div>';}
+/* ── CAPTCHA ── */
+(function(){
+  var captchaAnswer=0;
+  function newQ(){
+    var a=Math.floor(Math.random()*12)+1,b=Math.floor(Math.random()*12)+1;
+    captchaAnswer=a+b;
+    var q=document.getElementById('captcha-q');
+    if(q)q.textContent='What is '+a+' + '+b+' ?';
+    var inp=document.getElementById('captcha-ans');
+    if(inp)inp.value='';
+  }
+  newQ();
+  var btn=document.getElementById('captcha-refresh');
+  if(btn)btn.addEventListener('click',newQ);
+  window.__getCaptchaAnswer=function(){return captchaAnswer;};
+})();
+
+/* ── File Upload Label ── */
+(function(){
+  var inp=document.getElementById('resume-file');
+  var display=document.getElementById('file-name-display');
+  var nameText=document.getElementById('file-name-text');
+  var ui=document.getElementById('file-upload-ui');
+  if(!inp)return;
+  inp.addEventListener('change',function(){
+    var f=this.files[0];
+    if(!f)return;
+    var allowed=['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    if(!allowed.includes(f.type) && !/\.(pdf|doc|docx)$/i.test(f.name)){
+      alert('Please upload a PDF, DOC or DOCX file only.');
+      this.value='';return;
+    }
+    if(f.size>5*1024*1024){alert('File too large. Maximum 5 MB.');this.value='';return;}
+    if(nameText)nameText.textContent=f.name+' ('+Math.round(f.size/1024)+' KB)';
+    if(display)display.style.display='block';
+    if(ui)ui.style.borderColor='#10b981';
+  });
+})();
+
+/* ── Apply Form Submit ── */
+(function(){
+  var form=document.getElementById('apply-form');
+  var successBox=document.getElementById('apply-success');
+  var submitBtn=document.getElementById('apply-submit-btn');
+  var errBox=document.getElementById('apply-error');
+  if(!form)return;
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+
+    var name=form.name.value.trim();
+    var email=form.email.value.trim();
+    var dialEl=document.getElementById('apply-phone-dial');
+    var phoneVal=((dialEl?dialEl.value:'+91')+' '+form.phone.value.trim()).trim();
+    var role=form.role.value;
+    var resume=document.getElementById('resume-file');
+
+    if(!name||!email||!role){showErr('Please fill in all required fields.');return;}
+    var emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if(!emailOk){showErr('Please enter a valid email address.');return;}
+    if(!resume||!resume.files||!resume.files[0]){showErr('Please upload your resume.');return;}
+
+    // CAPTCHA check
+    var ans=parseInt(document.getElementById('captcha-ans').value);
+    var expected=window.__getCaptchaAnswer?window.__getCaptchaAnswer():null;
+    if(!ans||ans!==expected){showErr('Incorrect answer to the quick check. Please try again.');return;}
+
+    submitBtn.disabled=true;
+    submitBtn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Sending…';
+    errBox.style.display='none';
+
+    try{
+      var fd=new FormData(form);
+      fd.set('phone',phoneVal);
+      var res=await fetch('/api/careers',{method:'POST',body:fd});
+      var data=await res.json();
+      if(res.ok&&data.success){
+        form.style.display='none';
+        successBox.style.display='block';
+      }else{
+        throw new Error(data.error||'Something went wrong.');
+      }
+    }catch(err){
+      showErr(err.message||'Failed to submit. Please try WhatsApp.');
+      submitBtn.disabled=false;
+      submitBtn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Application';
+    }
+  });
+
+  function showErr(msg){
+    errBox.textContent='⚠ '+msg;
+    errBox.style.display='block';
+    errBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+})();
+
+/* ── Apply Phone Flag Picker ── */
+(function(){
+  var COUNTRIES=[
+    {code:'in',dial:'+91',name:'India'},
+    {code:'us',dial:'+1',name:'United States'},
+    {code:'gb',dial:'+44',name:'United Kingdom'},
+    {code:'ae',dial:'+971',name:'UAE'},
+    {code:'sg',dial:'+65',name:'Singapore'},
+    {code:'au',dial:'+61',name:'Australia'},
+    {code:'ca',dial:'+1',name:'Canada'},
+    {code:'my',dial:'+60',name:'Malaysia'},
+    {code:'nz',dial:'+64',name:'New Zealand'},
+    {code:'de',dial:'+49',name:'Germany'},
+    {code:'fr',dial:'+33',name:'France'},
+    {code:'it',dial:'+39',name:'Italy'},
+    {code:'es',dial:'+34',name:'Spain'},
+    {code:'nl',dial:'+31',name:'Netherlands'},
+    {code:'sa',dial:'+966',name:'Saudi Arabia'},
+    {code:'qa',dial:'+974',name:'Qatar'},
+    {code:'om',dial:'+968',name:'Oman'},
+    {code:'bh',dial:'+973',name:'Bahrain'},
+    {code:'kw',dial:'+965',name:'Kuwait'},
+    {code:'pk',dial:'+92',name:'Pakistan'},
+    {code:'bd',dial:'+880',name:'Bangladesh'},
+    {code:'lk',dial:'+94',name:'Sri Lanka'},
+    {code:'np',dial:'+977',name:'Nepal'},
+  ];
+  var row=document.getElementById('apply-phone-row');
+  var trigger=document.getElementById('apply-phone-trigger');
+  var drop=document.getElementById('apply-phone-drop');
+  var list=document.getElementById('apply-phone-drop-list');
+  var search=document.getElementById('apply-phone-search');
+  var flag=document.getElementById('apply-phone-flag');
+  var code=document.getElementById('apply-phone-code');
+  var hidden=document.getElementById('apply-phone-dial');
+  if(!row)return;
+
+  function renderList(q){
+    var f=q?(COUNTRIES.filter(c=>c.name.toLowerCase().includes(q.toLowerCase()))):COUNTRIES;
+    list.innerHTML=f.map(c=>'<div class="phone-opt" data-dial="'+c.dial+'" data-code="'+c.code+'" data-name="'+c.name+'"><img src="https://flagcdn.com/24x18/'+c.code+'.png" alt="'+c.name+'"><span class="phone-opt-name">'+c.name+'</span><span class="phone-opt-code">'+c.dial+'</span></div>').join('');
+    list.querySelectorAll('.phone-opt').forEach(function(opt){
+      opt.addEventListener('click',function(){
+        var d=this.dataset;
+        flag.src='https://flagcdn.com/24x18/'+d.code+'.png';
+        flag.alt=d.name;
+        code.textContent=d.dial;
+        hidden.value=d.dial;
+        row.classList.remove('open');
+      });
+    });
+  }
+  renderList();
+  trigger.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=row.classList.toggle('open');
+    if(open){search.value='';renderList();search.focus();}
+  });
+  search.addEventListener('input',function(){renderList(this.value);});
+  document.addEventListener('click',function(e){
+    if(!row.contains(e.target))row.classList.remove('open');
+  });
+})();
 </script>
 </body>
 </html>

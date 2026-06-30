@@ -727,4 +727,67 @@ if(form){
     {code:'om',dial:'+968',name:'Oman'},
     {code:'bh',dial:'+973',name:'Bahrain'},
     {code:'kw',dial:'+965',name:'Kuwait'},
-    {code:'pk',dial:'+92',
+    {code:'pk',dial:'+92',name:'Pakistan'},
+    {code:'bd',dial:'+880',name:'Bangladesh'},
+    {code:'lk',dial:'+94',name:'Sri Lanka'},
+    {code:'np',dial:'+977',name:'Nepal'},
+    {code:'za',dial:'+27',name:'South Africa'},
+    {code:'ng',dial:'+234',name:'Nigeria'},
+    {code:'ke',dial:'+254',name:'Kenya'},
+    {code:'br',dial:'+55',name:'Brazil'},
+    {code:'mx',dial:'+52',name:'Mexico'},
+    {code:'jp',dial:'+81',name:'Japan'},
+    {code:'kr',dial:'+82',name:'South Korea'},
+    {code:'cn',dial:'+86',name:'China'}
+  ];
+
+  const row=document.getElementById('phone-row');
+  const trigger=document.getElementById('phone-trigger');
+  const flag=document.getElementById('phone-flag');
+  const codeDisplay=document.getElementById('phone-code-display');
+  const dialHidden=document.getElementById('phone-dial-hidden');
+  const drop=document.getElementById('phone-drop');
+  const list=document.getElementById('phone-drop-list');
+  const search=document.getElementById('phone-search');
+  if(!trigger||!list)return;
+
+  function flagUrl(code){return 'https://flagcdn.com/24x18/'+code+'.png';}
+
+  function renderList(filter){
+    const q=(filter||'').toLowerCase();
+    list.innerHTML='';
+    COUNTRIES.filter(c=>!q||c.name.toLowerCase().includes(q)||c.dial.includes(q)).forEach(c=>{
+      const el=document.createElement('div');
+      el.className='phone-opt'+(c.code==='in'?' selected':'');
+      el.setAttribute('role','option');
+      el.innerHTML='<img src="'+flagUrl(c.code)+'" alt="'+c.name+'" loading="lazy"><span class="phone-opt-name">'+c.name+'</span><span class="phone-opt-code">'+c.dial+'</span>';
+      el.addEventListener('click',function(){
+        flag.src=flagUrl(c.code);
+        codeDisplay.textContent=c.dial;
+        dialHidden.value=c.dial;
+        drop.style.display='none';
+        list.querySelectorAll('.phone-opt').forEach(o=>o.classList.remove('selected'));
+        el.classList.add('selected');
+      });
+      list.appendChild(el);
+    });
+  }
+
+  renderList();
+
+  trigger.addEventListener('click',function(e){
+    e.stopPropagation();
+    const open=drop.style.display==='block';
+    drop.style.display=open?'none':'block';
+    if(!open){search.value='';renderList();search.focus();}
+  });
+
+  search.addEventListener('input',function(){renderList(this.value);});
+
+  document.addEventListener('click',function(e){
+    if(!row.contains(e.target)) drop.style.display='none';
+  });
+})();
+</script>
+</body>
+</html>
