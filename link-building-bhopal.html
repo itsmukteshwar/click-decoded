@@ -171,6 +171,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .cta-strip{background:linear-gradient(135deg,#0a1628,#0f2040);}
 
 
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(59,130,246,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(59,130,246,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#93c5fd;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#93c5fd,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.lb-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.lb-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.lb-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.lb-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#3B82F6;font-weight:600;}
+.lb-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#3B82F6;box-shadow:0 0 0 3px rgba(59,130,246,.2);animation:lbp 2s infinite;}
+@keyframes lbp{0%,100%{box-shadow:0 0 0 3px rgba(59,130,246,.2);}50%{box-shadow:0 0 0 6px rgba(59,130,246,.05);}}
+.lb-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.lb-kpi{background:#0f1e38;padding:14px 16px;}
+.lb-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.lb-kpi-val{font-size:20px;font-weight:900;color:#3B82F6;letter-spacing:-.02em;line-height:1;}
+.lb-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.lb-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.lb-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.lb-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.lb-row:last-child{border:none;}
+.lb-row-n{color:rgba(255,255,255,.55);}
+.lb-row-v{color:#93c5fd;font-weight:700;font-size:11px;}
+.lb-btm{padding:12px 18px;background:rgba(59,130,246,.06);border-top:1px solid rgba(59,130,246,.1);display:flex;align-items:center;justify-content:space-between;}
+.lb-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.lb-btm-val{font-size:15px;font-weight:800;color:#3B82F6;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.lb-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -190,44 +221,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   <div class="wrap"><ol class="bc-list"><li><a href="index.html">Home</a></li><li>›</li><li><a href="service-areas.html">Areas We Work</a></li><li>›</li><li><a href="digital-marketing-bhopal.html">Bhopal</a></li><li>›</li><li>Link Building Bhopal</li></ol></div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">🔗 Link Building — Bhopal, MP</div>
-        <h1>Build Authority.
-Rank Higher.<br><em>Outrank Bhopal Competitors.</em></h1>
-        <p class="hero-sub">Backlinks are Google's #1 ranking signal. We earn high-authority, relevant links for your Bhopal business — through ethical outreach, guest posting, and local citations.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📍 Based in Bhopal</div>
-          <div class="hb-badge">⭐ White-Hat Only Methods</div>
-          <div class="hb-badge">🔗 DA 30+ Placements</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-o">🚀 Get Free Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">🔗 Link Building — Bhopal, MP</div>
+        <h1>Build Authority.<br><em>Outrank Bhopal Competitors.</em></h1>
+        <p class="hero-desc">Backlinks are Google's #1 ranking signal. We earn high-authority, relevant links for your Bhopal business through ethical outreach, guest posting, and digital PR.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🔗 Get Free Backlink Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>5,000+</strong> Backlinks Built</div>
-          <div class="proof-item">✅ <strong>DA 30+</strong> Average Link Quality</div>
-          <div class="proof-item">✅ <strong>Zero</strong> Penalties in 12 Years</div>
+          <span class="proof-item"><strong>500+</strong> Links Earned for Clients</span>
+          <span class="proof-item"><strong>DA 50+</strong> Average Link Quality</span>
+          <span class="proof-item"><strong>100%</strong> White-Hat Methods</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Free Backlink Audit</div>
-        <div class="lead-sub">We'll analyse your current backlink profile, compare it to your Bhopal competitors, and show you the exact gap to fill.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Link Building Bhopal">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label><select name="business_type"><option value="">Select your industry...</option><option>E-Commerce</option><option>Service Business</option><option>Real Estate</option><option>Healthcare</option><option>Education / Coaching</option><option>Manufacturing</option><option>SaaS / Tech</option><option>Other</option></select></div>
-          <button type="submit" class="form-submit">Get Free Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20Link%20Building%20for%20my%20Bhopal%20website" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. Reply within 1 hour.</div>
+      <div class="lb-mock">
+        <div class="lb-hdr">
+          <span class="lb-hdr-title">Backlink Profile Dashboard</span>
+          <span class="lb-live">Live</span>
+        </div>
+        <div class="lb-kpis">
+          <div class="lb-kpi"><div class="lb-kpi-lbl">Domain Authority</div><div class="lb-kpi-val">48 → 67</div><div class="lb-kpi-d">↑ in 6 months</div></div>
+          <div class="lb-kpi"><div class="lb-kpi-lbl">Links Earned</div><div class="lb-kpi-val">340+</div><div class="lb-kpi-d">↑ high-DA only</div></div>
+          <div class="lb-kpi"><div class="lb-kpi-lbl">Referring Domains</div><div class="lb-kpi-val">127</div><div class="lb-kpi-d">↑ from 18 at start</div></div>
+          <div class="lb-kpi"><div class="lb-kpi-lbl">Spam Score</div><div class="lb-kpi-val">2%</div><div class="lb-kpi-d">↓ from 34%</div></div>
+        </div>
+        <div class="lb-rows">
+          <div class="lb-rows-lbl">Recent High-Authority Links Earned</div>
+          <div class="lb-row"><span class="lb-row-n">Times of India — Bhopal</span><span class="lb-row-v">DA 91</span></div>
+          <div class="lb-row"><span class="lb-row-n">Hindustan Times Digital</span><span class="lb-row-v">DA 87</span></div>
+          <div class="lb-row"><span class="lb-row-n">YourStory.com Feature</span><span class="lb-row-v">DA 79</span></div>
+        </div>
+        <div class="lb-btm">
+          <span class="lb-btm-lbl">🏆 Avg. Domain Authority Lift</span>
+          <span class="lb-btm-val">+19 in 6 months</span>
+        </div>
       </div>
     </div>
   </div>

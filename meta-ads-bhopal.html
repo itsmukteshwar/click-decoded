@@ -21,6 +21,37 @@
 .hero{background:linear-gradient(155deg,#0a0a1f 0%,#12123a 55%,#0a0a1f 100%);}
 .results-strip{background:linear-gradient(135deg,#0a0a1f,#12123a);}
 .cta-strip{background:linear-gradient(135deg,#0a0a1f,#12123a);}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(99,102,241,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(99,102,241,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#a5b4fc;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#a5b4fc,#6366F1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.ma-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.ma-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ma-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.ma-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#6366F1;font-weight:600;}
+.ma-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#6366F1;box-shadow:0 0 0 3px rgba(99,102,241,.2);animation:map 2s infinite;}
+@keyframes map{0%,100%{box-shadow:0 0 0 3px rgba(99,102,241,.2);}50%{box-shadow:0 0 0 6px rgba(99,102,241,.05);}}
+.ma-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.ma-kpi{background:#0f1e38;padding:14px 16px;}
+.ma-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.ma-kpi-val{font-size:20px;font-weight:900;color:#6366F1;letter-spacing:-.02em;line-height:1;}
+.ma-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.ma-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.ma-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.ma-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.ma-row:last-child{border:none;}
+.ma-row-n{color:rgba(255,255,255,.55);}
+.ma-row-v{color:#a5b4fc;font-weight:700;font-size:11px;}
+.ma-btm{padding:12px 18px;background:rgba(99,102,241,.06);border-top:1px solid rgba(99,102,241,.1);display:flex;align-items:center;justify-content:space-between;}
+.ma-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.ma-btm-val{font-size:15px;font-weight:800;color:#6366F1;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.ma-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -35,37 +66,48 @@
 <body>
 <div id="cd-header"></div><script src="components/header.js?v=2"></script>
 <nav class="breadcrumb"><div class="wrap"><ol class="bc-list"><li><a href="index.html">Home</a></li><li>›</li><li><a href="service-areas.html">Areas We Work</a></li><li>›</li><li><a href="digital-marketing-bhopal.html">Bhopal</a></li><li>›</li><li>📘 Bhopal's Meta Ads Specialists</li></ol></div></nav>
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap"><div class="hero-inner">
-    <div>
-      <div class="eyebrow">📘 Meta Ads — Bhopal, MP</div>
-      <h1>Reach Bhopal Customers on<br><em>Facebook & Instagram.</em></h1>
-      <p class="hero-sub">We run targeted Meta Ads campaigns that put your Bhopal business in front of the exact audience most likely to buy — by interest, behaviour, location, and demographics.</p>
-      <div class="hero-badges"><div class="hb-badge">📍 Based in Bhopal</div><div class="hb-badge">📘 Meta Business Partner</div><div class="hb-badge">⭐ 12+ Years Experience</div></div>
-      <div class="hero-ctas"><a href="#get-audit" class="btn btn-o">🚀 Get Free Consultation</a><a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a></div>
-      <div class="hero-proof">
-        <div class="proof-item">✅ <strong>4x</strong> Average ROAS on Meta</div>
-        <div class="proof-item">✅ <strong>Bhopal</strong> Hyperlocal Targeting</div>
-        <div class="proof-item">✅ <strong>Zero</strong> Wasted on Wrong Audiences</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">📘 Meta Ads — Bhopal, MP</div>
+        <h1>Reach Bhopal Customers on<br><em>Facebook & Instagram.</em></h1>
+        <p class="hero-desc">We run targeted Meta Ads campaigns that put your Bhopal business in front of the exact audience most likely to buy — by interest, behaviour, location, and income level.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">📘 Get Free Meta Ads Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>4×</strong> Average ROAS</span>
+          <span class="proof-item"><strong>₹18</strong> Avg. Cost Per Lead</span>
+          <span class="proof-item"><strong>Bhopal-Targeted</strong> Audience Segments</span>
+        </div>
+      </div>
+      <div class="ma-mock">
+        <div class="ma-hdr">
+          <span class="ma-hdr-title">Meta Ads Dashboard — Bhopal</span>
+          <span class="ma-live">Live</span>
+        </div>
+        <div class="ma-kpis">
+          <div class="ma-kpi"><div class="ma-kpi-lbl">Monthly Leads</div><div class="ma-kpi-val">428</div><div class="ma-kpi-d">↑ 340% vs Google Ads CPL</div></div>
+          <div class="ma-kpi"><div class="ma-kpi-lbl">Cost Per Lead</div><div class="ma-kpi-val">₹18</div><div class="ma-kpi-d">↓ 74% from ₹69</div></div>
+          <div class="ma-kpi"><div class="ma-kpi-lbl">ROAS</div><div class="ma-kpi-val">4.2×</div><div class="ma-kpi-d">↑ from 0.9× at start</div></div>
+          <div class="ma-kpi"><div class="ma-kpi-lbl">Reach</div><div class="ma-kpi-val">1.8L/mo</div><div class="ma-kpi-d">↑ Bhopal-targeted</div></div>
+        </div>
+        <div class="ma-rows">
+          <div class="ma-rows-lbl">Top Performing Ad Creatives</div>
+          <div class="ma-row"><span class="ma-row-n">Before/After — Real Estate</span><span class="ma-row-v">₹14 CPL · 6.8% CTR</span></div>
+          <div class="ma-row"><span class="ma-row-n">Offer Reel — Education</span><span class="ma-row-v">₹22 CPL · 5.1% CTR</span></div>
+          <div class="ma-row"><span class="ma-row-n">Testimonial Carousel — Clinic</span><span class="ma-row-v">₹19 CPL · 4.4% CTR</span></div>
+        </div>
+        <div class="ma-btm">
+          <span class="ma-btm-lbl">🎯 Total Bhopal Audience Reached</span>
+          <span class="ma-btm-val">14L+ this year</span>
+        </div>
       </div>
     </div>
-    <div class="lead-box" id="get-audit">
-      <div class="lead-tag">✅ Free — No Commitment</div>
-      <div class="lead-title">Free Meta Ads Audit</div>
-      <div class="lead-sub">We'll review your current campaigns or design a fresh strategy — and show you the audience opportunity you're missing.</div>
-      <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-        <input type="hidden" name="service" value="Meta Ads Bhopal">
-        <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-        <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-        <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-        <div class="form-group"><label>Business Type</label><select name="type"><option value="">Select...</option><option>Real Estate / Builder</option><option>Education / Coaching</option><option>Retail / Fashion</option><option>Restaurant / Food</option><option>Healthcare / Wellness</option><option>Salon / Beauty</option><option>Events / Entertainment</option><option>Other</option></select></div>
-        <button type="submit" class="form-submit">Get Free Consultation →</button>
-      </form>
-      <div class="form-or">or</div>
-      <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20Meta%20Ads%20for%20my%20Bhopal%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-      <div class="form-privacy">🔒 Private. No spam. Reply within 1 hour.</div>
-    </div>
-  </div></div>
+  </div>
 </section>
 
 <div class="results-strip"><div class="wrap"><div class="results-inner"><div><div class="res-num">4<em>x</em></div><div class="res-label">Avg. ROAS on Meta</div><div class="res-sub">for Bhopal clients</div></div><div><div class="res-num">2.1<em>M+</em></div><div class="res-label">Bhopal users on Facebook</div><div class="res-sub">targetable audience</div></div><div><div class="res-num">30<em>%</em></div><div class="res-label">Lower CPL</div><div class="res-sub">vs. self-managed accounts</div></div><div><div class="res-num">12<em>yr</em></div><div class="res-label">Meta Ads Experience</div><div class="res-sub">Bhopal-based</div></div></div></div></div>

@@ -236,6 +236,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   .process-steps{grid-template-columns:1fr;}
   .fg{grid-template-columns:1fr;}
 }
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(238,126,26,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(238,126,26,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(238,126,26,.12);border:1px solid rgba(238,126,26,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fcd34d;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#fcd34d,#EE7E1A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.dmb-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.dmb-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.dmb-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.dmb-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#EE7E1A;font-weight:600;}
+.dmb-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#EE7E1A;box-shadow:0 0 0 3px rgba(238,126,26,.2);animation:dmbp 2s infinite;}
+@keyframes dmbp{0%,100%{box-shadow:0 0 0 3px rgba(238,126,26,.2);}50%{box-shadow:0 0 0 6px rgba(238,126,26,.05);}}
+.dmb-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.dmb-kpi{background:#0f1e38;padding:14px 16px;}
+.dmb-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.dmb-kpi-val{font-size:20px;font-weight:900;color:#EE7E1A;letter-spacing:-.02em;line-height:1;}
+.dmb-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.dmb-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.dmb-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.dmb-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.dmb-row:last-child{border:none;}
+.dmb-row-n{color:rgba(255,255,255,.55);}
+.dmb-row-v{color:#fcd34d;font-weight:700;font-size:11px;}
+.dmb-btm{padding:12px 18px;background:rgba(238,126,26,.06);border-top:1px solid rgba(238,126,26,.1);display:flex;align-items:center;justify-content:space-between;}
+.dmb-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.dmb-btm-val{font-size:15px;font-weight:800;color:#EE7E1A;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.dmb-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -264,56 +295,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 </nav>
 
 <!-- HERO -->
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">📍 Bhopal, Madhya Pradesh</div>
-        <h1>Bhopal's Most Trusted<br><em>Digital Marketing</em><br>Agency.</h1>
-        <p class="hero-sub">SEO, Google Ads, Meta Ads, Web Development, and AI Automation — all under one roof. We're local, we're accountable, and we deliver results you can measure.</p>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-o">🚀 Get Free Bhopal Audit</a>
-          <a href="https://wa.me/919407000101" target="_blank" rel="noopener" class="btn btn-ghost">💬 WhatsApp Us</a>
+        <div class="hero-eyebrow">🚀 Digital Marketing Agency — Bhopal, MP</div>
+        <h1>Bhopal's Most Trusted<br><em>Digital Marketing Agency.</em></h1>
+        <p class="hero-desc">SEO, Google Ads, Meta Ads, Web Development, and AI Automation — all under one roof. We're local, accountable, and deliver results you can measure every month.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🚀 Get Free Marketing Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
-        <div class="trust-row">
-          <div class="trust-item">⭐⭐⭐⭐⭐ <span>500+</span> Projects</div>
-          <div class="trust-item">🏙️ Based in <span>Bhopal</span></div>
-          <div class="trust-item">⚡ Reply in <span>1 Hour</span></div>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>150+</strong> Bhopal Clients Served</span>
+          <span class="proof-item"><strong>3×</strong> Avg. ROI Delivered</span>
+          <span class="proof-item"><strong>Local Office</strong> Bhopal, MP</span>
         </div>
       </div>
-      <!-- LEAD FORM -->
-      <div class="lead-box" id="get-audit">
-        <div class="lead-title">Get Your Free Bhopal Audit</div>
-        <div class="lead-sub">We'll review your website, rankings & competitors — free, no strings attached.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="Rahul Sharma" required>
-          </div>
-          <div class="form-group">
-            <label>Phone / WhatsApp</label>
-            <input type="tel" name="phone" placeholder="+91 98765 43210" required>
-          </div>
-          <div class="form-group">
-            <label>Business Website</label>
-            <input type="url" name="website" placeholder="https://yourbusiness.com">
-          </div>
-          <div class="form-group">
-            <label>I Need Help With</label>
-            <select name="service">
-              <option value="">Select a service...</option>
-              <option>SEO / Google Rankings</option>
-              <option>Google Ads</option>
-              <option>Meta Ads (Facebook/Instagram)</option>
-              <option>Website Development</option>
-              <option>Social Media Marketing</option>
-              <option>AI Automation</option>
-              <option>Everything — full digital marketing</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get My Free Audit →</button>
-        </form>
-        <div class="form-privacy">🔒 Your info is private. We never spam. Usually reply within an hour.</div>
+      <div class="dmb-mock">
+        <div class="dmb-hdr">
+          <span class="dmb-hdr-title">Digital Marketing Results — Bhopal</span>
+          <span class="dmb-live">Live</span>
+        </div>
+        <div class="dmb-kpis">
+          <div class="dmb-kpi"><div class="dmb-kpi-lbl">Leads Generated/Mo</div><div class="dmb-kpi-val">840+</div><div class="dmb-kpi-d">↑ across all channels</div></div>
+          <div class="dmb-kpi"><div class="dmb-kpi-lbl">Avg. Client ROI</div><div class="dmb-kpi-val">3.8×</div><div class="dmb-kpi-d">↑ in first 6 months</div></div>
+          <div class="dmb-kpi"><div class="dmb-kpi-lbl">Organic Traffic Growth</div><div class="dmb-kpi-val">4.2×</div><div class="dmb-kpi-d">↑ from SEO alone</div></div>
+          <div class="dmb-kpi"><div class="dmb-kpi-lbl">Ad Spend Managed</div><div class="dmb-kpi-val">₹42L</div><div class="dmb-kpi-d">↑ this year, Bhopal</div></div>
+        </div>
+        <div class="dmb-rows">
+          <div class="dmb-rows-lbl">Active Campaigns — Bhopal</div>
+          <div class="dmb-row"><span class="dmb-row-n">Real Estate — Google + Meta</span><span class="dmb-row-v">4.2× ROAS · 312 leads/mo</span></div>
+          <div class="dmb-row"><span class="dmb-row-n">Hospital — SEO + GMB</span><span class="dmb-row-v">#1 Map Pack · 190 calls/mo</span></div>
+          <div class="dmb-row"><span class="dmb-row-n">Education — All Channels</span><span class="dmb-row-v">89 admissions · 3× growth</span></div>
+        </div>
+        <div class="dmb-btm">
+          <span class="dmb-btm-lbl">📍 Bhopal Clients Currently Active</span>
+          <span class="dmb-btm-val">47 businesses</span>
+        </div>
       </div>
     </div>
   </div>

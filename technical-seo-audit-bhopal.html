@@ -171,6 +171,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .cta-strip{background:linear-gradient(135deg,#1c1000,#2d1e00);}
 
 
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(245,158,11,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(245,158,11,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fde68a;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#fde68a,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.tsa-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.tsa-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.tsa-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.tsa-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#F59E0B;font-weight:600;}
+.tsa-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#F59E0B;box-shadow:0 0 0 3px rgba(245,158,11,.2);animation:tsap 2s infinite;}
+@keyframes tsap{0%,100%{box-shadow:0 0 0 3px rgba(245,158,11,.2);}50%{box-shadow:0 0 0 6px rgba(245,158,11,.05);}}
+.tsa-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.tsa-kpi{background:#0f1e38;padding:14px 16px;}
+.tsa-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.tsa-kpi-val{font-size:20px;font-weight:900;color:#F59E0B;letter-spacing:-.02em;line-height:1;}
+.tsa-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.tsa-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.tsa-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.tsa-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.tsa-row:last-child{border:none;}
+.tsa-row-n{color:rgba(255,255,255,.55);}
+.tsa-row-v{color:#fde68a;font-weight:700;font-size:11px;}
+.tsa-btm{padding:12px 18px;background:rgba(245,158,11,.06);border-top:1px solid rgba(245,158,11,.1);display:flex;align-items:center;justify-content:space-between;}
+.tsa-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.tsa-btm-val{font-size:15px;font-weight:800;color:#F59E0B;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.tsa-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -190,44 +221,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   <div class="wrap"><ol class="bc-list"><li><a href="index.html">Home</a></li><li>›</li><li><a href="service-areas.html">Areas We Work</a></li><li>›</li><li><a href="digital-marketing-bhopal.html">Bhopal</a></li><li>›</li><li>Technical SEO Audit Bhopal</li></ol></div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">⚙️ Technical SEO Audit — Bhopal, MP</div>
-        <h1>Fix What Google
-Can't See.<br><em>Rank What It Can.</em></h1>
-        <p class="hero-sub">A deep technical audit of your website — crawl issues, site speed, Core Web Vitals, structured data, duplicates. We find what's blocking your Bhopal rankings and fix it.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📍 Based in Bhopal</div>
-          <div class="hb-badge">⭐ 12+ Years Experience</div>
-          <div class="hb-badge">⚙️ Core Web Vitals Specialists</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-o">🚀 Get Free Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">⚙️ Technical SEO Audit — Bhopal, MP</div>
+        <h1>Fix What Google Can't See.<br><em>Rank What It Can.</em></h1>
+        <p class="hero-desc">A deep technical audit of your website — crawl issues, site speed, Core Web Vitals, structured data, and duplicate content. We find what's blocking your Bhopal rankings.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">⚙️ Get Free Technical Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>500+</strong> Audits Delivered</div>
-          <div class="proof-item">✅ <strong>Core Web Vitals</strong> Fixed & Passed</div>
-          <div class="proof-item">✅ <strong>Bhopal</strong> Office — Walk-ins Welcome</div>
+          <span class="proof-item"><strong>200+</strong> Technical Checks</span>
+          <span class="proof-item"><strong>Core Web</strong> Vitals Optimised</span>
+          <span class="proof-item"><strong>Same-Day</strong> Audit Report</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Free Website Audit</div>
-        <div class="lead-sub">We'll scan your site and show you the top technical issues blocking your Google rankings — for free.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Technical SEO Audit Bhopal">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label><select name="business_type"><option value="">Select your industry...</option><option>E-Commerce Store</option><option>Service Business</option><option>Real Estate</option><option>Healthcare / Clinic</option><option>Education / Coaching</option><option>Manufacturing</option><option>Hospitality</option><option>Other</option></select></div>
-          <button type="submit" class="form-submit">Get Free Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20a%20Technical%20SEO%20Audit%20for%20my%20Bhopal%20website" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. Reply within 1 hour.</div>
+      <div class="tsa-mock">
+        <div class="tsa-hdr">
+          <span class="tsa-hdr-title">Technical SEO Audit Report</span>
+          <span class="tsa-live">Live</span>
+        </div>
+        <div class="tsa-kpis">
+          <div class="tsa-kpi"><div class="tsa-kpi-lbl">Issues Found</div><div class="tsa-kpi-val">147</div><div class="tsa-kpi-d">↑ critical blockers removed</div></div>
+          <div class="tsa-kpi"><div class="tsa-kpi-lbl">Page Speed Score</div><div class="tsa-kpi-val">34 → 91</div><div class="tsa-kpi-d">↑ Core Web Vitals passed</div></div>
+          <div class="tsa-kpi"><div class="tsa-kpi-lbl">Crawl Errors Fixed</div><div class="tsa-kpi-val">89</div><div class="tsa-kpi-d">↑ all resolved in 7 days</div></div>
+          <div class="tsa-kpi"><div class="tsa-kpi-lbl">Rankings After Fix</div><div class="tsa-kpi-val">+62 pos</div><div class="tsa-kpi-d">↑ avg keyword lift</div></div>
+        </div>
+        <div class="tsa-rows">
+          <div class="tsa-rows-lbl">Critical Issues Fixed</div>
+          <div class="tsa-row"><span class="tsa-row-n">Broken Internal Links (34)</span><span class="tsa-row-v">✅ Fixed</span></div>
+          <div class="tsa-row"><span class="tsa-row-n">Missing Schema Markup</span><span class="tsa-row-v">✅ Added</span></div>
+          <div class="tsa-row"><span class="tsa-row-n">Slow LCP (6.2s → 1.1s)</span><span class="tsa-row-v">✅ Resolved</span></div>
+        </div>
+        <div class="tsa-btm">
+          <span class="tsa-btm-lbl">⚡ Avg. Ranking Lift After Audit</span>
+          <span class="tsa-btm-val">+62 positions</span>
+        </div>
       </div>
     </div>
   </div>

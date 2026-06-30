@@ -171,6 +171,38 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .cta-strip{background:linear-gradient(135deg,#1a0a2e,#2d1060);}
 
 
+
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(139,92,246,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(139,92,246,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#c4b5fd;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#c4b5fd,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.ecs-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.ecs-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ecs-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.ecs-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#8B5CF6;font-weight:600;}
+.ecs-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#8B5CF6;box-shadow:0 0 0 3px rgba(139,92,246,.2);animation:ecsp 2s infinite;}
+@keyframes ecsp{0%,100%{box-shadow:0 0 0 3px rgba(139,92,246,.2);}50%{box-shadow:0 0 0 6px rgba(139,92,246,.05);}}
+.ecs-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.ecs-kpi{background:#0f1e38;padding:14px 16px;}
+.ecs-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.ecs-kpi-val{font-size:20px;font-weight:900;color:#8B5CF6;letter-spacing:-.02em;line-height:1;}
+.ecs-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.ecs-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.ecs-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.ecs-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.ecs-row:last-child{border:none;}
+.ecs-row-n{color:rgba(255,255,255,.55);}
+.ecs-row-v{color:#c4b5fd;font-weight:700;font-size:11px;}
+.ecs-btm{padding:12px 18px;background:rgba(139,92,246,.06);border-top:1px solid rgba(139,92,246,.1);display:flex;align-items:center;justify-content:space-between;}
+.ecs-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.ecs-btm-val{font-size:15px;font-weight:800;color:#8B5CF6;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.ecs-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -190,44 +222,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   <div class="wrap"><ol class="bc-list"><li><a href="index.html">Home</a></li><li>›</li><li><a href="service-areas.html">Areas We Work</a></li><li>›</li><li><a href="digital-marketing-bhopal.html">Bhopal</a></li><li>›</li><li>E-Commerce SEO Bhopal</li></ol></div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">🛒 E-Commerce SEO — Bhopal, MP</div>
-        <h1>Rank Your Products.
-Drive Organic Sales.<br><em>No Ad Spend Required.</em></h1>
-        <p class="hero-sub">We get your Bhopal online store's product and category pages ranking on Google Page 1 — so you drive consistent organic sales without depending on Google Ads.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📍 Based in Bhopal</div>
-          <div class="hb-badge">🛒 WooCommerce & Shopify Experts</div>
-          <div class="hb-badge">⭐ 12+ Years Experience</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-o">🚀 Get Free Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">🛒 E-Commerce SEO — Bhopal, MP</div>
+        <h1>Rank Your Products.<br><em>Drive Organic Sales.</em></h1>
+        <p class="hero-desc">We get your Bhopal online store's product and category pages ranking on Google Page 1 — driving consistent organic sales without depending on ads.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🛒 Get Free Store SEO Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>3x</strong> Avg. Organic Revenue Growth</div>
-          <div class="proof-item">✅ <strong>Product Pages</strong> Ranked on Page 1</div>
-          <div class="proof-item">✅ <strong>Zero</strong> Black-Hat Methods</div>
+          <span class="proof-item"><strong>3×</strong> Avg. Organic Revenue</span>
+          <span class="proof-item"><strong>Page 1</strong> Product Rankings</span>
+          <span class="proof-item"><strong>No Ads</strong> Needed for Organic</span>
         </div>
       </div>
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Free Store SEO Audit</div>
-        <div class="lead-sub">We'll analyse your store's product rankings, technical health, and competitor gap — and show you where the organic revenue opportunity is.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="E-Commerce SEO Bhopal">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-          <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-          <div class="form-group"><label>Business Type</label><select name="business_type"><option value="">Select your industry...</option><option>WooCommerce / WordPress</option><option>Shopify</option><option>Magento</option><option>OpenCart</option><option>Custom Store</option><option>Other Platform</option></select></div>
-          <button type="submit" class="form-submit">Get Free Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20E-Commerce%20SEO%20for%20my%20Bhopal%20online%20store" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-        <div class="form-privacy">🔒 Private. No spam. Reply within 1 hour.</div>
+      <div class="ecs-mock">
+        <div class="ecs-hdr">
+          <span class="ecs-hdr-title">Store SEO Performance — Bhopal</span>
+          <span class="ecs-live">Live</span>
+        </div>
+        <div class="ecs-kpis">
+          <div class="ecs-kpi"><div class="ecs-kpi-lbl">Organic Revenue</div><div class="ecs-kpi-val">₹12.8L</div><div class="ecs-kpi-d">↑ 340% in 6 months</div></div>
+          <div class="ecs-kpi"><div class="ecs-kpi-lbl">Keywords on Page 1</div><div class="ecs-kpi-val">284</div><div class="ecs-kpi-d">↑ from 18 at start</div></div>
+          <div class="ecs-kpi"><div class="ecs-kpi-lbl">Organic Orders/Month</div><div class="ecs-kpi-val">892</div><div class="ecs-kpi-d">↑ 4.1× growth</div></div>
+          <div class="ecs-kpi"><div class="ecs-kpi-lbl">Avg. Position</div><div class="ecs-kpi-val">2.4</div><div class="ecs-kpi-d">↑ from 34.7</div></div>
+        </div>
+        <div class="ecs-rows">
+          <div class="ecs-rows-lbl">Top Ranking Product Pages</div>
+          <div class="ecs-row"><span class="ecs-row-n">"sarees online Bhopal"</span><span class="ecs-row-v">#1 Google</span></div>
+          <div class="ecs-row"><span class="ecs-row-n">"organic grocery Bhopal"</span><span class="ecs-row-v">#1 Google</span></div>
+          <div class="ecs-row"><span class="ecs-row-n">"electronics store Bhopal"</span><span class="ecs-row-v">#2 Google</span></div>
+        </div>
+        <div class="ecs-btm">
+          <span class="ecs-btm-lbl">🔍 New Page 1 Keywords This Month</span>
+          <span class="ecs-btm-val">47 new</span>
+        </div>
       </div>
     </div>
   </div>

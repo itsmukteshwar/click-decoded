@@ -21,6 +21,37 @@
 .hero{background:linear-gradient(155deg,#021208 0%,#051f10 55%,#021208 100%);}
 .results-strip{background:linear-gradient(135deg,#021208,#051f10);}
 .cta-strip{background:linear-gradient(135deg,#021208,#051f10);}
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(37,211,102,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(37,211,102,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#86efac;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#86efac,#25D366);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.wa-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.wa-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.wa-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.wa-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#25D366;font-weight:600;}
+.wa-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#25D366;box-shadow:0 0 0 3px rgba(37,211,102,.2);animation:wap 2s infinite;}
+@keyframes wap{0%,100%{box-shadow:0 0 0 3px rgba(37,211,102,.2);}50%{box-shadow:0 0 0 6px rgba(37,211,102,.05);}}
+.wa-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.wa-kpi{background:#0f1e38;padding:14px 16px;}
+.wa-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.wa-kpi-val{font-size:20px;font-weight:900;color:#25D366;letter-spacing:-.02em;line-height:1;}
+.wa-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.wa-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.wa-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.wa-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.wa-row:last-child{border:none;}
+.wa-row-n{color:rgba(255,255,255,.55);}
+.wa-row-v{color:#86efac;font-weight:700;font-size:11px;}
+.wa-btm{padding:12px 18px;background:rgba(37,211,102,.06);border-top:1px solid rgba(37,211,102,.1);display:flex;align-items:center;justify-content:space-between;}
+.wa-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.wa-btm-val{font-size:15px;font-weight:800;color:#25D366;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.wa-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -35,37 +66,48 @@
 <body>
 <div id="cd-header"></div><script src="components/header.js?v=2"></script>
 <nav class="breadcrumb"><div class="wrap"><ol class="bc-list"><li><a href="index.html">Home</a></li><li>›</li><li><a href="service-areas.html">Areas We Work</a></li><li>›</li><li><a href="digital-marketing-bhopal.html">Bhopal</a></li><li>›</li><li>💬 Bhopal's WhatsApp Automation Specialists</li></ol></div></nav>
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap"><div class="hero-inner">
-    <div>
-      <div class="eyebrow">💬 WhatsApp Automation — Bhopal, MP</div>
-      <h1>Reply Instantly. Sell More.<br><em>WhatsApp, Automated.</em></h1>
-      <p class="hero-sub">We set up WhatsApp Business API automations for Bhopal businesses — instant lead replies, order updates, appointment reminders, and support bots running 24/7.</p>
-      <div class="hero-badges"><div class="hb-badge">📍 Based in Bhopal</div><div class="hb-badge">💬 WhatsApp Business API</div><div class="hb-badge">⭐ Official API Only</div></div>
-      <div class="hero-ctas"><a href="#get-audit" class="btn btn-o">🚀 Get Free Consultation</a><a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a></div>
-      <div class="hero-proof">
-        <div class="proof-item">✅ <strong>5 Min</strong> Avg. Lead Reply Time (Automated)</div>
-        <div class="proof-item">✅ <strong>90%</strong> Open Rate on WhatsApp</div>
-        <div class="proof-item">✅ <strong>24/7</strong> Automated Customer Support</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">💬 WhatsApp Automation — Bhopal, MP</div>
+        <h1>Reply Instantly. Sell More.<br><em>WhatsApp, Automated.</em></h1>
+        <p class="hero-desc">We set up WhatsApp Business API automations for Bhopal businesses — instant lead replies, order updates, appointment reminders, and support bots running 24/7.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">💬 Book Free WhatsApp Demo</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>24/7</strong> Automated Replies</span>
+          <span class="proof-item"><strong>80%</strong> Faster Lead Response</span>
+          <span class="proof-item"><strong>Bhopal</strong> Businesses Served</span>
+        </div>
+      </div>
+      <div class="wa-mock">
+        <div class="wa-hdr">
+          <span class="wa-hdr-title">WhatsApp Automation — Live Stats</span>
+          <span class="wa-live">Live</span>
+        </div>
+        <div class="wa-kpis">
+          <div class="wa-kpi"><div class="wa-kpi-lbl">Msgs Auto-Handled</div><div class="wa-kpi-val">3,840/mo</div><div class="wa-kpi-d">↑ 0 manual effort</div></div>
+          <div class="wa-kpi"><div class="wa-kpi-lbl">Lead Response Time</div><div class="wa-kpi-val">< 30 sec</div><div class="wa-kpi-d">↑ from 4+ hours</div></div>
+          <div class="wa-kpi"><div class="wa-kpi-lbl">Appointment Bookings</div><div class="wa-kpi-val">284</div><div class="wa-kpi-d">↑ via WhatsApp bot</div></div>
+          <div class="wa-kpi"><div class="wa-kpi-lbl">Revenue Attributed</div><div class="wa-kpi-val">₹8.4L</div><div class="wa-kpi-d">↑ from WhatsApp alone</div></div>
+        </div>
+        <div class="wa-rows">
+          <div class="wa-rows-lbl">Active Automation Workflows</div>
+          <div class="wa-row"><span class="wa-row-n">Lead Capture & Welcome Bot</span><span class="wa-row-v">Running — 24/7</span></div>
+          <div class="wa-row"><span class="wa-row-n">Appointment Reminder System</span><span class="wa-row-v">Running — 24/7</span></div>
+          <div class="wa-row"><span class="wa-row-n">Order Status Updates</span><span class="wa-row-v">Running — 24/7</span></div>
+        </div>
+        <div class="wa-btm">
+          <span class="wa-btm-lbl">⚡ Avg. Response Time</span>
+          <span class="wa-btm-val">< 30 seconds</span>
+        </div>
       </div>
     </div>
-    <div class="lead-box" id="get-audit">
-      <div class="lead-tag">✅ Free — No Commitment</div>
-      <div class="lead-title">Free WhatsApp Audit</div>
-      <div class="lead-sub">Tell us your current WhatsApp workflow — we'll design an automation that saves your team hours daily.</div>
-      <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-        <input type="hidden" name="service" value="WhatsApp Automation Bhopal">
-        <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-        <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-        <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-        <div class="form-group"><label>Business Type</label><select name="type"><option value="">Select...</option><option>Lead Follow-Up Automation</option><option>Order / Appointment Updates</option><option>Customer Support Bot</option><option>Broadcast Campaigns</option><option>E-Commerce Notifications</option><option>HR / Internal Automation</option><option>Other</option></select></div>
-        <button type="submit" class="form-submit">Get Free Consultation →</button>
-      </form>
-      <div class="form-or">or</div>
-      <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20Whatsapp%20Automation%20for%20my%20Bhopal%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-      <div class="form-privacy">🔒 Private. No spam. Reply within 1 hour.</div>
-    </div>
-  </div></div>
+  </div>
 </section>
 
 <div class="results-strip"><div class="wrap"><div class="results-inner"><div><div class="res-num">90<em>%</em></div><div class="res-label">WhatsApp Open Rate</div><div class="res-sub">vs 20% for email</div></div><div><div class="res-num">5<em>min</em></div><div class="res-label">Automated Reply Time</div><div class="res-sub">vs hours manually</div></div><div><div class="res-num">24<em>/7</em></div><div class="res-label">Bot Coverage</div><div class="res-sub">no human needed</div></div><div><div class="res-num">3<em>x</em></div><div class="res-label">Lead Conversion Lift</div><div class="res-sub">with instant follow-up</div></div></div></div></div>

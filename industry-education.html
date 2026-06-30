@@ -127,14 +127,35 @@ h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n
 .bc-sep{opacity:.4;}
 /* HERO */
 .hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:72px 0 64px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-30%;left:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(var(--ac-rgb),.06) 0%,transparent 70%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-20%;right:-8%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(var(--ac-rgb),.05) 0%,transparent 70%);pointer-events:none;}
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start;}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--ac-rgb),.12);border:1px solid rgba(var(--ac-rgb),.25);color:var(--ac);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:99px;margin-bottom:18px;}
-.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:16px;}
-.hero h1 em{font-style:normal;color:var(--ac);}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;max-width:480px;margin-bottom:28px;}
-.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(33,150,243,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(33,150,243,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(33,150,243,.12);border:1px solid rgba(33,150,243,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#90caf9;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#90caf9,#2196f3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+/* EDUCATION DASHBOARD MOCK */
+.ed-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.ed-mock-header{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ed-mock-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.ed-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#2196f3;font-weight:600;}
+.ed-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#2196f3;box-shadow:0 0 0 3px rgba(33,150,243,.2);animation:edpulse 2s infinite;}
+@keyframes edpulse{0%,100%{box-shadow:0 0 0 3px rgba(33,150,243,.2);}50%{box-shadow:0 0 0 6px rgba(33,150,243,.05);}}
+.ed-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.ed-kpi{background:#0f1e38;padding:16px 18px;}
+.ed-kpi-label{font-size:10.5px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.ed-kpi-val{font-size:24px;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1;}
+.ed-kpi-val.blue{color:#2196f3;}
+.ed-kpi-delta{font-size:11px;margin-top:4px;font-weight:600;}
+.ed-kpi-delta.up{color:#4caf50;}
+.ed-season{padding:16px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.ed-season-label{font-size:10.5px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.ed-season-bar{background:rgba(255,255,255,.06);border-radius:99px;height:8px;overflow:hidden;margin-bottom:6px;}
+.ed-season-fill{height:100%;background:linear-gradient(90deg,#1565c0,#2196f3);border-radius:99px;width:73%;}
+.ed-season-meta{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.4);}
+.ed-wa{padding:14px 18px;background:rgba(33,150,243,.06);border-top:1px solid rgba(33,150,243,.1);display:flex;align-items:center;justify-content:space-between;}
+.ed-wa-label{font-size:12px;color:rgba(255,255,255,.5);font-weight:500;}
+.ed-wa-val{font-size:16px;font-weight:800;color:#2196f3;}
 .hero-proof{display:flex;gap:16px;flex-wrap:wrap;}
 .proof-item{font-size:12.5px;color:rgba(255,255,255,.45);font-weight:500;display:flex;align-items:center;gap:5px;}
 .proof-item strong{color:rgba(255,255,255,.8);}
@@ -258,7 +279,7 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .footer-areas b{color:rgba(255,255,255,.4);}.footer-areas a{color:rgba(255,255,255,.25);transition:.15s;}.footer-areas a:hover{color:rgba(255,255,255,.6);}
 /* RESPONSIVE */
 @media(max-width:960px){
-  .hero-inner{grid-template-columns:1fr;}.form-box{display:none;}
+  .hero-grid{grid-template-columns:1fr;}.ed-mock{display:none;}
   .pain-grid,.why-grid{grid-template-columns:repeat(2,1fr);}
   .faq-grid{grid-template-columns:1fr;}
   .fg{grid-template-columns:1fr 1fr;}
@@ -305,46 +326,59 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <div class="eyebrow">🎓 Education Industry</div>
-      <h1>More <em>Student Admissions</em><br>for Schools, Coaching &amp; Colleges</h1>
-      <p class="hero-sub">Parents and students compare institutions on Google before visiting or calling. We make sure your institution ranks first — and converts that traffic into enquiries and booked admissions, not just pageviews.</p>
-      <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-ac">Get Free Admissions Audit</a>
-        <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">🎓 Schools · Coaching · Colleges · EdTech</div>
+        <h1>More <em>Student Admissions</em><br>for Schools, Coaching &amp; Colleges</h1>
+        <p class="hero-desc">Parents and students compare institutions on Google before calling. We make your institution rank first — and turn that traffic into booked admissions, not just pageviews.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🎓 Get Free Admissions Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>Admission-Season</strong> Ready</span>
+          <span class="proof-item"><strong>₹80</strong> Avg Cost Per Lead</span>
+          <span class="proof-item"><strong>Results</strong> in 30–60 Days</span>
+        </div>
       </div>
-      <div class="hero-proof">
-        <span class="proof-item">✓ <strong>Admission-Season</strong> Ready</span>
-        <span class="proof-item">✓ <strong>₹80</strong> Avg Cost Per Lead</span>
-        <span class="proof-item">✓ <strong>Results</strong> in 30–60 Days</span>
-      </div>
-    </div>
-    <div class="form-box">
-      <h3>Free Admissions Audit</h3>
-      <p>We'll review your institution's digital presence and identify exactly where you're losing enquiries.</p>
-      <form id="lf" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('lf-ok').style.display='block';">
-        <div class="form-row">
-          <div class="fg-item"><label>Name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg-item"><label>Phone</label><input type="tel" placeholder="+91 98765 00000" required></div>
-          <div class="fg-item fg-full"><label>Institution Name</label><input type="text" placeholder="School / College / Coaching name" required></div>
-          <div class="fg-item fg-full"><label>Institution Type</label>
-            <select>
-              <option>School (CBSE / ICSE / State Board)</option>
-              <option>Coaching Institute (NEET / JEE / UPSC)</option>
-              <option>Degree College / University</option>
-              <option>EdTech / Online Courses</option>
-              <option>Vocational / Skill Training</option>
-            </select>
+      <!-- Education Admissions Dashboard Mock -->
+      <div class="ed-mock">
+        <div class="ed-mock-header">
+          <span class="ed-mock-title">Admissions Dashboard — 2025–26</span>
+          <span class="ed-live">Live</span>
+        </div>
+        <div class="ed-kpis">
+          <div class="ed-kpi">
+            <div class="ed-kpi-label">Student Enquiries</div>
+            <div class="ed-kpi-val blue">1,847</div>
+            <div class="ed-kpi-delta up">↑ 124% this season</div>
+          </div>
+          <div class="ed-kpi">
+            <div class="ed-kpi-label">Admissions Confirmed</div>
+            <div class="ed-kpi-val">89</div>
+            <div class="ed-kpi-delta up">↑ 2.8× vs last year</div>
+          </div>
+          <div class="ed-kpi">
+            <div class="ed-kpi-label">Google Rank</div>
+            <div class="ed-kpi-val blue">#1</div>
+            <div class="ed-kpi-delta up">↑ "best coaching near me"</div>
+          </div>
+          <div class="ed-kpi">
+            <div class="ed-kpi-label">Organic Traffic</div>
+            <div class="ed-kpi-val">6,340</div>
+            <div class="ed-kpi-delta up">↑ 112% in 60 days</div>
           </div>
         </div>
-        <button type="submit" class="form-submit">🚀 Get Free Admissions Audit</button>
-        <p class="form-note">🔒 Confidential. No spam ever.</p>
-      </form>
-      <div id="lf-ok" style="display:none;text-align:center;padding:24px 0;">
-        <div style="font-size:36px;margin-bottom:12px;">✅</div>
-        <h3 style="color:#fff;margin-bottom:8px;">Received!</h3>
-        <p style="color:rgba(255,255,255,.5);">We'll send your audit within 24 hours.</p>
+        <div class="ed-season">
+          <div class="ed-season-label">Seat Capacity Filled — 2025–26</div>
+          <div class="ed-season-bar"><div class="ed-season-fill"></div></div>
+          <div class="ed-season-meta"><span>73% seats confirmed</span><span>Target: 100 seats</span></div>
+        </div>
+        <div class="ed-wa">
+          <span class="ed-wa-label">💬 WhatsApp Admission Enquiries</span>
+          <span class="ed-wa-val">64 this week</span>
+        </div>
       </div>
     </div>
   </div>

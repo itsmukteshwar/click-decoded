@@ -135,33 +135,40 @@ h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n
 .bc-list a{color:var(--m);font-weight:500;transition:.14s;}.bc-list a:hover{color:var(--n);}
 .bc-sep{opacity:.4;}
 /* HERO */
-.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:72px 0 64px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-30%;left:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(var(--ac-rgb),.06) 0%,transparent 70%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-20%;right:-8%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(var(--ac-rgb),.05) 0%,transparent 70%);pointer-events:none;}
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start;}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--ac-rgb),.12);border:1px solid rgba(var(--ac-rgb),.25);color:var(--ac);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:99px;margin-bottom:18px;}
-.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:16px;}
-.hero h1 em{font-style:normal;color:var(--ac);}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;max-width:480px;margin-bottom:28px;}
-.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
-.hero-proof{display:flex;gap:16px;flex-wrap:wrap;}
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(76,175,80,.15) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(76,175,80,.06) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(76,175,80,.12);border:1px solid rgba(76,175,80,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#81c784;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#a5d6a7,#4caf50);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.hero-proof{display:flex;gap:24px;flex-wrap:wrap;}
 .proof-item{font-size:12.5px;color:rgba(255,255,255,.45);font-weight:500;display:flex;align-items:center;gap:5px;}
 .proof-item strong{color:rgba(255,255,255,.8);}
-/* HERO FORM */
-.form-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;backdrop-filter:blur(10px);}
-.form-box h3{font-size:17px;color:#fff;margin-bottom:6px;}
-.form-box p{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:20px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.fg-item{display:flex;flex-direction:column;gap:6px;}
-.fg-item label{font-size:12px;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;}
-.fg-item input,.fg-item select,.fg-item textarea{padding:11px 14px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;font-size:13.5px;color:#fff;font-family:'Inter',sans-serif;transition:.18s;outline:none;}
-.fg-item input::placeholder,.fg-item textarea::placeholder{color:rgba(255,255,255,.3);}
-.fg-item input:focus,.fg-item select:focus,.fg-item textarea:focus{border-color:var(--ac);background:rgba(255,255,255,.1);}
-.fg-item select option{background:#1e3460;color:#fff;}
-.fg-full{grid-column:span 2;}
-.form-submit{width:100%;padding:14px;background:var(--ac);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:.18s;margin-top:8px;}
-.form-submit:hover{opacity:.9;transform:translateY(-1px);}
-.form-note{font-size:11px;color:rgba(255,255,255,.3);text-align:center;margin-top:10px;}
+/* HEALTHCARE DASHBOARD MOCK */
+.hc-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.hc-mock-header{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.hc-mock-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.hc-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#4caf50;font-weight:600;}
+.hc-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#4caf50;box-shadow:0 0 0 3px rgba(76,175,80,.2);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(76,175,80,.2);}50%{box-shadow:0 0 0 6px rgba(76,175,80,.05);}}
+.hc-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.hc-kpi{background:#0f1e38;padding:16px 18px;}
+.hc-kpi-label{font-size:10.5px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.hc-kpi-val{font-size:24px;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1;}
+.hc-kpi-val.green{color:#4caf50;}
+.hc-kpi-delta{font-size:11px;margin-top:4px;font-weight:600;}
+.hc-kpi-delta.up{color:#4caf50;}.hc-kpi-delta.down{color:#ef5350;}
+.hc-reviews{padding:16px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.hc-reviews-label{font-size:10.5px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.hc-stars{display:flex;align-items:center;gap:8px;}
+.hc-star-row{display:flex;gap:3px;font-size:16px;}
+.hc-rating{font-size:22px;font-weight:900;color:#fff;}
+.hc-reviews-count{font-size:11.5px;color:rgba(255,255,255,.4);}
+.hc-whatsapp{padding:14px 18px;background:rgba(37,211,102,.06);border-top:1px solid rgba(37,211,102,.1);display:flex;align-items:center;justify-content:space-between;}
+.hc-wa-label{font-size:12px;color:rgba(255,255,255,.5);font-weight:500;}
+.hc-wa-val{font-size:16px;font-weight:800;color:#25d366;}
 /* RESULTS STRIP */
 .results-strip{background:var(--n);padding:40px 0;}
 .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
@@ -257,7 +264,7 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 .footer-areas b{color:rgba(255,255,255,.4);}.footer-areas a{color:rgba(255,255,255,.25);transition:.15s;}.footer-areas a:hover{color:rgba(255,255,255,.6);}
 /* RESPONSIVE */
 @media(max-width:960px){
-  .hero-inner{grid-template-columns:1fr;}.form-box{display:none;}
+  .hero-grid{grid-template-columns:1fr;}.hc-mock{display:none;}
   .pain-grid,.why-grid{grid-template-columns:repeat(2,1fr);}
   .faq-grid{grid-template-columns:1fr;}
   .fg{grid-template-columns:1fr 1fr;}
@@ -303,46 +310,62 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <div class="eyebrow">🏥 Healthcare Industry</div>
-      <h1>More <em>Patient Appointments</em><br>for Hospitals, Clinics &amp; Doctors</h1>
-      <p class="hero-sub">Patients in India Google symptoms, doctors, and hospitals before booking. We ensure your clinic ranks first — and converts that traffic into booked appointments, not just clicks.</p>
-      <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-ac">Get Free Industry Audit</a>
-        <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">🏥 Healthcare · Clinics · Hospitals · Doctors</div>
+        <h1>More <em>Patient Appointments</em><br>for Hospitals, Clinics &amp; Doctors</h1>
+        <p class="hero-desc">Patients in India Google symptoms, doctors, and hospitals before booking. We ensure your clinic ranks first — and converts that traffic into booked appointments, not just clicks.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🏥 Get Free Healthcare Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>MCI-Compliant</strong> Campaigns</span>
+          <span class="proof-item"><strong>Patient Privacy</strong> First</span>
+          <span class="proof-item"><strong>Results</strong> in 30–60 Days</span>
+        </div>
       </div>
-      <div class="hero-proof">
-        <span class="proof-item">✓ <strong>MCI-Compliant</strong> Campaigns</span>
-        <span class="proof-item">✓ <strong>Patient Privacy</strong> First</span>
-        <span class="proof-item">✓ <strong>Results</strong> in 30–60 Days</span>
-      </div>
-    </div>
-    <div class="form-box">
-      <h3>Free Healthcare Audit</h3>
-      <p>We'll review your clinic's digital presence and show you exactly what's losing you patients.</p>
-      <form id="lf" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('lf-ok').style.display='block';">
-        <div class="form-row">
-          <div class="fg-item"><label>Name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg-item"><label>Phone</label><input type="tel" placeholder="+91 98765 00000" required></div>
-          <div class="fg-item fg-full"><label>Clinic / Hospital Name</label><input type="text" placeholder="Your clinic name" required></div>
-          <div class="fg-item fg-full"><label>Primary Goal</label>
-            <select>
-              <option>More Patient Appointments</option>
-              <option>Better Google Rankings</option>
-              <option>Reputation Management</option>
-              <option>New Website / Redesign</option>
-              <option>WhatsApp Booking System</option>
-            </select>
+      <!-- Healthcare Patient Dashboard Mock -->
+      <div class="hc-mock">
+        <div class="hc-mock-header">
+          <span class="hc-mock-title">Patient Acquisition Dashboard</span>
+          <span class="hc-live">Live</span>
+        </div>
+        <div class="hc-kpis">
+          <div class="hc-kpi">
+            <div class="hc-kpi-label">GMB Profile Views</div>
+            <div class="hc-kpi-val green">2,847</div>
+            <div class="hc-kpi-delta up">↑ 156% this month</div>
+          </div>
+          <div class="hc-kpi">
+            <div class="hc-kpi-label">Appointments Booked</div>
+            <div class="hc-kpi-val">124</div>
+            <div class="hc-kpi-delta up">↑ 3.2× vs last month</div>
+          </div>
+          <div class="hc-kpi">
+            <div class="hc-kpi-label">Google Maps Rank</div>
+            <div class="hc-kpi-val green">#1</div>
+            <div class="hc-kpi-delta up">↑ from #9 position</div>
+          </div>
+          <div class="hc-kpi">
+            <div class="hc-kpi-label">Organic Traffic</div>
+            <div class="hc-kpi-val">4,210</div>
+            <div class="hc-kpi-delta up">↑ 88% in 60 days</div>
           </div>
         </div>
-        <button type="submit" class="form-submit">🚀 Get Free Healthcare Audit</button>
-        <p class="form-note">🔒 Patient data is never used for advertising. No spam.</p>
-      </form>
-      <div id="lf-ok" style="display:none;text-align:center;padding:24px 0;">
-        <div style="font-size:36px;margin-bottom:12px;">✅</div>
-        <h3 style="color:#fff;margin-bottom:8px;">Received!</h3>
-        <p style="color:rgba(255,255,255,.5);">We'll send your audit within 24 hours.</p>
+        <div class="hc-reviews">
+          <div class="hc-reviews-label">Google Reviews</div>
+          <div class="hc-stars">
+            <div class="hc-star-row">⭐⭐⭐⭐⭐</div>
+            <div class="hc-rating">4.9</div>
+            <div class="hc-reviews-count">312 patient reviews</div>
+          </div>
+        </div>
+        <div class="hc-whatsapp">
+          <span class="hc-wa-label">💬 WhatsApp Enquiries This Week</span>
+          <span class="hc-wa-val">89 new</span>
+        </div>
       </div>
     </div>
   </div>

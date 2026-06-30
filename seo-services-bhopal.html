@@ -240,6 +240,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   .results-inner{grid-template-columns:1fr 1fr;}
   .fg{grid-template-columns:1fr;}
 }
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(37,99,235,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(37,99,235,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#93c5fd;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#93c5fd,#2563EB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.ssb-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.ssb-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ssb-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.ssb-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#2563EB;font-weight:600;}
+.ssb-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#2563EB;box-shadow:0 0 0 3px rgba(37,99,235,.2);animation:ssbp 2s infinite;}
+@keyframes ssbp{0%,100%{box-shadow:0 0 0 3px rgba(37,99,235,.2);}50%{box-shadow:0 0 0 6px rgba(37,99,235,.05);}}
+.ssb-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.ssb-kpi{background:#0f1e38;padding:14px 16px;}
+.ssb-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.ssb-kpi-val{font-size:20px;font-weight:900;color:#2563EB;letter-spacing:-.02em;line-height:1;}
+.ssb-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.ssb-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.ssb-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.ssb-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.ssb-row:last-child{border:none;}
+.ssb-row-n{color:rgba(255,255,255,.55);}
+.ssb-row-v{color:#93c5fd;font-weight:700;font-size:11px;}
+.ssb-btm{padding:12px 18px;background:rgba(37,99,235,.06);border-top:1px solid rgba(37,99,235,.1);display:flex;align-items:center;justify-content:space-between;}
+.ssb-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.ssb-btm-val{font-size:15px;font-weight:800;color:#2563EB;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.ssb-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -270,68 +301,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 </nav>
 
 <!-- HERO — above fold, Google Ads optimized -->
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">🔍 SEO Services — Bhopal, MP</div>
-        <h1>Rank #1 on Google.<br><em>Get More Bhopal</em><br>Customers.</h1>
-        <p class="hero-sub">We are Bhopal's most experienced SEO agency. We rank local businesses on Google Page 1 — with transparent reporting and zero guesswork.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📍 Based in Bhopal</div>
-          <div class="hb-badge">⭐ 12+ Years Experience</div>
-          <div class="hb-badge">📊 Free Audit Included</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-o">🚀 Get Free SEO Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">🔍 SEO Services — Bhopal, MP</div>
+        <h1>Rank #1 on Google.<br><em>Get More Bhopal Customers.</em></h1>
+        <p class="hero-desc">We're Bhopal's most experienced SEO agency. We rank local businesses on Google Page 1 with transparent reporting, proven strategy, and zero guesswork.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🔍 Get Free SEO Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>500+</strong> Projects Delivered</div>
-          <div class="proof-item">✅ <strong>3x</strong> Average Traffic Growth</div>
-          <div class="proof-item">✅ <strong>Local</strong> Bhopal office</div>
+          <span class="proof-item"><strong>Page 1</strong> Rankings in 90 Days</span>
+          <span class="proof-item"><strong>3×</strong> Avg. Organic Traffic Growth</span>
+          <span class="proof-item"><strong>Zero</strong> Hidden Charges</span>
         </div>
       </div>
-      <!-- LEAD FORM -->
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Get Your Free SEO Audit</div>
-        <div class="lead-sub">We'll analyse your website, current rankings & Bhopal competitors — and show you exactly what's missing.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="SEO Services Bhopal">
-          <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" name="name" placeholder="Rahul Sharma" required>
-          </div>
-          <div class="form-group">
-            <label>Phone / WhatsApp *</label>
-            <input type="tel" name="phone" placeholder="+91 98765 43210" required>
-          </div>
-          <div class="form-group">
-            <label>Website URL</label>
-            <input type="url" name="website" placeholder="https://yourbusiness.com">
-          </div>
-          <div class="form-group">
-            <label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your industry...</option>
-              <option>Real Estate</option>
-              <option>Healthcare / Clinic</option>
-              <option>Education / Coaching</option>
-              <option>Manufacturing / Industrial</option>
-              <option>Retail / E-Commerce</option>
-              <option>Hospitality / Restaurant</option>
-              <option>Legal / Finance</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get My Free SEO Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20SEO%20services%20for%20my%20Bhopal%20business" target="_blank" rel="noopener" class="form-wa">
-          💬 Chat on WhatsApp
-        </a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="ssb-mock">
+        <div class="ssb-hdr">
+          <span class="ssb-hdr-title">SEO Performance — Bhopal Client</span>
+          <span class="ssb-live">Live</span>
+        </div>
+        <div class="ssb-kpis">
+          <div class="ssb-kpi"><div class="ssb-kpi-lbl">Keywords on Page 1</div><div class="ssb-kpi-val">312</div><div class="ssb-kpi-d">↑ from 14 at start</div></div>
+          <div class="ssb-kpi"><div class="ssb-kpi-lbl">Organic Traffic</div><div class="ssb-kpi-val">18,400/mo</div><div class="ssb-kpi-d">↑ 4.2× in 6 months</div></div>
+          <div class="ssb-kpi"><div class="ssb-kpi-lbl">Domain Authority</div><div class="ssb-kpi-val">54</div><div class="ssb-kpi-d">↑ from 22</div></div>
+          <div class="ssb-kpi"><div class="ssb-kpi-lbl">Leads from SEO</div><div class="ssb-kpi-val">94/mo</div><div class="ssb-kpi-d">↑ ₹0 ad spend</div></div>
+        </div>
+        <div class="ssb-rows">
+          <div class="ssb-rows-lbl">Top Keywords Ranking #1</div>
+          <div class="ssb-row"><span class="ssb-row-n">"SEO agency Bhopal"</span><span class="ssb-row-v">#1 Google</span></div>
+          <div class="ssb-row"><span class="ssb-row-n">"digital marketing Bhopal"</span><span class="ssb-row-v">#1 Google</span></div>
+          <div class="ssb-row"><span class="ssb-row-n">"website design Bhopal"</span><span class="ssb-row-v">#2 Google</span></div>
+        </div>
+        <div class="ssb-btm">
+          <span class="ssb-btm-lbl">📈 Avg. Traffic Growth (6 months)</span>
+          <span class="ssb-btm-val">4.2× organic</span>
+        </div>
       </div>
     </div>
   </div>

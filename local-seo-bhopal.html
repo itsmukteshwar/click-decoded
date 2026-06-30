@@ -307,6 +307,37 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
   .results-inner{grid-template-columns:1fr 1fr;}
   .fg{grid-template-columns:1fr;}
 }
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(16,185,129,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(16,185,129,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#6ee7b7;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#6ee7b7,#10B981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.lsb-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.lsb-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.lsb-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.lsb-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#10B981;font-weight:600;}
+.lsb-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 0 3px rgba(16,185,129,.2);animation:lsbp 2s infinite;}
+@keyframes lsbp{0%,100%{box-shadow:0 0 0 3px rgba(16,185,129,.2);}50%{box-shadow:0 0 0 6px rgba(16,185,129,.05);}}
+.lsb-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.lsb-kpi{background:#0f1e38;padding:14px 16px;}
+.lsb-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.lsb-kpi-val{font-size:20px;font-weight:900;color:#10B981;letter-spacing:-.02em;line-height:1;}
+.lsb-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.lsb-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.lsb-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.lsb-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.lsb-row:last-child{border:none;}
+.lsb-row-n{color:rgba(255,255,255,.55);}
+.lsb-row-v{color:#6ee7b7;font-weight:700;font-size:11px;}
+.lsb-btm{padding:12px 18px;background:rgba(16,185,129,.06);border-top:1px solid rgba(16,185,129,.1);display:flex;align-items:center;justify-content:space-between;}
+.lsb-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.lsb-btm-val{font-size:15px;font-weight:800;color:#10B981;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.lsb-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -337,70 +368,45 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
 </nav>
 
 <!-- HERO -->
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">📍 Local SEO — Bhopal, MP</div>
-        <h1>Rank in Google Maps.<br>Get More Bhopal<br><em>Walk-ins & Calls.</em></h1>
-        <p class="hero-sub">We get Bhopal businesses into the Google Map Pack — the 3 listings that appear above all organic results and capture 40% of all local clicks.</p>
-        <div class="hero-badges">
-          <div class="hb-badge">📍 Based in Bhopal</div>
-          <div class="hb-badge">⭐ 12+ Years Experience</div>
-          <div class="hb-badge">🗺️ Google Maps Specialists</div>
-        </div>
-        <div class="hero-ctas">
-          <a href="#get-audit" class="btn btn-o">🚀 Get Free Local SEO Audit</a>
-          <a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a>
+        <div class="hero-eyebrow">📍 Local SEO — Bhopal, MP</div>
+        <h1>Rank in Google Maps.<br><em>Get More Bhopal Walk-ins & Calls.</em></h1>
+        <p class="hero-desc">We get Bhopal businesses into the Google Map Pack — the 3 listings that appear above all organic results and capture 40% of all local clicks.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">📍 Get Free Local SEO Audit</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
         </div>
         <div class="hero-proof">
-          <div class="proof-item">✅ <strong>500+</strong> Local Businesses Served</div>
-          <div class="proof-item">✅ <strong>Map Pack</strong> Rankings Achieved</div>
-          <div class="proof-item">✅ <strong>Bhopal</strong> Office — Walk-ins Welcome</div>
+          <span class="proof-item"><strong>Map Pack</strong> #1 Rankings Achieved</span>
+          <span class="proof-item"><strong>40%</strong> of Local Clicks Go Here</span>
+          <span class="proof-item"><strong>3× More</strong> Calls & Walk-ins</span>
         </div>
       </div>
-
-      <!-- LEAD FORM -->
-      <div class="lead-box" id="get-audit">
-        <div class="lead-tag">✅ Free — No Commitment</div>
-        <div class="lead-title">Free Local SEO Audit</div>
-        <div class="lead-sub">We'll check your Google Business Profile, map ranking, citations & local competitors — and tell you exactly what to fix.</div>
-        <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-          <input type="hidden" name="service" value="Local SEO Bhopal">
-          <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" name="name" placeholder="Rahul Sharma" required>
-          </div>
-          <div class="form-group">
-            <label>Phone / WhatsApp *</label>
-            <input type="tel" name="phone" placeholder="+91 98765 43210" required>
-          </div>
-          <div class="form-group">
-            <label>Business Name</label>
-            <input type="text" name="business" placeholder="Your Business Name">
-          </div>
-          <div class="form-group">
-            <label>Business Type</label>
-            <select name="business_type">
-              <option value="">Select your category...</option>
-              <option>Restaurant / Cafe</option>
-              <option>Clinic / Hospital</option>
-              <option>Coaching Institute</option>
-              <option>Real Estate / Builder</option>
-              <option>Retail Shop / Showroom</option>
-              <option>Salon / Spa / Beauty</option>
-              <option>Legal / CA / Finance</option>
-              <option>Hotel / Homestay</option>
-              <option>Other Local Business</option>
-            </select>
-          </div>
-          <button type="submit" class="form-submit">Get My Free Local SEO Audit →</button>
-        </form>
-        <div class="form-or">or</div>
-        <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20Local%20SEO%20for%20my%20Bhopal%20business" target="_blank" rel="noopener" class="form-wa">
-          💬 Chat on WhatsApp
-        </a>
-        <div class="form-privacy">🔒 Private. No spam. We reply within 1 hour.</div>
+      <div class="lsb-mock">
+        <div class="lsb-hdr">
+          <span class="lsb-hdr-title">Google Business Profile — Bhopal</span>
+          <span class="lsb-live">Live</span>
+        </div>
+        <div class="lsb-kpis">
+          <div class="lsb-kpi"><div class="lsb-kpi-lbl">Map Pack Position</div><div class="lsb-kpi-val">#1</div><div class="lsb-kpi-d">↑ from outside top 10</div></div>
+          <div class="lsb-kpi"><div class="lsb-kpi-lbl">GMB Profile Views</div><div class="lsb-kpi-val">4,820</div><div class="lsb-kpi-d">↑ 312% this month</div></div>
+          <div class="lsb-kpi"><div class="lsb-kpi-lbl">Direction Requests</div><div class="lsb-kpi-val">284</div><div class="lsb-kpi-d">↑ 4× vs last month</div></div>
+          <div class="lsb-kpi"><div class="lsb-kpi-lbl">Call Clicks</div><div class="lsb-kpi-val">193</div><div class="lsb-kpi-d">↑ 247%</div></div>
+        </div>
+        <div class="lsb-rows">
+          <div class="lsb-rows-lbl">Local Keywords in Map Pack</div>
+          <div class="lsb-row"><span class="lsb-row-n">"dentist in Bhopal"</span><span class="lsb-row-v">#1 Map Pack</span></div>
+          <div class="lsb-row"><span class="lsb-row-n">"CA firm Bhopal"</span><span class="lsb-row-v">#1 Map Pack</span></div>
+          <div class="lsb-row"><span class="lsb-row-n">"interior designer Bhopal"</span><span class="lsb-row-v">#2 Map Pack</span></div>
+        </div>
+        <div class="lsb-btm">
+          <span class="lsb-btm-lbl">📞 Avg. Monthly Calls Generated</span>
+          <span class="lsb-btm-val">190+ calls</span>
+        </div>
       </div>
     </div>
   </div>

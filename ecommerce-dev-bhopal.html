@@ -21,6 +21,38 @@
 .hero{background:linear-gradient(155deg,#021510 0%,#042a1e 55%,#021510 100%);}
 .results-strip{background:linear-gradient(135deg,#021510,#042a1e);}
 .cta-strip{background:linear-gradient(135deg,#021510,#042a1e);}
+
+
+/* ── PREMIUM HERO ── */
+.hero{background:linear-gradient(155deg,#0f1e38 0%,#162847 55%,#0f1e38 100%);padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 70% 30%,rgba(5,150,105,.18) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 5% 80%,rgba(5,150,105,.07) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(5,150,105,.12);border:1px solid rgba(5,150,105,.3);border-radius:99px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#6ee7b7;margin-bottom:20px;}
+.hero h1{font-size:clamp(28px,3.8vw,48px);font-weight:900;color:#fff;line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#6ee7b7,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.ecd-mock{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);}
+.ecd-hdr{background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ecd-hdr-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.ecd-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#059669;font-weight:600;}
+.ecd-live::before{content:'';width:7px;height:7px;border-radius:50%;background:#059669;box-shadow:0 0 0 3px rgba(5,150,105,.2);animation:ecdp 2s infinite;}
+@keyframes ecdp{0%,100%{box-shadow:0 0 0 3px rgba(5,150,105,.2);}50%{box-shadow:0 0 0 6px rgba(5,150,105,.05);}}
+.ecd-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
+.ecd-kpi{background:#0f1e38;padding:14px 16px;}
+.ecd-kpi-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+.ecd-kpi-val{font-size:20px;font-weight:900;color:#059669;letter-spacing:-.02em;line-height:1;}
+.ecd-kpi-d{font-size:10.5px;margin-top:3px;font-weight:600;color:#4caf50;}
+.ecd-rows{padding:14px 18px;border-top:1px solid rgba(255,255,255,.06);}
+.ecd-rows-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.ecd-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11.5px;}
+.ecd-row:last-child{border:none;}
+.ecd-row-n{color:rgba(255,255,255,.55);}
+.ecd-row-v{color:#6ee7b7;font-weight:700;font-size:11px;}
+.ecd-btm{padding:12px 18px;background:rgba(5,150,105,.06);border-top:1px solid rgba(5,150,105,.1);display:flex;align-items:center;justify-content:space-between;}
+.ecd-btm-lbl{font-size:11.5px;color:rgba(255,255,255,.45);}
+.ecd-btm-val{font-size:15px;font-weight:800;color:#059669;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.ecd-mock{display:none;}}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -35,37 +67,48 @@
 <body>
 <div id="cd-header"></div><script src="components/header.js?v=2"></script>
 <nav class="breadcrumb"><div class="wrap"><ol class="bc-list"><li><a href="index.html">Home</a></li><li>›</li><li><a href="service-areas.html">Areas We Work</a></li><li>›</li><li><a href="digital-marketing-bhopal.html">Bhopal</a></li><li>›</li><li>🛍️ Bhopal's E-Commerce Development Specialists</li></ol></div></nav>
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap"><div class="hero-inner">
-    <div>
-      <div class="eyebrow">🛍️ E-Commerce Development — Bhopal, MP</div>
-      <h1>Launch Your Bhopal<br><em>Online Store.</em></h1>
-      <p class="hero-sub">We build high-converting e-commerce stores for Bhopal businesses — WooCommerce or custom — with Indian payment gateways, mobile-first design, and SEO built in.</p>
-      <div class="hero-badges"><div class="hb-badge">📍 Based in Bhopal</div><div class="hb-badge">🛍️ WooCommerce Specialists</div><div class="hb-badge">⭐ 12+ Years Experience</div></div>
-      <div class="hero-ctas"><a href="#get-audit" class="btn btn-o">🚀 Get Free Consultation</a><a href="tel:+919407000101" class="btn btn-ghost">📞 Call Now</a></div>
-      <div class="hero-proof">
-        <div class="proof-item">✅ <strong>100+</strong> Stores Built & Launched</div>
-        <div class="proof-item">✅ <strong>Razorpay</strong> & PayU Integrated</div>
-        <div class="proof-item">✅ <strong>SEO-Ready</strong> Product Pages from Day 1</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">🛍️ E-Commerce Development — Bhopal, MP</div>
+        <h1>Launch Your Bhopal<br><em>Online Store.</em></h1>
+        <p class="hero-desc">We build high-converting WooCommerce stores for Bhopal businesses — Indian payment gateways, mobile-first design, and SEO built in from day one.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-ac">🛍️ Get Free Store Consultation</a>
+          <a href="https://wa.me/919407000101" class="btn btn-ghost">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-item"><strong>100+</strong> Stores Built</span>
+          <span class="proof-item"><strong>Razorpay</strong> & PayU Integrated</span>
+          <span class="proof-item"><strong>SEO-Ready</strong> From Day 1</span>
+        </div>
+      </div>
+      <div class="ecd-mock">
+        <div class="ecd-hdr">
+          <span class="ecd-hdr-title">Store Performance Dashboard</span>
+          <span class="ecd-live">Live</span>
+        </div>
+        <div class="ecd-kpis">
+          <div class="ecd-kpi"><div class="ecd-kpi-lbl">Monthly Revenue</div><div class="ecd-kpi-val">₹18.4L</div><div class="ecd-kpi-d">↑ 212% in 90 days</div></div>
+          <div class="ecd-kpi"><div class="ecd-kpi-lbl">Conversion Rate</div><div class="ecd-kpi-val">3.8%</div><div class="ecd-kpi-d">↑ from 0.9% before</div></div>
+          <div class="ecd-kpi"><div class="ecd-kpi-lbl">Organic Orders</div><div class="ecd-kpi-val">640</div><div class="ecd-kpi-d">↑ no ad spend</div></div>
+          <div class="ecd-kpi"><div class="ecd-kpi-lbl">Page Speed Score</div><div class="ecd-kpi-val">94/100</div><div class="ecd-kpi-d">↑ Core Web Vitals</div></div>
+        </div>
+        <div class="ecd-rows">
+          <div class="ecd-rows-lbl">Recently Launched Bhopal Stores</div>
+          <div class="ecd-row"><span class="ecd-row-n">Fashion Boutique — Bhopal</span><span class="ecd-row-v">₹4.2L/mo</span></div>
+          <div class="ecd-row"><span class="ecd-row-n">Organic Food Store</span><span class="ecd-row-v">₹2.8L/mo</span></div>
+          <div class="ecd-row"><span class="ecd-row-n">Electronics Retailer</span><span class="ecd-row-v">₹6.1L/mo</span></div>
+        </div>
+        <div class="ecd-btm">
+          <span class="ecd-btm-lbl">📦 Avg. Store Launch Time</span>
+          <span class="ecd-btm-val">14 days</span>
+        </div>
       </div>
     </div>
-    <div class="lead-box" id="get-audit">
-      <div class="lead-tag">✅ Free — No Commitment</div>
-      <div class="lead-title">Free Store Consultation</div>
-      <div class="lead-sub">Tell us your products and requirements — we'll give you a clear scope and quote within 24 hours.</div>
-      <form action="https://formspree.io/f/hello@clickdecoded.com" method="POST">
-        <input type="hidden" name="service" value="E-Commerce Development Bhopal">
-        <div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Rahul Sharma" required></div>
-        <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required></div>
-        <div class="form-group"><label>Website URL</label><input type="url" name="website" placeholder="https://yourbusiness.com"></div>
-        <div class="form-group"><label>Business Type</label><select name="type"><option value="">Select...</option><option>WooCommerce (WordPress)</option><option>Custom E-Commerce Store</option><option>Shopify Setup & Customisation</option><option>Store Migration</option><option>Add Features to Existing Store</option><option>Other</option></select></div>
-        <button type="submit" class="form-submit">Get Free Consultation →</button>
-      </form>
-      <div class="form-or">or</div>
-      <a href="https://wa.me/919407000101?text=Hi%2C%20I%20need%20Ecommerce%20Dev%20for%20my%20Bhopal%20business" target="_blank" rel="noopener" class="form-wa">💬 Chat on WhatsApp</a>
-      <div class="form-privacy">🔒 Private. No spam. Reply within 1 hour.</div>
-    </div>
-  </div></div>
+  </div>
 </section>
 
 <div class="results-strip"><div class="wrap"><div class="results-inner"><div><div class="res-num">100<em>+</em></div><div class="res-label">Stores Built</div><div class="res-sub">for Bhopal & India</div></div><div><div class="res-num">Indian<em>Payment</em></div><div class="res-label">Gateways Integrated</div><div class="res-sub">Razorpay, PayU, CCAvenue</div></div><div><div class="res-num">Mobile<em>-First</em></div><div class="res-label">Every Store</div><div class="res-sub">70%+ mobile traffic</div></div><div><div class="res-num">12<em>yr</em></div><div class="res-label">E-Commerce Dev</div><div class="res-sub">Bhopal-based</div></div></div></div></div>
