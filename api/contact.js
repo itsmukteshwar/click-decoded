@@ -23,7 +23,7 @@ function buildThankYouEmail(data) {
       <!-- HEADER -->
       <tr>
         <td style="background:linear-gradient(135deg,#0f1e38 0%,#162847 60%,#0f1e38 100%);padding:40px 40px 36px;text-align:center;">
-          <img src="https://www.clickdecoded.com/clickdecoded.png" alt="Click Decoded" width="160" style="display:block;margin:0 auto 24px;max-width:160px;">
+          <div style="display:inline-block;background:#ffffff;border-radius:14px;padding:10px 22px;margin:0 auto 24px;"><img src="https://www.clickdecoded.com/clickdecoded.png" alt="Click Decoded" width="150" style="display:block;max-width:150px;"></div>
           <h1 style="margin:0;font-size:26px;font-weight:900;color:#ffffff;letter-spacing:-0.03em;line-height:1.2;">
             We've Got Your Message,<br>
             <span style="color:#EE7E1A;">${firstName}!</span>
@@ -155,10 +155,13 @@ function buildThankYouEmail(data) {
 function buildNotificationEmail(data) {
   const { name, company, email, phone, service, budget, message } = data;
 
+  const phoneClean = (phone || "").replace(/[^0-9]/g, "");
+  const phoneDisplay = phone || "—";
+
   const rows = [
     ["Name", name],
-    ["Email", email],
-    ["Phone", phone || "—"],
+    ["Email", `<a href="mailto:${email}" style="color:#2A4573;text-decoration:none;">${email}</a>`],
+    ["Phone", phone ? `<a href="tel:+${phoneClean}" style="color:#EE7E1A;font-weight:800;text-decoration:none;">${phoneDisplay}</a>` : "—"],
     ["Company / Brand", company || "—"],
     ["Service", service || "—"],
     ["Budget", budget || "—"],
@@ -223,15 +226,21 @@ function buildNotificationEmail(data) {
         <td style="padding:0 32px 28px;">
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
-              <td style="padding-right:8px;">
+              <td style="padding-right:6px;">
                 <a href="mailto:${email}?subject=Re: Your Enquiry — Click Decoded&body=Hi ${name},%0A%0AThank you for reaching out..."
-                   style="display:block;text-align:center;background:#2A4573;color:#ffffff;font-size:13px;font-weight:700;padding:11px 16px;border-radius:10px;text-decoration:none;">
+                   style="display:block;text-align:center;background:#2A4573;color:#ffffff;font-size:12px;font-weight:700;padding:11px 10px;border-radius:10px;text-decoration:none;">
                   ✉ Reply via Email
                 </a>
               </td>
-              <td style="padding-left:8px;">
+              <td style="padding:0 6px;">
+                <a href="tel:+${(phone || "").replace(/[^0-9]/g, "")}"
+                   style="display:block;text-align:center;background:#EE7E1A;color:#ffffff;font-size:12px;font-weight:700;padding:11px 10px;border-radius:10px;text-decoration:none;">
+                  📞 Call Them
+                </a>
+              </td>
+              <td style="padding-left:6px;">
                 <a href="https://wa.me/${(phone || "").replace(/[^0-9]/g, "") || "919407000101"}"
-                   style="display:block;text-align:center;background:#25D366;color:#ffffff;font-size:13px;font-weight:700;padding:11px 16px;border-radius:10px;text-decoration:none;">
+                   style="display:block;text-align:center;background:#25D366;color:#ffffff;font-size:12px;font-weight:700;padding:11px 10px;border-radius:10px;text-decoration:none;">
                   💬 WhatsApp Them
                 </a>
               </td>
@@ -308,7 +317,7 @@ module.exports = async function handler(req, res) {
 
     // ── 1. Send Thank You email to the enquirer ──
     await transporter.sendMail({
-      from: `"Click Decoded" <${process.env.ZOHO_EMAIL}>`,
+      from: `"Team Click Decoded" <${process.env.ZOHO_EMAIL}>`,
       to: email,
       subject: `We got your message, ${name.split(" ")[0]} 👋 — Click Decoded`,
       html: buildThankYouEmail({ name, company, email, phone, service, budget, message }),
