@@ -10,7 +10,10 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon-clickdecoded.svg" type="image/svg+xml"><link rel="alternate icon" href="clickdecoded.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Click Decoded","url":"https://clickdecoded.com","logo":"https://clickdecoded.com/logo-color.svg","description":"Premium B2B digital marketing, SEO, AI automation and white label agency, Bhopal India.","address":{"@type":"PostalAddress","addressLocality":"Bhopal","addressRegion":"Madhya Pradesh","addressCountry":"IN"}}</script>
 <style>
 /* ╔══════════════════════════════════════════╗
@@ -35,8 +38,8 @@
   --shell-h: calc(var(--nav-h) + var(--ticker-h)); /* 114px total */
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;font-size:16px;}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--body);background:#fff;-webkit-font-smoothing:antialiased;}
+html{scroll-behavior:smooth;font-size:16px;}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--body);background:#fff;-webkit-font-smoothing:antialiased;}
 html{overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 img,svg{display:block;}
@@ -1153,6 +1156,7 @@ footer h4{
   gtag('js', new Date());
   gtag('config', 'G-LEH1H9LH8E');
 </script>
+<link rel="preload" as="image" href="clickdecoded.png" fetchpriority="high">
 </head>
 <body>
 
