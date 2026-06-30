@@ -1,0 +1,12 @@
+{
+  "name": "clickdecoded-website",
+  "version": "1.0.0",
+  "description": "Click Decoded — AI-powered digital agency website",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}

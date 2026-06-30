@@ -599,23 +599,81 @@ const hdr=document.getElementById('hdr');if(hdr)window.addEventListener('scroll'
 /* ── Form Submit Handler ── */
 const form=document.getElementById('contact-form');
 const successBox=document.getElementById('form-success');
+const submitBtn=form?form.querySelector('.form-submit'):null;
+
 if(form){
-  form.addEventListener('submit',function(e){
+  form.addEventListener('submit',async function(e){
     e.preventDefault();
+
     const name=form.name.value.trim();
     const email=form.email.value.trim();
     const dialEl=document.getElementById('phone-dial-hidden');
     const phoneVal=((dialEl?dialEl.value:'+91')+' '+form.phone.value.trim()).trim();
     const service=form.service.value;
-    if(!name||!email||!phoneVal||!service){
+
+    // Client-side validation
+    if(!name||!email||!service){
       const firstEmpty=[...form.querySelectorAll('input[required],select[required]')].find(el=>!el.value.trim());
-      if(firstEmpty){firstEmpty.focus();firstEmpty.style.borderColor='#ef4444';setTimeout(()=>firstEmpty.style.borderColor='',2000);}
+      if(firstEmpty){firstEmpty.focus();firstEmpty.style.borderColor='#ef4444';setTimeout(()=>firstEmpty.style.borderColor='',2500);}
       return;
     }
-    form.style.display='none';
-    successBox.style.display='block';
+
+    // Loading state
+    if(submitBtn){
+      submitBtn.disabled=true;
+      submitBtn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation:spin .8s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Sending…';
+    }
+    if(!document.getElementById('spin-style')){
+      const s=document.createElement('style');
+      s.id='spin-style';
+      s.textContent='@keyframes spin{to{transform:rotate(360deg)}}';
+      document.head.appendChild(s);
+    }
+
+    try {
+      const payload={
+        name,
+        email,
+        phone: phoneVal,
+        company: (form.company?form.company.value.trim():''),
+        service,
+        budget: (form.budget?form.budget.value:''),
+        message: (form.message?form.message.value.trim():''),
+      };
+
+      const res=await fetch('/api/contact',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload),
+      });
+
+      const data=await res.json();
+
+      if(res.ok && data.success){
+        form.style.display='none';
+        successBox.style.display='block';
+      } else {
+        throw new Error(data.error||'Something went wrong.');
+      }
+    } catch(err){
+      // Show inline error
+      let errBox=document.getElementById('form-error-msg');
+      if(!errBox){
+        errBox=document.createElement('p');
+        errBox.id='form-error-msg';
+        errBox.style.cssText='margin-top:12px;padding:12px 16px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:10px;font-size:13px;color:#dc2626;text-align:center;';
+        form.appendChild(errBox);
+      }
+      errBox.textContent='⚠ '+(err.message||'Failed to send. Please WhatsApp us at +91 94070 00101.');
+      // Reset button
+      if(submitBtn){
+        submitBtn.disabled=false;
+        submitBtn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message — We\'ll Reply in 24 Hours';
+      }
+    }
   });
-  form.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',()=>el.style.borderColor=''));
+
+  form.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',()=>{el.style.borderColor='';const eb=document.getElementById('form-error-msg');if(eb)eb.remove();}));
 }
 
 /* ── Phone Flag Picker ── */
