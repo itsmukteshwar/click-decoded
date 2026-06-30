@@ -117,10 +117,20 @@
 .form-submit:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(238,126,26,.3);}
 .form-note{text-align:center;font-size:12px;color:var(--s);margin-top:14px;line-height:1.6;}
 /* SUCCESS STATE */
-.form-success{display:none;text-align:center;padding:40px 20px;}
-.form-success .fs-icon{font-size:52px;margin-bottom:16px;}
-.form-success h3{font-size:22px;margin-bottom:10px;color:var(--n);}
-.form-success p{font-size:14px;color:var(--m);line-height:1.7;}
+.form-success{display:none;text-align:center;padding:48px 24px 36px;}
+.fs-anim{position:relative;width:84px;height:84px;margin:0 auto 20px;}
+.fs-ring{position:absolute;inset:0;border-radius:50%;border:3px solid #10b981;animation:fs-ring-pop .5s cubic-bezier(.34,1.56,.64,1) forwards;}
+.fs-check-svg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+@keyframes fs-ring-pop{0%{transform:scale(0);opacity:0;}60%{transform:scale(1.12);}100%{transform:scale(1);opacity:1;}}
+@keyframes fs-check-draw{0%{stroke-dashoffset:40;}100%{stroke-dashoffset:0;}}
+.fs-badge{display:inline-block;background:rgba(16,185,129,.1);color:#059669;border:1px solid rgba(16,185,129,.25);border-radius:100px;padding:5px 16px;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:14px;text-transform:uppercase;}
+.form-success h3{font-size:24px;font-weight:800;color:var(--n);margin-bottom:8px;line-height:1.2;}
+.fs-sub{font-size:14px;color:var(--m);line-height:1.75;max-width:380px;margin:0 auto 24px;}
+.fs-steps{display:flex;flex-direction:column;gap:10px;margin:0 auto 24px;text-align:left;background:#f8fafc;border:1px solid #e8edf3;border-radius:14px;padding:16px 18px;max-width:380px;}
+.fs-step{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--m);font-weight:500;}
+.fs-step-num{min-width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--o),var(--o2));color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fs-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:12px 24px;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;transition:.18s;box-shadow:0 4px 14px rgba(37,211,102,.25);}
+.fs-wa:hover{background:#20ba5a;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35);}
 /* SIDEBAR */
 .contact-sidebar{display:flex;flex-direction:column;gap:16px;}
 /* Quick contact cards */
@@ -338,9 +348,28 @@ footer h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing
           <p class="form-note">🔒 Your information is private and will never be shared with third parties.</p>
         </form>
         <div class="form-success" id="form-success">
-          <div class="fs-icon">✅</div>
-          <h3>Message Received!</h3>
-          <p>Thank you for reaching out. A member of our team will review your enquiry and get back to you within 24 hours — usually much faster.<br><br>For urgent matters, WhatsApp us directly at <strong>+91 94070 00101</strong>.</p>
+          <div class="fs-anim">
+            <div class="fs-ring"></div>
+            <div class="fs-check-svg">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <path d="M9 18l6 6 12-12" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-dasharray="40" stroke-dashoffset="40"
+                  style="animation:fs-check-draw .4s .35s ease forwards;"/>
+              </svg>
+            </div>
+          </div>
+          <div class="fs-badge">🎯 Message received</div>
+          <h3>We've got your details!<br>Talk soon.</h3>
+          <p class="fs-sub">A confirmation is on its way to your inbox. Our team will personally review your project and respond within 24 hours — usually much sooner.</p>
+          <div class="fs-steps">
+            <div class="fs-step"><div class="fs-step-num">1</div> Confirmation email sent to your inbox</div>
+            <div class="fs-step"><div class="fs-step-num">2</div> Our team reviews your project brief</div>
+            <div class="fs-step"><div class="fs-step-num">3</div> You hear from us within 24 hours</div>
+          </div>
+          <a href="https://wa.me/919407000101?text=Hi%2C+I+just+submitted+a+form+on+clickdecoded.com" class="fs-wa" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Need it urgent? WhatsApp us now
+          </a>
         </div>
       </div>
 
@@ -698,67 +727,4 @@ if(form){
     {code:'om',dial:'+968',name:'Oman'},
     {code:'bh',dial:'+973',name:'Bahrain'},
     {code:'kw',dial:'+965',name:'Kuwait'},
-    {code:'pk',dial:'+92',name:'Pakistan'},
-    {code:'bd',dial:'+880',name:'Bangladesh'},
-    {code:'lk',dial:'+94',name:'Sri Lanka'},
-    {code:'np',dial:'+977',name:'Nepal'},
-    {code:'za',dial:'+27',name:'South Africa'},
-    {code:'ng',dial:'+234',name:'Nigeria'},
-    {code:'ke',dial:'+254',name:'Kenya'},
-    {code:'br',dial:'+55',name:'Brazil'},
-    {code:'mx',dial:'+52',name:'Mexico'},
-    {code:'jp',dial:'+81',name:'Japan'},
-    {code:'kr',dial:'+82',name:'South Korea'},
-    {code:'cn',dial:'+86',name:'China'}
-  ];
-
-  const row=document.getElementById('phone-row');
-  const trigger=document.getElementById('phone-trigger');
-  const flag=document.getElementById('phone-flag');
-  const codeDisplay=document.getElementById('phone-code-display');
-  const dialHidden=document.getElementById('phone-dial-hidden');
-  const drop=document.getElementById('phone-drop');
-  const list=document.getElementById('phone-drop-list');
-  const search=document.getElementById('phone-search');
-  if(!trigger||!list)return;
-
-  function flagUrl(code){return 'https://flagcdn.com/24x18/'+code+'.png';}
-
-  function renderList(filter){
-    const q=(filter||'').toLowerCase();
-    list.innerHTML='';
-    COUNTRIES.filter(c=>!q||c.name.toLowerCase().includes(q)||c.dial.includes(q)).forEach(c=>{
-      const el=document.createElement('div');
-      el.className='phone-opt'+(c.code==='in'?' selected':'');
-      el.setAttribute('role','option');
-      el.innerHTML='<img src="'+flagUrl(c.code)+'" alt="'+c.name+'" loading="lazy"><span class="phone-opt-name">'+c.name+'</span><span class="phone-opt-code">'+c.dial+'</span>';
-      el.addEventListener('click',function(){
-        flag.src=flagUrl(c.code);
-        codeDisplay.textContent=c.dial;
-        dialHidden.value=c.dial;
-        drop.style.display='none';
-        list.querySelectorAll('.phone-opt').forEach(o=>o.classList.remove('selected'));
-        el.classList.add('selected');
-      });
-      list.appendChild(el);
-    });
-  }
-
-  renderList();
-
-  trigger.addEventListener('click',function(e){
-    e.stopPropagation();
-    const open=drop.style.display==='block';
-    drop.style.display=open?'none':'block';
-    if(!open){search.value='';renderList();search.focus();}
-  });
-
-  search.addEventListener('input',function(){renderList(this.value);});
-
-  document.addEventListener('click',function(e){
-    if(!row.contains(e.target)) drop.style.display='none';
-  });
-})();
-</script>
-</body>
-</html>
+    {code:'pk',dial:'+92',
