@@ -1146,6 +1146,56 @@ footer h4{
   .hero-btns{flex-direction:column;}
   .hero-btns .btn{justify-content:center;}
 }
+
+/* BLOG SECTION — real photo cards */
+.blog-grid-real { align-items: stretch; }
+.bcard-img-photo {
+  height: 210px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.bcard-img-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.bcard-feat:hover .bcard-img-photo img { transform: scale(1.04); }
+.bcard-img-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,27,42,.55) 0%, transparent 55%);
+}
+.bcard-img-photo .bcard-cat { position: absolute; bottom: 14px; left: 14px; z-index: 2; }
+.bcard-read-time {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 2;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,.8);
+  background: rgba(0,0,0,.3);
+  padding: 3px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+.bcard-excerpt {
+  font-size: 13px;
+  color: var(--s);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bcard-feat { cursor: pointer; }
+.bcard-feat:hover h3 { color: var(--o); }
+.bcard-feat h3 { transition: color .2s; }
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -1862,23 +1912,49 @@ footer h4{
 <!-- ════════════════ BLOG ════════════════ -->
 <section class="blog-section">
  <div class="wrap">
-  <div class="sec-h rv">
-   <div class="pill pill-b">Resources</div>
-   <h2>Insights & Guides</h2>
-   <p>Practical marketing knowledge from our team — no fluff, no gated content.</p>
+  <div class="sec-h rv" style="margin-bottom:48px;">
+   <div class="pill pill-b">The Playbook</div>
+   <h2>No-Fluff Guides That <em>Actually</em> Rank</h2>
+   <p>Written by practitioners, not content farms. Every guide is tested, cited, and built to help Indian businesses grow — free, forever.</p>
   </div>
-  <div class="blog-grid">
-   <div class="bcard rv">
-    <div class="bcard-img" style="background:linear-gradient(135deg,var(--n),#2d4a7a)"><span class="bcard-cat">White Label</span></div>
-    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>What is White Label SEO &amp; How Does It Work for Agencies?</h3><a href="blog.html" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-   </div>
-   <div class="bcard rv2">
-    <div class="bcard-img" style="background:linear-gradient(135deg,#1a0a3a,var(--b))"><span class="bcard-cat">Automation</span></div>
-    <div class="bcard-body"><div class="bcard-date">June 2026</div><h3>How WhatsApp Automation Cuts Lead Response Time from Hours to 2 Minutes</h3><a href="blog.html" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-   </div>
-   <div class="bcard rv3">
-    <div class="bcard-img" style="background:linear-gradient(135deg,#0d3320,#0a5c36)"><span class="bcard-cat">GEO / AI Search</span></div>
-    <div class="bcard-body"><div class="bcard-date">May 2026</div><h3>GEO vs SEO: How to Get Your Business Cited by ChatGPT and Gemini</h3><a href="blog.html" class="read">Read More <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <div class="blog-grid blog-grid-real">
+   <a href="seo-guide-indian-businesses-2026.html" class="bcard bcard-feat rv" style="text-decoration:none;color:inherit;">
+    <div class="bcard-img bcard-img-photo">
+     <img src="img/seo-guide-indian-businesses-2026.png" alt="The Complete SEO Guide for Indian Businesses 2026" loading="lazy">
+     <span class="bcard-cat">SEO Guide</span>
+     <div class="bcard-read-time">22 min read</div>
+    </div>
+    <div class="bcard-body">
+     <div class="bcard-date">July 2026 &nbsp;·&nbsp; 14 Chapters</div>
+     <h3>The Complete SEO Guide for Indian Businesses (2026)</h3>
+     <p class="bcard-excerpt">From keyword research to Core Web Vitals — everything Indian businesses need to rank #1 on Google India. Zero fluff, ~4,800 words.</p>
+     <span class="read">Read the Guide <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+   </a>
+   <a href="ai-automation-guide-indian-businesses-2026.html" class="bcard bcard-feat rv2" style="text-decoration:none;color:inherit;">
+    <div class="bcard-img bcard-img-photo">
+     <img src="img/ai-automation-2026.png" alt="AI & Business Automation for Indian SMBs 2026" loading="lazy">
+     <span class="bcard-cat">AI Automation</span>
+     <div class="bcard-read-time">20 min read</div>
+    </div>
+    <div class="bcard-body">
+     <div class="bcard-date">July 2026 &nbsp;·&nbsp; 17 Chapters</div>
+     <h3>AI &amp; Business Automation for Indian SMBs: The Complete 2026 Guide</h3>
+     <p class="bcard-excerpt">WhatsApp bots, AI chatbots, workflow automation — save 20+ hours a week and scale without hiring. Everything covered, nothing sold.</p>
+     <span class="read">Read the Guide <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+   </a>
+   <div class="bcard bcard-coming rv3">
+    <div class="bcard-img" style="background:linear-gradient(135deg,#0c1f3f,#162847);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+     <div style="font-size:32px;">✍️</div>
+     <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;">Coming Next</div>
+    </div>
+    <div class="bcard-body">
+     <div class="bcard-date" style="display:flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--o);display:inline-block;"></span> Publishing soon</div>
+     <h3>Google Ads for Indian SMBs: The 2026 Performance Playbook</h3>
+     <p class="bcard-excerpt">Smart bidding, local campaigns, and audience targeting strategies built for the Indian market.</p>
+     <a href="blog.html" class="read">Browse All Guides <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
    </div>
   </div>
  </div>
