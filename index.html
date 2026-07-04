@@ -834,7 +834,9 @@ h1,h2,h3,h4{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--n
    ║  BLOG                                    ║
    ╚══════════════════════════════════════════╝ */
 .blog-section{background:#fff;}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.blog-slider-wrap{position:relative;overflow:hidden;}
+.blog-track{display:flex;gap:18px;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+.blog-track .bcard{flex:0 0 calc((100% - 36px)/3);min-width:0;}
 .bcard{
   border:1px solid var(--bdr);border-radius:20px;
   overflow:hidden;transition:.25s;
@@ -1057,6 +1059,8 @@ footer h4{
 .rv2{opacity:0;transform:translateY(24px);transition:opacity .6s ease .15s,transform .6s ease .15s;}
 .rv2.in{opacity:1;transform:none;}
 .rv3{opacity:0;transform:translateY(24px);transition:opacity .6s ease .28s,transform .6s ease .28s;}
+.rv4{opacity:0;transform:translateY(24px);transition:opacity .6s ease .42s,transform .6s ease .42s;}
+.rv4.in{opacity:1;transform:none;}
 .rv3.in{opacity:1;transform:none;}
 
 /* ╔══════════════════════════════════════════╗
@@ -1135,7 +1139,7 @@ footer h4{
 @media(max-width:768px){
   .dmenu,.navcta .btn:not(.show-m){display:none;}
   .hb{display:flex;}
-  .bento,.auto-cards,.cases-grid,.testi-grid,.blog-grid{grid-template-columns:1fr;}
+  .bento,.auto-cards,.cases-grid,.testi-grid,/* blog carousel mobile handled in .blog-track */
   .bc-wl{grid-column:span 1;}
   .stats-grid,.fg,.lead-inner{grid-template-columns:1fr;}
   .tp-list{grid-template-columns:1fr;}
@@ -1148,7 +1152,7 @@ footer h4{
 }
 
 /* BLOG SECTION — real photo cards */
-.blog-grid-real { align-items: stretch; }
+.blog-track .bcard{flex:0 0 calc(100% - 0px);}
 .bcard-img-photo {
   height: 210px;
   padding: 0;
@@ -1196,6 +1200,27 @@ footer h4{
 .bcard-feat { cursor: pointer; }
 .bcard-feat:hover h3 { color: var(--o); }
 .bcard-feat h3 { transition: color .2s; }
+
+/* ─── Blog Carousel ─── */
+.blog-slider-outer{position:relative;}
+.blog-slider-wrap{overflow:hidden;border-radius:4px;}
+.blog-track{display:flex;gap:18px;will-change:transform;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+.blog-track .bcard{flex:0 0 calc((100% - 36px)/3);min-width:0;}
+.bslide-btn{position:absolute;top:38%;transform:translateY(-50%);z-index:10;
+  width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.92);box-shadow:0 2px 12px rgba(0,0,0,.15);
+  display:flex;align-items:center;justify-content:center;transition:.2s;}
+.bslide-btn:hover{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.22);}
+.bslide-prev{left:-18px;}.bslide-next{right:-18px;}
+.bslide-dots{display:flex;justify-content:center;gap:7px;margin-top:28px;}
+.bslide-dot{width:8px;height:8px;border-radius:50%;background:var(--bdr);
+  border:none;cursor:pointer;padding:0;transition:.2s;}
+.bslide-dot.active{background:var(--o);width:22px;border-radius:4px;}
+@media(max-width:900px){.blog-track .bcard{flex:0 0 calc((100% - 18px)/2);}}
+@media(max-width:600px){
+  .blog-track .bcard{flex:0 0 100%;}
+  .bslide-prev{left:-8px;}.bslide-next{right:-8px;}
+}
 </style>
 
 <!-- Google Analytics GA4 -->
@@ -1917,46 +1942,66 @@ footer h4{
    <h2>No-Fluff Guides That <em>Actually</em> Rank</h2>
    <p>Written by practitioners, not content farms. Every guide is tested, cited, and built to help Indian businesses grow — free, forever.</p>
   </div>
-  <div class="blog-grid blog-grid-real">
-   <a href="seo-guide-indian-businesses-2026.html" class="bcard bcard-feat rv" style="text-decoration:none;color:inherit;">
-    <div class="bcard-img bcard-img-photo">
-     <img src="img/seo-guide-indian-businesses-2026.png" alt="The Complete SEO Guide for Indian Businesses 2026" loading="lazy">
-     <span class="bcard-cat">SEO Guide</span>
-     <div class="bcard-read-time">22 min read</div>
-    </div>
-    <div class="bcard-body">
-     <div class="bcard-date">July 2026 &nbsp;·&nbsp; 14 Chapters</div>
-     <h3>The Complete SEO Guide for Indian Businesses (2026)</h3>
-     <p class="bcard-excerpt">From keyword research to Core Web Vitals — everything Indian businesses need to rank #1 on Google India. Zero fluff, ~4,800 words.</p>
-     <span class="read">Read the Guide <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-   </a>
-   <a href="ai-automation-guide-indian-businesses-2026.html" class="bcard bcard-feat rv2" style="text-decoration:none;color:inherit;">
-    <div class="bcard-img bcard-img-photo">
-     <img src="img/ai-automation-2026.png" alt="AI & Business Automation for Indian SMBs 2026" loading="lazy">
-     <span class="bcard-cat">AI Automation</span>
-     <div class="bcard-read-time">20 min read</div>
-    </div>
-    <div class="bcard-body">
-     <div class="bcard-date">July 2026 &nbsp;·&nbsp; 17 Chapters</div>
-     <h3>AI &amp; Business Automation for Indian SMBs: The Complete 2026 Guide</h3>
-     <p class="bcard-excerpt">WhatsApp bots, AI chatbots, workflow automation — save 20+ hours a week and scale without hiring. Everything covered, nothing sold.</p>
-     <span class="read">Read the Guide <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-   </a>
-   <div class="bcard bcard-coming rv3">
-    <div class="bcard-img" style="background:linear-gradient(135deg,#0c1f3f,#162847);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-     <div style="font-size:32px;">✍️</div>
-     <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;">Coming Next</div>
-    </div>
-    <div class="bcard-body">
-     <div class="bcard-date" style="display:flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--o);display:inline-block;"></span> Publishing soon</div>
-     <h3>Google Ads for Indian SMBs: The 2026 Performance Playbook</h3>
-     <p class="bcard-excerpt">Smart bidding, local campaigns, and audience targeting strategies built for the Indian market.</p>
-     <a href="blog.html" class="read">Browse All Guides <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <div class="blog-slider-outer">
+   <button class="bslide-btn bslide-prev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#1E293B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+   <div class="blog-slider-wrap">
+    <div class="blog-track" id="blogTrack">
+     <a href="seo-guide-indian-businesses-2026.html" class="bcard bcard-feat" style="text-decoration:none;color:inherit;">
+      <div class="bcard-img bcard-img-photo">
+       <img src="img/seo-guide-indian-businesses-2026.png" alt="The Complete SEO Guide for Indian Businesses 2026" loading="lazy">
+       <span class="bcard-cat">SEO Guide</span>
+       <div class="bcard-read-time">22 min read</div>
+      </div>
+      <div class="bcard-body">
+       <div class="bcard-date">July 2026 &nbsp;·&nbsp; 14 Chapters</div>
+       <h3>The Complete SEO Guide for Indian Businesses (2026)</h3>
+       <p class="bcard-excerpt">From keyword research to Core Web Vitals — everything Indian businesses need to rank #1 on Google India. Zero fluff, ~4,800 words.</p>
+       <span class="read">Read the Guide <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+     </a>
+     <a href="ai-automation-guide-indian-businesses-2026.html" class="bcard bcard-feat" style="text-decoration:none;color:inherit;">
+      <div class="bcard-img bcard-img-photo">
+       <img src="img/ai-automation-2026.png" alt="AI & Business Automation for Indian SMBs 2026" loading="lazy">
+       <span class="bcard-cat">AI Automation</span>
+       <div class="bcard-read-time">20 min read</div>
+      </div>
+      <div class="bcard-body">
+       <div class="bcard-date">July 2026 &nbsp;·&nbsp; 17 Chapters</div>
+       <h3>AI &amp; Business Automation for Indian SMBs: The Complete 2026 Guide</h3>
+       <p class="bcard-excerpt">WhatsApp bots, AI chatbots, workflow automation — save 20+ hours a week and scale without hiring. Everything covered, nothing sold.</p>
+       <span class="read">Read the Guide <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+     </a>
+     <a href="business-website-guide-india-2026.html" class="bcard bcard-feat" style="text-decoration:none;color:inherit;">
+      <div class="bcard-img bcard-img-photo">
+       <img src="img/business-website-guide-india-2026.png" alt="How to Build a Business Website That Generates Leads India 2026" loading="lazy">
+       <span class="bcard-cat">Web Dev Guide</span>
+       <div class="bcard-read-time">20 min read</div>
+      </div>
+      <div class="bcard-body">
+       <div class="bcard-date">July 2026 &nbsp;·&nbsp; 14 Chapters</div>
+       <h3>How to Build a Business Website That Actually Generates Leads (2026)</h3>
+       <p class="bcard-excerpt">Platform choice, mobile design, lead capture, trust signals & MSME credibility — the complete blueprint for Indian businesses.</p>
+       <span class="read">Read the Guide <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+     </a>
+     <div class="bcard bcard-coming">
+      <div class="bcard-img" style="background:linear-gradient(135deg,#1a0c3f,#2d1662);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+       <div style="font-size:32px;">📣</div>
+       <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;">Coming Next</div>
+      </div>
+      <div class="bcard-body">
+       <div class="bcard-date" style="display:flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--o);display:inline-block;"></span> Publishing soon</div>
+       <h3>Google &amp; Meta Ads for Indian Businesses: The Complete 2026 Guide</h3>
+       <p class="bcard-excerpt">Campaign setup, budget strategy, audience targeting, and retargeting — everything for paid ads in India.</p>
+       <a href="blog.html" class="read">Browse All Guides <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+     </div>
     </div>
    </div>
+   <button class="bslide-btn bslide-next" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#1E293B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
+  <div class="bslide-dots" id="blogDots"></div>
  </div>
 </section>
 
@@ -2062,7 +2107,7 @@ if(hdr) window.addEventListener('scroll',()=>hdr.classList.toggle('up',scrollY>4
     });
   },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 
-  document.querySelectorAll('.rv,.rv2,.rv3').forEach(function(el){ obs.observe(el); });
+  document.querySelectorAll('.rv,.rv2,.rv3,.rv4').forEach(function(el){ obs.observe(el); });
 
   /* Hero elements — force visible immediately (already in viewport) */
   document.querySelectorAll('.sh-left,.sh-right,.scroll-hero-sticky').forEach(function(el){
@@ -2109,5 +2154,68 @@ document.querySelectorAll('.fi-q').forEach(function(btn){
   });
 });
 </script>
+
+<script>
+(function(){
+  var track = document.getElementById('blogTrack');
+  var dotsWrap = document.getElementById('blogDots');
+  if(!track) return;
+  var cards = track.querySelectorAll('.bcard');
+  var total = cards.length;
+  var visCount = 3; // cards visible at once
+  var current = 0;
+  var autoTimer;
+  var gap = 18;
+
+  function getVisCount(){
+    var w = track.parentElement.offsetWidth;
+    if(w < 600) return 1;
+    if(w < 900) return 2;
+    return 3;
+  }
+  function getSlideWidth(){
+    visCount = getVisCount();
+    var w = track.parentElement.offsetWidth;
+    return (w - gap*(visCount-1)) / visCount;
+  }
+  var maxSlide = total - visCount;
+  function goTo(n){
+    visCount = getVisCount();
+    maxSlide = total - visCount;
+    if(n < 0) n = maxSlide;
+    if(n > maxSlide) n = 0;
+    current = n;
+    var sw = getSlideWidth();
+    track.style.transform = 'translateX(-' + ((sw + gap) * current) + 'px)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i === current); });
+  }
+  // Build dots (one per slide position)
+  var dots = [];
+  for(var i=0;i<=maxSlide;i++){
+    var d = document.createElement('button');
+    d.className = 'bslide-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    (function(idx){ d.addEventListener('click',function(){ goTo(idx); resetAuto(); }); })(i);
+    dotsWrap.appendChild(d);
+    dots.push(d);
+  }
+  document.querySelector('.bslide-prev').addEventListener('click',function(){ goTo(current-1); resetAuto(); });
+  document.querySelector('.bslide-next').addEventListener('click',function(){ goTo(current+1); resetAuto(); });
+
+  function resetAuto(){ clearInterval(autoTimer); autoTimer = setInterval(function(){ goTo(current+1); }, 4200); }
+  resetAuto();
+
+  // Pause on hover
+  var outer = document.querySelector('.blog-slider-outer');
+  outer.addEventListener('mouseenter',function(){ clearInterval(autoTimer); });
+  outer.addEventListener('mouseleave', resetAuto);
+
+  // Recalc on resize
+  window.addEventListener('resize', function(){ goTo(current); });
+  // Initial position
+  goTo(0);
+})();
+</script>
+
 </body>
 </html>
