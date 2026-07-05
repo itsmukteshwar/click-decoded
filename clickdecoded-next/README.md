@@ -1,120 +1,83 @@
-# Click Decoded — Next.js Website
+# Click Decoded — Next.js
 
-B2B digital marketing agency website. Built with Next.js 15, TypeScript, Tailwind CSS v4, shadcn/ui.
+B2B agency site (SEO, web development, paid ads, AI automation). Full 1:1 migration of the 100-page HTML site to Next.js 15 (App Router) + TypeScript, preserving exact content, design and SEO metadata.
 
 ## Stack
 
-| Tool | Purpose |
-|------|---------|
-| Next.js 15 (App Router) | Framework |
-| TypeScript (strict) | Type safety |
-| Tailwind CSS v4 | Styling |
-| shadcn/ui + Radix UI | Components |
-| Framer Motion | Animations |
-| Resend | Contact form emails |
-| MDX | Blog posts |
-| Vercel | Hosting + auto-deploy |
+Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 (utilities only — legacy pages ship their own scoped CSS) · nodemailer (Zoho SMTP) · MDX blog pipeline · deployed on VPS via standalone output.
 
-## Getting Started
+## Quick start
 
-### 1. Prerequisites
-- Node.js 20+ — download from [nodejs.org](https://nodejs.org)
-
-### 2. Install
 ```bash
 npm install
+cp .env.example .env.local   # then fill values (see below)
+npm run dev                  # http://localhost:3000
 ```
 
-### 3. Environment variables
-```bash
-cp .env.example .env.local
-# Fill in your values in .env.local
-```
+## Commands
 
-### 4. Run locally
-```bash
-npm run dev
-# Open http://localhost:3000
-```
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server (Turbopack) |
+| `npm run build` | Production build (standalone) |
+| `npm start` | Serve production build |
+| `npm run type-check` | TypeScript check |
+| `npm run lint` | ESLint |
 
-### 5. Build for production
+## VPS deployment
+
 ```bash
 npm run build
-npm start
+# standalone bundle: .next/standalone
+node .next/standalone/server.js         # or manage with pm2:
+pm2 start .next/standalone/server.js --name clickdecoded
 ```
 
-## Project Structure
+Copy `public/` and `.next/static` next to the standalone server if deploying the bundle alone (see Next.js standalone docs). Put nginx in front for TLS + gzip.
+
+## Environment (.env.local)
+
+| Var | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL |
+| `NEXT_PUBLIC_GA_ID` | GA4 measurement ID |
+| `NEXT_PUBLIC_WA_NUMBER` | WhatsApp number |
+| `ZOHO_EMAIL` / `ZOHO_APP_PASSWORD` | SMTP auth for contact & careers forms |
+| `SMTP_HOST` / `SMTP_PORT` | SMTP server (default smtp.zoho.in:465) |
+
+`.env.example` is the committed template; `.env.local` holds real secrets (gitignored).
+
+## Architecture
 
 ```
 src/
-├── app/                  # Next.js App Router pages
-│   ├── layout.tsx        # Root layout (Header + Footer + WhatsApp)
-│   ├── page.tsx          # Homepage
-│   ├── blog/             # Blog listing + individual posts
-│   ├── api/contact/      # Contact form API (Resend)
-│   ├── sitemap.ts        # Auto-generated sitemap
-│   └── robots.ts         # robots.txt
-├── components/
-│   ├── layout/           # Header, Footer
-│   ├── sections/         # Reusable page sections
-│   ├── ui/               # shadcn/ui primitives
-│   └── whatsapp/         # WhatsApp floating button
-├── content/blog/         # MDX blog posts (*.mdx)
-├── lib/
-│   ├── constants.ts      # ALL site-wide constants (edit here first)
-│   ├── utils.ts          # cn(), formatINR(), waUrl(), buildWaMessage()
-│   └── blog.ts           # MDX blog helpers
-└── types/index.ts        # Global TypeScript types
+  app/                    # 101 routes, generated 1:1 from the HTML site
+    page.tsx              # home (from index.html)
+    services/<slug>/      # 38 service pages
+    locations/{bhopal,indore}/<service>/   # 34 city pages
+    industries/<slug>/    # 11 industry pages
+    white-label/<slug>/   # 6 white-label pages
+    legal/{privacy,terms,cookie-policy}/
+    blog/                 # listing + 3 long-form guides + MDX posts ([slug])
+    api/{contact,careers} # Zoho SMTP form handlers
+    sitemap.ts robots.ts  # generated sitemap.xml / robots.txt
+  components/chrome/      # Header (mega menu), Footer, WhatsAppFab,
+                          # PageScript + LegacyHandlers (run legacy page JS)
+  lib/constants.ts        # ALL site-wide constants — never hardcode strings
+  lib/email/              # email HTML templates (ported from api/*.js)
+  content/blog/           # MDX posts
 ```
 
-## Key Conventions
+### How converted pages work
 
-- **All constants** → `src/lib/constants.ts` — never hardcode strings in components
-- **All secrets** → `.env.local` — never commit this file
-- **Styling** → Tailwind utility classes only; use `cn()` from `src/lib/utils.ts`
-- **New page** → create `src/app/[route]/page.tsx`, export `metadata` and default component
-- **New blog post** → add `src/content/blog/your-post.mdx` with frontmatter (see example)
+Each generated `page.tsx` contains: Next `metadata` export (title/description/canonical/OG), the page's original `<style>` block, JSON-LD schema, exact JSX markup, and its original inline scripts replayed via `PageScript`. Old flat URLs (`/seo-services.html`) 301-redirect to the new folder routes (`/services/seo`) — full table in `next.config.ts`.
 
-## Adding a Blog Post
+### Notes
 
-Create `src/content/blog/your-slug.mdx`:
+- `src/components/{sections,layout,whatsapp}` are from the earlier prototype build and are no longer imported (kept for reference).
+- Regenerating pages: the HTML originals live one directory up; the converter pipeline is a session tool — edit generated pages directly going forward.
 
-```mdx
----
-title: "Your Post Title"
-description: "Short description for SEO"
-date: "2025-07-01"
-author: "Click Decoded"
-category: "SEO"
-tags: ["seo", "growth"]
-published: true
----
+## Changelog
 
-## Your content here
-```
-
-## Environment Variables
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `RESEND_API_KEY` | Yes | From [resend.com](https://resend.com) |
-| `CONTACT_TO_EMAIL` | Yes | Where form leads go |
-| `NEXT_PUBLIC_SITE_URL` | Yes | Full site URL (no trailing slash) |
-| `NEXT_PUBLIC_WA_NUMBER` | Yes | WhatsApp number (no + or spaces) |
-
-## Deployment (Vercel)
-
-1. Push to GitHub
-2. Import repo in [vercel.com](https://vercel.com)
-3. Add environment variables in Vercel dashboard
-4. Every `git push origin main` auto-deploys
-
-## SEO — .html → Clean URL Redirects
-
-Old HTML site used `/page.html`. Next.js uses `/page`. The redirect is handled automatically in `next.config.ts`:
-
-```ts
-{ source: '/:path*.html', destination: '/:path*', permanent: true }
-```
-
-No manual redirects needed — all old indexed URLs 301 to clean URLs automatically.
+- **2026-07-04** — Full migration: all 100 HTML pages converted to App Router routes (exact design + content), v5 mega-menu header, footer + WhatsApp widget ported, Zoho SMTP contact/careers APIs, 190 × 301 redirects, sitemap/robots, GA4 via env.
+- Earlier — Project scaffold, index prototype, MDX blog pipeline.

@@ -1,41 +1,54 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { WhatsAppButton } from '@/components/whatsapp/WhatsAppButton'
-import { SEO_DEFAULTS, COMPANY } from '@/lib/constants'
+import Header from '@/components/chrome/Header'
+import Footer from '@/components/chrome/Footer'
+import WhatsAppFab from '@/components/chrome/WhatsAppFab'
+import LegacyHandlers from '@/components/chrome/LegacyHandlers'
+import { COMPANY } from '@/lib/constants'
 
-const inter = Inter({ subsets: ['latin'] })
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
   metadataBase: new URL(COMPANY.siteUrl),
-  title:        { default: SEO_DEFAULTS.defaultTitle, template: SEO_DEFAULTS.titleTemplate },
-  description:  SEO_DEFAULTS.description,
   icons: {
-    icon:    '/images/favicon-clickdecoded.png',
-    apple:   '/images/clickdecoded.png',
+    icon: [
+      { url: '/favicon-clickdecoded.svg', type: 'image/svg+xml' },
+      { url: '/images/clickdecoded.png', type: 'image/png' },
+    ],
+    apple: '/images/clickdecoded.png',
   },
-  openGraph: {
-    type:     'website',
-    locale:   'en_IN',
-    url:      COMPANY.siteUrl,
-    siteName: COMPANY.name,
-    images:   [{ url: SEO_DEFAULTS.ogImage, width: 1200, height: 630 }],
-  },
-  twitter: { card: 'summary_large_image', creator: SEO_DEFAULTS.twitterHandle },
-  robots: { index: true, follow: true },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        />
+      </head>
+      <body>
         <Header />
-        <main>{children}</main>
+        {children}
         <Footer />
-        <WhatsAppButton />
+        <WhatsAppFab />
+        <LegacyHandlers />
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   )
