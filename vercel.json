@@ -2,12 +2,42 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "clickdecoded.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "clickdecoded.com"
+        }
+      ],
       "destination": "https://www.clickdecoded.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/index.php/:path*",
+      "destination": "https://www.clickdecoded.com/",
+      "permanent": true
+    },
+    {
+      "source": "/index.php",
+      "destination": "https://www.clickdecoded.com/",
       "permanent": true
     }
   ],
   "headers": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "product"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

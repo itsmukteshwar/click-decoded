@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Block spam bot URL injection patterns
+Disallow: /*?product*
+Disallow: /index.php
+Disallow: /index.php/*
+
 Sitemap: https://www.clickdecoded.com/sitemap.xml
