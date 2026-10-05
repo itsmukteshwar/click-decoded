@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<!-- Blog | Click Decoded — clickdecoded.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.clickdecoded.com/blog.html</loc>
+    <lastmod>2026-07-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clickdecoded.com/seo-guide-indian-businesses-2026.html</loc>
+    <lastmod>2026-07-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clickdecoded.com/ai-automation-guide-indian-businesses-2026.html</loc>
+    <lastmod>2026-07-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clickdecoded.com/business-website-guide-india-2026.html</loc>
+    <lastmod>2026-07-04</lastmod>
+  </url>
+</urlset>
+<!-- Set each lastmod to the date that page's content last changed (check the dateModified in each guide's Article schema). -->

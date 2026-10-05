@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "domain": "clickdecoded.com",
+    "audit_date": "2026-10-06",
+    "pages_crawled": 102,
+    "data_sources": [
+      "raw HTML crawl",
+      "rendered homepage",
+      "MCA registry",
+      "web search"
+    ],
+    "limitations": [
+      "no GSC/GA4/CrUX",
+      "lab-only performance",
+      "no backlink API"
+    ]
+  },
+  "summary": {
+    "health_score": 65,
+    "business_type": "B2B digital marketing agency, hybrid SAB (Bhopal office, pan-India)",
+    "top_findings": [
+      "Lead form redirects to /thank-you.html, which returns 404",
+      "CIN on site (U72900MP2014PTC032149) does not match the MCA record (U72200MP2014PTC033341)",
+      "Header nav and footer (incl. NAP) are injected by JavaScript",
+      "100 pages link to /index.html; / gets 0 raw-HTML inlinks",
+      "9 broken internal links (8 city pages + ecommerce-dev.html)"
+    ],
+    "quick_wins": [
+      "Create thank-you.html and fix _next",
+      "Correct the CIN",
+      "Replace index.html links with / and add a 301",
+      "Add the 3 guides to sitemap-blog.xml",
+      "Publish llms.txt and OG images"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "weight": 0.22,
+      "score": 68,
+      "what_works": [
+        "HTTPS + www canonical host",
+        "102/102 pages 200 with self-canonicals",
+        "robots.txt clean, sitemap index",
+        "Fast Vercel edge (bom1)"
+      ],
+      "findings": [
+        {
+          "title": "Form success page 404",
+          "severity": "Critical",
+          "description": "_next=https://clickdecoded.com/thank-you.html returns 404",
+          "recommendation": "Deploy fix-kit/thank-you.html"
+        },
+        {
+          "title": "JS-injected header/footer",
+          "severity": "Critical",
+          "description": "header.js (62 links) and footer.js (42 links + NAP) built client-side",
+          "recommendation": "Render at build time"
+        },
+        {
+          "title": "Internal links to /index.html",
+          "severity": "Critical",
+          "description": "100 pages link to /index.html; / has 0 raw inlinks",
+          "recommendation": "Link to / and 301 /index.html"
+        },
+        {
+          "title": "9 broken internal links",
+          "severity": "Critical",
+          "description": "8 city pages + /ecommerce-dev.html return 404",
+          "recommendation": "Unlink or build pages; 301 ecommerce-dev"
+        },
+        {
+          "title": "Guides missing from sitemap; uniform lastmod",
+          "severity": "High",
+          "description": "3 guides absent; all lastmod 2026-06-29",
+          "recommendation": "Use fix-kit/sitemap-blog.xml; real lastmod"
+        },
+        {
+          "title": "No custom 404",
+          "severity": "High",
+          "description": "Vercel plain-text NOT_FOUND",
+          "recommendation": "Deploy fix-kit/404.html"
+        },
+        {
+          "title": "No <main> on 99 pages",
+          "severity": "Medium",
+          "description": "Only the guides use <main>",
+          "recommendation": "Add <main> to templates"
+        },
+        {
+          "title": "Missing HSTS/CSP",
+          "severity": "Medium",
+          "description": "HSTS not observed; no CSP",
+          "recommendation": "Use the fix-kit/vercel.json headers"
+        },
+        {
+          "title": "favicon.ico / apple-touch-icon 404",
+          "severity": "Low",
+          "description": "",
+          "recommendation": "Add icons + manifest"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "weight": 0.23,
+      "score": 58,
+      "what_works": [
+        "3 long-form guides 5.4k–6.5k words",
+        "Unique location pages (2–20% overlap)",
+        "Public pricing",
+        "Honest page"
+      ],
+      "findings": [
+        {
+          "title": "CIN mismatch",
+          "severity": "Critical",
+          "description": "About page CIN differs from the MCA record",
+          "recommendation": "Correct everywhere"
+        },
+        {
+          "title": "Contradicting figures",
+          "severity": "High",
+          "description": "Retention 98% vs 95%; ₹15k demo vs ₹25k minimum; <₹10k budget option",
+          "recommendation": "Make consistent"
+        },
+        {
+          "title": "Unverifiable claims",
+          "severity": "High",
+          "description": "Static 'live' rankings dashboard, DA 54, self-quoting AI mentions",
+          "recommendation": "Substantiate or remove"
+        },
+        {
+          "title": "No named experts",
+          "severity": "High",
+          "description": "No team, bylines or Person schema",
+          "recommendation": "Add founders, bylines, bios"
+        },
+        {
+          "title": "Anonymous case studies",
+          "severity": "Medium",
+          "description": "All results unnamed",
+          "recommendation": "Publish 2–3 named cases"
+        },
+        {
+          "title": "Thin industry and Indore pages",
+          "severity": "Medium",
+          "description": "Industry avg ~800 words; Indore 665–832",
+          "recommendation": "Expand to 1,200+"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "weight": 0.2,
+      "score": 74,
+      "what_works": [
+        "Unique titles/metas",
+        "1 H1 per page",
+        "Metas 129–159 chars"
+      ],
+      "findings": [
+        {
+          "title": "22 titles >60 chars",
+          "severity": "Medium",
+          "description": "Guides 67–87; 3 industry titles truncated to '| Click'",
+          "recommendation": "Rewrite"
+        },
+        {
+          "title": "Weak homepage title",
+          "severity": "Medium",
+          "description": "No 'agency'/'India'",
+          "recommendation": "Front-load the primary keyword"
+        },
+        {
+          "title": "H1 <br> concatenation",
+          "severity": "Low",
+          "description": "'We Handlethe Digital.'",
+          "recommendation": "Add spaces"
+        },
+        {
+          "title": "Low internal links",
+          "severity": "Medium",
+          "description": "23 pages have 1–2 raw inlinks",
+          "recommendation": "Contextual links + static nav"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "weight": 0.1,
+      "score": 60,
+      "what_works": [
+        "JSON-LD on 102/102 pages, 0 parse errors",
+        "Breadcrumbs on 92"
+      ],
+      "findings": [
+        {
+          "title": "HowTo on 42 sales pages",
+          "severity": "High",
+          "description": "Deprecated rich result; misused type",
+          "recommendation": "Remove"
+        },
+        {
+          "title": "Indore LocalBusiness conflict",
+          "severity": "High",
+          "description": "Bhopal address with Indore geo",
+          "recommendation": "Use Service + areaServed"
+        },
+        {
+          "title": "No @id graph / sameAs / Person",
+          "severity": "High",
+          "description": "Org redeclared per page, non-www url",
+          "recommendation": "Use fix-kit/schema-site-graph.jsonld"
+        },
+        {
+          "title": "Article author is Organization",
+          "severity": "Medium",
+          "description": "Guides",
+          "recommendation": "Person author"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "weight": 0.1,
+      "score": 85,
+      "what_works": [
+        "TTFB 78 ms",
+        "LCP 516 ms (lab)",
+        "CLS 0"
+      ],
+      "findings": [
+        {
+          "title": "55 KB inline CSS per page",
+          "severity": "Medium",
+          "description": "Not cacheable across pages",
+          "recommendation": "External cached stylesheet"
+        },
+        {
+          "title": "6 Inter weights",
+          "severity": "Low",
+          "description": "Google Fonts",
+          "recommendation": "Self-host 3 weights"
+        },
+        {
+          "title": "INP unknown",
+          "severity": "Info",
+          "description": "No field data",
+          "recommendation": "Connect CrUX/GSC"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "weight": 0.1,
+      "score": 45,
+      "what_works": [
+        "All AI bots allowed",
+        "Server-rendered body content",
+        "Citable guides with FAQs"
+      ],
+      "findings": [
+        {
+          "title": "No llms.txt",
+          "severity": "High",
+          "description": "404",
+          "recommendation": "Publish fix-kit/llms.txt"
+        },
+        {
+          "title": "NAP invisible to non-JS AI crawlers",
+          "severity": "High",
+          "description": "Footer injected by JS",
+          "recommendation": "Static footer"
+        },
+        {
+          "title": "Weak entity / no off-site mentions",
+          "severity": "High",
+          "description": "Brand search finds no third-party coverage",
+          "recommendation": "Profiles + PR + sameAs"
+        },
+        {
+          "title": "Self-quoting AI mention widget",
+          "severity": "Medium",
+          "description": "Homepage",
+          "recommendation": "Replace with dated evidence"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "weight": 0.05,
+      "score": 55,
+      "what_works": [
+        "All 18 images have alt"
+      ],
+      "findings": [
+        {
+          "title": "97/102 pages without og:image",
+          "severity": "High",
+          "description": "No social previews",
+          "recommendation": "9 OG templates"
+        },
+        {
+          "title": "Broken OG images",
+          "severity": "Medium",
+          "description": "og-healthcare.jpg, og-education.jpg 404",
+          "recommendation": "Fix paths"
+        },
+        {
+          "title": "14 images without dimensions",
+          "severity": "Low",
+          "description": "",
+          "recommendation": "Add width/height"
+        }
+      ]
+    },
+    {
+      "name": "Local SEO (supplementary)",
+      "weight": 0,
+      "score": 55,
+      "what_works": [
+        "LocalBusiness on Bhopal pages",
+        "GBP link",
+        "Hours in schema"
+      ],
+      "findings": [
+        {
+          "title": "Street address only in schema",
+          "severity": "High",
+          "description": "Not visible on page",
+          "recommendation": "Show NAP in text"
+        },
+        {
+          "title": "8 promised city pages 404",
+          "severity": "High",
+          "description": "",
+          "recommendation": "Unlink or build hubs"
+        },
+        {
+          "title": "No reviews shown",
+          "severity": "Medium",
+          "description": "",
+          "recommendation": "GBP review badge + testimonials"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "thank-you.html + form _next",
+          "Correct CIN",
+          "index.html → / links + 301",
+          "Fix 9 broken links",
+          "Static header/footer"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Sitemap guides + real lastmod",
+          "Schema @id graph",
+          "Remove HowTo",
+          "Indore schema fix",
+          "llms.txt",
+          "OG images",
+          "Consistent figures",
+          "Remove unverified widgets",
+          "Custom 404",
+          "Team + Person schema",
+          "Guide bylines"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "<main> tags",
+          "Title rewrites",
+          "Expand industry + Indore pages",
+          "Named case studies",
+          "Internal links",
+          "Blog 2/month",
+          "Directory/entity profiles",
+          "CSS/font optimisation"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "HSTS/CSP",
+          "Icons/manifest",
+          "GSC + Bing + IndexNow",
+          "AI citation tracking (20 prompts)",
+          "Monthly re-crawl"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "fix_kit_dir": "fix-kit/",
+    "crawl_csv": "crawl-data.csv"
+  }
+}

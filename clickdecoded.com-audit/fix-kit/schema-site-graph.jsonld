@@ -1,0 +1,140 @@
+<!-- Place in <head> of index.html and about.html. On other pages, reference "@id" values instead of redeclaring the Organization.
+     TODO before deploy: replace every REPLACE_ value, delete sameAs entries for profiles that don't exist yet, and confirm the GBP CID URL. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://www.clickdecoded.com/#org",
+      "name": "Click Decoded",
+      "legalName": "Aharnish Infotech Private Limited",
+      "alternateName": ["ClickDecoded", "Click Decoded Bhopal"],
+      "url": "https://www.clickdecoded.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.clickdecoded.com/clickdecoded.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://www.clickdecoded.com/og/og-home.jpg",
+      "description": "B2B digital growth agency in Bhopal, India offering SEO, Google & Meta Ads, web development, WhatsApp and n8n AI automation, Generative Engine Optimization and white-label fulfilment for agencies.",
+      "foundingDate": "2014-10-21",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "CIN",
+        "value": "U72200MP2014PTC033341"
+      },
+      "founder": [
+        { "@id": "https://www.clickdecoded.com/#mukteshwar-sharma" },
+        { "@id": "https://www.clickdecoded.com/#bhagvendra-pratap-singh" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Amrit Complex, Raisen Road",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "462023",
+        "addressCountry": "IN"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 23.2529061, "longitude": 77.438125 },
+      "telephone": "+91-94070-00101",
+      "email": "hello@clickdecoded.com",
+      "priceRange": "₹25,000–₹1,20,000 per month",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:00" }
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Bhopal" },
+        { "@type": "City", "name": "Indore" },
+        { "@type": "State", "name": "Madhya Pradesh" },
+        { "@type": "Country", "name": "India" }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-94070-00101",
+        "contactType": "sales",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "knowsAbout": [
+        "Search Engine Optimization", "Local SEO", "Programmatic SEO", "Google Ads", "Meta Ads",
+        "Generative Engine Optimization", "Answer Engine Optimization", "WhatsApp Business API",
+        "n8n workflow automation", "AI chatbots", "WordPress development", "White label SEO"
+      ],
+      "sameAs": [
+        "https://www.google.com/maps?cid=REPLACE_GBP_CID",
+        "https://www.linkedin.com/company/REPLACE",
+        "https://www.facebook.com/REPLACE",
+        "https://www.instagram.com/REPLACE",
+        "https://clutch.co/profile/REPLACE"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.clickdecoded.com/#website",
+      "url": "https://www.clickdecoded.com/",
+      "name": "Click Decoded",
+      "publisher": { "@id": "https://www.clickdecoded.com/#org" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.clickdecoded.com/#mukteshwar-sharma",
+      "name": "Mukteshwar Sharma",
+      "jobTitle": "Co-founder & Director",
+      "worksFor": { "@id": "https://www.clickdecoded.com/#org" },
+      "url": "https://www.clickdecoded.com/about.html#team",
+      "image": "https://www.clickdecoded.com/img/team/mukteshwar-sharma.webp",
+      "sameAs": ["https://www.linkedin.com/in/REPLACE"],
+      "knowsAbout": ["SEO", "Generative Engine Optimization", "AI automation"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.clickdecoded.com/#bhagvendra-pratap-singh",
+      "name": "Bhagvendra Pratap Singh",
+      "jobTitle": "Co-founder & Director",
+      "worksFor": { "@id": "https://www.clickdecoded.com/#org" },
+      "url": "https://www.clickdecoded.com/about.html#team",
+      "sameAs": ["https://www.linkedin.com/in/REPLACE"]
+    }
+  ]
+}
+</script>
+
+<!-- Example: service page (e.g. seo-services.html). Replace the HowTo + Organization blocks with this. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.clickdecoded.com/seo-services.html#service",
+  "name": "SEO Services",
+  "serviceType": "Search Engine Optimization",
+  "provider": { "@id": "https://www.clickdecoded.com/#org" },
+  "areaServed": { "@type": "Country", "name": "India" },
+  "url": "https://www.clickdecoded.com/seo-services.html",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "priceSpecification": { "@type": "UnitPriceSpecification", "price": 25000, "priceCurrency": "INR", "unitText": "MONTH" }
+  }
+}
+</script>
+
+<!-- Example: guide Article author fix -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Complete SEO Guide for Indian Businesses (2026)",
+  "image": "https://www.clickdecoded.com/img/seo-guide-indian-businesses-2026.png",
+  "datePublished": "2026-07-01T08:00:00+05:30",
+  "dateModified": "2026-07-04T08:00:00+05:30",
+  "author": { "@id": "https://www.clickdecoded.com/#mukteshwar-sharma" },
+  "publisher": { "@id": "https://www.clickdecoded.com/#org" },
+  "isPartOf": { "@id": "https://www.clickdecoded.com/#website" },
+  "mainEntityOfPage": "https://www.clickdecoded.com/seo-guide-indian-businesses-2026.html",
+  "inLanguage": "en-IN"
+}
+</script>

@@ -1,0 +1,263 @@
+<title>Click Decoded SEO Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: audit dossier — score header, category meters, then tabbed findings and a checkable action plan */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --line:#dde1e8; --fg:#141b2b; --muted:#5b6578;
+  --accent:#d9661f; --accent-soft:#fbeadf;
+  --crit:#c42b2b; --crit-soft:#fbe4e4; --high:#c66a00; --high-soft:#fdf0dc;
+  --med:#8a7a00; --med-soft:#f6f2d2; --low:#3b6ea8; --low-soft:#e2ecf8; --good:#23845a; --good-soft:#dff2e8;
+  --f-display:"Archivo","Segoe UI",system-ui,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1420; --surface:#171e2d; --line:#2a3346; --fg:#e7ebf3; --muted:#9aa5ba;
+  --accent:#f08a45; --accent-soft:#3a2617;
+  --crit:#f07070; --crit-soft:#3a1a1d; --high:#f0a64a; --high-soft:#3a2a14;
+  --med:#d8c650; --med-soft:#34301a; --low:#7fb0ea; --low-soft:#1a2a40; --good:#5cc995; --good-soft:#163428; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1420; --surface:#171e2d; --line:#2a3346; --fg:#e7ebf3; --muted:#9aa5ba;
+  --accent:#f08a45; --accent-soft:#3a2617;
+  --crit:#f07070; --crit-soft:#3a1a1d; --high:#f0a64a; --high-soft:#3a2a14;
+  --med:#d8c650; --med-soft:#34301a; --low:#7fb0ea; --low-soft:#1a2a40; --good:#5cc995; --good-soft:#163428; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--f-body);padding-inline:16px;padding-block:24px 64px}
+.wrap{max-width:1080px;margin:0 auto;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,4.5vw,40px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:22px;font-weight:700}
+h3{font-size:16px;font-weight:700}
+p{margin:0}
+.eyebrow{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+
+/* header */
+.head{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.gauge{position:relative;width:168px;height:168px}
+.gauge svg{width:100%;height:100%;transform:rotate(-90deg)}
+.gauge .num{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.gauge .num b{font:800 52px/1 var(--f-display);display:block}
+.gauge .num span{font:500 12px var(--f-mono);color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:14px;color:var(--muted)}
+.meta b{color:var(--fg);font-weight:600}
+.lede{margin-top:10px;max-width:62ch}
+
+/* meters */
+.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.meter{display:grid;gap:6px}
+.meter .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.meter .name{font-weight:600}
+.meter .w{font:500 11px var(--f-mono);color:var(--muted)}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:4px}
+
+/* issue list */
+.cols{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.cols>*{min-width:0}
+ol.issues{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px}
+ol.issues li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.pill{font:500 11px var(--f-mono);letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.p-crit{background:var(--crit-soft);color:var(--crit)}
+.p-high{background:var(--high-soft);color:var(--high)}
+.p-med{background:var(--med-soft);color:var(--med)}
+.p-low{background:var(--low-soft);color:var(--low)}
+.p-good{background:var(--good-soft);color:var(--good)}
+.issues b{display:block}
+.issues small{color:var(--muted);font-size:14px}
+ul.wins{margin:14px 0 0;padding-left:18px;display:grid;gap:8px}
+
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tabs button{font:600 14px var(--f-body);background:transparent;border:1px solid var(--line);color:var(--fg);padding:7px 12px;border-radius:6px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tabs button:focus-visible,.check:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tabpanel{display:grid;gap:12px;margin-top:16px}
+.find{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.find:first-of-type{border-top:0}
+.find>div{min-width:0}
+.find .fix{margin-top:6px;font-size:14px}
+.find .fix::before{content:"Fix → ";font-weight:600;color:var(--accent)}
+.works{display:flex;flex-wrap:wrap;gap:6px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11px var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td.n{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+
+/* plan */
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.phase h3{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.phase .when{font:500 12px var(--f-mono);color:var(--muted)}
+.phase ul{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.phase label{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:15px;cursor:pointer}
+.check{margin-top:4px;accent-color:var(--accent);width:16px;height:16px}
+.progress{font:500 12px var(--f-mono);color:var(--muted);margin-top:10px}
+footer{font-size:13px;color:var(--muted)}
+
+@media (max-width:760px){.head{grid-template-columns:1fr}.cols{grid-template-columns:1fr}.gauge{width:140px;height:140px}}
+@media (prefers-reduced-motion:no-preference){.bar i{transition:width .6s ease}}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div class="gauge" aria-label="SEO health score 65 out of 100">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="10"></circle>
+        <circle cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="114.3"></circle>
+      </svg>
+      <div class="num"><div><b class="mono">65</b><span>/ 100 HEALTH</span></div></div>
+    </div>
+    <div>
+      <p class="eyebrow">Full SEO audit · 6 Oct 2026</p>
+      <h1>clickdecoded.com</h1>
+      <p class="lede">The site is fast, clean and has unique service and location content. Five issues are costing leads and trust: the form ends on a 404, the CIN doesn't match MCA records, navigation and contact details exist only after JavaScript runs, internal links point to <span class="mono">/index.html</span>, and nine links are broken.</p>
+      <div class="meta">
+        <span><b class="mono">102</b> URLs crawled</span>
+        <span><b>B2B agency</b>, hybrid service-area business</span>
+        <span>Host <b>Vercel bom1</b></span>
+        <span>Lab data only (no GSC/CrUX)</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="panel" aria-labelledby="cat-h">
+    <h2 id="cat-h">Category scores</h2>
+    <div class="meters" id="meters" style="margin-top:16px"></div>
+  </section>
+
+  <section class="cols">
+    <div class="panel">
+      <h2>Top 5 critical issues</h2>
+      <ol class="issues">
+        <li><span class="pill p-crit">Critical</span><div><b>Lead form lands on a 404</b><small><span class="mono">_next</span> points to <span class="mono">/thank-you.html</span>, which doesn't exist. No conversion tracking and <span class="mono">_captcha=false</span>.</small></div></li>
+        <li><span class="pill p-crit">Critical</span><div><b>CIN doesn't match MCA</b><small>Site: U72900MP2014PTC032149. Registry: U72200MP2014PTC033341.</small></div></li>
+        <li><span class="pill p-crit">Critical</span><div><b>Nav and footer injected by JS</b><small>104 links plus phone and email are invisible to GPTBot, ClaudeBot and PerplexityBot.</small></div></li>
+        <li><span class="pill p-crit">Critical</span><div><b>100 pages link to /index.html</b><small>The real homepage <span class="mono">/</span> gets 0 raw-HTML internal links.</small></div></li>
+        <li><span class="pill p-crit">Critical</span><div><b>9 broken internal links</b><small>8 city pages from Service Areas, plus <span class="mono">/ecommerce-dev.html</span>.</small></div></li>
+      </ol>
+    </div>
+    <div class="panel">
+      <h2>Quick wins (under 1 hour each)</h2>
+      <ul class="wins">
+        <li>Deploy <span class="mono">thank-you.html</span> and fix <span class="mono">_next</span></li>
+        <li>Correct the CIN everywhere</li>
+        <li>Replace <span class="mono">index.html</span> links with <span class="mono">/</span> and add a 301</li>
+        <li>Add the 3 guides to <span class="mono">sitemap-blog.xml</span></li>
+        <li>Publish <span class="mono">/llms.txt</span></li>
+        <li>Remove HowTo schema from 42 pages</li>
+        <li>Align figures: 98% vs 95% retention, ₹15K vs ₹25K minimum</li>
+      </ul>
+      <p class="muted" style="margin-top:14px;font-size:14px">Ready-made files are in the <span class="mono">fix-kit/</span> folder of the audit.</p>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="f-h">
+    <h2 id="f-h">Findings by category</h2>
+    <div class="tabs" role="tablist" id="tabs" style="margin-top:14px"></div>
+    <div id="panels"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="p-h">
+    <h2 id="p-h">Action plan</h2>
+    <p class="muted" style="margin-top:4px;font-size:14px">Tick items as you ship them. Progress is saved in this browser only. Projected score: 71 after Phase 1, 80 after Phase 2, 87 after Phase 3.</p>
+    <div class="phases" id="phases" style="margin-top:16px"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Content health snapshot</h2>
+    <div class="tablewrap" style="margin-top:12px">
+      <table>
+        <thead><tr><th>Page group</th><th>Pages</th><th>Avg words</th><th>Schema</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Long-form guides</td><td class="n">3</td><td class="n">5,922</td><td>Article, FAQPage</td><td><span class="pill p-good">Strong</span></td></tr>
+          <tr><td>Core service pages</td><td class="n">38</td><td class="n">1,358</td><td>Service, FAQPage, HowTo</td><td><span class="pill p-med">Remove HowTo</span></td></tr>
+          <tr><td>Bhopal location pages</td><td class="n">14</td><td class="n">890</td><td>LocalBusiness, Service</td><td><span class="pill p-good">Good</span></td></tr>
+          <tr><td>Indore location pages</td><td class="n">14</td><td class="n">723</td><td>Organization, Service</td><td><span class="pill p-high">Expand + fix schema</span></td></tr>
+          <tr><td>Industry pages</td><td class="n">11</td><td class="n">803</td><td>Service</td><td><span class="pill p-high">Thin, 1–2 inlinks</span></td></tr>
+          <tr><td>White-label pages</td><td class="n">6</td><td class="n">818</td><td>Service, FAQPage, HowTo</td><td><span class="pill p-med">Low inlinks</span></td></tr>
+          <tr><td>Missing city pages</td><td class="n">8</td><td class="n">—</td><td>—</td><td><span class="pill p-crit">404</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Method: raw-HTML crawl of all sitemap URLs and discovered links, rendered homepage check, JSON-LD extraction, 5-gram duplicate test, MCA registry cross-check and a brand web search. Performance figures come from a single lab load. Full markdown reports, crawl CSV and fix files are in the <span class="mono">clickdecoded.com-audit</span> folder.</footer>
+</div>
+
+<script>
+const cats=[
+ {id:"tech",name:"Technical SEO",w:22,s:68,works:["HTTPS + www host","102/102 return 200","Self-canonicals everywhere","Clean robots.txt"],
+  f:[["crit","Form success page returns 404","/thank-you.html is missing; every lead sees Vercel's NOT_FOUND page.","Deploy fix-kit/thank-you.html, set _next to the www URL, add a honeypot field."],
+     ["crit","Header and footer built by JavaScript","header.js (62 links) and footer.js (42 links, NAP, legal entity) render client-side.","Render at build time (Next.js layout) or inline static HTML."],
+     ["crit","Links point to /index.html","100 pages link to /index.html; / gets 0 raw inlinks.","Link to / and 301 /index.html → /."],
+     ["crit","9 broken internal links","Dewas, Gwalior, Raipur, Nagpur, Pune, Delhi NCR, Mumbai, Bangalore and /ecommerce-dev.html.","Unlink the cities until real pages exist; 301 ecommerce-dev."],
+     ["high","Guides missing from sitemap","sitemap-blog.xml lists only blog.html; all 97 lastmod values are 2026-06-29.","Use fix-kit/sitemap-blog.xml and real per-page dates."],
+     ["high","No custom 404 page","Vercel default plain text, no navigation.","Deploy fix-kit/404.html."],
+     ["med","No <main> on 99 pages","Only the 3 guides use <main>.","Add <main id=\"main\"> to every template."],
+     ["med","HSTS and CSP missing","Other security headers are present.","Merge headers from fix-kit/vercel.json."],
+     ["low","favicon.ico and touch icon 404","SVG favicon works; legacy paths don't.","Add favicon.ico, apple-touch-icon.png, manifest."]]},
+ {id:"content",name:"Content & E-E-A-T",w:23,s:58,works:["3 guides of 5.4k–6.5k words","Location pages 2–20% overlap only","Public pricing","The Honest Page"],
+  f:[["crit","CIN mismatch","About page CIN differs from the MCA record U72200MP2014PTC033341.","Correct everywhere, including schema."],
+     ["high","Figures contradict each other","Retention 98% vs 95%; chatbot demo ₹15K vs ₹25K minimum; contact form offers under ₹10K.","Pick one defensible number per claim."],
+     ["high","Unverifiable claims on homepage","Static 'live' ranking dashboard, DA 54, self-quoting ChatGPT/Gemini mentions.","Replace with dated screenshots or remove."],
+     ["high","No named experts","No team page, bylines or Person schema. Directors: Mukteshwar Sharma, Bhagvendra Pratap Singh.","Add founder profiles, guide bylines and bios."],
+     ["med","All case studies anonymous","'Client names are kept confidential by default.'","Publish 2–3 named, permission-based cases with screenshots."],
+     ["med","Thin industry and Indore pages","Industry avg 803 words; Indore 665–832.","Expand to 1,200+ with sector-specific detail."]]},
+ {id:"onpage",name:"On-Page SEO",w:20,s:74,works:["Unique titles and metas","1 H1 per page","All metas 129–159 chars"],
+  f:[["med","22 titles over 60 characters","Guides run 67–87; three industry titles are cut to '| Click'.","Rewrite (list in findings/on-page.md)."],
+     ["med","Homepage title lacks keywords","'Click Decoded — SEO · Marketing · AI Automation'.","Front-load 'Digital Marketing, SEO & AI Automation Agency India'."],
+     ["med","23 pages with 1–2 inlinks","All industry pages, 5 white-label pages, pricing, careers and more.","Add contextual links from service pages and a static nav."],
+     ["low","H1 text runs together","'We Handlethe Digital.' when extracted.","Add a space before each <br>."]]},
+ {id:"schema",name:"Schema",w:10,s:60,works:["JSON-LD on 102/102 pages","0 parse errors","Breadcrumbs on 92"],
+  f:[["high","HowTo on 42 sales pages","Rich result retired in 2023 and the type is misused.","Remove the HowTo nodes."],
+     ["high","Indore LocalBusiness conflict","Bhopal street address with Indore coordinates.","Use Service + areaServed: Indore + provider @id."],
+     ["high","No entity graph","Organization redeclared per page with a non-www url; no sameAs, founder or legalName.","Use fix-kit/schema-site-graph.jsonld."],
+     ["med","Article author is Organization","The 3 guides.","Set author to a Person with LinkedIn sameAs."]]},
+ {id:"perf",name:"Performance",w:10,s:85,works:["TTFB 78 ms","LCP 516 ms (lab)","CLS 0"],
+  f:[["med","55 KB inline CSS on every page","Can't be cached across page views.","Move shared CSS to a hashed, cached stylesheet."],
+     ["low","6 Inter weights from Google Fonts","Two third-party origins.","Self-host 3 weights as WOFF2."],
+     ["low","INP not measured","No field data connected.","Connect Search Console Core Web Vitals."]]},
+ {id:"geo",name:"AI Search (GEO/AEO)",w:10,s:45,works:["All AI bots allowed","Body content server-rendered","Citable guides with FAQs"],
+  f:[["high","No llms.txt","Returns 404.","Publish fix-kit/llms.txt."],
+     ["high","Contact details invisible to AI crawlers","NAP lives in JS footer.","Static footer HTML."],
+     ["high","Weak entity, no off-site mentions","Brand search finds no third-party coverage.","LinkedIn, Clutch, GoodFirms, Crunchbase profiles + PR + sameAs."],
+     ["med","Self-quoting AI-mention widget","Claims ChatGPT recommends the brand without evidence.","Replace with dated screenshots."]]},
+ {id:"img",name:"Images",w:5,s:55,works:["All 18 images have alt text"],
+  f:[["high","97 of 102 pages lack og:image","No previews when shared on WhatsApp or LinkedIn.","Create 9 OG templates at 1200×630."],
+     ["med","Two OG images return 404","og-healthcare.jpg and og-education.jpg on the non-www host.","Fix paths."],
+     ["low","14 images without dimensions","Homepage 4, blog 3, others.","Add width and height."]]},
+ {id:"local",name:"Local SEO",w:0,s:55,works:["LocalBusiness on Bhopal pages","GBP link in schema","Hours in schema"],
+  f:[["high","Street address only in schema","Visible text says only 'Bhopal Office'.","Show the full NAP on contact, footer and the Bhopal hub."],
+     ["high","8 promised city pages are 404","Listed in footer and Service Areas.","Unlink, then build one hub per city with a real client."],
+     ["med","No reviews on the site","No Google review badge or named testimonials.","Add a GBP review badge and 3–5 named testimonials."],
+     ["med","Citations missing","Not found on major Indian directories.","Justdial, Sulekha, IndiaMART, Clutch, GoodFirms with identical NAP."]]}
+];
+const sev={crit:["p-crit","Critical"],high:["p-high","High"],med:["p-med","Medium"],low:["p-low","Low"]};
+const color=s=>s>=80?"var(--good)":s>=65?"var(--accent)":s>=50?"var(--high)":"var(--crit)";
+const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+document.getElementById("meters").innerHTML=cats.map(c=>`<div class="meter"><div class="row"><span class="name">${c.name}</span><span class="mono">${c.s}</span></div><div class="bar"><i style="width:${c.s}%;background:${color(c.s)}"></i></div><span class="w">${c.w?`Weight ${c.w}%`:"Supplementary, not weighted"}</span></div>`).join("");
+const tabs=document.getElementById("tabs"),panels=document.getElementById("panels");
+tabs.innerHTML=cats.map((c,i)=>`<button role="tab" id="t-${c.id}" aria-controls="pn-${c.id}" aria-selected="${i===0}">${c.name} <span class="mono">${c.s}</span></button>`).join("");
+panels.innerHTML=cats.map((c,i)=>`<div class="tabpanel" role="tabpanel" id="pn-${c.id}" aria-labelledby="t-${c.id}" ${i?"hidden":""}><div class="works">${c.works.map(w=>`<span class="pill p-good">${esc(w)}</span>`).join("")}</div><div>${c.f.map(([s,t,d,r])=>`<div class="find"><span class="pill ${sev[s][0]}">${sev[s][1]}</span><div><h3>${esc(t)}</h3><p class="muted">${esc(d)}</p><p class="fix">${esc(r)}</p></div></div>`).join("")}</div></div>`).join("");
+function show(id){cats.forEach(c=>{document.getElementById("t-"+c.id).setAttribute("aria-selected",c.id===id);document.getElementById("pn-"+c.id).hidden=c.id!==id});try{localStorage.setItem("cd-tab",id)}catch(e){}}
+tabs.addEventListener("click",e=>{const b=e.target.closest("button");if(b)show(b.id.slice(2))});
+const h=location.hash.slice(1);let saved=null;try{saved=localStorage.getItem("cd-tab")}catch(e){}
+if(cats.some(c=>c.id===h))show(h);else if(saved&&cats.some(c=>c.id===saved))show(saved);
+
+const phases=[
+ ["Phase 1 · Critical fixes","Week 1",["Create thank-you.html and fix form _next","Correct the CIN everywhere","Replace /index.html links with / and add a 301","Fix 9 broken internal links","Render header and footer as static HTML"]],
+ ["Phase 2 · High impact","Weeks 2–3",["Add guides to sitemap with real lastmod","Deploy the @id schema graph","Remove HowTo schema (42 pages)","Fix Indore LocalBusiness schema","Publish llms.txt","Add OG images to all pages","Make retention and pricing figures consistent","Remove or prove the AI-mention and DA widgets","Deploy a custom 404 page","Add a team section with Person schema","Add author bylines to the 3 guides"]],
+ ["Phase 3 · Content & authority","Month 2",["Add <main> to every template","Rewrite 22 long titles","Expand 11 industry pages to 1,200+ words","Bring Indore pages up to Bhopal depth","Publish 2–3 named case studies","Add contextual internal links","Publish 2 blog posts a month","Create directory and entity profiles","Move inline CSS to a cached file"]],
+ ["Phase 4 · Monitoring","Ongoing",["Add HSTS and CSP headers","Add favicon.ico, touch icon and manifest","Connect GSC, Bing and IndexNow","Track 20 AI-search prompts monthly","Re-crawl the site monthly"]]
+];
+let done={};try{done=JSON.parse(localStorage.getItem("cd-plan")||"{}")}catch(e){}
+const ph=document.getElementById("phases");
+function renderPlan(){ph.innerHTML=phases.map(([n,w,items],pi)=>{const k=items.map((_,ii)=>`p${pi}-${ii}`);const c=k.filter(x=>done[x]).length;return `<div class="phase"><h3>${n}<span class="when">${w}</span></h3><ul>${items.map((t,ii)=>`<li><label><input type="checkbox" class="check" id="p${pi}-${ii}" ${done[`p${pi}-${ii}`]?"checked":""}><span>${esc(t)}</span></label></li>`).join("")}</ul><p class="progress">${c} of ${items.length} done</p></div>`}).join("")}
+renderPlan();
+ph.addEventListener("change",e=>{if(e.target.matches(".check")){done[e.target.id]=e.target.checked;try{localStorage.setItem("cd-plan",JSON.stringify(done))}catch(err){}const id=e.target.id;renderPlan();document.getElementById(id)?.focus()}});
+</script>
