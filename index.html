@@ -1132,23 +1132,40 @@ footer h4{
 @media(max-width:1024px){
   .bento{grid-template-columns:1fr 1fr;}
   .bc-seo,.bc-ads,.bc-web,.bc-auto,.bc-geo{grid-column:span 1;}
-  .bc-wl{grid-column:span 2;grid-template-columns:1fr;}
+  .bc-wl{grid-column:span 2;grid-template-columns:1fr;padding:36px;}
+  .auto-cards{grid-template-columns:1fr 1fr;}
   .mega.wide{width:700px;grid-template-columns:repeat(3,1fr);}
   .geo-grid{grid-template-columns:1fr;}
 }
 @media(max-width:768px){
   .dmenu,.navcta .btn:not(.show-m){display:none;}
   .hb{display:flex;}
-  .bento,.auto-cards,.cases-grid,.testi-grid,/* blog carousel mobile handled in .blog-track */
-  .bc-wl{grid-column:span 1;}
+  /* Force single-column on all card grids at tablet/phone */
+  .bento{grid-template-columns:1fr;}
+  .bc-seo,.bc-ads,.bc-web,.bc-auto,.bc-geo{grid-column:span 1;}
+  .bc-wl{grid-column:span 1;grid-template-columns:1fr;padding:28px 24px;}
+  .auto-cards{grid-template-columns:1fr;}
+  .cases-grid,.testi-grid{grid-template-columns:1fr;}
   .stats-grid,.fg,.lead-inner{grid-template-columns:1fr;}
-  .tp-list{grid-template-columns:1fr;}
-  section{padding:64px 0;}
+  .tp-list{grid-template-columns:1fr 1fr;}
+  section{padding:56px 0;}
   .sec-h h2{font-size:28px;}
+  /* Prevent horizontal overflow */
+  .bento,.bc{max-width:100%;overflow:hidden;}
+  .bc-wl h2{font-size:22px;}
 }
 @media(max-width:480px){
   .hero-btns{flex-direction:column;}
   .hero-btns .btn{justify-content:center;}
+  /* Reduce card padding on small phones */
+  .bc{padding:22px 20px;}
+  .bc-wl{padding:24px 20px;}
+  .bc .bc-icon{width:44px;height:44px;font-size:20px;margin-bottom:14px;}
+  .bc h3{font-size:17px;}
+  .bc p{font-size:13.5px;}
+  /* Prevent any section overflow */
+  section,div{max-width:100vw;}
+  .wrap{padding:0 18px;}
 }
 
 /* BLOG SECTION — real photo cards */
